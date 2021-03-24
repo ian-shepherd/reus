@@ -9,3 +9,6 @@ reus.egg-info/requires.txt
 reus.egg-info/SOURCES.txt
 reus.egg-info/top_level.txt
 reus/__pycache__/teams.cpython-38.pyc
+*.whl
+*.gz
+*.pyc

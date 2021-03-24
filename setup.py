@@ -1,6 +1,6 @@
 import setuptools
 
-VERSION = '0.0.1'
+VERSION = '0.0.3'
 DESCRIPTION = 'A package that allows you to pull soccer club information'
 LONG_DESCRIPTION = 'A package that allows you to pull soccer club information, primarily from Transfermarkt'
 
@@ -13,7 +13,9 @@ setuptools.setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     packages=setuptools.find_packages(),
-    install_requires=['json', 'requests'],
+    install_requires=[
+        'requests>=2.0.0'
+    ],
     keywords=['python', 'transfermarkt', 'soccer', 'football'],
     classifiers=[
         "Programming Language :: Python :: 3",

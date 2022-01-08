@@ -1,25 +1,27 @@
 import setuptools
 
-VERSION = '0.0.3'
-DESCRIPTION = 'A package that allows you to pull soccer club information'
-LONG_DESCRIPTION = 'A package that allows you to pull soccer club information, primarily from Transfermarkt'
+VERSION = '1.0.0'
+DESCRIPTION = 'A package that allows you to soccer information'
+LONG_DESCRIPTION = 'A package that allows you to pull soccer statistics, player market values, and transfer information, primarily from FBref and Transfermarkt'
 
 setuptools.setup(
-    name="reus",
+    name='reus',
     version=VERSION,
-    author="Ian Shepherd",
-    author_email="ian.shepherd123@gmail.com",
-    url="https://github.com/ian-shepherd/reus",
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
-    packages=setuptools.find_packages(),
+    url='https://github.com/ian-shepherd/reus',
+    author='Ian Shepherd',
     install_requires=[
-        'requests>=2.0.0'
-    ],
-    keywords=['python', 'transfermarkt', 'soccer', 'football'],
+        'pandas',
+        'numpy',
+        'requests',
+        'beautifulsoup4>=4.10.0'
+        ],
+    keywords=['python', 'fbref', 'transfermarkt', 'soccer', 'football'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
+        "Operating System :: OS Independent"
+        ],
+    packages=setuptools.find_packages()
 )

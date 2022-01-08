@@ -6,7 +6,7 @@ Follow](https://img.shields.io/twitter/follow/theFirmAISports?style=social)](htt
 
 ## Soccer/Football Team Information
 
-This package contains general team information such as team name, domestic league country, domestic league, team colours, transfermarkt ID, stadium, and stadium address. A vast majority of the information is from transfermarkt with the exception of a few clubs they did not have colours for that I found in various sources.
+This package is designed to extract match statistics and league information from fbref in addition to player and team information from transfermarkt. Specific shoutout to  [worldfootballR](https://github.com/JaseZiv/worldfootballR) and their associated [dataset](https://github.com/JaseZiv/worldfootballR_data) that provided the inspiration to build the python version.
 
 ## Installation
 
@@ -22,58 +22,22 @@ Then to import the package:
 import reus
 ```
 
+Additional documentation is provided [here](https://........com)
 
-## Examples
+## Roadmap
 
-#### Load Data
-
-Return a list of dictionaries for over all teams in the dataset
-
-``` python
-reus.load_data()
-```
-
-#### Attributes
-
-Return a set of available attributes
-
-``` python
-reus.attributes()
-```
-
-#### Leagues
-
-Return a set of leagues in the dataset
-
-``` python
-reus.leagues()
-```
-
-#### Teams
-
-Return a set of teams in the dataset unless filtered for league
-
-``` python
-reus.teams()
-```
-
-#### Team Data
-
-Return a dictionary of team data
-
-``` python
-reus.team_data('Borussia Dortmund')
-```
-
-#### Team Attributes
-
-Return an attribute from a team
-
-``` python
-reus.team_attr('Borussia Dortmund', attr='TeamColours')
-```
+  - More extensive documentation with examples
+  - fbref match stats for standard matches (not covered by Statsbomb)
+  - fbref player scouting reports
+  - fbref team statistics
+  - transfermarkt team staff
+  - transfermarkt staff history
+  - understat data
+  - fifa data
 
 
-## Special Thanks
-
-  - To the [FC Python](https://twitter.com/FC_Python) who provided a lot of the initial data and motivation to put this together\!
+## Resources
+  - [FBref](https://fbref.com/)
+  - [Transfermarkt](http://transfermarkt.com/)
+  - [FC Python](https://fcpython.com/)
+  - [538](https://fivethirtyeight.com/)

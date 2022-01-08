@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Functions &mdash; reus 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to reus’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> reus
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-helper">General helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fbref">Fbref</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#match-functions">Match functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#league-functions">League functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#transfermarkt">Transfermarkt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#player-functions">Player functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#team-functions">Team functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#helper-functions">Helper functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">reus</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Functions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/functions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h1>
+<p>Complete list of all functions of reus package</p>
+<section id="general-helper">
+<h2>General helper<a class="headerlink" href="#general-helper" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.get_page_soup">
+<span id=".fbref.get_page_soup"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">get_page_soup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.get_page_soup" title="Permalink to this definition"></a></dt>
+<dd><p>Returns html of a given url</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – complete url</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pageSoup</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bs4 object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="fbref">
+<h2>Fbref<a class="headerlink" href="#fbref" title="Permalink to this headline"></a></h2>
+<p>Functions to extract football reference data</p>
+<section id="match-functions">
+<h3>Match functions<a class="headerlink" href="#match-functions" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_data">
+<span id=".fbref.fb_match_data"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_data" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts metadata and statistics for a given match that includes StatsBomb data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – path of fbref match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>match data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_defensive_actions_stats">
+<span id=".fbref.fb_match_defensive_actions_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_defensive_actions_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_defensive_actions_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts defensive stats for each player in a given match that includes StatsBomb data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>defensive stats for home and away team</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_keeper_stats">
+<span id=".fbref.fb_match_keeper_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_keeper_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_keeper_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts goalkeeping stats for each keeper in a given match that includes StatsBomb data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>goalkeeping stats for home and away team</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_lineups">
+<span id=".fbref.fb_match_lineups"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_lineups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_lineups" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts matchday squad information (formation, starters, bench) for a given match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>squad information</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_metadata">
+<span id=".fbref.fb_match_metadata"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_metadata" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts general information (teams, managers, captains, date, time, venue, attendance, score, xG) for a given match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(metadata, officials)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(dict, dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_misc_stats">
+<span id=".fbref.fb_match_misc_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_misc_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_misc_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts miscellaneous stats for each player in a given match that includes StatsBomb data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>miscellaneous stats for home and away team</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_passing_stats">
+<span id=".fbref.fb_match_passing_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_passing_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_passing_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts passing stats for each player in a given match that includes StatsBomb data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>passing stats for home and away team</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_passing_type_stats">
+<span id=".fbref.fb_match_passing_type_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_passing_type_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_passing_type_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts passing type stats for each player in a given match that includes StatsBomb data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>passing type stats for home and away team</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_possession_stats">
+<span id=".fbref.fb_match_possession_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_possession_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_possession_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts possession stats for each player in a given match that includes StatsBomb data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>possession stats for home and away team</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_shots">
+<span id=".fbref.fb_match_shots"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_shots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_shots" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts shots for a given match that includes StatsBomb data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shots for the match</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_summary">
+<span id=".fbref.fb_match_summary"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts events (goals, bookings, and substitutions) from match summary for a given match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>events</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_summary_stats">
+<span id=".fbref.fb_match_summary_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_summary_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_summary_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts summary statistics for each player in a given match that includes StatsBomb data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>summary stats for home and away team</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_team_stats">
+<span id=".fbref.fb_match_team_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_team_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_team_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts summary stats for each team in a given match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a match</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>summary statistics for each team</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="league-functions">
+<h3>League functions<a class="headerlink" href="#league-functions" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_league_table">
+<span id=".fbref.fb_league_table"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_league_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_league_table" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a list of league table and basic information in a season</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – url of a season</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>league table</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_urls">
+<span id=".fbref.fb_match_urls"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_urls" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a list of urls for matches in a season</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – url of a season</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>match urls for given season</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_season_fixture_urls">
+<span id=".fbref.fb_season_fixture_urls"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_season_fixture_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">competition_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Domestic</span> <span class="pre">Leagues</span> <span class="pre">-</span> <span class="pre">1st</span> <span class="pre">Tier'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_season_fixture_urls" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a series of urls for fixture section a season</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>country</strong> (<em>str</em><em> or </em><em>list</em>) – country of league</p></li>
+<li><p><strong>season_end</strong> (<em>str</em><em> or </em><em>list</em>) – year at end of season</p></li>
+<li><p><strong>gender</strong> (<em>str</em><em> or </em><em>list</em>) – gender of league</p></li>
+<li><p><strong>competition_type</strong> (<em>str</em><em> or </em><em>list</em>) – html document of a match</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>season fixture urls</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_season_urls">
+<span id=".fbref.fb_season_urls"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_season_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">competition_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Domestic</span> <span class="pre">Leagues</span> <span class="pre">-</span> <span class="pre">1st</span> <span class="pre">Tier'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_season_urls" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a series of urls for overview section a season</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>country</strong> (<em>str</em><em> or </em><em>list</em>) – country of league</p></li>
+<li><p><strong>season_end</strong> (<em>str</em><em> or </em><em>list</em>) – year at end of season</p></li>
+<li><p><strong>gender</strong> (<em>str</em><em> or </em><em>list</em>) – gender of league</p></li>
+<li><p><strong>competition_type</strong> (<em>str</em><em> or </em><em>list</em>) – html document of a match</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>season urls</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>series</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="transfermarkt">
+<h2>Transfermarkt<a class="headerlink" href="#transfermarkt" title="Permalink to this headline"></a></h2>
+<p>Functions to extract transfermarkt data</p>
+<section id="player-functions">
+<h3>Player functions<a class="headerlink" href="#player-functions" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_player_data">
+<span id=".transfermarkt.tm_player_data"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EUR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_data" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts metadata, market value history, and transfer history for a given player</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – path of transfermarkt player</p></li>
+<li><p><strong>currency</strong> (<em>str</em>) – desired currency to return for values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(player metadata, market value history, player transfers)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(dict, list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_player_injury">
+<span id=".transfermarkt.tm_player_injury"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_injury</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_injury" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts player injury history and equipped to handle players with multiple pages of injuries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a player injury page</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>player injuries</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_player_market_value">
+<span id=".transfermarkt.tm_player_market_value"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_market_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_market_value" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts date, team, and market value from highchart</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a player</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>market value of player by date</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_player_metadata">
+<span id=".transfermarkt.tm_player_metadata"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_metadata" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts general player information (biographical, club, contract, market value, and miscellaneous)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a player</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>player metadata</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_player_transfers">
+<span id=".transfermarkt.tm_player_transfers"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_transfers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_transfers" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts player transfer information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a player</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>player transfers</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="team-functions">
+<h3>Team functions<a class="headerlink" href="#team-functions" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_team_player_urls">
+<span id=".transfermarkt.tm_team_player_urls"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_team_player_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">club</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EUR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_team_player_urls" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts basic player information for each player in a squad including basic player information, market value, and contract expiration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>club</strong> (<em>str</em>) – club name</p></li>
+<li><p><strong>season</strong> (<em>str</em><em> or </em><em>int</em>) – year at start of season</p></li>
+<li><p><strong>currency</strong> (<em>str</em>) – desired currency to return for values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>squad players</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_team_transfers">
+<span id=".transfermarkt.tm_team_transfers"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_team_transfers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">club</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">main_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EUR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_team_transfers" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts player transfer information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>club</strong> (<em>str</em>) – club name</p></li>
+<li><p><strong>season</strong> (<em>str</em><em> or </em><em>int</em>) – year at start of season</p></li>
+<li><p><strong>position_group</strong> (<em>str</em>) – positional group</p></li>
+<li><p><strong>main_position</strong> (<em>str</em>) – main position</p></li>
+<li><p><strong>window</strong> (<em>str</em>) – transfer window</p></li>
+<li><p><strong>currency</strong> (<em>str</em>) – desired currency to return for values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>team transfers</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="helper-functions">
+<h3>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_player_injury_scraper">
+<span id=".transfermarkt.tm_player_injury_scraper"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_injury_scraper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_injury_scraper" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function extracts player injury history</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – html document of a player injury page</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>player injuries for specific page</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_format_currency">
+<span id=".transfermarkt.tm_format_currency"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_format_currency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_format_currency" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function to convert values from string to float values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – raw value of fee or market value</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>converted value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to reus’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ian Shepherd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

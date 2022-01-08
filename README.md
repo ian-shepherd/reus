@@ -22,7 +22,7 @@ Then to import the package:
 import reus
 ```
 
-Additional documentation is provided [here](https://........com)
+Additional documentation is provided [here](https://ian-shepherd.github.io/reus/)
 
 ## Roadmap
 

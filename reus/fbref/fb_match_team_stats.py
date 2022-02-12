@@ -41,9 +41,9 @@ def fb_match_team_stats(pageSoup):
         shots_x = shots[0].find_all('div')[0].text.split()
         shots_target_x = shots_x[0]
         shots_taken_x = shots_x[2]
-        shots_accuracy_x = int(shots_x[4].replace('%', '')) / 100
+        shots_accuracy_x = int(shots_x[4].replace('%', '')) / 100 if shots_x[4] != '%' else None
         shots_y = shots[5].find_all('div')[0].text.split()
-        shots_accuracy_y = int(shots_y[0].replace('%', '')) / 100
+        shots_accuracy_y = int(shots_y[0].replace('%', '')) / 100 if shots_y[0] != '%' else None
         shots_target_y = shots_y[2]
         shots_taken_y = shots_y[4]
     except IndexError:
@@ -57,9 +57,9 @@ def fb_match_team_stats(pageSoup):
         saves_x = saves[0].find_all('div')[0].text.split()
         saves_completed_x = saves_x[0]
         saves_attempted_x = saves_x[2]
-        saves_rate_x = int(saves_x[4].replace('%', '')) / 100
+        saves_rate_x = int(saves_x[4].replace('%', '')) / 100 if saves_x[4] != '%' else None
         saves_y = saves[5].find_all('div')[0].text.split()
-        saves_rate_y = int(saves_y[0].replace('%', '')) / 100
+        saves_rate_y = int(saves_y[0].replace('%', '')) / 100 if saves_y[0] != '%' else None
         saves_completed_y = saves_y[2]
         saves_attempted_y = saves_y[4]
     except IndexError:
@@ -128,10 +128,10 @@ def fb_match_team_stats(pageSoup):
               'possession_y' : possession_y,
               'passes_completed_x' : passing_completed_x,
               'passes_attempted_x' : passing_attempted_x,
-              'passsing_accuracy_x' : passing_accuracy_x,
+              'passing_accuracy_x' : passing_accuracy_x,
               'passes_completed_y' : passing_completed_y,
               'passes_attempted_y' : passing_attempted_y,
-              'passsing_accuracy_y' : passing_accuracy_y,
+              'passing_accuracy_y' : passing_accuracy_y,
               'shots_on_target_x' : shots_target_x,
               'shots_taken_x' : shots_taken_x,
               'shot_accuracy_x' : shots_accuracy_x,

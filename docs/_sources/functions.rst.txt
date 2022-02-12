@@ -153,7 +153,7 @@ League functions
    :return: league table
    :rtype: list[str]
 
-.. py:function:: .fbref.fb_match_urls(pageSoup)
+.. py:function:: .fbref.fb_match_urls(url)
 
    Returns a list of urls for matches in a season
 

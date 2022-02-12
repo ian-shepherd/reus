@@ -157,8 +157,8 @@ League functions
 
    Returns a list of urls for matches in a season
 
-   :param pageSoup: url of a season
-   :type pageSoup: bs4
+   :param url: url of a season
+   :type url: str
    :return: match urls for given season
    :rtype: list[str]
 

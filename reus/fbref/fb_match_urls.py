@@ -22,6 +22,8 @@ def fb_match_urls(url):
         try:
             if 'matches' in row.find_all('a', href=True)[2]['href']:
                 match_urls.append(row.find_all('a', href=True)[2]['href'])
+            elif 'matches' in row.find_all('a', href=True)[3]['href']:
+                match_urls.append(row.find_all('a', href=True)[3]['href'])
         except IndexError:
             continue
     

@@ -24,6 +24,7 @@ def fb_match_data(url: str):
         tuple: match data
             dict: metadata information
             dict: match officials
+            dict: lineups
             list: events
             dict: summary statistics for each team
             list: summary stats of home team players
@@ -41,8 +42,6 @@ def fb_match_data(url: str):
             list: goalkeeping stats of home team keeper
             list: goalkeeping stats of away team keeper
             list: shots for the match
-            list: goalkeeping stats of home team keeper
-            list: goalkeeping stats of away team keeper
     """
 
     page = "https://fbref.com" + url

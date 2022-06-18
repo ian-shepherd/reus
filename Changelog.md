@@ -1,5 +1,8 @@
 # Change Log
 
+### 1.0.4 2022-06-18 Bug fix
+Fbref matches failed on ones with penalty kick goals
+
 ### 1.0.3 2022-06-18 Added fbref team functions and minor bug fixes
 Removed trailing whitespace from team name in fbref.fb_league_table
 Updated bare except to Attribute error in fbref.fb_match_summary

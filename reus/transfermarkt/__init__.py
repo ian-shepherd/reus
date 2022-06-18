@@ -1,4 +1,4 @@
-__version__ = "1.0.3"
+__version__ = "1.0.4"
 
 from .tm_player_data import tm_player_data
 from .tm_player_metadata import tm_player_metadata

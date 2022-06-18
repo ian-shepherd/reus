@@ -53,9 +53,13 @@ def fb_match_summary(pageSoup=None, url: str = None):
             event = "Goal (shootout)"
         elif divs[2]["class"][1] == "penalty_shootout_miss":
             event = "Miss (shootout)"
+        elif divs[2]["class"][1] == "penalty_goal":
+            event = "Goal (penalty)"
+        elif divs[2]["class"][1] == "penalty_miss":
+            event = "Miss (penalty)"
 
         # determine score before goal
-        if event in ["Goal", "Own Goal", "Goal (shootout)"]:
+        if event in ["Goal", "Own Goal", "Goal (shootout)", "Goal (penalty)"]:
             score_x, score_y = score.split(":")
             if team == "x":
                 score_x = int(score_x) - 1

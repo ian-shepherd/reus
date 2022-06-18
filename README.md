@@ -22,6 +22,14 @@ Then to import the package:
 import reus
 ```
 
+Please scrape responsibly. Do not make calls faster than 1 per 3 seconds. If you are iterating over multiple pages, please use a sleep time of at least 3 seconds.
+
+```python
+time.sleep(4)
+```
+
+It is a minor inconvenience to you but lets us all keep accessing the data.
+
 Additional documentation is provided [here](https://ian-shepherd.github.io/reus/)
 
 ## Roadmap

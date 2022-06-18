@@ -17,7 +17,7 @@ Please scrape responsibly. Do not make calls faster than 1 per 3 seconds. If you
       
       time.sleep(4)
 
-It is a minor inconvenience to you but let's us all keep accessing the data.
+It is a minor inconvenience to you but lets us all keep accessing the data.
 
 .. toctree::
    :maxdepth: 2

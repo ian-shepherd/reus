@@ -1,20 +1,20 @@
 from .util import tm_player_injury_scraper
-from ..util import get_page_soup
+from ..util import get_page_soup_headers
 
 
 def tm_player_injury(pageSoup):
-    """
-    Extracts player injury history and equipped to handle players with multiple pages of injuries
 
-    Parameters:
-    pageSoup (html document): bs4 object of player referenced in url
+    """Extracts player injury history and equipped to handle players with multiple pages of injuries
+
+    Args:
+        pageSoup (bs4): bs4 object of injury page for player referenced in url
 
     Returns:
-    list: player injuries
+        list: player injuries
     """
 
-    # Determine if multiple pages present    
-    injuryPages = len(pageSoup.find_all('li', {'class' : 'tm-pagination__list-item'}))
+    # Determine if multiple pages present
+    injuryPages = len(pageSoup.find_all("li", {"class": "tm-pagination__list-item"}))
 
     # Execute one time using helper function
     if injuryPages == 0:
@@ -26,18 +26,17 @@ def tm_player_injury(pageSoup):
         injuries = tm_player_injury_scraper(pageSoup)
 
         # iterate over each subsequent page
-        for p in range(1, injuryPages-2):
+        for p in range(1, injuryPages - 2):
 
             # generate url for next page
-            page = pageSoup.find('meta', {'property' : "og:url"})['content']
-            page = "/".join((page, "page", str(p+1)))
+            page = pageSoup.find("meta", {"property": "og:url"})["content"]
+            page = "/".join((page, "page", str(p + 1)))
 
             # return page soup for next page
-            pageSoup = get_page_soup(page)
+            pageSoup = get_page_soup_headers(page)
 
             # Extract injuries for next page and add to current list
             injuries_ = tm_player_injury_scraper(pageSoup)
             injuries.extend(injuries_)
-
 
     return injuries

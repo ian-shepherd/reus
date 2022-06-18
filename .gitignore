@@ -113,3 +113,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Tests
+tests/
+test-outputs/
+
+# Other
+.vscode/

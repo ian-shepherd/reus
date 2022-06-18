@@ -6,7 +6,7 @@ Follow](https://img.shields.io/twitter/follow/theFirmAISports?style=social)](htt
 
 ## Soccer/Football Team Information
 
-This package is designed to extract match statistics and league information from fbref in addition to player and team information from transfermarkt. Specific shoutout to  [worldfootballR](https://github.com/JaseZiv/worldfootballR) and their associated [dataset](https://github.com/JaseZiv/worldfootballR_data) that provided the inspiration to build the python version.
+This package is designed to extract match statistics and league information from fbref in addition to player and team information from transfermarkt. Specific shoutout to [worldfootballR](https://github.com/JaseZiv/worldfootballR) and their associated [dataset](https://github.com/JaseZiv/worldfootballR_data) that provided the inspiration to build the python version.
 
 ## Installation
 

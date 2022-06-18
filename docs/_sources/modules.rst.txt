@@ -1,5 +1,0 @@
-reus
-====
-
-.. toctree::
-   :maxdepth: 4

@@ -9,11 +9,22 @@ You can view the code on |github_link|.
 
    <a href="https://github.com/ian-shepherd/reus" target="_blank">Github</a>
 
-   
+To install Reus::
+
+		pip install reus
+	
+Please scrape responsibly. Do not make calls faster than 1 per 3 seconds. If you are iterating over multiple pages, please use a sleep time of at least 3 seconds. ::
+      
+      time.sleep(4)
+
+It is a minor inconvenience to you but let's us all keep accessing the data.
+
 .. toctree::
    :maxdepth: 2
+   :caption: Contents:
    
-   functions
+   fbref
+   transfermarkt
 
 
 .. note::
@@ -26,5 +37,4 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

@@ -1,14 +1,19 @@
 # Change Log
 
-### 1.0.4 2022-06-18 Bug fix
+## 1.0.6 2022-06-21 Bug fix
+Added further error handling for fb_match_summary when matches have slightly different syntax around events without a second player (i.e. own goal, penalty kicks, shootouts)
+
+### 1.0.5 2022-06-18 Bug fix
 Fbref matches failed on ones with penalty kick goals
 
-### 1.0.3 2022-06-18 Added fbref team functions and minor bug fixes
+### 1.0.4 2022-06-18 Added fbref team functions and minor bug fixes
 Removed trailing whitespace from team name in fbref.fb_league_table
 Updated bare except to Attribute error in fbref.fb_match_summary
 Linted util and all fbref functions
 Added url as an argument for fbref functions
 Added fbref team functions
+
+### 1.0.3 2022-06-18 Yanked
 
 ### 1.0.2 2022-02-11 Fixture Bug fix
 Added handling for getting match urls for leagues with playoffs in fbref.fb_match_urls

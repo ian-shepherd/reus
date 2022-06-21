@@ -1,6 +1,6 @@
 import setuptools
 
-VERSION = "1.0.4"
+VERSION = "1.0.6"
 DESCRIPTION = "A package that allows you to soccer information"
 LONG_DESCRIPTION = """
     A package that allows you to pull soccer statistics, player market values, and

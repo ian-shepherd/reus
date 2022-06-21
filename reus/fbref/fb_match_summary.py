@@ -74,10 +74,15 @@ def fb_match_summary(pageSoup=None, url: str = None):
 
         # extra primary and secondary (if applicable)
         event_player1 = divs[3].find("a", href=True)["href"]
-        try:
-            event_player2 = divs[3].find("small").find("a", href=True)["href"]
-        except AttributeError:
+        if event in ["Goal (penalty)", "Own Goal", "Goal (shootout)"]:
             event_player2 = None
+        else:
+            try:
+                event_player2 = divs[3].find("small").find("a", href=True)["href"]
+            except AttributeError:
+                event_player2 = None
+            except TypeError:
+                event_player2 = None
 
         # generate dictionary for each event
         mydict["team"] = team

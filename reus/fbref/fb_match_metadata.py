@@ -24,6 +24,7 @@ def fb_match_metadata(pageSoup=None, url: str = None):
     # Extract url
     url = pageSoup.find("meta", {"property": "og:url"})["content"]
     url = url.replace("https://fbref.com", "")
+    match_id = url.split("/")[3]
 
     # Find scorebox object
     scorebox = pageSoup.find("div", {"class": "scorebox"})
@@ -31,10 +32,16 @@ def fb_match_metadata(pageSoup=None, url: str = None):
     teams = scorebox.find_all("strong")
 
     # extract team id and name
-    id_x = teams[0].find("a", href=True)["href"].split("/")[3]
-    id_y = teams[3].find("a", href=True)["href"].split("/")[3]
-    team_x = teams[0].find("a", href=True).text
-    team_y = teams[3].find("a", href=True).text
+    if len(teams) == 7:
+        id_x = teams[0].find("a", href=True)["href"].split("/")[3]
+        id_y = teams[2].find("a", href=True)["href"].split("/")[3]
+        team_x = teams[0].find("a", href=True).text
+        team_y = teams[2].find("a", href=True).text
+    else:
+        id_x = teams[0].find("a", href=True)["href"].split("/")[3]
+        id_y = teams[3].find("a", href=True)["href"].split("/")[3]
+        team_x = teams[0].find("a", href=True).text
+        team_y = teams[3].find("a", href=True).text
 
     # extract scores
     scores = pageSoup.find_all("div", {"class": "scores"})
@@ -50,6 +57,15 @@ def fb_match_metadata(pageSoup=None, url: str = None):
         xg_y = scores[1].find("div", {"class": "score_xg"}).text
     except AttributeError:
         xg_y = None
+
+    if "*" in score_x:
+        print(
+            f"{match_id} match between {team_x} and {team_y} was forfeited and awarded to {team_x}"
+        )
+    elif "*" in score_y:
+        print(
+            f"{match_id} match between {team_x} and {team_y} was forfeited and awarded to {team_y}"
+        )
 
     # extract managers and captains
     managers = pageSoup.find_all("div", {"class": "datapoint"})
@@ -68,6 +84,8 @@ def fb_match_metadata(pageSoup=None, url: str = None):
 
     # extract attendance, venue, and official information
     scorebox_meta_ = scorebox_meta.find_all("div")
+    if "*Match awarded to " in scorebox_meta_[3].text:
+        scorebox_meta_.pop(3)
     if scorebox_meta_[4].text.startswith("Attendance:"):
         attendance = scorebox_meta_[4].text
         attendance = attendance.replace("Attendance: ", "")
@@ -80,9 +98,9 @@ def fb_match_metadata(pageSoup=None, url: str = None):
         officials = scorebox_meta_[5].find_all("small")[1].text.split("\xa0· ")
 
     # generate dictionary for general metadata
-    matadict = {
+    metadict = {
         "url": url,
-        "match_id": url.split("/")[3],
+        "match_id": match_id,
         "id_x": id_x,
         "id_y": id_y,
         "team_x": team_x,
@@ -119,4 +137,4 @@ def fb_match_metadata(pageSoup=None, url: str = None):
         "var": var,
     }
 
-    return matadict, officialsdict
+    return metadict, officialsdict

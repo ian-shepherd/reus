@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.7 2022-07-02 Error handling for forfeited matches and missing player identifier
+Renamed dictionary from matadict to metadict in fb_match_metadata
+Added error handling for bad names, no csk identifier, in fb_match_summary_stats
+Added error handling for no age in fb_match_summary_stats
+Added error handling and note for forfeited matches in fb_match_metadata
+
 ## 1.0.6 2022-06-21 Bug fix
 Added further error handling for fb_match_summary when matches have slightly different syntax around events without a second player (i.e. own goal, penalty kicks, shootouts)
 

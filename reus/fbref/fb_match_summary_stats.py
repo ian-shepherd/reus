@@ -41,14 +41,20 @@ def fb_match_summary_stats(pageSoup=None, url: str = None):
         # iterate through each player and store metrics
         for row in stats_players[2:-1]:
             th = row.find("th")
-            name = th["csk"]
+            try:
+                name = th["csk"]
+            except KeyError:
+                name = th.text
             player_id = th.find("a", href=True)["href"].split("/")[3]
 
             shirtnumber = row.find("td", {"data-stat": "shirtnumber"}).text
             nation = row.find("td", {"data-stat": "nationality"}).text
             position = row.find("td", {"data-stat": "position"}).text
             age = row.find("td", {"data-stat": "age"}).text.split("-")
-            age = int(age[0]) + int(age[1]) / 365
+            try:
+                age = int(age[0]) + int(age[1]) / 365
+            except ValueError:
+                age = None
             minutes = row.find("td", {"data-stat": "minutes"}).text
             goals = row.find("td", {"data-stat": "goals"}).text
             assists = row.find("td", {"data-stat": "assists"}).text

@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_match_summary(pageSoup=None, url: str = None):
+def fb_match_summary(pageSoup=None, url: str = None) -> list:
     """Extracts events (goals, bookings, and substitutions) from match summary for a given match
 
     Args:
@@ -72,26 +72,29 @@ def fb_match_summary(pageSoup=None, url: str = None):
 
         score_post = score
 
-        # extra primary and secondary (if applicable)
-        event_player1 = divs[3].find("a", href=True)["href"]
+        # extract primary and secondary (if applicable)
+        try:
+            event_player1 = divs[3].find("a", href=True)["href"]
+        except (AttributeError, TypeError):
+            continue
         if event in ["Goal (penalty)", "Own Goal", "Goal (shootout)"]:
             event_player2 = None
         else:
             try:
                 event_player2 = divs[3].find("small").find("a", href=True)["href"]
-            except AttributeError:
-                event_player2 = None
-            except TypeError:
+            except (AttributeError, TypeError):
                 event_player2 = None
 
         # generate dictionary for each event
-        mydict["team"] = team
-        mydict["minute"] = mins
-        mydict["event"] = event
-        mydict["score_pre"] = score_pre
-        mydict["score_post"] = score_post
-        mydict["player1"] = event_player1
-        mydict["player2"] = event_player2
+        mydict = {
+            "team": team,
+            "minute": mins,
+            "event": event,
+            "score_pre": score_pre,
+            "score_post": score_post,
+            "player1": event_player1,
+            "player2": event_player2,
+        }
 
         # append event dictionary to list
         eventList.append(mydict)

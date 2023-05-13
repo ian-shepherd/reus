@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_team_player_playing_time_stats(pageSoup=None, url: str = None):
+def fb_team_player_playing_time_stats(pageSoup=None, url: str = None) -> list:
     """Extracts playing time stats for each player in a given team
 
     Args:
@@ -30,38 +30,47 @@ def fb_team_player_playing_time_stats(pageSoup=None, url: str = None):
 
     # iterate through each player and store attributes
     for row in rows:
+        # general
         th = row.find("th")
-        name = th["csk"]
+        try:
+            name = th.text
+        except AttributeError:
+            name = th["csk"]
         player_id = th.find("a", href=True)["href"].split("/")[3]
         nation = row.find("td", {"data-stat": "nationality"}).text
         position = row.find("td", {"data-stat": "position"}).text
         age = row.find("td", {"data-stat": "age"}).text.split("-")
-        if len(age) > 1:
+        try:
             age = int(age[0]) + int(age[1]) / 365
-        else:
-            age = age[0]
+        except ValueError:
+            age = None
 
+        # playing time
         matches = row.find("td", {"data-stat": "games"}).text
         minutes = row.find("td", {"data-stat": "minutes"}).text
         minutes_per_match = row.find("td", {"data-stat": "minutes_per_game"}).text
         minutes_pct = row.find("td", {"data-stat": "minutes_pct"}).text
         minutes_90 = row.find("td", {"data-stat": "minutes_90s"}).text
 
+        # starts
         starts = row.find("td", {"data-stat": "games_starts"}).text
         minutes_per_start = row.find("td", {"data-stat": "minutes_per_start"}).text
         full_90 = row.find("td", {"data-stat": "games_complete"}).text
 
+        # subs
         subs = row.find("td", {"data-stat": "games_subs"}).text
         minutes_per_sub = row.find("td", {"data-stat": "minutes_per_sub"}).text
         unused_sub = row.find("td", {"data-stat": "unused_subs"}).text
 
-        ppm = row.find("td", {"data-stat": "points_per_match"}).text
+        # Team Success
+        ppm = row.find("td", {"data-stat": "points_per_game"}).text
         goals = row.find("td", {"data-stat": "on_goals_for"}).text
         goals_allowed = row.find("td", {"data-stat": "on_goals_against"}).text
         plus_minus = row.find("td", {"data-stat": "plus_minus"}).text
         plus_minus_p90 = row.find("td", {"data-stat": "plus_minus_per90"}).text
         plus_minus_on_off = row.find("td", {"data-stat": "plus_minus_wowy"}).text
 
+        # Team Success (xG)
         try:
             xG = row.find("td", {"data-stat": "on_xg_for"}).text
             xGA = row.find("td", {"data-stat": "on_xg_against"}).text
@@ -75,9 +84,13 @@ def fb_team_player_playing_time_stats(pageSoup=None, url: str = None):
         except AttributeError:
             xG = xGA = xG_plus_minus = xG_plus_minus_p90 = xG_plus_minus_on_off = None
 
-        match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
-            "href"
-        ]
+        # match logs
+        try:
+            match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
+                "href"
+            ]
+        except TypeError:
+            match_logs = None
 
         # generate dictionary for player
         mydict = {
@@ -86,6 +99,7 @@ def fb_team_player_playing_time_stats(pageSoup=None, url: str = None):
             "nation": nation,
             "position": position,
             "age": age,
+            "matches": matches,
             "minutes": minutes,
             "minutes_per_match": minutes_per_match,
             "minutes_pct": minutes_pct,

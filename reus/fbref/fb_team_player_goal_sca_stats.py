@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_team_player_goal_sca_stats(pageSoup=None, url: str = None):
+def fb_team_player_goal_sca_stats(pageSoup=None, url: str = None) -> list:
     """Extracts shot and goal creating actions for each player in a given team
 
     Args:
@@ -33,38 +33,47 @@ def fb_team_player_goal_sca_stats(pageSoup=None, url: str = None):
 
     # iterate through each player and store attributes
     for row in rows:
+        # general
         th = row.find("th")
-        name = th["csk"]
+        try:
+            name = th.text
+        except AttributeError:
+            name = th["csk"]
         player_id = th.find("a", href=True)["href"].split("/")[3]
         nation = row.find("td", {"data-stat": "nationality"}).text
         position = row.find("td", {"data-stat": "position"}).text
         age = row.find("td", {"data-stat": "age"}).text.split("-")
-        if len(age) > 1:
+        try:
             age = int(age[0]) + int(age[1]) / 365
-        else:
-            age = age[0]
+        except ValueError:
+            age = None
         minutes_90 = row.find("td", {"data-stat": "minutes_90s"}).text
 
+        # sca
         shot_creating_actions = row.find("td", {"data-stat": "sca"}).text
         shot_creating_actions_p90 = row.find("td", {"data-stat": "sca_per90"}).text
 
+        # sca types
         sca_pass_live = row.find("td", {"data-stat": "sca_passes_live"}).text
         sca_pass_dead = row.find("td", {"data-stat": "sca_passes_dead"}).text
-        sca_dribble = row.find("td", {"data-stat": "sca_dribbles"}).text
+        sca_take_on = row.find("td", {"data-stat": "sca_take_ons"}).text
         sca_shot = row.find("td", {"data-stat": "sca_shots"}).text
         sca_foul = row.find("td", {"data-stat": "sca_fouled"}).text
         sca_defense = row.find("td", {"data-stat": "sca_defense"}).text
 
+        # gca
         goal_creating_actions = row.find("td", {"data-stat": "gca"}).text
         goal_creating_actions_p90 = row.find("td", {"data-stat": "gca_per90"}).text
 
+        # gca types
         gca_pass_live = row.find("td", {"data-stat": "gca_passes_live"}).text
         gca_pass_dead = row.find("td", {"data-stat": "gca_passes_dead"}).text
-        gca_dribble = row.find("td", {"data-stat": "gca_dribbles"}).text
+        gca_take_on = row.find("td", {"data-stat": "gca_take_ons"}).text
         gca_shot = row.find("td", {"data-stat": "gca_shots"}).text
         gca_foul = row.find("td", {"data-stat": "gca_fouled"}).text
         gca_defense = row.find("td", {"data-stat": "gca_defense"}).text
 
+        # match logs
         match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
             "href"
         ]
@@ -81,7 +90,7 @@ def fb_team_player_goal_sca_stats(pageSoup=None, url: str = None):
             "shot_creating_actions_p90": shot_creating_actions_p90,
             "sca_pass_live": sca_pass_live,
             "sca_pass_dead": sca_pass_dead,
-            "sca_dribble": sca_dribble,
+            "sca_take_on": sca_take_on,
             "sca_shot": sca_shot,
             "sca_foul": sca_foul,
             "sca_defensive_action": sca_defense,
@@ -89,7 +98,7 @@ def fb_team_player_goal_sca_stats(pageSoup=None, url: str = None):
             "goal_creating_actions_p90": goal_creating_actions_p90,
             "gca_pass_live": gca_pass_live,
             "gca_pass_dead": gca_pass_dead,
-            "gca_dribble": gca_dribble,
+            "gca_take_on": gca_take_on,
             "gca_shot": gca_shot,
             "gca_foul": gca_foul,
             "gca_defensive_action": gca_defense,

@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_team_player_shooting_stats(pageSoup=None, url: str = None):
+def fb_team_player_shooting_stats(pageSoup=None, url: str = None) -> list:
     """Extracts shooting stats for each player in a given team
 
     Args:
@@ -30,23 +30,28 @@ def fb_team_player_shooting_stats(pageSoup=None, url: str = None):
 
     # iterate through each player and store attributes
     for row in rows:
+        # general
         th = row.find("th")
-        name = th["csk"]
+        try:
+            name = th.text
+        except AttributeError:
+            name = th["csk"]
         player_id = th.find("a", href=True)["href"].split("/")[3]
         nation = row.find("td", {"data-stat": "nationality"}).text
         position = row.find("td", {"data-stat": "position"}).text
         age = row.find("td", {"data-stat": "age"}).text.split("-")
-        if len(age) > 1:
+        try:
             age = int(age[0]) + int(age[1]) / 365
-        else:
-            age = age[0]
+        except ValueError:
+            age = None
         minutes_90 = row.find("td", {"data-stat": "minutes_90s"}).text
 
+        # standard
         goals = row.find("td", {"data-stat": "goals"}).text
-        shots = row.find("td", {"data-stat": "shots_total"}).text
+        shots = row.find("td", {"data-stat": "shots"}).text
         shots_on_target = row.find("td", {"data-stat": "shots_on_target"}).text
         shots_on_target_per = row.find("td", {"data-stat": "shots_on_target_pct"}).text
-        shots_p90 = row.find("td", {"data-stat": "shots_total_per90"}).text
+        shots_p90 = row.find("td", {"data-stat": "shots_per90"}).text
         shots_on_target_p90 = row.find(
             "td", {"data-stat": "shots_on_target_per90"}
         ).text
@@ -56,10 +61,11 @@ def fb_team_player_shooting_stats(pageSoup=None, url: str = None):
             dist = row.find("td", {"data-stat": "average_shot_distance"}).text
             fk = row.find("td", {"data-stat": "shots_free_kicks"}).text
         except AttributeError:
-            diist = fk = None
+            dist = fk = None
         pk = row.find("td", {"data-stat": "pens_made"}).text
         pk_attempted = row.find("td", {"data-stat": "pens_att"}).text
 
+        # expected
         try:
             xG = row.find("td", {"data-stat": "xg"}).text
             npxG = row.find("td", {"data-stat": "npxg"}).text
@@ -69,6 +75,7 @@ def fb_team_player_shooting_stats(pageSoup=None, url: str = None):
         except AttributeError:
             xG = npxG = npxG_per_shot = goals_xG = npg_xG = None
 
+        # match logs
         match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
             "href"
         ]

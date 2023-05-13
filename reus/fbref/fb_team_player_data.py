@@ -13,14 +13,16 @@ from .fb_team_player_defensive_actions_stats import (
 from .fb_team_player_possession_stats import fb_team_player_possession_stats
 from .fb_team_player_playing_time_stats import fb_team_player_playing_time_stats
 from .fb_team_player_misc_stats import fb_team_player_misc_stats
+from bs4 import BeautifulSoup
 
 
-def fb_team_player_data(url: str):
-    """Extracts statistics of each player for a given team. This includes summary, passing,
+def fb_team_player_data(url: str, html_file: BeautifulSoup = None) -> tuple:
+    """Extracts statistics of each player for a given team. This includes summary, shooting, passing,
     defensive, possession, possession, playing time, and goalkeeping stats
 
     Args:
         url (str): path of fbref team page
+        html_file (BeautifulSoup, optional): pageSoup html file. Defaults to None.
 
     Returns:
         tuple: player stats
@@ -38,8 +40,11 @@ def fb_team_player_data(url: str):
 
     """
 
-    page = "https://fbref.com" + url
-    pageSoup = get_page_soup(page)
+    if html_file is None:
+        page = "https://fbref.com" + url
+        pageSoup = get_page_soup(page)
+    else:
+        pageSoup = html_file
 
     summary_stats = fb_team_player_summary_stats(pageSoup)
     keeper_stats = fb_team_player_keeper_stats(pageSoup)

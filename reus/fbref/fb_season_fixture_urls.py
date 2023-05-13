@@ -9,8 +9,8 @@ def fb_season_fixture_urls(
     governing_body: str = None,
     tier: str = None,
     season_end_year: int = None,
-    stats_bomb: str = None,
-):
+    advanced: str = None,
+) -> pd.Series:
     """Returns a series of urls for fixture section of a season
 
     Args:
@@ -21,7 +21,7 @@ def fb_season_fixture_urls(
         governing_body (str or list, optional): governing body of competition. Defaults to None.
         tier (str or list, optional): tier of competition. Defaults to None.
         season_end_year (int or list, optional): year at end of competition. Defaults to None.
-        stats_bomb (str or list, optional): flag for if statsbomb data is available. Defaults to None.
+        advanced (str or list, optional): flag for if advanced data is available. Defaults to None.
 
     Returns:
         series: season fixture urls
@@ -88,12 +88,12 @@ def fb_season_fixture_urls(
 
     df = df[df.season_end_year.isin(season_end_year)]
 
-    # Stats bomb
-    if stats_bomb is None:
-        stats_bomb = df.stats_bomb.unique()
-    elif not isinstance(stats_bomb, list):
-        stats_bomb = [stats_bomb]
+    # Advanced stats
+    if advanced is None:
+        advanced = df.advanced.unique()
+    elif not isinstance(advanced, list):
+        advanced = [advanced]
 
-    df = df[df.stats_bomb.isin(stats_bomb)]
+    df = df[df.advanced.isin(advanced)]
 
     return df["fixtures_url"]

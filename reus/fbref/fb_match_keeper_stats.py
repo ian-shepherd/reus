@@ -2,8 +2,8 @@ from .fb_match_metadata import fb_match_metadata
 from ..util import get_page_soup
 
 
-def fb_match_keeper_stats(pageSoup=None, url: str = None):
-    """Extracts goalkeeping stats for each keeper in a given match that includes StatsBomb data
+def fb_match_keeper_stats(pageSoup=None, url: str = None) -> tuple:
+    """Extracts goalkeeping stats for each keeper in a given match that includes advanced data
 
     Args:
         pageSoup (bs4, optional): bs4 object of a match. Defaults to None.
@@ -41,48 +41,96 @@ def fb_match_keeper_stats(pageSoup=None, url: str = None):
         # iterate through each keeper and store metrics
         for row in stats_keeper[2:]:
             th = row.find("th")
-            name = th["csk"]
-            player_id = th.find("a", href=True)["href"].split("/")[3]
 
+            # general
+            try:
+                name = th.text
+            except AttributeError:
+                name = th["csk"]
+
+            player_id = th.find("a", href=True)["href"].split("/")[3]
             nation = row.find("td", {"data-stat": "nationality"}).text
             age = row.find("td", {"data-stat": "age"}).text.split("-")
-            age = int(age[0]) + int(age[1]) / 365
+            try:
+                age = int(age[0]) + int(age[1]) / 365
+            except ValueError:
+                age = None
             minutes = row.find("td", {"data-stat": "minutes"}).text
+
+            # shot stopping
             shots_against = row.find(
-                "td", {"data-stat": "shots_on_target_against"}
+                "td", {"data-stat": "gk_shots_on_target_against"}
             ).text
-            goals_allowed = row.find("td", {"data-stat": "goals_against_gk"}).text
-            saves = row.find("td", {"data-stat": "saves"}).text
-            save_pct = row.find("td", {"data-stat": "save_pct"}).text
-            psxg = row.find("td", {"data-stat": "psxg_gk"}).text
+            goals_allowed = row.find("td", {"data-stat": "gk_goals_against"}).text
+            saves = row.find("td", {"data-stat": "gk_saves"}).text
+            save_pct = row.find("td", {"data-stat": "gk_save_pct"}).text
+            if save_pct == "":
+                save_pct = None
+            psxg = row.find("td", {"data-stat": "gk_psxg"}).text
+
+            # launched
             launched_completed = row.find(
-                "td", {"data-stat": "passes_completed_launched_gk"}
+                "td", {"data-stat": "gk_passes_completed_launched"}
             ).text
             launched_attempted = row.find(
-                "td", {"data-stat": "passes_launched_gk"}
+                "td", {"data-stat": "gk_passes_launched"}
             ).text
-            launched_acc = row.find("td", {"data-stat": "passes_pct_launched_gk"}).text
-            passes_attempted = row.find("td", {"data-stat": "passes_gk"}).text
-            throws_attempted = row.find("td", {"data-stat": "passes_throws_gk"}).text
-            pct_lauched = row.find("td", {"data-stat": "pct_passes_launched_gk"}).text
+            launched_accuracy = row.find(
+                "td", {"data-stat": "gk_passes_pct_launched"}
+            ).text
+            if launched_accuracy == "":
+                launched_accuracy = None
+
+            # passes
+            passes_attempted = row.find("td", {"data-stat": "gk_passes"}).text
+            if passes_attempted == "":
+                passes_attempted = None
+            throws_attempted = row.find("td", {"data-stat": "gk_passes_throws"}).text
+            if throws_attempted == "":
+                throws_attempted = None
+            pct_launched = row.find("td", {"data-stat": "gk_pct_passes_launched"}).text
+            if pct_launched == "":
+                pct_launched = None
             passes_avg_length = row.find(
-                "td", {"data-stat": "passes_length_avg_gk"}
+                "td", {"data-stat": "gk_passes_length_avg"}
             ).text
-            gk_attempted = row.find("td", {"data-stat": "goal_kicks"}).text
+            if passes_avg_length == "":
+                passes_avg_length = None
+
+            # goal kicks
+            gk_attempted = row.find("td", {"data-stat": "gk_goal_kicks"}).text
+            if gk_attempted == "":
+                gk_attempted = None
             gk_pct_launched = row.find(
-                "td", {"data-stat": "pct_goal_kicks_launched"}
+                "td", {"data-stat": "gk_pct_goal_kicks_launched"}
             ).text
-            gk_avg_length = row.find("td", {"data-stat": "goal_kick_length_avg"}).text
-            crosses_faced = row.find("td", {"data-stat": "crosses_gk"}).text
-            crosses_stopped = row.find("td", {"data-stat": "crosses_stopped_gk"}).text
+            if gk_pct_launched == "":
+                gk_pct_launched = None
+            gk_avg_length = row.find(
+                "td", {"data-stat": "gk_goal_kick_length_avg"}
+            ).text
+            if gk_avg_length == "":
+                gk_avg_length = None
+
+            # crosses
+            crosses_faced = row.find("td", {"data-stat": "gk_crosses"}).text
+            if crosses_faced == "":
+                crosses_faced = None
+            crosses_stopped = row.find("td", {"data-stat": "gk_crosses_stopped"}).text
+            if crosses_stopped == "":
+                crosses_stopped = None
             crosses_stopped_pct = row.find(
-                "td", {"data-stat": "crosses_stopped_pct_gk"}
+                "td", {"data-stat": "gk_crosses_stopped_pct"}
             ).text
+            if crosses_stopped_pct == "":
+                crosses_stopped_pct = None
+
+            # sweeper
             defensive_actions = row.find(
-                "td", {"data-stat": "def_actions_outside_pen_area_gk"}
+                "td", {"data-stat": "gk_def_actions_outside_pen_area"}
             ).text
             defensive_actions_avg_distance = row.find(
-                "td", {"data-stat": "avg_distance_def_actions_gk"}
+                "td", {"data-stat": "gk_avg_distance_def_actions"}
             ).text
 
             # generate dictionary for team
@@ -95,14 +143,14 @@ def fb_match_keeper_stats(pageSoup=None, url: str = None):
                 "shots_against": shots_against,
                 "goals_allowed": goals_allowed,
                 "saves": saves,
-                "saves_pct": save_pct,
+                "save_pct": save_pct,
                 "psxg": psxg,
                 "launched_completed": launched_completed,
                 "launched_attempted": launched_attempted,
-                "launched_accuracy": launched_acc,
+                "launched_accuracy": launched_accuracy,
                 "passes_attempted": passes_attempted,
                 "throws_attempted": throws_attempted,
-                "pct_launched": pct_lauched,
+                "pct_launched": pct_launched,
                 "passes_avg_length": passes_avg_length,
                 "gk_attempted": gk_attempted,
                 "gk_pct_launched": gk_pct_launched,

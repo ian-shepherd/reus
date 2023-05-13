@@ -1,15 +1,24 @@
 import re
+from ..util import get_page_soup_headers
 
 
-def tm_player_market_value(pageSoup):
+def tm_player_market_value(pageSoup=None, url: str = None) -> list:
     """Extracts date, team, and market value from highchart
 
     Args:
-        pageSoup (bs4): bs4 object of player page referenced in url
+        pageSoup (bs4, optional): bs4 object of player page referenced in url. Defaults to None.
+        url (str, optional): path of transfermarkt player page. Defaults to None.
 
     Returns:
         list: market value of player by date
     """
+
+    assert (
+        pageSoup is not None or url is not None
+    ), "Either pageSoup or url must be provided"
+
+    if pageSoup is None:
+        pageSoup = get_page_soup_headers(url)
 
     # Extract currency
     value = pageSoup.find("div", {"class": "data-header__box--small"}).find("a").text
@@ -32,7 +41,6 @@ def tm_player_market_value(pageSoup):
 
     # iterate through each data point and store attributes
     for i in range(len(date)):
-
         # generate dictionary for each point
         mydict = {
             "date": date[i].replace("\\x20", " ").replace("'", ""),

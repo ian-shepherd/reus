@@ -2,7 +2,7 @@ import re
 from ..util import get_page_soup
 
 
-def fb_match_lineups(pageSoup=None, url: str = None):
+def fb_match_lineups(pageSoup=None, url: str = None) -> dict:
     """Extracts matchday squad information (formation, starters, bench) for a given match
 
     Args:
@@ -27,7 +27,7 @@ def fb_match_lineups(pageSoup=None, url: str = None):
     lineup_x = lineup[0].find("table").find_all("tr")
     formation_x = lineup_x[0].text
     # generate empty lists
-    squad_x = []
+    starter_x = []
     bench_x = []
     role = "starter"
 
@@ -38,7 +38,7 @@ def fb_match_lineups(pageSoup=None, url: str = None):
             continue
 
         if role == "starter":
-            squad_x.append(row.find("a", href=True)["href"])
+            starter_x.append(row.find("a", href=True)["href"])
         elif role == "bench":
             bench_x.append(row.find("a", href=True)["href"])
 
@@ -46,7 +46,7 @@ def fb_match_lineups(pageSoup=None, url: str = None):
     lineup_y = lineup[1].find("table").find_all("tr")
     formation_y = lineup_y[0].text
     # generate empty lists
-    squad_y = []
+    starter_y = []
     bench_y = []
     role = "starter"
 
@@ -57,7 +57,7 @@ def fb_match_lineups(pageSoup=None, url: str = None):
             continue
 
         if role == "starter":
-            squad_y.append(row.find("a", href=True)["href"])
+            starter_y.append(row.find("a", href=True)["href"])
         elif role == "bench":
             bench_y.append(row.find("a", href=True)["href"])
 
@@ -68,9 +68,9 @@ def fb_match_lineups(pageSoup=None, url: str = None):
     mydict = {
         "formation_x": re.search(pattern, formation_x).group(1),
         "formation_y": re.search(pattern, formation_y).group(1),
-        "squad_x": squad_x,
+        "starter_x": starter_x,
         "bench_x": bench_x,
-        "squad_y": squad_y,
+        "starter_y": starter_y,
         "bench_y": bench_y,
     }
 

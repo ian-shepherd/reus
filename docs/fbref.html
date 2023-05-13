@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fbref &mdash; reus 1.0.4 documentation</title>
+  <title>Fbref &mdash; reus 1.1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,11 +14,12 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Transfermarkt" href="transfermarkt.html" />
+    <link rel="next" title="Fotmob" href="fotmob.html" />
     <link rel="prev" title="Welcome to reus’s documentation!" href="index.html" /> 
 </head>
 
@@ -45,6 +46,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#team-functions">Team functions</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="fotmob.html">Fotmob</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transfermarkt.html">Transfermarkt</a></li>
 </ul>
 
@@ -73,31 +75,36 @@
            <div itemprop="articleBody">
              
   <section id="fbref">
-<h1>Fbref<a class="headerlink" href="#fbref" title="Permalink to this headline"></a></h1>
+<h1>Fbref<a class="headerlink" href="#fbref" title="Permalink to this heading"></a></h1>
 <p>Complete list of all football reference functions</p>
 <section id="match-functions">
-<h2>Match functions<a class="headerlink" href="#match-functions" title="Permalink to this headline"></a></h2>
+<h2>Match functions<a class="headerlink" href="#match-functions" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_data">
-<span id=".fbref.fb_match_data"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_data" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts metadata and statistics for a given match that includes StatsBomb data. This includes summary match statistics for each team, summary stats for away team, passing, defensive, possession and goalkeeping stats</p>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_html</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_match_data" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts metadata and statistics for a given match that include Opta data. This includes summary match statistics for each team, summary stats for away team, passing, defensive, possession and goalkeeping stats</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – path of fbref match page</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – path of fbref match page</p></li>
+<li><p><strong>save_html</strong> (<em>bool</em>) – whether to save html file of match page. Defaults to False.</p></li>
+<li><p><strong>html_file</strong> (<em>BeautifulSoup</em><em> or </em><em>None</em>) – pageSoup html file of match page. Defaults to None.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>match data</p>
+<dd class="field-even"><p>match data and BeautifulSoup file of match page (optional)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>tuple</p>
+<dd class="field-odd"><p>(dict, dict, dict, list, dict, list, list, list, list, list, list, list, list, list, list, list, list, list, list, list, BeautifulSoup) or (dict, dict, dict, list, dict,
+list, list, list, list, list, list, list, list, list, list, list, list, list, list, list, BeautifulSoup)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_defensive_actions_stats">
-<span id=".fbref.fb_match_defensive_actions_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_defensive_actions_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_defensive_actions_stats" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts defensive stats for each player in a given match that includes StatsBomb data</p>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_defensive_actions_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_match_defensive_actions_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts defensive action stats for each player in a given match that includes advanced data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -106,7 +113,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>defensive stats for home and away team players</p>
+<dd class="field-even"><p>(defensive stats for home team players, defensive stats for away team players)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>(list, list)</p>
@@ -116,8 +123,8 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_keeper_stats">
-<span id=".fbref.fb_match_keeper_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_keeper_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_keeper_stats" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts goalkeeping stats for each keeper in a given match that includes StatsBomb data</p>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_keeper_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_match_keeper_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts goalkeeping stats for each keeper in a given match that includes advanced data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -126,7 +133,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>goalkeeping stats for home and away team players</p>
+<dd class="field-even"><p>(keeper stats for home team players, keeper stats for away team players)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>(list, list)</p>
@@ -136,7 +143,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_lineups">
-<span id=".fbref.fb_match_lineups"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_lineups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_lineups" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_lineups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#fbref.fb_match_lineups" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts matchday squad information (formation, starters, bench) for a given match</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -156,7 +163,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_metadata">
-<span id=".fbref.fb_match_metadata"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_metadata" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_match_metadata" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts general information (teams, managers, captains, date, time, venue, attendance, score, xG) for a given match</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -176,8 +183,8 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_misc_stats">
-<span id=".fbref.fb_match_misc_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_misc_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_misc_stats" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts miscellaneous stats for each player in a given match that includes StatsBomb data</p>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_misc_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_match_misc_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts miscellaneous stats for each player in a given match that includes advanced data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -186,7 +193,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>miscellaneous stats for home and away team players</p>
+<dd class="field-even"><p>(miscellaneous stats for home team players, miscellaneous stats for away team players)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>(list, list)</p>
@@ -196,8 +203,8 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_passing_stats">
-<span id=".fbref.fb_match_passing_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_passing_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_passing_stats" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts passing stats for each player in a given match that includes StatsBomb data</p>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_passing_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_match_passing_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts passing stats for each player in a given match that includes advanced data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -206,7 +213,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>passing stats for home and away team players</p>
+<dd class="field-even"><p>(passing stats for home team players, passing stats for away team players)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>(list, list)</p>
@@ -216,8 +223,8 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_passing_type_stats">
-<span id=".fbref.fb_match_passing_type_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_passing_type_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_passing_type_stats" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts passing type stats for each player in a given match that includes StatsBomb data</p>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_passing_type_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_match_passing_type_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts passing type stats for each player in a given match that includes advanced data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -226,7 +233,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>passing type stats for home and away team players</p>
+<dd class="field-even"><p>(passing type stats for home team players, passing type stats for away team players)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>(list, list)</p>
@@ -236,8 +243,8 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_possession_stats">
-<span id=".fbref.fb_match_possession_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_possession_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_possession_stats" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts possession stats for each player in a given match that includes StatsBomb data</p>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_possession_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_match_possession_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts possession stats for each player in a given match that includes advanced data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -246,7 +253,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>possession stats for home and away team players</p>
+<dd class="field-even"><p>(possession stats for home team players, possession stats for away team players)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>(list, list)</p>
@@ -256,8 +263,8 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_shots">
-<span id=".fbref.fb_match_shots"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_shots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_shots" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts shots for a given match that includes StatsBomb data</p>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_shots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_match_shots" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts shots for a given match that includes Opta data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -269,14 +276,34 @@
 <dd class="field-even"><p>shots for the match</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list[str]</p>
+<dd class="field-odd"><p>list[dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_match_summary_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_summary_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_match_summary_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts summary statistics for each player in a given match that includes advanced data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a match. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref match page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(summary stats for home team players, summary stats for away team players)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_summary">
-<span id=".fbref.fb_match_summary"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_summary" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_summary" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts events (goals, bookings, and substitutions) from match summary for a given match</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -289,34 +316,14 @@
 <dd class="field-even"><p>events</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list[str]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="fbref.fb_match_summary_stats">
-<span id=".fbref.fb_match_summary_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_summary_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_summary_stats" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts summary statistics for each player in a given match that includes StatsBomb data</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a match. Defaults to None.</p></li>
-<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref match page. Defaults to None.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>summary stats for home and away team players</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(list, list)</p>
+<dd class="field-odd"><p>list[dict]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_team_stats">
-<span id=".fbref.fb_match_team_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_team_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_team_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_team_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_team_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts summary stats for each team in a given match</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -336,10 +343,10 @@
 
 </section>
 <section id="league-functions">
-<h2>League functions<a class="headerlink" href="#league-functions" title="Permalink to this headline"></a></h2>
+<h2>League functions<a class="headerlink" href="#league-functions" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_league_table">
-<span id=".fbref.fb_league_table"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_league_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_league_table" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_league_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_league_table" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a list of league table and basic information in a season</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -356,7 +363,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_match_urls">
-<span id=".fbref.fb_match_urls"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_urls" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_match_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_match_urls" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a list of urls for matches in a season</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -373,7 +380,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_season_fixture_urls">
-<span id=".fbref.fb_season_fixture_urls"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_season_fixture_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">competition_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">competition_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">governing_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season_end_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_bomb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_season_fixture_urls" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_season_fixture_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">competition_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">competition_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">governing_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season_end_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_bomb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_season_fixture_urls" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a series of urls for fixture section of a season</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -399,7 +406,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_season_urls">
-<span id=".fbref.fb_season_urls"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_season_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">competition_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">competition_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">governing_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season_end_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_bomb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_season_urls" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_season_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">competition_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">competition_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">governing_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season_end_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_bomb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_season_urls" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a series of urls for overview section of a season</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -423,12 +430,252 @@
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_advanced_keeper_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_advanced_keeper_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_advanced_keeper_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts advanced keeper stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(advanced keeper stats for each team, advanced keeper stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_data">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_data" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts statistics of each team. This includes summary, shooting, passing, defensive, possession, possession, playing time, and goalkeeping stats</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – path of fbref stats page</p></li>
+<li><p><strong>html_file</strong> (<em>BeautifulSoup</em><em> or </em><em>None</em>) – pageSoup html file of fbref stats page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>team data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list, list, list, list, list, list, list, list, list, list, list, list, list, list, list, list, list, list, list, list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_defensive_actions_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_defensive_actions_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_defensive_actions_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts defensive action stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(defensive action stats for each team, defensive action stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_goal_sca_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_goal_sca_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_goal_sca_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts shot and goal creating actions stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(shot and goal creating actions stats for each team, shot and goal creating actions stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_keeper_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_keeper_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_keeper_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts keeper stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(keeper stats for each team, keeper stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_misc_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_misc_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_misc_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts miscellaneous stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(miscellaneous stats for each team, miscellaneous stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_passing_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_passing_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_passing_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts passing stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(passing stats for each team, passing stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_passing_type_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_passing_type_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_passing_type_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts passing type stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(passing type stats for each team, passing type stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_playing_time_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_playing_time_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_playing_time_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts playing time stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(playing time stats for each team, playing time stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_possession_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_possession_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_possession_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts possession stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(possession stats for each team, possession stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_shooting_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_shooting_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_shooting_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts shooting stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(shooting stats for each team, shooting stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fbref.fb_team_summary_stats">
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_summary_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_summary_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts summary stats for each team in a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em><em> or </em><em>None</em>) – bs4 object of a team. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(summary stats for each team, summary stats against each team)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="team-functions">
-<h2>Team functions<a class="headerlink" href="#team-functions" title="Permalink to this headline"></a></h2>
+<h2>Team functions<a class="headerlink" href="#team-functions" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_advanced_keeper_stats">
-<span id=".fbref.fb_team_player_advanced_keeper_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_advanced_keeper_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_advanced_keeper_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_advanced_keeper_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_advanced_keeper_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts advanced keeper stats for each player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -448,24 +695,27 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_data">
-<span id=".fbref.fb_team_player_data"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_data" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fbref.fb_team_player_data" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts statistics of each player for a given team. This includes summary, passing, defensive, possession, possession, playing time, and goalkeeping stats</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em><em> or </em><em>None</em>) – path of fbref team page. Defaults to None.</p></li>
+<li><p><strong>html_file</strong> (<em>BeautifulSoup</em><em> or </em><em>None</em>) – pageSoup html file of fbref team page. Defaults to None.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>player stats</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>tuple</p>
+<dd class="field-odd"><p>(list, list, list, list, list, list, list, list, list, list, list)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_defensive_actions_stats">
-<span id=".fbref.fb_team_player_defensive_actions_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_defensive_actions_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_defensive_actions_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_defensive_actions_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_defensive_actions_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts defensive action stats for each player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -485,7 +735,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_goal_sca_stats">
-<span id=".fbref.fb_team_player_goal_sca_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_goal_sca_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_goal_sca_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_goal_sca_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_goal_sca_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts shot and goal creating actions for each player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -505,7 +755,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_keeper_stats">
-<span id=".fbref.fb_team_player_keeper_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_keeper_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_keeper_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_keeper_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_keeper_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts basic keeper stats for each player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -525,7 +775,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_misc_stats">
-<span id=".fbref.fb_team_player_misc_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_misc_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_misc_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_misc_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_misc_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts miscellaneous stats for rach player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -545,7 +795,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_passing_stats">
-<span id=".fbref.fb_team_player_passing_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_passing_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_passing_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_passing_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_passing_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts passing stats for each player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -565,7 +815,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_passing_type_stats">
-<span id=".fbref.fb_team_player_passing_type_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_passing_type_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_passing_type_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_passing_type_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_passing_type_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts passing type stats for each player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -585,7 +835,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_playing_time_stats">
-<span id=".fbref.fb_team_player_playing_time_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_playing_time_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_playing_time_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_playing_time_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_playing_time_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts playing time stats for each player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -605,7 +855,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_possession_stats">
-<span id=".fbref.fb_team_player_possession_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_possession_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_possession_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_possession_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_possession_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts possession stats for each player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -625,7 +875,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_shooting_stats">
-<span id=".fbref.fb_team_player_shooting_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_shooting_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_shooting_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_shooting_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_shooting_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts shooting stats for each player in a given team</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -645,7 +895,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fbref.fb_team_player_summary_stats">
-<span id=".fbref.fb_team_player_summary_stats"></span><span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_summary_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fbref.fb_team_player_summary_stats" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.fbref.</span></span><span class="sig-name descname"><span class="pre">fb_team_player_summary_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fbref.fb_team_player_summary_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts summary stats for each player in a given team</p>
 <blockquote>
 <div><dl class="field-list simple">
@@ -679,13 +929,13 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to reus’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="transfermarkt.html" class="btn btn-neutral float-right" title="Transfermarkt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="fotmob.html" class="btn btn-neutral float-right" title="Fotmob" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Ian Shepherd.</p>
+    <p>&#169; Copyright 2023, Ian Shepherd.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

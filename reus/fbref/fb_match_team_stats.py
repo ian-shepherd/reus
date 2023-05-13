@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_match_team_stats(pageSoup=None, url: str = None):
+def fb_match_team_stats(pageSoup=None, url: str = None) -> dict:
     """Extracts summary stats for each team in a given match
 
     Args:
@@ -23,71 +23,117 @@ def fb_match_team_stats(pageSoup=None, url: str = None):
     stats = pageSoup.find("div", {"id": "team_stats"})
     statsTable = stats.find("table").find_all("tr")
 
-    # Error handling for missing metrics
-    try:
-        possession = statsTable[2].find_all("strong")
-        possession_x = int(possession[0].text.replace("%", "")) / 100
-        possession_y = int(possession[1].text.replace("%", "")) / 100
-    except IndexError:
-        possession_x = possession_y = None
+    # Baseline stats
+    possession_x = None
+    possession_y = None
+    passes_completed_x = None
+    passes_attempted_x = None
+    passing_accuracy_x = None
+    passes_completed_y = None
+    passes_attempted_y = None
+    passing_accuracy_y = None
+    shots_target_x = None
+    shots_taken_x = None
+    shot_accuracy_x = None
+    shots_target_y = None
+    shots_taken_y = None
+    shot_accuracy_y = None
+    saves_x = None
+    saves_attempted_x = None
+    save_rate_x = None
+    saves_y = None
+    saves_attempted_y = None
+    save_rate_y = None
+    yellow_cards_x = None
+    red_cards_x = None
+    yellow_cards_y = None
+    red_cards_y = None
 
-    try:
-        passing = statsTable[4].find_all("div")
-        passing_x = passing[0].find_all("div")[0].text.split()
-        passing_completed_x = passing_x[0]
-        passing_attempted_x = passing_x[2]
-        passing_accuracy_x = int(passing_x[4].replace("%", "")) / 100
-        passing_y = passing[5].find_all("div")[0].text.split()
-        passing_accuracy_y = int(passing_y[0].replace("%", "")) / 100
-        passing_completed_y = passing_y[2]
-        passing_attempted_y = passing_y[4]
-    except IndexError:
-        passing_completed_x = passing_completed_y = None
-        passing_attempted_x = passing_attempted_y = None
-        passing_accuracy_x = passing_accuracy_y = None
+    currentStat = None
+    for i in statsTable[1:]:
+        if i.text == "Possession":
+            currentStat = "possession"
+            continue
+        elif i.text == "Passing Accuracy":
+            currentStat = "passing"
+            continue
+        elif i.text == "Shots on Target":
+            currentStat = "shooting"
+            continue
+        elif i.text == "Saves":
+            currentStat = "saves"
+            continue
+        elif i.text == "Cards":
+            currentStat = "cards"
+            continue
 
-    try:
-        shots = statsTable[6].find_all("div")
-        shots_x = shots[0].find_all("div")[0].text.split()
-        shots_target_x = shots_x[0]
-        shots_taken_x = shots_x[2]
-        shots_accuracy_x = (
-            int(shots_x[4].replace("%", "")) / 100 if shots_x[4] != "%" else None
-        )
-        shots_y = shots[5].find_all("div")[0].text.split()
-        shots_accuracy_y = (
-            int(shots_y[0].replace("%", "")) / 100 if shots_y[0] != "%" else None
-        )
-        shots_target_y = shots_y[2]
-        shots_taken_y = shots_y[4]
-    except IndexError:
-        shots_target_x = shots_target_y = None
-        shots_taken_x = shots_taken_y = None
-        shots_accuracy_x = shots_accuracy_y = None
+        if currentStat == "possession":
+            possession = i.find_all("strong")
+            possession_x = possession[0].text.replace("%", "")
+            possession_y = possession[1].text.replace("%", "")
+            currentStat = None
+            continue
+        elif currentStat == "passing":
+            passing = i.find_all("div")
+            passing_x = passing[0].find_all("div")[0].text.split()
+            passes_completed_x = passing_x[0]
+            passes_attempted_x = passing_x[2]
+            passing_accuracy_x = passing_x[4].replace("%", "")
+            passing_y = passing[5].find_all("div")[0].text.split()
+            passing_accuracy_y = passing_y[0].replace("%", "")
+            passes_completed_y = passing_y[2]
+            passes_attempted_y = passing_y[4]
+            currentStat = None
+            continue
+        elif currentStat == "shooting":
+            shooting = i.find_all("div")
+            shooting_x = shooting[0].find_all("div")[0].text.split()
+            shots_target_x = shooting_x[0]
+            shots_taken_x = shooting_x[2]
+            shot_accuracy_x = shooting_x[4].replace("%", "")
+            shooting_y = shooting[5].find_all("div")[0].text.split()
+            shot_accuracy_y = shooting_y[0].replace("%", "")
+            shots_target_y = shooting_y[2]
+            shots_taken_y = shooting_y[4]
+            currentStat = None
+            continue
+        elif currentStat == "saves":
+            goalkeeping = i.find_all("div")
+            goalkeeping_x = goalkeeping[0].find_all("div")[0].text.split()
+            if goalkeeping_x[0] == "of":
+                saves_x = "0"
+                saves_attempted_x = goalkeeping_x[1]
+                save_rate_x = "0"
+            else:
+                saves_x = goalkeeping_x[0]
+                saves_attempted_x = goalkeeping_x[2]
+                save_rate_x = goalkeeping_x[4].replace("%", "")
+            goalkeeping_y = goalkeeping[5].find_all("div")[0].text.split()
+            if goalkeeping_y[2] == "of":
+                saves_y = "0"
+                saves_attempted_y = goalkeeping_y[3]
+                save_rate_y = "0"
+            else:
+                saves_y = goalkeeping_y[2]
+                saves_attempted_y = goalkeeping_y[4]
+                save_rate_y = goalkeeping_y[0].replace("%", "")
+            currentStat = None
+            continue
+        elif currentStat == "cards":
+            cards = i.find_all("div")
+            cards_x = cards[0]
+            yellow_cards_x = len(cards_x.find_all("span", {"class": "yellow_card"}))
+            red_cards_x = len(cards_x.find_all("span", {"class": "red_card"}))
+            cards_y = cards[5]
+            yellow_cards_y = len(cards_y.find_all("span", {"class": "yellow_card"}))
+            red_cards_y = len(cards_y.find_all("span", {"class": "red_card"}))
+            currentStat = None
+            continue
 
-    try:
-        saves = statsTable[8].find_all("div")
-        saves_x = saves[0].find_all("div")[0].text.split()
-        saves_completed_x = saves_x[0]
-        saves_attempted_x = saves_x[2]
-        saves_rate_x = (
-            int(saves_x[4].replace("%", "")) / 100 if saves_x[4] != "%" else None
-        )
-        saves_y = saves[5].find_all("div")[0].text.split()
-        saves_rate_y = (
-            int(saves_y[0].replace("%", "")) / 100 if saves_y[0] != "%" else None
-        )
-        saves_completed_y = saves_y[2]
-        saves_attempted_y = saves_y[4]
-    except IndexError:
-        saves_completed_x = saves_completed_y = None
-        saves_attempted_x = saves_attempted_y = None
-        saves_rate_x = saves_rate_y = None
-
+    # Extra stats
     extra = pageSoup.find("div", {"id": "team_stats_extra"})
     extraTable = extra.find_all("div")
 
-    # Error handling for missing statistics
     fouls_x = fouls_y = None
     corners_x = corners_y = None
     crosses_x = crosses_y = None
@@ -143,24 +189,28 @@ def fb_match_team_stats(pageSoup=None, url: str = None):
     mydict = {
         "possession_x": possession_x,
         "possession_y": possession_y,
-        "passes_completed_x": passing_completed_x,
-        "passes_attempted_x": passing_attempted_x,
+        "passes_completed_x": passes_completed_x,
+        "passes_attempted_x": passes_attempted_x,
         "passing_accuracy_x": passing_accuracy_x,
-        "passes_completed_y": passing_completed_y,
-        "passes_attempted_y": passing_attempted_y,
+        "passes_completed_y": passes_completed_y,
+        "passes_attempted_y": passes_attempted_y,
         "passing_accuracy_y": passing_accuracy_y,
         "shots_on_target_x": shots_target_x,
         "shots_taken_x": shots_taken_x,
-        "shot_accuracy_x": shots_accuracy_x,
+        "shot_accuracy_x": shot_accuracy_x,
         "shots_on_target_y": shots_target_y,
         "shots_taken_y": shots_taken_y,
-        "shot_accuracy_y": shots_accuracy_y,
-        "saves_x": saves_completed_x,
+        "shot_accuracy_y": shot_accuracy_y,
+        "saves_x": saves_x,
         "shots_faced_x": saves_attempted_x,
-        "save_rate_x": saves_rate_x,
-        "saves_y": saves_completed_y,
+        "save_rate_x": save_rate_x,
+        "saves_y": saves_y,
         "shots_faced_y": saves_attempted_y,
-        "save_rate_y": saves_rate_y,
+        "save_rate_y": save_rate_y,
+        "yellow_cards_x": yellow_cards_x,
+        "red_cards_x": red_cards_x,
+        "yellow_cards_y": yellow_cards_y,
+        "red_cards_y": red_cards_y,
         "fouls_x": fouls_x,
         "fouls_y": fouls_y,
         "corners_x": corners_x,

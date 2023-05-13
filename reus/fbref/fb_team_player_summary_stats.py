@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_team_player_summary_stats(pageSoup=None, url: str = None):
+def fb_team_player_summary_stats(pageSoup=None, url: str = None) -> list:
     """Extracts summary stats for each player in a given team
 
     Args:
@@ -29,51 +29,73 @@ def fb_team_player_summary_stats(pageSoup=None, url: str = None):
 
     # iterate through each player and store attributes
     for row in rows:
+        # general
         th = row.find("th")
-        name = th["csk"]
+        try:
+            name = th.text
+        except AttributeError:
+            name = th["csk"]
         player_id = th.find("a", href=True)["href"].split("/")[3]
         nation = row.find("td", {"data-stat": "nationality"}).text
         position = row.find("td", {"data-stat": "position"}).text
         age = row.find("td", {"data-stat": "age"}).text.split("-")
-        if len(age) > 1:
+        try:
             age = int(age[0]) + int(age[1]) / 365
-        else:
-            age = age[0]
+        except ValueError:
+            age = None
         minutes = row.find("td", {"data-stat": "minutes"}).text
         minutes_90 = row.find("td", {"data-stat": "minutes_90s"}).text
 
+        # performance
         goals = row.find("td", {"data-stat": "goals"}).text
         assists = row.find("td", {"data-stat": "assists"}).text
+        g_a = row.find("td", {"data-stat": "goals_assists"}).text
         npg = row.find("td", {"data-stat": "goals_pens"}).text
         pk = row.find("td", {"data-stat": "pens_made"}).text
         pk_attempted = row.find("td", {"data-stat": "pens_att"}).text
         card_yellow = row.find("td", {"data-stat": "cards_yellow"}).text
         card_red = row.find("td", {"data-stat": "cards_red"}).text
 
+        # expected
+        try:
+            xG = row.find("td", {"data-stat": "xg"}).text
+            npxG = row.find("td", {"data-stat": "npxg"}).text
+            xAG = row.find("td", {"data-stat": "xg_assist"}).text
+            npxg_xga = row.find("td", {"data-stat": "npxg_xg_assist"}).text
+        except AttributeError:
+            xG = npxG = xAG = npxg_xga
+
+        # progression
+        progressive_carries = row.find("td", {"data-stat": "progressive_carries"}).text
+        progressive_passes = row.find("td", {"data-stat": "progressive_passes"}).text
+        progressive_passes_received = row.find(
+            "td", {"data-stat": "progressive_passes_received"}
+        ).text
+
+        # performance per 90 minutes
         goalp90 = row.find("td", {"data-stat": "goals_per90"}).text
         assistsp90 = row.find("td", {"data-stat": "assists_per90"}).text
         g_ap90 = row.find("td", {"data-stat": "goals_assists_per90"}).text
         npgp90 = row.find("td", {"data-stat": "goals_pens_per90"}).text
         npg_ap90 = row.find("td", {"data-stat": "goals_assists_pens_per90"}).text
 
+        # expected per 90 minutes
         try:
-            xG = row.find("td", {"data-stat": "xg"}).text
-            npxG = row.find("td", {"data-stat": "npxg"}).text
-            xA = row.find("td", {"data-stat": "xa"}).text
-            npxG_a = row.find("td", {"data-stat": "npxg_xa"}).text
             xGp90 = row.find("td", {"data-stat": "xg_per90"}).text
-            xAp90 = row.find("td", {"data-stat": "xa_per90"}).text
-            xG_xAp90 = row.find("td", {"data-stat": "xg_xa_per90"}).text
+            xAGp90 = row.find("td", {"data-stat": "xg_assist_per90"}).text
+            xG_xAGp90 = row.find("td", {"data-stat": "xg_xg_assist_per90"}).text
             npxGp90 = row.find("td", {"data-stat": "npxg_per90"}).text
-            npxG_ap90 = row.find("td", {"data-stat": "npxg_xa_per90"}).text
+            npxG_xAGp90 = row.find("td", {"data-stat": "npxg_xg_assist_per90"}).text
         except AttributeError:
-            xG = (
-                npxG
-            ) = xA = npxG_a = xGp90 = xAp90 = xG_xAp90 = npxGp90 = npxG_ap90 = None
+            xGp90 = xAGp90 = xG_xAGp90 = npxGp90 = npxG_xAGp90 = None
 
-        match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
-            "href"
-        ]
+        # match logs
+        try:
+            match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
+                "href"
+            ]
+        except TypeError:
+            match_logs = None
 
         # generate dictionary for player
         mydict = {
@@ -86,26 +108,29 @@ def fb_team_player_summary_stats(pageSoup=None, url: str = None):
             "90s": minutes_90,
             "goals": goals,
             "assists": assists,
+            "goals+assists": g_a,
             "npg": npg,
             "pk": pk,
             "pk_attempted": pk_attempted,
             "card_yellow": card_yellow,
             "card_red": card_red,
+            "xG": xG,
+            "npxG": npxG,
+            "xAG": xAG,
+            "npxG+xA": npxg_xga,
+            "progressive_carries": progressive_carries,
+            "progressive_passes": progressive_passes,
+            "progressive_passes_received": progressive_passes_received,
             "goals_p90": goalp90,
             "assists_p90": assistsp90,
             "goals+assists_p90": g_ap90,
             "npg_p90": npgp90,
             "npg+assists_p90": npg_ap90,
-            "xG": xG,
-            "npxG": npxG,
-            "xA": xA,
-            "npxG+xA": npxG_a,
             "xG_p90": xGp90,
-            "xA_p90": xAp90,
-            "xG+xA_p90": xG_xAp90,
+            "xAG_p90": xAGp90,
+            "xG+xAGp90": xG_xAGp90,
             "npxG_p90": npxGp90,
-            "npxG+xA_p90": npxG_ap90,
-            "npxG+xA": npxG_a,
+            "npxG+xAG_p90": npxG_xAGp90,
             "match_logs": match_logs,
         }
 

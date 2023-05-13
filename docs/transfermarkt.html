@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transfermarkt &mdash; reus 1.0.4 documentation</title>
+  <title>Transfermarkt &mdash; reus 1.1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,11 +14,12 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Fbref" href="fbref.html" /> 
+    <link rel="prev" title="Fotmob" href="fotmob.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,6 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="fbref.html">Fbref</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fotmob.html">Fotmob</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Transfermarkt</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#player-functions">Player functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#team-functions">Team functions</a></li>
@@ -72,33 +74,34 @@
            <div itemprop="articleBody">
              
   <section id="transfermarkt">
-<h1>Transfermarkt<a class="headerlink" href="#transfermarkt" title="Permalink to this headline"></a></h1>
+<h1>Transfermarkt<a class="headerlink" href="#transfermarkt" title="Permalink to this heading"></a></h1>
 <p>Complete list of all transfermarkt functions</p>
 <section id="player-functions">
-<h2>Player functions<a class="headerlink" href="#player-functions" title="Permalink to this headline"></a></h2>
+<h2>Player functions<a class="headerlink" href="#player-functions" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="transfermarkt.tm_player_data">
-<span id=".transfermarkt.tm_player_data"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EUR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_data" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts metadata, market value history, and transfer history for a given player based on EUR, GBP, or USD currency.</p>
+<span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_html</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#transfermarkt.tm_player_data" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts metadata, market value history, and transfer history for a given player</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>url</strong> (<em>str</em>) – path of transfermarkt player page</p></li>
-<li><p><strong>currency</strong> (<em>str</em>) – desired currency to return for values. Defaults to EUR.</p></li>
+<li><p><strong>save_html</strong> – whether to save html file. Defaults to False.</p></li>
+<li><p><strong>html_file</strong> (<em>BeautifulSoup</em><em> or </em><em>None</em>) – pageSoup html file. Defaults to None.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>player metadata, historical market values, transfer history</p>
+<dd class="field-even"><p>player metadata, historical market values, transfer history, and BeautifulSoup file of player page (optional)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(dict, list, list)</p>
+<dd class="field-odd"><p>(dict, list, list, BeautifulSoup) or (dict, list, list)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="transfermarkt.tm_player_injury">
-<span id=".transfermarkt.tm_player_injury"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_injury</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_injury" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_injury</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#transfermarkt.tm_player_injury" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts player injury history and equipped to handle players with multiple pages of injuries</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -115,11 +118,14 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="transfermarkt.tm_player_market_value">
-<span id=".transfermarkt.tm_player_market_value"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_market_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_market_value" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_market_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#transfermarkt.tm_player_market_value" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts date, team, and market value from highchart</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – bs4 object of player page referenced in url</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em>) – bs4 object of player page referenced in url. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em>) – path of transfermarkt player page. Defaults to None.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>market value of player by date</p>
@@ -132,11 +138,14 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="transfermarkt.tm_player_metadata">
-<span id=".transfermarkt.tm_player_metadata"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_metadata" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict:</span></span></span><a class="headerlink" href="#transfermarkt.tm_player_metadata" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts general player information (biographical, club, contract, market value, and miscellaneous)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – bs4 object of player page referenced in url</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em>) – bs4 object of player page referenced in url. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em>) – path of transfermarkt player page. Defaults to None.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>player metadata</p>
@@ -149,11 +158,14 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="transfermarkt.tm_player_transfers">
-<span id=".transfermarkt.tm_player_transfers"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_transfers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_transfers" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_transfers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list:</span></span></span><a class="headerlink" href="#transfermarkt.tm_player_transfers" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts player transfer information</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pageSoup</strong> (<em>bs4</em>) – bs4 object of player page referenced in url</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageSoup</strong> (<em>bs4</em>) – bs4 object of player page referenced in url. Defaults to None.</p></li>
+<li><p><strong>url</strong> (<em>str</em>) – path of transfermarkt player page. Defaults to None.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>player transfers</p>
@@ -166,41 +178,22 @@
 
 </section>
 <section id="team-functions">
-<h2>Team functions<a class="headerlink" href="#team-functions" title="Permalink to this headline"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="transfermarkt.tm_team_player_urls">
-<span id=".transfermarkt.tm_team_player_urls"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_team_player_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">club</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EUR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_team_player_urls" title="Permalink to this definition"></a></dt>
-<dd><p>Extracts basic player information for each player in a squad including basic player information, market value, and contract expiration</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>club</strong> (<em>str</em>) – club name</p></li>
-<li><p><strong>season</strong> (<em>str</em><em> or </em><em>int</em>) – year at start of season</p></li>
-<li><p><strong>currency</strong> (<em>str</em>) – desired currency to return for values. Defaults to EUR.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>squad players</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
+<h2>Team functions<a class="headerlink" href="#team-functions" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="transfermarkt.tm_team_transfers">
-<span id=".transfermarkt.tm_team_transfers"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_team_transfers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">club</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">main_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EUR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_team_transfers" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_team_transfers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">club</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'us'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">main_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">team_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transfermarkt_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#transfermarkt.tm_team_transfers" title="Permalink to this definition"></a></dt>
 <dd><p>Extracts player transfer information</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>club</strong> (<em>str</em>) – club name</p></li>
 <li><p><strong>season</strong> (<em>str</em><em> or </em><em>int</em>) – year at start of season</p></li>
+<li><p><strong>domain</strong> (<em>str</em>) – domain to use for transfermarkt. Defaults to us.</p></li>
 <li><p><strong>position_group</strong> (<em>str</em>) – position group to filter by. Defaults to All.</p></li>
 <li><p><strong>main_position</strong> (<em>str</em>) – main position to filter by. Defaults to All.</p></li>
 <li><p><strong>window</strong> (<em>str</em>) – transfer window to filter by. Defaults to All.</p></li>
-<li><p><strong>currency</strong> (<em>str</em>) – desired currency to return for values. Defaults to EUR.</p></li>
+<li><p><strong>team_id</strong> (<em>int</em>) – transfermarkt team id. Defaults to None.</p></li>
+<li><p><strong>transfermarkt_name</strong> (<em>bool</em>) – if True, club is a transfermarkt name. Defaults to False.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -212,12 +205,35 @@
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="transfermarkt.tm_team_player_data">
+<span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_team_player_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">club</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'us'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">team_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transfermarkt_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#transfermarkt.tm_team_player_data" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts basic player information for each player in a squad including basic player information, market value, and contract expiration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>club</strong> (<em>str</em>) – club name</p></li>
+<li><p><strong>season</strong> (<em>str</em><em> or </em><em>int</em>) – year at start of season</p></li>
+<li><p><strong>domain</strong> (<em>str</em>) – domain to use for transfermarkt. Defaults to us.</p></li>
+<li><p><strong>team_id</strong> (<em>int</em>) – transfermarkt team id. Defaults to None.</p></li>
+<li><p><strong>transfermarkt_name</strong> (<em>bool</em>) – if True, club is a transfermarkt name. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>squad players</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="helper-functions">
-<h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline"></a></h2>
+<h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="transfermarkt.tm_player_injury_scraper">
-<span id=".transfermarkt.tm_player_injury_scraper"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_injury_scraper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_player_injury_scraper" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_player_injury_scraper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pageSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#transfermarkt.tm_player_injury_scraper" title="Permalink to this definition"></a></dt>
 <dd><p>Helper function extracts player injury history</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -234,7 +250,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="transfermarkt.tm_format_currency">
-<span id=".transfermarkt.tm_format_currency"></span><span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_format_currency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transfermarkt.tm_format_currency" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">.transfermarkt.</span></span><span class="sig-name descname"><span class="pre">tm_format_currency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#transfermarkt.tm_format_currency" title="Permalink to this definition"></a></dt>
 <dd><p>Helper function to convert values from string to float values</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -256,13 +272,13 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="fbref.html" class="btn btn-neutral float-left" title="Fbref" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fotmob.html" class="btn btn-neutral float-left" title="Fotmob" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Ian Shepherd.</p>
+    <p>&#169; Copyright 2023, Ian Shepherd.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

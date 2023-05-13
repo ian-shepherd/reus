@@ -1,5 +1,62 @@
 # Change Log
 
+## 1.1.1 2023-05-13
+fb_league_table: fixed broken tags, added Pts/MP and last 5
+fb_match_data: added save_html and html_file arguments and functionality
+fb_match_defensive_actions_stats: updated from StatsBomb to Opta data
+fb_match_keeper_stats: updated from StatsBomb to Opta data
+fb_match_lineups: renamed backend variables to more appropriate name
+fb_match_metadata: 
+	-updated error handling for edge case scenarios where one set of missing information (ex. one team missing a captain or manager, incomplete officials info)
+	-added league_id, league name, and matchweek
+fb_match_misc_stats: updated from StatsBomb to Opta data
+fb_match_passing_stats: updated from StatsBomb to Opta data
+fb_match_passing_type_stats: updated from StatsBomb to Opta data
+fb_match_possession_stats: updated from StatsBomb to Opta data
+fb_match_shots: updated to include Opta xG data
+fb_match_summary_stats: updated from StatsBomb to Opta data
+fb_match_summary: improved error handling for match events
+fb_match_team_stats: improved error handling for missing stats
+fb_season_fixture_urls: updated arguments from statsbomb flag to advanced data flag
+fb_season_urls: updated arguments from statsbomb flag to advanced data flag
+fb_team_player_advanced_keeper: fixed broken tasks and age error handling
+fb_team_player_defensive_action_stats: updated from StatsBomb to Opta data and age error handling
+fb_team_player_goal_sca_stats: updated from StatsBomb to Opta data and age error handling
+fb_team_player_keeper_stats: updated from StatsBomb to Opta data and age error handling
+fb_team_player_misc_stats: updated from StatsBomb to Opta data and age error handling
+fb_team_player_passing_stats: updated from StatsBomb to Opta data and age error handling
+fb_team_player_passing_type_stats: updated from StatsBomb to Opta data and age error handling
+fb_team_player_playing_time_stats: updated from StatsBomb to Opta data and age error handling
+fb_team_player_possession_stats: updated from StatsBomb to Opta data and age error handling
+fb_team_player_shooting_stats: updated from StatsBomb to Opta data and age error handling
+fb_team_player_summary_stats: updated from StatsBomb to Opta data and age error handling
+added team stat functions
+- fb_team_advanced_keeper_stats
+- fb_team_data
+- fb_team_defensive_actions_stats
+- fb_team_goal_sca_stats
+- fb_team_keeper_stats
+- fb_team_misc_stats
+- fb_team_passing_stats
+- fb_team_passing_type_stats
+- fb_team_playing_time_stats
+- fb_team_possession_stats
+- fb_team_shooting_stats
+- fb_team_summary_stats
+
+## 1.1.0 2022-10-09
+Added fotmob functionality for getting match data
+Updated function documentation with type hints
+Removed repetitive print statements when a match was forfeited
+
+## 1.0.8 2022-08-09
+Removed * from score when match forfeited
+Added error handling for no manager or captain in fb_match_metadata
+Added verbose parameter in fb_match_metadata that prints error when match forfeited or missing manager or captain
+Removed main call from fb_match_defensive_actions_stats
+Changed ids in fb_match_keeper_stats to match new format
+Changed ids in fb_match_shots to match new format
+
 ## 1.0.7 2022-07-02 Error handling for forfeited matches and missing player identifier
 Renamed dictionary from matadict to metadict in fb_match_metadata
 Added error handling for bad names, no csk identifier, in fb_match_summary_stats

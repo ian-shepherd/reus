@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_team_player_passing_type_stats(pageSoup=None, url: str = None):
+def fb_team_player_passing_type_stats(pageSoup=None, url: str = None) -> list:
     """Extracts passing type stats for each player in a given team
 
     Args:
@@ -33,49 +33,44 @@ def fb_team_player_passing_type_stats(pageSoup=None, url: str = None):
 
     # iterate through each player and store attributes
     for row in rows:
+        # general
         th = row.find("th")
-        name = th["csk"]
+        try:
+            name = th.text
+        except AttributeError:
+            name = th["csk"]
         player_id = th.find("a", href=True)["href"].split("/")[3]
         nation = row.find("td", {"data-stat": "nationality"}).text
         position = row.find("td", {"data-stat": "position"}).text
         age = row.find("td", {"data-stat": "age"}).text.split("-")
-        if len(age) > 1:
+        try:
             age = int(age[0]) + int(age[1]) / 365
-        else:
-            age = age[0]
+        except ValueError:
+            age = None
         minutes_90 = row.find("td", {"data-stat": "minutes_90s"}).text
+        passes_attempted = row.find("td", {"data-stat": "passes"}).text
 
-        att = row.find("td", {"data-stat": "passes"}).text
-
+        # pass types
         live = row.find("td", {"data-stat": "passes_live"}).text
         dead = row.find("td", {"data-stat": "passes_dead"}).text
-        fk = row.find("td", {"data-stat": "passes_free_kicks"}).text
-        tb = row.find("td", {"data-stat": "through_balls"}).text
-        press = row.find("td", {"data-stat": "passes_pressure"}).text
-        sw = row.find("td", {"data-stat": "passes_switches"}).text
-        crs = row.find("td", {"data-stat": "crosses"}).text
-        ck = row.find("td", {"data-stat": "corner_kicks"}).text
+        free_kicks = row.find("td", {"data-stat": "passes_free_kicks"}).text
+        through_balls = row.find("td", {"data-stat": "through_balls"}).text
+        switches = row.find("td", {"data-stat": "passes_switches"}).text
+        crosses = row.find("td", {"data-stat": "crosses"}).text
+        throw_ins = row.find("td", {"data-stat": "throw_ins"}).text
+        corner_kicks = row.find("td", {"data-stat": "corner_kicks"}).text
 
+        # corner kicks
         ck_in = row.find("td", {"data-stat": "corner_kicks_in"}).text
         ck_out = row.find("td", {"data-stat": "corner_kicks_out"}).text
         ck_straight = row.find("td", {"data-stat": "corner_kicks_straight"}).text
 
-        height_ground = row.find("td", {"data-stat": "passes_ground"}).text
-        height_low = row.find("td", {"data-stat": "passes_low"}).text
-        height_high = row.find("td", {"data-stat": "passes_high"}).text
+        # outcomes
+        completed = row.find("td", {"data-stat": "passes_completed"}).text
+        offsides = row.find("td", {"data-stat": "passes_offsides"}).text
+        blocked = row.find("td", {"data-stat": "passes_blocked"}).text
 
-        body_left = row.find("td", {"data-stat": "passes_left_foot"}).text
-        body_right = row.find("td", {"data-stat": "passes_right_foot"}).text
-        body_head = row.find("td", {"data-stat": "passes_head"}).text
-        body_ti = row.find("td", {"data-stat": "throw_ins"}).text
-        body_other = row.find("td", {"data-stat": "passes_other_body"}).text
-
-        out_cmp = row.find("td", {"data-stat": "passes_completed"}).text
-        out_off = row.find("td", {"data-stat": "passes_offsides"}).text
-        out_out = row.find("td", {"data-stat": "passes_oob"}).text
-        out_int = row.find("td", {"data-stat": "passes_intercepted"}).text
-        out_blk = row.find("td", {"data-stat": "passes_blocked"}).text
-
+        # match logs
         match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
             "href"
         ]
@@ -88,31 +83,21 @@ def fb_team_player_passing_type_stats(pageSoup=None, url: str = None):
             "position": position,
             "age": age,
             "90s": minutes_90,
-            "attempted": att,
+            "passes_attempted": passes_attempted,
             "live": live,
             "dead": dead,
-            "free_kick": fk,
-            "through_balls": tb,
-            "under_pressure": press,
-            "switches": sw,
-            "crosses": crs,
-            "corner_kicks": ck,
-            "corner_inswing": ck_in,
-            "corner_outswing": ck_out,
-            "corner_straight": ck_straight,
-            "height_ground": height_ground,
-            "height_low": height_low,
-            "height_high": height_high,
-            "body_left": body_left,
-            "body_right": body_right,
-            "body_head": body_head,
-            "body_throw_in": body_ti,
-            "body_other": body_other,
-            "completed": out_cmp,
-            "offsides": out_off,
-            "out_of_bounds": out_out,
-            "intercepted": out_int,
-            "blocked": out_blk,
+            "free_kicks": free_kicks,
+            "through_balls": through_balls,
+            "switches": switches,
+            "crosses": crosses,
+            "throw_ins": throw_ins,
+            "corner_kicks": corner_kicks,
+            "ck_in": ck_in,
+            "ck_out": ck_out,
+            "ck_straight": ck_straight,
+            "completed": completed,
+            "offsides": offsides,
+            "blocked": blocked,
             "match_logs": match_logs,
         }
 

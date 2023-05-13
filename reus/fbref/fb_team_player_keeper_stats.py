@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_team_player_keeper_stats(pageSoup=None, url: str = None):
+def fb_team_player_keeper_stats(pageSoup=None, url: str = None) -> list:
     """Extracts basic keeper stats for each player in a given team
 
     Args:
@@ -31,38 +31,47 @@ def fb_team_player_keeper_stats(pageSoup=None, url: str = None):
 
     # iterate through each player and store attributes
     for row in rows:
+        # general
         th = row.find("th")
-        name = th["csk"]
+        try:
+            name = th.text
+        except AttributeError:
+            name = th["csk"]
         player_id = th.find("a", href=True)["href"].split("/")[3]
         nation = row.find("td", {"data-stat": "nationality"}).text
         position = row.find("td", {"data-stat": "position"}).text
         age = row.find("td", {"data-stat": "age"}).text.split("-")
-        if len(age) > 1:
+        try:
             age = int(age[0]) + int(age[1]) / 365
-        else:
-            age = age[0]
-        matches = row.find("td", {"data-stat": "games_gk"}).text
-        starts = row.find("td", {"data-stat": "games_starts_gk"}).text
-        minutes = row.find("td", {"data-stat": "minutes_gk"}).text
+        except ValueError:
+            age = None
+
+        # playing time
+        matches = row.find("td", {"data-stat": "gk_games"}).text
+        starts = row.find("td", {"data-stat": "gk_games_starts"}).text
+        minutes = row.find("td", {"data-stat": "gk_minutes"}).text
         minutes_90 = row.find("td", {"data-stat": "minutes_90s"}).text
 
-        goals_allowed = row.find("td", {"data-stat": "goals_against_gk"}).text
-        goals_allowed_p90 = row.find("td", {"data-stat": "goals_against_per90_gk"}).text
-        shots_against = row.find("td", {"data-stat": "shots_on_target_against"}).text
-        saves = row.find("td", {"data-stat": "saves"}).text
-        save_pct = row.find("td", {"data-stat": "save_pct"}).text
-        wins = row.find("td", {"data-stat": "wins_gk"}).text
-        draws = row.find("td", {"data-stat": "draws_gk"}).text
-        losses = row.find("td", {"data-stat": "losses_gk"}).text
-        clean_sheets = row.find("td", {"data-stat": "clean_sheets"}).text
-        cleen_sheet_pct = row.find("td", {"data-stat": "clean_sheets_pct"}).text
+        # performance
+        goals_allowed = row.find("td", {"data-stat": "gk_goals_against"}).text
+        goals_allowed_p90 = row.find("td", {"data-stat": "gk_goals_against_per90"}).text
+        shots_against = row.find("td", {"data-stat": "gk_shots_on_target_against"}).text
+        saves = row.find("td", {"data-stat": "gk_saves"}).text
+        save_pct = row.find("td", {"data-stat": "gk_save_pct"}).text
+        wins = row.find("td", {"data-stat": "gk_wins"}).text
+        draws = row.find("td", {"data-stat": "gk_ties"}).text
+        losses = row.find("td", {"data-stat": "gk_losses"}).text
+        clean_sheets = row.find("td", {"data-stat": "gk_clean_sheets"}).text
+        cleen_sheet_pct = row.find("td", {"data-stat": "gk_clean_sheets_pct"}).text
 
-        pk_against = row.find("td", {"data-stat": "pens_att_gk"}).text
-        pk_allowed = row.find("td", {"data-stat": "pens_allowed"}).text
-        pk_saves = row.find("td", {"data-stat": "pens_saved"}).text
-        pk_missed = row.find("td", {"data-stat": "pens_missed_gk"}).text
-        pk_save_pct = row.find("td", {"data-stat": "pens_save_pct"}).text
+        # penalty kicks
+        pk_against = row.find("td", {"data-stat": "gk_pens_att"}).text
+        pk_allowed = row.find("td", {"data-stat": "gk_pens_allowed"}).text
+        pk_saves = row.find("td", {"data-stat": "gk_pens_saved"}).text
+        pk_missed = row.find("td", {"data-stat": "gk_pens_missed"}).text
+        pk_save_pct = row.find("td", {"data-stat": "gk_pens_save_pct"}).text
 
+        # match logs
         match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
             "href"
         ]

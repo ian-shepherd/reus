@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_team_player_defensive_actions_stats(pageSoup=None, url: str = None):
+def fb_team_player_defensive_actions_stats(pageSoup=None, url: str = None) -> list:
     """Extracts defensive action stats for each player in a given team
 
     Args:
@@ -33,46 +33,51 @@ def fb_team_player_defensive_actions_stats(pageSoup=None, url: str = None):
 
     # iterate through each player and store attributes
     for row in rows:
+        # general
         th = row.find("th")
-        name = th["csk"]
+        try:
+            name = th.text
+        except AttributeError:
+            name = th["csk"]
         player_id = th.find("a", href=True)["href"].split("/")[3]
         nation = row.find("td", {"data-stat": "nationality"}).text
         position = row.find("td", {"data-stat": "position"}).text
         age = row.find("td", {"data-stat": "age"}).text.split("-")
-        if len(age) > 1:
+        try:
             age = int(age[0]) + int(age[1]) / 365
-        else:
-            age = age[0]
+        except ValueError:
+            age = None
         minutes_90 = row.find("td", {"data-stat": "minutes_90s"}).text
 
-        tkl = row.find("td", {"data-stat": "tackles"}).text
-        tklW = row.find("td", {"data-stat": "tackles_won"}).text
-        tkl_def = row.find("td", {"data-stat": "tackles_def_3rd"}).text
-        tkl_mid = row.find("td", {"data-stat": "tackles_mid_3rd"}).text
-        tkl_att = row.find("td", {"data-stat": "tackles_att_3rd"}).text
+        # tackles
+        tackles_attempted = row.find("td", {"data-stat": "tackles"}).text
+        tackles_successful = row.find("td", {"data-stat": "tackles_won"}).text
+        tackles_defensive_third = row.find("td", {"data-stat": "tackles_def_3rd"}).text
+        tackles_middle_third = row.find("td", {"data-stat": "tackles_mid_3rd"}).text
+        tackles_attacking_third = row.find("td", {"data-stat": "tackles_att_3rd"}).text
 
-        drb_tkl = row.find("td", {"data-stat": "dribble_tackles"}).text
-        drb_att = row.find("td", {"data-stat": "dribbles_vs"}).text
-        drb_pct = row.find("td", {"data-stat": "dribble_tackles_pct"}).text
-        drb_past = row.find("td", {"data-stat": "dribbled_past"}).text
+        # challenges
+        challenges_successful = row.find("td", {"data-stat": "challenge_tackles"}).text
+        challenges_attempted = row.find("td", {"data-stat": "challenges"}).text
+        challenge_success_rate = row.find(
+            "td", {"data-stat": "challenge_tackles_pct"}
+        ).text
+        if challenge_success_rate == "":
+            challenge_success_rate = None
+        challenges_lost = row.find("td", {"data-stat": "challenges_lost"}).text
 
-        press = row.find("td", {"data-stat": "pressures"}).text
-        press_succ = row.find("td", {"data-stat": "pressure_regains"}).text
-        press_pct = row.find("td", {"data-stat": "pressure_regain_pct"}).text
-        press_def = row.find("td", {"data-stat": "pressures_def_3rd"}).text
-        press_mid = row.find("td", {"data-stat": "pressures_mid_3rd"}).text
-        press_att = row.find("td", {"data-stat": "pressures_att_3rd"}).text
+        # blocks
+        blocks = row.find("td", {"data-stat": "blocks"}).text
+        blocked_shots = row.find("td", {"data-stat": "blocked_shots"}).text
+        blocked_passes = row.find("td", {"data-stat": "blocked_passes"}).text
 
-        blk = row.find("td", {"data-stat": "blocks"}).text
-        blk_shots = row.find("td", {"data-stat": "blocked_shots"}).text
-        blk_sv = row.find("td", {"data-stat": "blocked_shots_saves"}).text
-        blk_pass = row.find("td", {"data-stat": "blocked_passes"}).text
-
+        # other
         interceptions = row.find("td", {"data-stat": "interceptions"}).text
         tkl_int = row.find("td", {"data-stat": "tackles_interceptions"}).text
-        clr = row.find("td", {"data-stat": "clearances"}).text
-        err = row.find("td", {"data-stat": "errors"}).text
+        clearances = row.find("td", {"data-stat": "clearances"}).text
+        errors = row.find("td", {"data-stat": "errors"}).text
 
+        # match logs
         match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
             "href"
         ]
@@ -85,29 +90,22 @@ def fb_team_player_defensive_actions_stats(pageSoup=None, url: str = None):
             "position": position,
             "age": age,
             "90s": minutes_90,
-            "tackles": tkl,
-            "tackles_won": tklW,
-            "tackles_defensive_third": tkl_def,
-            "tackles_middle_third": tkl_mid,
-            "tackles_attacking_third": tkl_att,
-            "dribble_tackles": drb_tkl,
-            "dribble_tackles_attempted": drb_att,
-            "dribble_pct": drb_pct,
-            "dribbled_past": drb_past,
-            "pressures": press,
-            "pressures_successful": press_succ,
-            "pressure_pct": press_pct,
-            "pressures_defensive_third": press_def,
-            "pressures_middle_third": press_mid,
-            "pressures_attacking_third": press_att,
-            "blocks": blk,
-            "blocked_shots": blk_shots,
-            "blocked_shots_on_target": blk_sv,
-            "blocked_passes": blk_pass,
+            "tackles_attempted": tackles_attempted,
+            "tackles_successful": tackles_successful,
+            "tackles_defensive_third": tackles_defensive_third,
+            "tackles_middle_third": tackles_middle_third,
+            "tackles_attacking_third": tackles_attacking_third,
+            "challenges_successful": challenges_successful,
+            "challenges_attempted": challenges_attempted,
+            "challenge_success_rate": challenge_success_rate,
+            "challenges_lost": challenges_lost,
+            "blocks": blocks,
+            "blocked_shots": blocked_shots,
+            "blocked_passes": blocked_passes,
             "interceptions": interceptions,
             "tkl_int": tkl_int,
-            "clearances": clr,
-            "errors": err,
+            "clearances": clearances,
+            "errors": errors,
             "match_logs": match_logs,
         }
 

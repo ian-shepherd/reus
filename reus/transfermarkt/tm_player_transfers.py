@@ -1,13 +1,23 @@
-def tm_player_transfers(pageSoup):
+from ..util import get_page_soup_headers
 
+
+def tm_player_transfers(pageSoup=None, url: str = None) -> list:
     """Extracts player transfer information
 
     Args:
-        pageSoup (bs4): bs4 object of player page referenced in url
+        pageSoup (bs4, optional): bs4 object of player page referenced in url. Defaults to None.
+        url (str, optional): path of transfermarkt player page. Defaults to None.
 
     Returns:
         list: player transfers
     """
+
+    assert (
+        pageSoup is not None or url is not None
+    ), "Either pageSoup or url must be provided"
+
+    if pageSoup is None:
+        pageSoup = get_page_soup_headers(url)
 
     # Find transfer object
     transfer_data = pageSoup.find("div", {"data-viewport": "Transferhistorie"})
@@ -19,7 +29,6 @@ def tm_player_transfers(pageSoup):
     # iterate through each transfer and store attributes
     # for row in rows:
     for row in table[1:-1]:
-
         # extract teams
         left = row.find(
             "div", {"class": "tm-player-transfer-history-grid__old-club"}

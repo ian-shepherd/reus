@@ -33,19 +33,18 @@ It is a minor inconvenience to you but lets us all keep accessing the data.
 Additional documentation is provided [here](https://ian-shepherd.github.io/reus/)
 
 ## Roadmap
-
-  - More extensive documentation with examples
-  - fbref match stats for standard matches (not covered by Statsbomb)
+  - add fotmob league table and statistics functionality
+  - translation function for players and teams
+  - change outputs of fbref functions from lists and tuples to dictionaries
   - fbref player scouting reports
-  - fbref team statistics
   - transfermarkt team staff
   - transfermarkt staff history
   - understat data
-  - fifa data
 
 
 ## Resources
   - [FBref](https://fbref.com/)
+  - [Fotmob](https://www.fotmob.com/)
   - [Transfermarkt](http://transfermarkt.com/)
   - [FC Python](https://fcpython.com/)
   - [538](https://fivethirtyeight.com/)

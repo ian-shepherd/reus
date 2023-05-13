@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def get_page_soup(url: str):
+def get_page_soup(url: str, save_html: bool = False) -> BeautifulSoup:
     """Returns html of a given url
 
     Args:
@@ -15,10 +15,13 @@ def get_page_soup(url: str):
     pageTree = requests.get(url)
     pageSoup = BeautifulSoup(pageTree.content, "html.parser")
 
-    return pageSoup
+    if save_html:
+        return pageSoup, pageTree.content
+    else:
+        return pageSoup
 
 
-def get_page_soup_headers(url: str):
+def get_page_soup_headers(url: str, save_html: bool = False) -> BeautifulSoup:
     """Returns html of a given url
 
     Args:
@@ -35,4 +38,7 @@ def get_page_soup_headers(url: str):
     pageTree = requests.get(url, headers=headers)
     pageSoup = BeautifulSoup(pageTree.content, "html.parser")
 
-    return pageSoup
+    if save_html:
+        return pageSoup, pageTree.content
+    else:
+        return pageSoup

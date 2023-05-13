@@ -1,4 +1,4 @@
-def tm_player_injury_scraper(pageSoup):
+def tm_player_injury_scraper(pageSoup) -> list:
     """Helper function extracts player injury history
 
     Args:
@@ -53,7 +53,7 @@ def tm_player_injury_scraper(pageSoup):
     return mylist
 
 
-def tm_format_currency(value: str):
+def tm_format_currency(value: str) -> float:
     """Helper function to convert values from string to float values
 
     Args:
@@ -72,6 +72,6 @@ def tm_format_currency(value: str):
     mult = 1000000 if value[-1] == "m" else 1000
 
     # Convert to float
-    value = float(value.replace("Th.", "").replace("m", "").strip()) * mult
+    value = float(value.replace("k", "").replace("m", "").strip()) * mult
 
     return value

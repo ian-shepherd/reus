@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_match_urls(url: str):
+def fb_match_urls(url: str) -> list:
     """Returns a list of urls for matches in a season
 
     Args:

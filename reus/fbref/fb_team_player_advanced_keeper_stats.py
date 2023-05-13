@@ -1,7 +1,7 @@
 from ..util import get_page_soup
 
 
-def fb_team_player_advanced_keeper_stats(pageSoup=None, url: str = None):
+def fb_team_player_advanced_keeper_stats(pageSoup=None, url: str = None) -> list:
     """Extracts advanced keeper stats for each player in a given team
 
     Args:
@@ -33,64 +33,78 @@ def fb_team_player_advanced_keeper_stats(pageSoup=None, url: str = None):
 
     # iterate through each player and store attributes
     for row in rows:
+        # general
         th = row.find("th")
-        name = th["csk"]
+        try:
+            name = th.text
+        except AttributeError:
+            name = th["csk"]
         player_id = th.find("a", href=True)["href"].split("/")[3]
         nation = row.find("td", {"data-stat": "nationality"}).text
         position = row.find("td", {"data-stat": "position"}).text
         age = row.find("td", {"data-stat": "age"}).text.split("-")
-        if len(age) > 1:
+        try:
             age = int(age[0]) + int(age[1]) / 365
-        else:
-            age = age[0]
+        except ValueError:
+            age = None
         minutes_90 = row.find("td", {"data-stat": "minutes_90s"}).text
 
-        goals_allowed = row.find("td", {"data-stat": "goals_against_gk"}).text
-        pk_allowed = row.find("td", {"data-stat": "pens_allowed"}).text
-        fk_allowed = row.find("td", {"data-stat": "free_kick_goals_against_gk"}).text
+        # goals
+        goals_allowed = row.find("td", {"data-stat": "gk_goals_against"}).text
+        pk_allowed = row.find("td", {"data-stat": "gk_pens_allowed"}).text
+        fk_allowed = row.find("td", {"data-stat": "gk_free_kick_goals_against"}).text
         corner_allowed = row.find(
-            "td", {"data-stat": "corner_kick_goals_against_gk"}
+            "td", {"data-stat": "gk_corner_kick_goals_against"}
         ).text
-        own_goals = row.find("td", {"data-stat": "own_goals_against_gk"}).text
+        own_goals = row.find("td", {"data-stat": "gk_own_goals_against"}).text
 
-        psxg = row.find("td", {"data-stat": "psxg_gk"}).text
+        # expected
+        psxg = row.find("td", {"data-stat": "gk_psxg"}).text
         psxg_per_sot = row.find(
-            "td", {"data-stat": "psnpxg_per_shot_on_target_against"}
+            "td", {"data-stat": "gk_psnpxg_per_shot_on_target_against"}
         ).text
-        psxg_g = row.find("td", {"data-stat": "psxg_net_gk"}).text
-        psxg_g_p90 = row.find("td", {"data-stat": "psxg_net_per90_gk"}).text
+        psxg_g = row.find("td", {"data-stat": "gk_psxg_net"}).text
+        psxg_g_p90 = row.find("td", {"data-stat": "gk_psxg_net_per90"}).text
 
+        # launched
         launched_completed = row.find(
-            "td", {"data-stat": "passes_completed_launched_gk"}
+            "td", {"data-stat": "gk_passes_completed_launched"}
         ).text
-        launched_attempted = row.find("td", {"data-stat": "passes_launched_gk"}).text
-        launched_acc = row.find("td", {"data-stat": "passes_pct_launched_gk"}).text
+        launched_attempted = row.find("td", {"data-stat": "gk_passes_launched"}).text
+        launched_acc = row.find("td", {"data-stat": "gk_passes_pct_launched"}).text
 
-        passes_attempted = row.find("td", {"data-stat": "passes_gk"}).text
-        throws_attempted = row.find("td", {"data-stat": "passes_throws_gk"}).text
-        pct_lauched = row.find("td", {"data-stat": "pct_passes_launched_gk"}).text
-        passes_avg_length = row.find("td", {"data-stat": "passes_length_avg_gk"}).text
+        # passes
+        passes_attempted = row.find("td", {"data-stat": "gk_passes"}).text
+        throws_attempted = row.find("td", {"data-stat": "gk_passes_throws"}).text
+        pct_lauched = row.find("td", {"data-stat": "gk_pct_passes_launched"}).text
+        passes_avg_length = row.find("td", {"data-stat": "gk_passes_length_avg"}).text
 
-        gk_attempted = row.find("td", {"data-stat": "goal_kicks"}).text
-        gk_pct_launched = row.find("td", {"data-stat": "pct_goal_kicks_launched"}).text
-        gk_avg_length = row.find("td", {"data-stat": "goal_kick_length_avg"}).text
+        # goal kicks
+        gk_attempted = row.find("td", {"data-stat": "gk_goal_kicks"}).text
+        gk_pct_launched = row.find(
+            "td", {"data-stat": "gk_pct_goal_kicks_launched"}
+        ).text
+        gk_avg_length = row.find("td", {"data-stat": "gk_goal_kick_length_avg"}).text
 
-        crosses_faced = row.find("td", {"data-stat": "crosses_gk"}).text
-        crosses_stopped = row.find("td", {"data-stat": "crosses_stopped_gk"}).text
+        # crosses
+        crosses_faced = row.find("td", {"data-stat": "gk_crosses"}).text
+        crosses_stopped = row.find("td", {"data-stat": "gk_crosses_stopped"}).text
         crosses_stopped_pct = row.find(
-            "td", {"data-stat": "crosses_stopped_pct_gk"}
+            "td", {"data-stat": "gk_crosses_stopped_pct"}
         ).text
 
+        # sweeper
         defensive_actions = row.find(
-            "td", {"data-stat": "def_actions_outside_pen_area_gk"}
+            "td", {"data-stat": "gk_def_actions_outside_pen_area"}
         ).text
         defensive_actions_p90 = row.find(
-            "td", {"data-stat": "def_actions_outside_pen_area_per90_gk"}
+            "td", {"data-stat": "gk_def_actions_outside_pen_area_per90"}
         ).text
         defensive_actions_avg_distance = row.find(
-            "td", {"data-stat": "avg_distance_def_actions_gk"}
+            "td", {"data-stat": "gk_avg_distance_def_actions"}
         ).text
 
+        # match logs
         match_logs = row.find("td", {"data-stat": "matches"}).find("a", href=True)[
             "href"
         ]

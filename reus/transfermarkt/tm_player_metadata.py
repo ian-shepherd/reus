@@ -1,16 +1,25 @@
 import re
+from ..util import get_page_soup_headers
 
 
-def tm_player_metadata(pageSoup):
+def tm_player_metadata(pageSoup=None, url: str = None) -> dict:
     #
     """Extracts general player information (biographical, club, contract, market value, and miscellaneous)
 
     Args:
-        pageSoup (bs4): bs4 object of player page referenced in url
+        pageSoup (bs4, optional): bs4 object of player page referenced in url. Defaults to None.
+        url (str, optional): path of transfermarkt player page. Defaults to None.
 
     Returns:
         dict: player metadata
     """
+
+    assert (
+        pageSoup is not None or url is not None
+    ), "Either pageSoup or url must be provided"
+
+    if pageSoup is None:
+        pageSoup = get_page_soup_headers(url)
 
     # Extract url
     url = pageSoup.find("meta", {"property": "og:url"})["content"]
@@ -57,6 +66,16 @@ def tm_player_metadata(pageSoup):
         )
     except AttributeError:
         birth_place = None
+
+    # birth country
+    try:
+        birth_country = (
+            player_data.find("span", text="Place of birth:")
+            .find_next("span")
+            .find("img")["title"]
+        )
+    except AttributeError:
+        birth_country = None
 
     # age
     try:
@@ -175,16 +194,26 @@ def tm_player_metadata(pageSoup):
 
     try:
         joined = pageSoup.find("span", text="Joined:")
-        joined = joined.find_next("span").text
+        joined = joined.find_next("span").text.strip()
     except AttributeError:
         joined = None
 
     # contract expiration
     try:
         contracted = pageSoup.find("span", text="Contract expires:")
-        contracted = contracted.find_next("span").text
+        contracted = contracted.find_next("span").text.strip()
     except AttributeError:
         contracted = None
+
+    # date of last contract extension
+    try:
+        extension = (
+            player_data.find("span", text="Date of last contract extension:")
+            .find_next("span")
+            .text.strip()
+        )
+    except AttributeError:
+        extension = None
 
     # market value
     try:
@@ -219,6 +248,7 @@ def tm_player_metadata(pageSoup):
         "full_name": full_name,
         "born": birth_date,
         "birth_place": birth_place,
+        "birth_country": birth_country,
         "age": age,
         "height": height,
         "nationality": nationality[0],
@@ -235,6 +265,7 @@ def tm_player_metadata(pageSoup):
         "club": club,
         "joined": joined,
         "contracted": contracted,
+        "extension": extension,
         "currency": currency,
         "mv": value,
         "update": updated,

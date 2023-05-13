@@ -1,7 +1,8 @@
+import re
 from ..util import get_page_soup
 
 
-def fb_match_metadata(pageSoup=None, url: str = None):
+def fb_match_metadata(pageSoup=None, url: str = None) -> tuple:
     """Extracts general information (teams, managers, captains, date, time, venue, attendance, score, xG) for a given match
 
     Args:
@@ -32,47 +33,94 @@ def fb_match_metadata(pageSoup=None, url: str = None):
     teams = scorebox.find_all("strong")
 
     # extract team id and name
-    if len(teams) == 7:
-        id_x = teams[0].find("a", href=True)["href"].split("/")[3]
-        id_y = teams[2].find("a", href=True)["href"].split("/")[3]
-        team_x = teams[0].find("a", href=True).text
-        team_y = teams[2].find("a", href=True).text
-    else:
-        id_x = teams[0].find("a", href=True)["href"].split("/")[3]
-        id_y = teams[3].find("a", href=True)["href"].split("/")[3]
-        team_x = teams[0].find("a", href=True).text
-        team_y = teams[3].find("a", href=True).text
+    team_idx = []
+    for i in range(len(teams)):
+        if teams[i].find("a", href=True) is not None and "squad" in teams[i].find(
+            "a", href=True
+        ).get("href"):
+            team_idx.append(i)
+    id_x = teams[team_idx[0]].find("a", href=True)["href"].split("/")[3]
+    id_y = teams[team_idx[1]].find("a", href=True)["href"].split("/")[3]
+    team_x = teams[team_idx[0]].find("a", href=True).text
+    team_y = teams[team_idx[1]].find("a", href=True).text
 
     # extract scores
     scores = pageSoup.find_all("div", {"class": "scores"})
     score_x = scores[0].find("div", {"class": "score"}).text
+    score_y = scores[1].find("div", {"class": "score"}).text
     # error handling for non-xG
     try:
         xg_x = scores[0].find("div", {"class": "score_xg"}).text
     except AttributeError:
         xg_x = None
-    score_y = scores[1].find("div", {"class": "score"}).text
-    # error handling for non-xG
     try:
         xg_y = scores[1].find("div", {"class": "score_xg"}).text
     except AttributeError:
         xg_y = None
 
-    if "*" in score_x:
-        print(
-            f"{match_id} match between {team_x} and {team_y} was forfeited and awarded to {team_x}"
-        )
-    elif "*" in score_y:
-        print(
-            f"{match_id} match between {team_x} and {team_y} was forfeited and awarded to {team_y}"
-        )
-
     # extract managers and captains
     managers = pageSoup.find_all("div", {"class": "datapoint"})
-    manager_x = managers[0].text.replace("Manager: ", "")
-    manager_y = managers[2].text.replace("Manager: ", "")
-    captain_x = managers[1].find("a", href=True)["href"]
-    captain_y = managers[3].find("a", href=True)["href"]
+    manager_x = None
+    manager_y = None
+    captain_x = None
+    captain_y = None
+    captain_url_x = None
+    captain_url_y = None
+    captain_id_x = None
+    captain_id_y = None
+    managerOrder = []
+    for m in managers:
+        if "Manager: " in m.text:
+            managerOrder.append("Manager")
+        elif "Captain: " in m.text:
+            managerOrder.append("Captain")
+    if managerOrder == ["Manager", "Captain", "Manager", "Captain"]:
+        manager_x = managers[0].text.replace("Manager: ", "")
+        manager_y = managers[2].text.replace("Manager: ", "")
+        captain_x = managers[1].find("a", href=True).text
+        captain_y = managers[3].find("a", href=True).text
+        captain_url_x = managers[1].find("a", href=True)["href"]
+        captain_url_y = managers[3].find("a", href=True)["href"]
+        captain_id_x = captain_url_x.split("/")[3]
+        captain_id_y = captain_url_y.split("/")[3]
+    elif managerOrder == ["Manager", "Captain", "Captain"]:
+        manager_x = managers[0].text.replace("Manager: ", "")
+        captain_x = managers[1].find("a", href=True).text
+        captain_y = managers[2].find("a", href=True).text
+        captain_url_x = managers[1].find("a", href=True)["href"]
+        captain_url_y = managers[2].find("a", href=True)["href"]
+        captain_id_x = captain_url_x.split("/")[3]
+        captain_id_y = captain_url_y.split("/")[3]
+    elif managerOrder == ["Captain", "Manager", "Captain"]:
+        manager_y = managers[1].text.replace("Manager: ", "")
+        captain_x = managers[0].find("a", href=True).text
+        captain_y = managers[2].find("a", href=True).text
+        captain_url_x = managers[0].find("a", href=True)["href"]
+        captain_url_y = managers[2].find("a", href=True)["href"]
+        captain_id_x = captain_url_x.split("/")[3]
+        captain_id_y = captain_url_y.split("/")[3]
+    elif managerOrder == ["Manager", "Captain", "Manager"]:
+        manager_x = managers[0].text.replace("Manager: ", "")
+        manager_y = managers[2].text.replace("Manager: ", "")
+        captain_x = managers[1].find("a", href=True).text
+        captain_url_x = managers[1].find("a", href=True)["href"]
+        captain_id_x = captain_url_x.split("/")[3]
+    elif managerOrder == ["Manager", "Manager", "Captain"]:
+        manager_x = managers[0].text.replace("Manager: ", "")
+        manager_y = managers[1].text.replace("Manager: ", "")
+        captain_y = managers[2].find("a", href=True).text
+        captain_url_y = managers[2].find("a", href=True)["href"]
+        captain_id_y = captain_url_y.split("/")[3]
+    elif managerOrder == ["Manager", "Manager"]:
+        manager_x = managers[0].text.replace("Manager: ", "")
+        manager_y = managers[1].text.replace("Manager: ", "")
+    elif managerOrder == ["Captain", "Captain"]:
+        captain_x = managers[0].find("a", href=True).text
+        captain_y = managers[1].find("a", href=True).text
+        captain_url_x = managers[0].find("a", href=True)["href"]
+        captain_url_y = managers[1].find("a", href=True)["href"]
+        captain_id_x = captain_url_x.split("/")[3]
+        captain_id_y = captain_url_y.split("/")[3]
 
     # Find match information object
     scorebox_meta = pageSoup.find("div", {"class": "scorebox_meta"})
@@ -81,51 +129,66 @@ def fb_match_metadata(pageSoup=None, url: str = None):
     datetime = scorebox_meta.find("span", {"class": "venuetime"})
     date = datetime["data-venue-date"]
     kickoff = datetime["data-venue-time"]
+    league_info = pageSoup.find("div", {"id": "content"})
+    league_id = league_info.find("a", href=True)["href"].split("/")[3]
+    league = league_info.find("a", href=True).text
+    matchweek = (
+        re.search(r"\(([^)]+)", league_info.text).group(1).replace("Matchweek ", "")
+    )
 
     # extract attendance, venue, and official information
     scorebox_meta_ = scorebox_meta.find_all("div")
-    if "*Match awarded to " in scorebox_meta_[3].text:
-        scorebox_meta_.pop(3)
-    if scorebox_meta_[4].text.startswith("Attendance:"):
-        attendance = scorebox_meta_[4].text
-        attendance = attendance.replace("Attendance: ", "")
-        attendance = attendance.replace(",", "")
-        venue = scorebox_meta_[5].text.replace("Venue: ", "")
-        officials = scorebox_meta_[6].find_all("small")[1].text.split("\xa0· ")
-    else:
-        attendance = 0
-        venue = scorebox_meta_[4].text.replace("Venue: ", "")
-        officials = scorebox_meta_[5].find_all("small")[1].text.split("\xa0· ")
+    attendance = None
+    venue = None
+    officials = None
+    notes = None
+    for i in list(scorebox_meta_):
+        if "Attendance:" in i.text:
+            attendance = i.text.replace("Attendance: ", "").replace(",", "")
+        elif "Venue:" in i.text:
+            venue = i.text.replace("Venue: ", "")
+        elif "Officials:" in i.text:
+            officials = i.find_all("small")[1].text.split("\xa0· ")
+            for j in officials:
+                officials[officials.index(j)] = j.replace("\xa0", " ")
+        elif "Match awarded to " in i.text:
+            notes = i.text
 
     # generate dictionary for general metadata
     metadict = {
-        "url": url,
         "match_id": match_id,
+        "url": url,
+        "date": date,
+        "kickoff": kickoff,
+        "venue": venue,
+        "attendance": attendance,
+        "league_id": league_id,
+        "league": league,
         "id_x": id_x,
-        "id_y": id_y,
         "team_x": team_x,
+        "id_y": id_y,
         "team_y": team_y,
+        "manager_x": manager_x,
+        "manager_y": manager_y,
+        "captain_x": captain_x,
+        "captain_url_x": captain_url_x,
+        "captain_id_x": captain_id_x,
+        "captain_y": captain_y,
+        "captain_url_y": captain_url_y,
+        "captain_id_y": captain_id_y,
         "score_x": score_x,
         "score_y": score_y,
         "xg_x": xg_x,
         "xg_y": xg_y,
-        "manager_x": manager_x,
-        "manager_y": manager_y,
-        "captain_x": captain_x,
-        "captain_id_x": captain_x.split("/")[3],
-        "captain_y": captain_y,
-        "captain_id_y": captain_y.split("/")[3],
-        "date": date,
-        "kickoff": kickoff,
-        "attendance": attendance,
-        "venue": venue,
+        "matchweek": matchweek,
+        "notes": notes,
     }
 
     # extract officials
     referee = officials[0].replace(" (Referee)", "")
-    ar1 = officials[1].replace(" (AR1)", "")
-    ar2 = officials[2].replace(" (AR2)", "")
-    fourth = officials[3].replace(" (4th)", "")
+    ar1 = officials[1].replace(" (AR1)", "") if len(officials) > 1 else None
+    ar2 = officials[2].replace(" (AR2)", "") if len(officials) > 2 else None
+    fourth = officials[3].replace(" (4th)", "") if len(officials) > 3 else None
     var = officials[4].replace(" (VAR)", "") if len(officials) > 4 else None
 
     # generate dictionary for officials

@@ -5,25 +5,28 @@ import pandas as pd
 
 def tm_team_transfers(
     club: str,
-    season,
+    season: str,
+    domain: str = "us",
     position_group="All",
     main_position="All",
     window="All",
-    currency="EUR",
-):
-
+    team_id: int = None,
+    transfermarkt_name: bool = False,
+) -> list:
     """Extracts player transfer information
 
     Args:
         club (str): club name
         season (str): year at start of season
+        domain (str, optional): domain to use for transfermarkt. Defaults to "us".
         position_group (str): position group to filter by. Defaults to All.
         main_position (str): main position to filter by. Defaults to All.
         window (str): transfer window to filter by. Defaults to All.
-        currency (str): desired currency to return for values. Defaults to EUR.
+        team_id (int, optional): transfermarkt team id. Defaults to None.
+        transfermarkt_name (bool, optional): if True, club is a transfermarkt name. Defaults to False.
 
     Returns:
-        _type_: _description_
+        list: team transfers
     """
 
     # Validate variables
@@ -53,32 +56,21 @@ def tm_team_transfers(
     ], "Select a valid main position"
     assert window in ["All", "Summer", "Winter"], "Select a valid transfer window"
 
-    # Lookup team name
-    df = pd.read_csv(
-        "https://raw.githubusercontent.com/ian-shepherd/reus_data/main/raw-data/team_translations.csv",
-        keep_default_na=False,
-    )
-    df = df[
-        (df.fbref_name == club)
-        | (df.transfermarkt_name == club)
-        | (df.transfermarkt_link == club)
-        | (df.fcpython == club)
-        | (df.fivethirtyeight == club)
-    ]
-
-    season = str(season)
-
-    # Determine domain
-    match currency:
-        case "EUR":
-            domain = "https://www.transfermarkt.com"
-            signed_currency = "€"
-        case "GBP":
-            domain = "https://www.transfermarkt.co.uk"
-            signed_currency = "£"
-        case "USD":
-            domain = "https://www.transfermarkt.us"
-            signed_currency = "$"
+    if team_id is None and transfermarkt_name is False:
+        # Lookup team name
+        df = pd.read_csv(
+            "https://raw.githubusercontent.com/ian-shepherd/reus_data/main/raw-data/team_translations.csv",
+            keep_default_na=False,
+        )
+        df = df[
+            (df.fbref_name == club)
+            | (df.transfermarkt_name == club)
+            | (df.transfermarkt_link == club)
+            | (df.fcpython == club)
+            | (df.fivethirtyeight == club)
+        ]
+        club = df.transfermarkt_link.iloc[0]
+        team_id = int(df.transfermarkt.iloc[0])
 
     # Determine position group subdirectory
     match position_group:
@@ -137,31 +129,38 @@ def tm_team_transfers(
 
     # Generate url
     try:
-        subdir = "/".join(
-            (
-                "saison_id",
-                season,
-                "pos",
-                pos_group_subdir,
-                "detailpos",
-                pos_subdir,
-                "w_s",
-                window_subdir,
-                "plus/1#zugaenge",
-            )
-        )
-        page = "/".join(
-            (
-                domain,
-                df.transfermarkt_link.iloc[0],
-                "transfers/verein",
-                str(df.transfermarkt.iloc[0]),
-                subdir,
-            )
-        )
+        subdir = f"saison_id/{season}/pos/{pos_group_subdir}/detailpos/{pos_subdir}/w_s/{window_subdir}/plus/1#zugaenge"
+        page = f"https://www.transfermarkt.{domain}/{club}/transfers/verein/{str(team_id)}/{subdir}"
     except IndexError:
         print("This team does not exist, please confirm spelling")
         exit()
+
+    # try:
+    #     subdir = "/".join(
+    #         (
+    #             "saison_id",
+    #             season,
+    #             "pos",
+    #             pos_group_subdir,
+    #             "detailpos",
+    #             pos_subdir,
+    #             "w_s",
+    #             window_subdir,
+    #             "plus/1#zugaenge",
+    #         )
+    #     )
+    #     page = "/".join(
+    #         (
+    #             domain,
+    #             df.transfermarkt_link.iloc[0],
+    #             "transfers/verein",
+    #             str(df.transfermarkt.iloc[0]),
+    #             subdir,
+    #         )
+    #     )
+    # except IndexError:
+    #     print("This team does not exist, please confirm spelling")
+    #     exit()
 
     pageSoup = get_page_soup_headers(page)
 
@@ -194,7 +193,6 @@ def tm_team_transfers(
 
     # iterate over arrivals and departures
     for table in [table_arrivals, table_departures]:
-
         # error handling for no transfers
         try:
             tbody = table.find("tbody")
@@ -212,7 +210,6 @@ def tm_team_transfers(
 
         # iterate through each transfer and store attributes
         for row in rows:
-
             # check if valid row
             try:
                 row_ = row["class"] not in ["odd", "even"]
@@ -232,6 +229,7 @@ def tm_team_transfers(
 
             # transfer info
             mv = row.find("td", {"class": "rechts"}).text.strip()
+            mv = mv.replace("-", "0")
             transfer_club = hauptlink_class[1].text.strip()
             try:
                 transfer_club_url = hauptlink_class[1].find("a", href=True)["href"]
@@ -241,6 +239,7 @@ def tm_team_transfers(
             transfer_league_url = signing_class.find_next("a", href=True)["href"]
             transfer_country = signing_class["alt"]
             signed_value = hauptlink_class[-1].text
+            signed_currency = signed_value[0]
 
             # value cleaning
             if "End of loan" in signed_value:

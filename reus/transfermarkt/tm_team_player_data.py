@@ -3,66 +3,46 @@ from .util import tm_format_currency
 import pandas as pd
 
 
-def tm_team_player_urls(club: str, season: str, currency="EUR"):
-
+def tm_team_player_data(
+    club: str,
+    season: str,
+    domain: str = "us",
+    team_id: int = None,
+    transfermarkt_name: bool = False,
+) -> list:
     """Extracts basic player information for each player in a squad including basic player information,
     market value, and contract expiration
 
     Args:
         club (str): club name
         season (str): year at start of season
-        currency (str): desired currency to return for values. Defaults to EUR.
+        domain (str, optional): domain to use for transfermarkt. Defaults to "us".
+        team_id (int, optional): transfermarkt team id. Defaults to None.
+        transfermarkt_name (bool, optional): if True, club is a transfermarkt name. Defaults to False.
 
     Returns:
         list: squad players
     """
 
-    assert currency in [
-        "EUR",
-        "GBP",
-        "USD",
-    ], "Select a valid currency of EUR, GBP, or USD"
-
-    # Lookup team name
-    df = pd.read_csv(
-        "https://raw.githubusercontent.com/ian-shepherd/reus_data/main/raw-data/team_translations.csv",
-        keep_default_na=False,
-    )
-    df = df[
-        (df.fbref_name == club)
-        | (df.transfermarkt_name == club)
-        | (df.transfermarkt_link == club)
-        | (df.fcpython == club)
-        | (df.fivethirtyeight == club)
-    ]
-
-    season = str(season)
-
-    # Determine domain
-    match currency:
-        case "EUR":
-            domain = "https://www.transfermarkt.com"
-            signed_currency = "€"
-        case "GBP":
-            domain = "https://www.transfermarkt.co.uk"
-            signed_currency = "£"
-        case "USD":
-            domain = "https://www.transfermarkt.us"
-            signed_currency = "$"
+    if team_id is None and transfermarkt_name is False:
+        # Lookup team name
+        df = pd.read_csv(
+            "https://raw.githubusercontent.com/ian-shepherd/reus_data/main/raw-data/team_translations.csv",
+            keep_default_na=False,
+        )
+        df = df[
+            (df.fbref_name == club)
+            | (df.transfermarkt_name == club)
+            | (df.transfermarkt_link == club)
+            | (df.fcpython == club)
+            | (df.fivethirtyeight == club)
+        ]
+        club = df.transfermarkt_link.iloc[0]
+        team_id = int(df.transfermarkt.iloc[0])
 
     # Generate url
     try:
-        page = "/".join(
-            (
-                domain,
-                df.transfermarkt_link.iloc[0],
-                "kader/verein",
-                str(df.transfermarkt.iloc[0]),
-                "saison_id",
-                season,
-                "plus/1",
-            )
-        )
+        page = f"https://www.transfermarkt.{domain}/{club}/kader/verein/{str(team_id)}/saison_id/{season}/plus/1"
     except IndexError:
         print("This team does not exist, please confirm spelling")
         exit()
@@ -81,7 +61,6 @@ def tm_team_player_urls(club: str, season: str, currency="EUR"):
 
     # iterate through each transfer and store attributes
     for row in rows:
-
         # check if valid row
         try:
             num = row.find("div", {"class": "rn_nummer"}).text
@@ -145,12 +124,9 @@ def tm_team_player_urls(club: str, season: str, currency="EUR"):
         try:
             signed_from = data[-2].find("img")["alt"]
             signed_from_url = data[-2].find("a", href=True)["href"]
-            signed_value = data[-2].find("img")["title"].split()[-1]
-            signed_value = (
-                signed_value.replace(signed_currency, "")
-                .replace("-", "0")
-                .replace("transfer", "0")
-            )
+            signed_value = data[-2].find("a")["title"].split()[-1]
+            signed_currency = signed_value[0]
+            signed_value = signed_value.replace("-", "0").replace("transfer", "0")
             if signed_value == "?":
                 signed_value = "unknown"
             else:
@@ -159,6 +135,7 @@ def tm_team_player_urls(club: str, season: str, currency="EUR"):
             signed_from = None
             signed_from_url = None
             signed_value = None
+            signed_currency = None
 
         # extract contracted
         try:

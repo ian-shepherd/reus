@@ -2,8 +2,8 @@ from .fb_match_metadata import fb_match_metadata
 from ..util import get_page_soup
 
 
-def fb_match_summary_stats(pageSoup=None, url: str = None):
-    """Extracts summary statistics for each player in a given match that includes StatsBomb data
+def fb_match_summary_stats(pageSoup=None, url: str = None) -> tuple:
+    """Extracts summary statistics for each player in a given match that includes advanced data
 
     Args:
         pageSoup (bs4, optional): bs4 object of a match. Defaults to None.
@@ -41,10 +41,12 @@ def fb_match_summary_stats(pageSoup=None, url: str = None):
         # iterate through each player and store metrics
         for row in stats_players[2:-1]:
             th = row.find("th")
+
+            # general
             try:
+                name = th.text.replace("\xa0", "")
+            except AttributeError:
                 name = th["csk"]
-            except KeyError:
-                name = th.text
             player_id = th.find("a", href=True)["href"].split("/")[3]
 
             shirtnumber = row.find("td", {"data-stat": "shirtnumber"}).text
@@ -56,38 +58,49 @@ def fb_match_summary_stats(pageSoup=None, url: str = None):
             except ValueError:
                 age = None
             minutes = row.find("td", {"data-stat": "minutes"}).text
+
+            # performance
             goals = row.find("td", {"data-stat": "goals"}).text
             assists = row.find("td", {"data-stat": "assists"}).text
             pk = row.find("td", {"data-stat": "pens_made"}).text
             pk_attempted = row.find("td", {"data-stat": "pens_att"}).text
-            shots = row.find("td", {"data-stat": "shots_total"}).text
+            shots = row.find("td", {"data-stat": "shots"}).text
             shots_on_target = row.find("td", {"data-stat": "shots_on_target"}).text
             card_yellow = row.find("td", {"data-stat": "cards_yellow"}).text
             card_red = row.find("td", {"data-stat": "cards_red"}).text
             touches = row.find("td", {"data-stat": "touches"}).text
-            pressures = row.find("td", {"data-stat": "pressures"}).text
             tackles = row.find("td", {"data-stat": "tackles"}).text
             interceptions = row.find("td", {"data-stat": "interceptions"}).text
             blocks = row.find("td", {"data-stat": "blocks"}).text
+
+            # expected
             xG = row.find("td", {"data-stat": "xg"}).text
             npxG = row.find("td", {"data-stat": "npxg"}).text
-            xA = row.find("td", {"data-stat": "xa"}).text
+            xA = row.find("td", {"data-stat": "xg_assist"}).text
+
+            # sca
             shot_creating_actions = row.find("td", {"data-stat": "sca"}).text
             goal_creating_actions = row.find("td", {"data-stat": "gca"}).text
+
+            # passes
             passes_completed = row.find("td", {"data-stat": "passes_completed"}).text
             passes_attempted = row.find("td", {"data-stat": "passes"}).text
             pass_accuracy = row.find("td", {"data-stat": "passes_pct"}).text
-            pass_progressive_distance = row.find(
+            progressive_passes = row.find(
                 "td", {"data-stat": "progressive_passes"}
             ).text
+
+            # carries
             carries = row.find("td", {"data-stat": "carries"}).text
-            dribble_progressive_distance = row.find(
+            progressive_carries = row.find(
                 "td", {"data-stat": "progressive_carries"}
             ).text
-            dribble_success = row.find("td", {"data-stat": "dribbles_completed"}).text
-            dribble_attempt = row.find("td", {"data-stat": "dribbles"}).text
 
-            # generate dictionary for team
+            # take ons
+            dribble_success = row.find("td", {"data-stat": "take_ons_won"}).text
+            dribble_attempt = row.find("td", {"data-stat": "take_ons"}).text
+
+            # generate dictionary for player
             mydict = {
                 "player_id": player_id,
                 "name": name,
@@ -105,7 +118,6 @@ def fb_match_summary_stats(pageSoup=None, url: str = None):
                 "card_yellow": card_yellow,
                 "card_red": card_red,
                 "touches": touches,
-                "pressures": pressures,
                 "tackles": tackles,
                 "interceptions": interceptions,
                 "blocks": blocks,
@@ -116,15 +128,15 @@ def fb_match_summary_stats(pageSoup=None, url: str = None):
                 "goal_creating_actions": goal_creating_actions,
                 "passes_completed": passes_completed,
                 "passes_attempted": passes_attempted,
-                "passes_accuracy": pass_accuracy,
-                "pass_progressive_distance": pass_progressive_distance,
+                "pass_accuracy": pass_accuracy,
+                "progressive_passes": progressive_passes,
                 "carries": carries,
-                "dribble_progressive_distance": dribble_progressive_distance,
+                "progressive_carries": progressive_carries,
                 "dribble_success": dribble_success,
                 "dribble_attempt": dribble_attempt,
             }
 
-            # add to empty list
+            # add to team list
             mylist.append(mydict)
 
         # assign list to appropriate team

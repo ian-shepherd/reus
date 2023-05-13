@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = "reus"
-copyright = "2022, Ian Shepherd"
+copyright = "2023, Ian Shepherd"
 author = "Ian Shepherd"
 
 # The full version, including alpha/beta/rc tags
-release = "1.0.4"
+release = "1.1.1"
 
 
 # -- General configuration ---------------------------------------------------

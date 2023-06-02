@@ -1,0 +1,25 @@
+Utils
+======
+
+Complete list of all util functions
+
+Functions
+---------
+
+.. py:function:: .utils.generate_standings(df: pd.DataFrame, matches: str = "All", xG: bool = False) -> pd.DataFrame
+
+    Returns a dataframe of league standings from given match results. xPts are calculated using the xGD of each match.
+
+    :param df: Dataframe of match results
+    :type df: pd.DataFrame
+    :param matches: type of matches to include in standings. Defaults to "All".
+
+        - ``All``: all matches
+        - ``Home``: Only home matches
+        - ``Away``: Only away matches
+
+    :type matches: str, optional
+    :param xG: whether to include expected calculations. Defaults to False.
+    :type xG: bool, optional
+    :return: Dataframe of league standings
+    :rtype: DataFrame

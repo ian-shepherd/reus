@@ -14,7 +14,6 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -73,13 +72,139 @@
            <div itemprop="articleBody">
              
   <section id="fotmob">
-<h1>Fotmob<a class="headerlink" href="#fotmob" title="Permalink to this heading"></a></h1>
+<h1>Fotmob<a class="headerlink" href="#fotmob" title="Permalink to this headline"></a></h1>
 <p>Complete list of all fotmob functions</p>
 <section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="fotmob.fm_leaague_ids">
+<span id=".fotmob.fm_leaague_ids"></span><span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_leaague_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ccode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">league_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.Series</span></span></span><a class="headerlink" href="#fotmob.fm_leaague_ids" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a series of league ids</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>competition_type</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>None</em>) – <p>type of competition. Defaults to None.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Leagues</span> <span class="pre">-</span> <span class="pre">1st</span> <span class="pre">Tier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Leagues</span> <span class="pre">-</span> <span class="pre">2nd</span> <span class="pre">Tier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Leagues</span> <span class="pre">-</span> <span class="pre">3rd</span> <span class="pre">Tier</span> <span class="pre">and</span> <span class="pre">Lower</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Cups</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Youth</span> <span class="pre">Leagues</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Club</span> <span class="pre">International</span> <span class="pre">Cups</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">National</span> <span class="pre">Team</span> <span class="pre">Competitions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">National</span> <span class="pre">Team</span> <span class="pre">Qualification</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>competition_name</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>None</em>) – name of competition. Defaults to None.</p></li>
+<li><p><strong>ccode</strong> (<em>str</em><em> or </em><em>None</em>) – country code of a league. Defaults to None.</p></li>
+<li><p><strong>country</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>None</em>) – country of competition. Defaults to None.</p></li>
+<li><p><strong>gender</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>None</em>) – <p>gender of competition. Defaults to None.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">M</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W</span></code></p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>league ids</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fotmob.fm_league_matches">
+<span id=".fotmob.fm_league_matches"></span><span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_league_matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">league_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">json</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame:</span></span></span><a class="headerlink" href="#fotmob.fm_league_matches" title="Permalink to this definition"></a></dt>
+<dd><p>Returns matches of a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>league_id</strong> (<em>str</em>) – id of a league</p></li>
+<li><p><strong>json_file</strong> (<em>json</em><em> or </em><em>None</em>) – json file of league page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>league matches</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fotmob.fm_league_table">
+<span id=".fotmob.fm_league_table"></span><span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_league_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">league_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matches</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">json</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict:</span></span></span><a class="headerlink" href="#fotmob.fm_league_table" title="Permalink to this definition"></a></dt>
+<dd><p>Returns standing of a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>league_id</strong> (<em>str</em>) – id of a league</p></li>
+<li><p><strong>matches</strong> (<em>str</em>) – <p>type of matches to include in standings. Defaults to “All”.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">All</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Home</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Away</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Form</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>json_file</strong> (<em>json</em><em> or </em><em>None</em>) – json file of league page. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>league standings</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fotmob.fm_league_urls">
+<span id=".fotmob.fm_league_urls"></span><span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_league_urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">competition_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">competition_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ccode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.Series:</span></span></span><a class="headerlink" href="#fotmob.fm_league_urls" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a series of league urls for the current season</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>competition_type</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>None</em>) – <p>type of competition. Defaults to None.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Leagues</span> <span class="pre">-</span> <span class="pre">1st</span> <span class="pre">Tier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Leagues</span> <span class="pre">-</span> <span class="pre">2nd</span> <span class="pre">Tier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Leagues</span> <span class="pre">-</span> <span class="pre">3rd</span> <span class="pre">Tier</span> <span class="pre">and</span> <span class="pre">Lower</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Cups</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Domestic</span> <span class="pre">Youth</span> <span class="pre">Leagues</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Club</span> <span class="pre">International</span> <span class="pre">Cups</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">National</span> <span class="pre">Team</span> <span class="pre">Competitions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">National</span> <span class="pre">Team</span> <span class="pre">Qualification</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>competition_name</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>None</em>) – name of competition. Defaults to None.</p></li>
+<li><p><strong>ccode</strong> (<em>str</em><em> or </em><em>None</em>) – country code of a league. Defaults to None.</p></li>
+<li><p><strong>country</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>None</em>) – country of competition. Defaults to None.</p></li>
+<li><p><strong>gender</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>None</em>) – <p>gender of competition. Defaults to None.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">M</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W</span></code></p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>league urls</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>series</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="fotmob.fm_leagues">
-<span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_leagues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ccode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">league_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#fotmob.fm_leagues" title="Permalink to this definition"></a></dt>
+<span id=".fotmob.fm_leagues"></span><span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_leagues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ccode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">league_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#fotmob.fm_leagues" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a dataframe of league information</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -101,11 +226,15 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fotmob.fm_match_data">
-<span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_match_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fotmob.fm_match_data" title="Permalink to this definition"></a></dt>
+<span id=".fotmob.fm_match_data"></span><span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_match_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">json</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#fotmob.fm_match_data" title="Permalink to this definition"></a></dt>
 <dd><p>Returns metadata and match data for a given match id</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>match_id</strong> (<em>str</em>) – id of a match</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>match_id</strong> (<em>str</em>) – id of a match</p></li>
+<li><p><strong>save_json</strong> (<em>bool</em>) – whether to save json of match page. Defaults to False.</p></li>
+<li><p><strong>json_file</strong> (<em>json</em><em> or </em><em>None</em>) – json file of match page. Defaults to None.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>match data and json of match page (optional)</p>
@@ -118,7 +247,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fotmob.fm_match_ids">
-<span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_match_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ccode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">league_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fotmob.fm_match_ids" title="Permalink to this definition"></a></dt>
+<span id=".fotmob.fm_match_ids"></span><span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_match_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ccode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">league_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#fotmob.fm_match_ids" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a list of match ids for a given date</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -134,6 +263,188 @@
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fotmob.fm_season_stat_leaders">
+<span id=".fotmob.fm_season_stat_leaders"></span><span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_season_stat_leaders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">league_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">team_or_player</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">json</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Non</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame:</span></span></span><a class="headerlink" href="#fotmob.fm_season_stat_leaders" title="Permalink to this definition"></a></dt>
+<dd><p>Returns top 3 stat leaders of a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>league_id</strong> (<em>str</em>) – id of a league</p></li>
+<li><p><strong>team_or_player</strong> (<em>str</em>) – <p>whether to return team or player stat leaders. Defaults to “player”.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">player</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">team</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>stat_name</strong> (<em>list</em>) – <p>name of stats.</p>
+<p>Player stats:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">long</span> <span class="pre">balls</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">passes</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Assists</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Big</span> <span class="pre">chances</span> <span class="pre">created</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Big</span> <span class="pre">chances</span> <span class="pre">missed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Blocks</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Chances</span> <span class="pre">created</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clean</span> <span class="pre">sheets</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clearances</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">assist</span> <span class="pre">(xA)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">assist</span> <span class="pre">(xA)</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">goals</span> <span class="pre">(xG)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">goals</span> <span class="pre">(xG)</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">goals</span> <span class="pre">on</span> <span class="pre">target</span> <span class="pre">(xGOT)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FotMob</span> <span class="pre">rating</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fouls</span> <span class="pre">committed</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">+</span> <span class="pre">Assists</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">conceded</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">prevented</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Interceptions</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Penalties</span> <span class="pre">conceded</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Penalties</span> <span class="pre">won</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Possession</span> <span class="pre">won</span> <span class="pre">final</span> <span class="pre">3rd</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Red</span> <span class="pre">cards</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">percentage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Saves</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shots</span> <span class="pre">on</span> <span class="pre">target</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shots</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Successful</span> <span class="pre">dribbles</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Successful</span> <span class="pre">tackles</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Top</span> <span class="pre">scorer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xG</span> <span class="pre">+</span> <span class="pre">xA</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Yellow</span> <span class="pre">cards</span></code></p></li>
+</ul>
+<p>Team stats:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">crosses</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">long</span> <span class="pre">balls</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">passes</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Average</span> <span class="pre">possession</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Big</span> <span class="pre">chances</span> <span class="pre">created</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Big</span> <span class="pre">chances</span> <span class="pre">missed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clean</span> <span class="pre">sheets</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clearances</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">goals</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FotMob</span> <span class="pre">rating</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fouls</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">conceded</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Interceptions</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Penalties</span> <span class="pre">awarded</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Penalties</span> <span class="pre">conceded</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Possession</span> <span class="pre">won</span> <span class="pre">final</span> <span class="pre">3rd</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Red</span> <span class="pre">cards</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Saves</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shots</span> <span class="pre">on</span> <span class="pre">target</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Successful</span> <span class="pre">tackles</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xG</span> <span class="pre">conceded</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Yellow</span> <span class="pre">cards</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>json_file</strong> (<em>json</em><em> or </em><em>None</em>) – json file of stat data. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>stat leaders</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fotmob.fm_season_stats">
+<span id=".fotmob.fm_season_stats"></span><span class="sig-prename descclassname"><span class="pre">.fotmob.</span></span><span class="sig-name descname"><span class="pre">fm_season_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">league_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">team_or_player</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">json</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Non</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame:</span></span></span><a class="headerlink" href="#fotmob.fm_season_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Returns complete list of stat leaders of a given league</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>league_id</strong> (<em>str</em>) – id of a league</p></li>
+<li><p><strong>team_or_player</strong> (<em>str</em>) – <p>whether to return team or player stat leaders. Defaults to “player”.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">player</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">team</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>stat_name</strong> (<em>list</em>) – <p>name of stats.</p>
+<p>Player stats:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">long</span> <span class="pre">balls</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">passes</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Assists</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Big</span> <span class="pre">chances</span> <span class="pre">created</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Big</span> <span class="pre">chances</span> <span class="pre">missed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Blocks</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Chances</span> <span class="pre">created</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clean</span> <span class="pre">sheets</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clearances</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">assist</span> <span class="pre">(xA)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">assist</span> <span class="pre">(xA)</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">goals</span> <span class="pre">(xG)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">goals</span> <span class="pre">(xG)</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">goals</span> <span class="pre">on</span> <span class="pre">target</span> <span class="pre">(xGOT)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FotMob</span> <span class="pre">rating</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fouls</span> <span class="pre">committed</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">+</span> <span class="pre">Assists</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">conceded</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">prevented</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Interceptions</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Penalties</span> <span class="pre">conceded</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Penalties</span> <span class="pre">won</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Possession</span> <span class="pre">won</span> <span class="pre">final</span> <span class="pre">3rd</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Red</span> <span class="pre">cards</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">percentage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Saves</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shots</span> <span class="pre">on</span> <span class="pre">target</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shots</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Successful</span> <span class="pre">dribbles</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Successful</span> <span class="pre">tackles</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Top</span> <span class="pre">scorer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xG</span> <span class="pre">+</span> <span class="pre">xA</span> <span class="pre">per</span> <span class="pre">90</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Yellow</span> <span class="pre">cards</span></code></p></li>
+</ul>
+<p>Team stats:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">crosses</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">long</span> <span class="pre">balls</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accurate</span> <span class="pre">passes</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Average</span> <span class="pre">possession</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Big</span> <span class="pre">chances</span> <span class="pre">created</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Big</span> <span class="pre">chances</span> <span class="pre">missed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clean</span> <span class="pre">sheets</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Clearances</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expected</span> <span class="pre">goals</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FotMob</span> <span class="pre">rating</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fouls</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">conceded</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Goals</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Interceptions</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Penalties</span> <span class="pre">awarded</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Penalties</span> <span class="pre">conceded</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Possession</span> <span class="pre">won</span> <span class="pre">final</span> <span class="pre">3rd</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Red</span> <span class="pre">cards</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Saves</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shots</span> <span class="pre">on</span> <span class="pre">target</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Successful</span> <span class="pre">tackles</span> <span class="pre">per</span> <span class="pre">match</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xG</span> <span class="pre">conceded</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Yellow</span> <span class="pre">cards</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>json_file</strong> (<em>json</em><em> or </em><em>None</em>) – json file of stat data. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>stat leaders</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dataframe</p>
 </dd>
 </dl>
 </dd></dl>

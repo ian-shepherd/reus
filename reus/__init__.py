@@ -1,5 +1,6 @@
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 
-from .fbref import *
-from .fotmob import *
-from .transfermarkt import *
+from .fbref import *  # noqa: F403
+from .fotmob import *  # noqa: F403
+from .transfermarkt import *  # noqa: F403
+from .utils import *  # noqa: F403

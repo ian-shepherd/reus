@@ -4,9 +4,19 @@ Follow](https://img.shields.io/twitter/follow/ishep123?style=social)](https://tw
 Follow](https://img.shields.io/twitter/follow/theFirmAISports?style=social)](https://twitter.com/theFirmAISports)
 
 
-## Soccer/Football Team Information
+# Overview
 
-This package is designed to extract match statistics and league information from fbref in addition to player and team information from transfermarkt. Specific shoutout to [worldfootballR](https://github.com/JaseZiv/worldfootballR) and their associated [dataset](https://github.com/JaseZiv/worldfootballR_data) that provided the inspiration to build the python version.
+Reus is a Python library that provides a convenient way to scrape soccer data from various sources, including FBref, FotMob, and Transfermarkt. It aims to simplify the process of accessing and analyzing soccer-related information for data enthusiasts and sports analysts.
+
+## Features
+
+- Retrieve detailed soccer statistics, including player and team performance metrics.
+- Fetch fixture information for specific seasons and competitions.
+- Access transfer market data, including player transfers, contract details, and market values.
+
+## Inspiration
+
+Reus takes inspiration from the R package [worldfootballR](https://github.com/JaseZiv/worldfootballR), and their associated [dataset](https://github.com/JaseZiv/worldfootballR_data), which is known for its extensive soccer data scraping capabilities. While Reus mimics some of the functionalities of worldfootballR, it is designed specifically for Python users, providing similar functionality and ease of use.
 
 ## Installation
 
@@ -30,10 +40,9 @@ time.sleep(4)
 
 It is a minor inconvenience to you but lets us all keep accessing the data.
 
-Additional documentation is provided [here](https://ian-shepherd.github.io/reus/)
+More detailed documentation is provided [here](https://ian-shepherd.github.io/reus/)
 
 ## Roadmap
-  - add fotmob league table and statistics functionality
   - translation function for players and teams
   - change outputs of fbref functions from lists and tuples to dictionaries
   - fbref player scouting reports

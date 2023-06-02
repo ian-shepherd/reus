@@ -130,7 +130,7 @@ Match functions
    :return: (summary stats for home team players, summary stats for away team players)
    :rtype: (list, list)
 
-.. py:function:: .fbref.fb_match_summary(pageSoup)
+.. py:function:: .fbref.fb_match_summary(pageSoup) -> list
 
    Extracts events (goals, bookings, and substitutions) from match summary for a given match
 
@@ -141,7 +141,7 @@ Match functions
    :return: events
    :rtype: list[dict]
 
-.. py:function:: .fbref.fb_match_team_stats(pageSoup=None, url: str = None)
+.. py:function:: .fbref.fb_match_team_stats(pageSoup=None, url: str = None) -> dict
 
    Extracts summary stats for each team in a given match
 
@@ -156,7 +156,7 @@ Match functions
 League functions
 ----------------
 
-.. py:function:: .fbref.fb_league_table(url: str)
+.. py:function:: .fbref.fb_league_table(url: str) -> list
 
    Returns a list of league table and basic information in a season
 
@@ -165,7 +165,7 @@ League functions
    :return: league table
    :rtype: list[dict]
 
-.. py:function:: .fbref.fb_match_urls(url: str)
+.. py:function:: .fbref.fb_match_urls(url: str) -> list
 
    Returns a list of urls for matches in a season
 
@@ -174,50 +174,120 @@ League functions
    :return: match urls for given season
    :rtype: list[str]
 
-.. py:function:: .fbref.fb_season_fixture_urls(competition_type: str = None, competition_name: str = None, country: str = None, gender: str = None, governing_body: str = None, tier: str = None, season_end_year: int = None, stats_bomb: str = None)
+.. py:function:: .fbref.fb_season_fixture_urls(competition_type: str = None, competition_name: str = None, country: str = None, gender: str = None, governing_body: str = None, tier: str = None, season_end_year: int = None, stats_bomb: str = None) -> pd.Series
 
    Returns a series of urls for fixture section of a season
 
    :param competition_type: type of competition. Defaults to None.
+      
+      - ``Domestic Leagues - 1st Tier``
+      - ``Domestic Leagues - 2nd Tier``
+      - ``Domestic Leagues - 3rd Tier and Lower``
+      - ``Domestic Cups``
+      - ``Domestic Youth Leagues``
+      - ``Club International Cups``
+      - ``National Team Competitions``
+      - ``National Team Qualification``
+
    :type competition_type: str, list, or None
    :param competition_name: name of competition. Defaults to None.
    :type competition_name: str, list, or None
    :param country: country of competition. Defaults to None.
    :type country: str, list, or None
    :param gender: gender of competition. Defaults to None.
+
+      - ``M``
+      - ``W``
+      
    :type gender: str, list, or None
    :param governing_body: governing body of competition. Defaults to None.
+
+      - ``AFC``
+      - ``CAF``
+      - ``CONMEBOL``
+      - ``CONCACAF``
+      - ``OFC``
+      - ``UEFA``
+      - ``FIFA``
+
    :type governing_body: str, list, or None
    :param tier: tier of competition. Defaults to None.
    :type tier: str, list, or None
+
+      - ``1st``
+      - ``2nd``
+      - ``3rd``
+      - ``4th``
+      - ``5th``
+      - ``Youth``
+
    :param season_end: year at end of competition. Defaults to None.
    :type season_end: int, list, or None
    :param stats_bomb: flag for if statsbomb data is available. Defaults to None.
+
+      - ``Y``
+      - ``N``
+
    :type stats_bomb: str, list, or None
    :return: season fixture urls
    :rtype: series
 
-.. py:function:: .fbref.fb_season_urls(competition_type: str = None, competition_name: str = None, country: str = None, gender: str = None, governing_body: str = None, tier: str = None, season_end_year: int = None, stats_bomb: str = None)
+.. py:function:: .fbref.fb_season_urls(competition_type: str = None, competition_name: str = None, country: str = None, gender: str = None, governing_body: str = None, tier: str = None, season_end_year: int = None, stats_bomb: str = None) -> pd.Series
 
    Returns a series of urls for overview section of a season
 
    :param competition_type: type of competition. Defaults to None.
+      
+      - ``Domestic Leagues - 1st Tier``
+      - ``Domestic Leagues - 2nd Tier``
+      - ``Domestic Leagues - 3rd Tier and Lower``
+      - ``Domestic Cups``
+      - ``Domestic Youth Leagues``
+      - ``Club International Cups``
+      - ``National Team Competitions``
+      - ``National Team Qualification``
+
    :type competition_type: str, list, or None
    :param competition_name: name of competition. Defaults to None.
    :type competition_name: str, list, or None
    :param country: country of competition. Defaults to None.
    :type country: str, list, or None
    :param gender: gender of competition. Defaults to None.
+
+      - ``M``
+      - ``W``
+      
    :type gender: str, list, or None
    :param governing_body: governing body of competition. Defaults to None.
+
+      - ``AFC``
+      - ``CAF``
+      - ``CONMEBOL``
+      - ``CONCACAF``
+      - ``OFC``
+      - ``UEFA``
+      - ``FIFA``
+
    :type governing_body: str, list, or None
    :param tier: tier of competition. Defaults to None.
    :type tier: str, list, or None
+
+      - ``1st``
+      - ``2nd``
+      - ``3rd``
+      - ``4th``
+      - ``5th``
+      - ``Youth``
+
    :param season_end: year at end of competition. Defaults to None.
    :type season_end: int, list, or None
    :param stats_bomb: flag for if statsbomb data is available. Defaults to None.
+
+      - ``Y``
+      - ``N``
+
    :type stats_bomb: str, list, or None
-   :return: season urls
+   :return: season fixture urls
    :rtype: series
 
 .. py:function:: .fbref.fb_team_advanced_keeper_stats(pageSoup=None, url: str = None) -> list

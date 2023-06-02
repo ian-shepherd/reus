@@ -26,6 +26,7 @@ It is a minor inconvenience to you but lets us all keep accessing the data.
    fbref
    fotmob
    transfermarkt
+   utils
 
 
 .. note::

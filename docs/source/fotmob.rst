@@ -5,6 +5,100 @@ Complete list of all fotmob functions
 
 Functions
 ---------
+
+.. py:function:: .fotmob.fm_leaague_ids(ccode: str = None, country: str = None, league_id: str = None, name: str = None) -> pd.Series
+
+    Returns a series of league ids
+
+    :param competition_type: type of competition. Defaults to None.
+      
+      - ``Domestic Leagues - 1st Tier``
+      - ``Domestic Leagues - 2nd Tier``
+      - ``Domestic Leagues - 3rd Tier and Lower``
+      - ``Domestic Cups``
+      - ``Domestic Youth Leagues``
+      - ``Club International Cups``
+      - ``National Team Competitions``
+      - ``National Team Qualification``
+
+    :type competition_type: str, list, or None
+    :param competition_name: name of competition. Defaults to None.
+    :type competition_name: str, list, or None
+    :param ccode: country code of a league. Defaults to None.
+    :type ccode: str or None
+    :param country: country of competition. Defaults to None.
+    :type country: str, list, or None
+    :param gender: gender of competition. Defaults to None.
+
+      - ``M``
+      - ``W``
+      
+    :type gender: str, list, or None
+    :return: league ids
+    :rtype: series
+
+.. py:function:: .fotmob.fm_league_matches(league_id: str, json_file: json = None) -> pd.DataFrame:
+
+    Returns matches of a given league
+
+    :param league_id: id of a league
+    :type league_id: str
+    :param json_file: json file of league page. Defaults to None.
+    :type json_file: json or None
+    :return: league matches
+    :rtype: dataframe
+
+.. py:function:: .fotmob.fm_league_table(league_id: str, matches="All", json_file: json = None) -> dict:
+
+    Returns standing of a given league
+
+    :param league_id: id of a league
+    :type league_id: str
+    :param matches: type of matches to include in standings. Defaults to "All".
+    
+        - ``All``
+        - ``Home``
+        - ``Away``
+        - ``Form``
+    
+    :type matches: str
+    :param json_file: json file of league page. Defaults to None.
+    :type json_file: json or None
+    :return: league standings
+    :rtype: dict
+
+.. py:function:: .fotmob.fm_league_urls(competition_type: str = None, competition_name: str = None, ccode: str = None, country: str = None, gender: str = None) -> pd.Series:
+
+    Returns a series of league urls for the current season
+
+    :param competition_type: type of competition. Defaults to None.
+      
+      - ``Domestic Leagues - 1st Tier``
+      - ``Domestic Leagues - 2nd Tier``
+      - ``Domestic Leagues - 3rd Tier and Lower``
+      - ``Domestic Cups``
+      - ``Domestic Youth Leagues``
+      - ``Club International Cups``
+      - ``National Team Competitions``
+      - ``National Team Qualification``
+
+    :type competition_type: str, list, or None
+    :param competition_name: name of competition. Defaults to None.
+    :type competition_name: str, list, or None
+    :param ccode: country code of a league. Defaults to None.
+    :type ccode: str or None
+    :param country: country of competition. Defaults to None.
+    :type country: str, list, or None
+    :param gender: gender of competition. Defaults to None.
+
+        - ``M``
+        - ``W``
+    
+    :type gender: str, list, or None
+    :return: league urls
+    :rtype: series
+    
+    
 .. py:function:: .fotmob.fm_leagues(ccode: str = None, country: str = None, league_id: str = None, name: str = None) -> pd.DataFrame
 
     Returns a dataframe of league information
@@ -20,12 +114,16 @@ Functions
     :return: league information
     :rtype: dataframe
 
-.. py:function:: .fotmob.fm_match_data(match_id: str) -> tuple
+.. py:function:: .fotmob.fm_match_data(match_id: str, save_json: bool = False, json_file: json = None) -> tuple
 
     Returns metadata and match data for a given match id
 
     :param match_id: id of a match
     :type match_id: str
+    :param save_json: whether to save json of match page. Defaults to False.
+    :type save_json: bool
+    :param json_file: json file of match page. Defaults to None.
+    :type json_file: json or None
     :return: match data and json of match page (optional)
     :rtype: (dict, list, list, list, list, list, list, json) or (dict, list, list, list, list, list, list)
 
@@ -44,4 +142,170 @@ Functions
     :return: match ids
     :rtype: list
     
+
+.. py:function:: .fotmob.fm_season_stat_leaders(league_id: str, team_or_player: str, stat_name: list, json_file: json = Non) -> pd.DataFrame:
+
+    Returns top 3 stat leaders of a given league
+
+    :param league_id: id of a league
+    :type league_id: str
+    :param team_or_player: whether to return team or player stat leaders. Defaults to "player".
+    
+        - ``player``
+        - ``team``
+
+    :type team_or_player: str
+    :param stat_name: name of stats.
+
+        Player stats:
+
+        - ``Accurate long balls per 90``
+        - ``Accurate passes per 90``
+        - ``Assists``
+        - ``Big chances created``
+        - ``Big chances missed``
+        - ``Blocks per 90``
+        - ``Chances created``
+        - ``Clean sheets``
+        - ``Clearances per 90``
+        - ``Expected assist (xA)``
+        - ``Expected assist (xA) per 90``
+        - ``Expected goals (xG)``
+        - ``Expected goals (xG) per 90``
+        - ``Expected goals on target (xGOT)``
+        - ``FotMob rating``
+        - ``Fouls committed per 90``
+        - ``Goals + Assists``
+        - ``Goals conceded per 90``
+        - ``Goals per 90``
+        - ``Goals prevented``
+        - ``Interceptions per 90``
+        - ``Penalties conceded``
+        - ``Penalties won``
+        - ``Possession won final 3rd per 90``
+        - ``Red cards``
+        - ``Save percentage``
+        - ``Saves per 90``
+        - ``Shots on target per 90``
+        - ``Shots per 90``
+        - ``Successful dribbles per 90``
+        - ``Successful tackles per 90``
+        - ``Top scorer``
+        - ``xG + xA per 90``
+        - ``Yellow cards``
+
+        Team stats:
+
+        - ``Accurate crosses per match``
+        - ``Accurate long balls per match``
+        - ``Accurate passes per match``
+        - ``Average possession``
+        - ``Big chances created``
+        - ``Big chances missed``
+        - ``Clean sheets``
+        - ``Clearances per match``
+        - ``Expected goals``
+        - ``FotMob rating``
+        - ``Fouls per match``
+        - ``Goals conceded per match``
+        - ``Goals per match``
+        - ``Interceptions per match``
+        - ``Penalties awarded``
+        - ``Penalties conceded``
+        - ``Possession won final 3rd per match``
+        - ``Red cards``
+        - ``Saves per match``
+        - ``Shots on target per match``
+        - ``Successful tackles per match``
+        - ``xG conceded``
+        - ``Yellow cards``
+
+    :type stat_name: list
+    :param json_file: json file of stat data. Defaults to None.
+    :type json_file: json or None
+    :return: stat leaders
+    :rtype: dataframe
+
+.. py:function:: .fotmob.fm_season_stats(league_id: str, team_or_player: str, stat_name: list, json_file: json = Non) -> pd.DataFrame:
+
+    Returns complete list of stat leaders of a given league
+
+    :param league_id: id of a league
+    :type league_id: str
+    :param team_or_player: whether to return team or player stat leaders. Defaults to "player".
+    
+        - ``player``
+        - ``team``
+
+    :type team_or_player: str
+    :param stat_name: name of stats.
+
+        Player stats:
+
+        - ``Accurate long balls per 90``
+        - ``Accurate passes per 90``
+        - ``Assists``
+        - ``Big chances created``
+        - ``Big chances missed``
+        - ``Blocks per 90``
+        - ``Chances created``
+        - ``Clean sheets``
+        - ``Clearances per 90``
+        - ``Expected assist (xA)``
+        - ``Expected assist (xA) per 90``
+        - ``Expected goals (xG)``
+        - ``Expected goals (xG) per 90``
+        - ``Expected goals on target (xGOT)``
+        - ``FotMob rating``
+        - ``Fouls committed per 90``
+        - ``Goals + Assists``
+        - ``Goals conceded per 90``
+        - ``Goals per 90``
+        - ``Goals prevented``
+        - ``Interceptions per 90``
+        - ``Penalties conceded``
+        - ``Penalties won``
+        - ``Possession won final 3rd per 90``
+        - ``Red cards``
+        - ``Save percentage``
+        - ``Saves per 90``
+        - ``Shots on target per 90``
+        - ``Shots per 90``
+        - ``Successful dribbles per 90``
+        - ``Successful tackles per 90``
+        - ``Top scorer``
+        - ``xG + xA per 90``
+        - ``Yellow cards``
+
+        Team stats:
+
+        - ``Accurate crosses per match``
+        - ``Accurate long balls per match``
+        - ``Accurate passes per match``
+        - ``Average possession``
+        - ``Big chances created``
+        - ``Big chances missed``
+        - ``Clean sheets``
+        - ``Clearances per match``
+        - ``Expected goals``
+        - ``FotMob rating``
+        - ``Fouls per match``
+        - ``Goals conceded per match``
+        - ``Goals per match``
+        - ``Interceptions per match``
+        - ``Penalties awarded``
+        - ``Penalties conceded``
+        - ``Possession won final 3rd per match``
+        - ``Red cards``
+        - ``Saves per match``
+        - ``Shots on target per match``
+        - ``Successful tackles per match``
+        - ``xG conceded``
+        - ``Yellow cards``
+
+    :type stat_name: list
+    :param json_file: json file of stat data. Defaults to None.
+    :type json_file: json or None
+    :return: stat leaders
+    :rtype: dataframe
 

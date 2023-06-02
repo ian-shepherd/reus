@@ -12,6 +12,8 @@ def fm_match_data(
 
     Args:
         match_id (str): id of a match
+        save_json (bool, optional): whether to save json file. Defaults to False.
+        json_file (json, optional): json file of match data. Defaults to None.
 
     Returns:
         tuple: match data
@@ -19,7 +21,7 @@ def fm_match_data(
             list: events
             list: shots
             list: bench players
-            list starters
+            list: starters
             list: players not available
             list: shootout
             json: json file (if save_json=True)
@@ -283,7 +285,8 @@ def fm_match_data(
                 mydict["team_id"] = team_id
                 mydict["opta_id"] = k.get("usingOptaId")
                 mydict["player_id"] = k.get("id")
-                mydict["player_name"] = " ".join(k.get("name").values())
+                # mydict["player_name"] = " ".join(k.get("name").values())
+                mydict["player_name"] = k.get("name").get("fullName")
                 mydict["player_url"] = k.get("pageUrl")
                 mydict["shirt_number"] = k.get("shirt")
                 mydict["time_subbed_on"] = k.get("timeSubbedOn")

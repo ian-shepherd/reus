@@ -1,48 +1,62 @@
 # Change Log
 
+## 1.1.2 2023-06-02
+* added fotmob functions
+	* fm_league_ids: Returns a series of league ids
+	* fm_league_matches: Returns matches of a given league
+	* fm_league_table: Returns standing of a given league
+	* fm_league_urls: Returns a series of league urls for the current season
+	* fm_season_stat_leaders: Returns top 3 stat leaders of a given league
+	* fm_season_stats: Returns complete list of stat leaders of a given league
+* added util functions
+	* generate_standings: Returns a dataframe of league standings from given match results
+* fm_match_data: fixed player name bug that returned repeat names
+* fb_season_fixture_urls: updated documentation
+* fb_season_urls: updated documentation
+
 ## 1.1.1 2023-05-13
-fb_league_table: fixed broken tags, added Pts/MP and last 5
-fb_match_data: added save_html and html_file arguments and functionality
-fb_match_defensive_actions_stats: updated from StatsBomb to Opta data
-fb_match_keeper_stats: updated from StatsBomb to Opta data
-fb_match_lineups: renamed backend variables to more appropriate name
-fb_match_metadata: 
-	-updated error handling for edge case scenarios where one set of missing information (ex. one team missing a captain or manager, incomplete officials info)
-	-added league_id, league name, and matchweek
-fb_match_misc_stats: updated from StatsBomb to Opta data
-fb_match_passing_stats: updated from StatsBomb to Opta data
-fb_match_passing_type_stats: updated from StatsBomb to Opta data
-fb_match_possession_stats: updated from StatsBomb to Opta data
-fb_match_shots: updated to include Opta xG data
-fb_match_summary_stats: updated from StatsBomb to Opta data
-fb_match_summary: improved error handling for match events
-fb_match_team_stats: improved error handling for missing stats
-fb_season_fixture_urls: updated arguments from statsbomb flag to advanced data flag
-fb_season_urls: updated arguments from statsbomb flag to advanced data flag
-fb_team_player_advanced_keeper: fixed broken tasks and age error handling
-fb_team_player_defensive_action_stats: updated from StatsBomb to Opta data and age error handling
-fb_team_player_goal_sca_stats: updated from StatsBomb to Opta data and age error handling
-fb_team_player_keeper_stats: updated from StatsBomb to Opta data and age error handling
-fb_team_player_misc_stats: updated from StatsBomb to Opta data and age error handling
-fb_team_player_passing_stats: updated from StatsBomb to Opta data and age error handling
-fb_team_player_passing_type_stats: updated from StatsBomb to Opta data and age error handling
-fb_team_player_playing_time_stats: updated from StatsBomb to Opta data and age error handling
-fb_team_player_possession_stats: updated from StatsBomb to Opta data and age error handling
-fb_team_player_shooting_stats: updated from StatsBomb to Opta data and age error handling
-fb_team_player_summary_stats: updated from StatsBomb to Opta data and age error handling
-added team stat functions
-- fb_team_advanced_keeper_stats
-- fb_team_data
-- fb_team_defensive_actions_stats
-- fb_team_goal_sca_stats
-- fb_team_keeper_stats
-- fb_team_misc_stats
-- fb_team_passing_stats
-- fb_team_passing_type_stats
-- fb_team_playing_time_stats
-- fb_team_possession_stats
-- fb_team_shooting_stats
-- fb_team_summary_stats
+* fb_league_table: fixed broken tags, added Pts/MP and last 5
+* fb_match_data: added save_html and html_file arguments and functionality
+* fb_match_defensive_actions_stats: updated from StatsBomb to Opta data
+* fb_match_keeper_stats: updated from StatsBomb to Opta data
+* fb_match_lineups: renamed backend variables to more appropriate name
+* fb_match_metadata: 
+	* updated error handling for edge case scenarios where one set of missing information (ex. one team missing a captain or manager, incomplete officials info)
+	* added league_id, league name, and matchweek
+* fb_match_misc_stats: updated from StatsBomb to Opta data
+* fb_match_passing_stats: updated from StatsBomb to Opta data
+* fb_match_passing_type_stats: updated from StatsBomb to Opta data
+* fb_match_possession_stats: updated from StatsBomb to Opta data
+* fb_match_shots: updated to include Opta xG data
+* fb_match_summary_stats: updated from StatsBomb to Opta data
+* fb_match_summary: improved error handling for match events
+* fb_match_team_stats: improved error handling for missing stats
+* fb_season_fixture_urls: updated arguments from statsbomb flag to advanced data flag
+* fb_season_urls: updated arguments from statsbomb flag to advanced data flag
+* fb_team_player_advanced_keeper: fixed broken tasks and age error handling
+* fb_team_player_defensive_action_stats: updated from StatsBomb to Opta data and age error handling
+* fb_team_player_goal_sca_stats: updated from StatsBomb to Opta data and age error handling
+* fb_team_player_keeper_stats: updated from StatsBomb to Opta data and age error handling
+* fb_team_player_misc_stats: updated from StatsBomb to Opta data and age error handling
+* fb_team_player_passing_stats: updated from StatsBomb to Opta data and age error handling
+* fb_team_player_passing_type_stats: updated from StatsBomb to Opta data and age error handling
+* fb_team_player_playing_time_stats: updated from StatsBomb to Opta data and age error handling
+* fb_team_player_possession_stats: updated from StatsBomb to Opta data and age error handling
+* fb_team_player_shooting_stats: updated from StatsBomb to Opta data and age error handling
+* fb_team_player_summary_stats: updated from StatsBomb to Opta data and age error handling
+* added team stat functions
+	* fb_team_advanced_keeper_stats
+	* fb_team_data
+	* fb_team_defensive_actions_stats
+	* fb_team_goal_sca_stats
+	* fb_team_keeper_stats
+	* fb_team_misc_stats
+	* fb_team_passing_stats
+	* fb_team_passing_type_stats
+	* fb_team_playing_time_stats
+	* fb_team_possession_stats
+	* fb_team_shooting_stats
+	* fb_team_summary_stats
 
 ## 1.1.0 2022-10-09
 Added fotmob functionality for getting match data

@@ -14,14 +14,41 @@ def fb_season_urls(
     """Returns a series of urls for overview section of a season
 
     Args:
-        competition_type (str or list, optional): type of competition. Defaults to None.
+        competition_type (str or list, optional): type of competition. Defaults to None. \n
+            'Domestic Leagues - 1st Tier' \n
+            'Domestic Leagues - 2nd Tier' \n
+            'Domestic Leagues - 3rd Tier and Lower' \n
+            'Domestic Cups' \n
+            'Domestic Youth Leagues' \n
+            'Club International Cups' \n
+            'National Team Competitions' \n
+            'National Team Qualification'
         competition_name (str or list, optional): name of competition. Defaults to None.
         country (str or list, optional): country of competition. Defaults to None.
         gender (str or list, optional): gender of competition. Defaults to None.
-        governing_body (str or list, optional): governing body of competition. Defaults to None.
-        tier (str or list, optional): tier of competition. Defaults to None.
+            'M' \n
+            'W'
+        governing_body (str or list, optional): governing body of competition. Defaults to None. \n
+            'AFC' \n
+            'CAF' \n
+            'CONMEBOL' \n
+            'CONCACAF' \n
+            'OFC' \n
+            'UEFA' \n
+            'FIFA' \n
+            ''
+        tier (str or list, optional): tier of competition. Defaults to None. \n
+            '1st' \n
+            '2nd' \n
+            '3rd' \n
+            '4th' \n
+            '5th' \n
+            'Youth' \n
+            ''
         season_end_year (int or list, optional): year at end of competition. Defaults to None.
-        advanced (str or list, optional): flag for if advanced data is available. Defaults to None.
+        advanced (str or list, optional): flag for if advanced data is available. Defaults to None. \n
+            'Y' \n
+            'N'
 
     Returns:
         series: season urls

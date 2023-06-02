@@ -1,4 +1,4 @@
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 
 from .fb_season_fixture_urls import fb_season_fixture_urls
 from .fb_season_urls import fb_season_urls

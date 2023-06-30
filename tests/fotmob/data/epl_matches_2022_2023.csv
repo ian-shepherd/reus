@@ -1,0 +1,381 @@
+round,roundName,pageUrl,id,id_x,team_x,id_y,team_y,utcTime,started,finished,scoreStr
+,,/match/3900932/matchfacts/crystal-palace-vs-arsenal,3900932,9826,Crystal Palace,9825,Arsenal,2022-08-05 17:00:00+00:00,True,True,0 - 2
+,,/match/3900933/matchfacts/fulham-vs-liverpool,3900933,9879,Fulham,8650,Liverpool,2022-08-06 09:30:00+00:00,True,True,2 - 2
+,,/match/3900934/matchfacts/afc-bournemouth-vs-aston-villa,3900934,8678,AFC Bournemouth,10252,Aston Villa,2022-08-06 12:00:00+00:00,True,True,2 - 0
+,,/match/3900935/matchfacts/leeds-united-vs-wolverhampton-wanderers,3900935,8463,Leeds United,8602,Wolverhampton Wanderers,2022-08-06 12:00:00+00:00,True,True,2 - 1
+,,/match/3900937/matchfacts/newcastle-united-vs-nottingham-forest,3900937,10261,Newcastle United,10203,Nottingham Forest,2022-08-06 12:00:00+00:00,True,True,2 - 0
+,,/match/3900938/matchfacts/tottenham-hotspur-vs-southampton,3900938,8586,Tottenham Hotspur,8466,Southampton,2022-08-06 12:00:00+00:00,True,True,4 - 1
+,,/match/3900939/matchfacts/everton-vs-chelsea,3900939,8668,Everton,8455,Chelsea,2022-08-06 14:30:00+00:00,True,True,0 - 1
+,,/match/3900936/matchfacts/leicester-city-vs-brentford,3900936,8197,Leicester City,9937,Brentford,2022-08-07 11:00:00+00:00,True,True,2 - 2
+,,/match/3900940/matchfacts/manchester-united-vs-brighton--hove-albion,3900940,10260,Manchester United,10204,Brighton & Hove Albion,2022-08-07 11:00:00+00:00,True,True,1 - 2
+,,/match/3900941/matchfacts/west-ham-united-vs-manchester-city,3900941,8654,West Ham United,8456,Manchester City,2022-08-07 13:30:00+00:00,True,True,0 - 2
+,,/match/3900943/matchfacts/aston-villa-vs-everton,3900943,10252,Aston Villa,8668,Everton,2022-08-13 09:30:00+00:00,True,True,2 - 1
+,,/match/3900942/matchfacts/arsenal-vs-leicester-city,3900942,9825,Arsenal,8197,Leicester City,2022-08-13 12:00:00+00:00,True,True,4 - 2
+,,/match/3900945/matchfacts/brighton--hove-albion-vs-newcastle-united,3900945,10204,Brighton & Hove Albion,10261,Newcastle United,2022-08-13 12:00:00+00:00,True,True,0 - 0
+,,/match/3900948/matchfacts/manchester-city-vs-afc-bournemouth,3900948,8456,Manchester City,8678,AFC Bournemouth,2022-08-13 12:00:00+00:00,True,True,4 - 0
+,,/match/3900950/matchfacts/southampton-vs-leeds-united,3900950,8466,Southampton,8463,Leeds United,2022-08-13 12:00:00+00:00,True,True,2 - 2
+,,/match/3900951/matchfacts/wolverhampton-wanderers-vs-fulham,3900951,8602,Wolverhampton Wanderers,9879,Fulham,2022-08-13 12:00:00+00:00,True,True,0 - 0
+,,/match/3900944/matchfacts/brentford-vs-manchester-united,3900944,9937,Brentford,10260,Manchester United,2022-08-13 14:30:00+00:00,True,True,4 - 0
+,,/match/3900949/matchfacts/nottingham-forest-vs-west-ham-united,3900949,10203,Nottingham Forest,8654,West Ham United,2022-08-14 11:00:00+00:00,True,True,1 - 0
+,,/match/3900946/matchfacts/chelsea-vs-tottenham-hotspur,3900946,8455,Chelsea,8586,Tottenham Hotspur,2022-08-14 13:30:00+00:00,True,True,2 - 2
+,,/match/3900947/matchfacts/liverpool-vs-crystal-palace,3900947,8650,Liverpool,9826,Crystal Palace,2022-08-15 17:00:00+00:00,True,True,1 - 1
+,,/match/3900960/matchfacts/tottenham-hotspur-vs-wolverhampton-wanderers,3900960,8586,Tottenham Hotspur,8602,Wolverhampton Wanderers,2022-08-20 09:30:00+00:00,True,True,1 - 0
+,,/match/3900953/matchfacts/crystal-palace-vs-aston-villa,3900953,9826,Crystal Palace,10252,Aston Villa,2022-08-20 12:00:00+00:00,True,True,3 - 1
+,,/match/3900954/matchfacts/everton-vs-nottingham-forest,3900954,8668,Everton,10203,Nottingham Forest,2022-08-20 12:00:00+00:00,True,True,1 - 1
+,,/match/3900955/matchfacts/fulham-vs-brentford,3900955,9879,Fulham,9937,Brentford,2022-08-20 12:00:00+00:00,True,True,3 - 2
+,,/match/3900957/matchfacts/leicester-city-vs-southampton,3900957,8197,Leicester City,8466,Southampton,2022-08-20 12:00:00+00:00,True,True,1 - 2
+,,/match/3900952/matchfacts/afc-bournemouth-vs-arsenal,3900952,8678,AFC Bournemouth,9825,Arsenal,2022-08-20 14:30:00+00:00,True,True,0 - 3
+,,/match/3900956/matchfacts/leeds-united-vs-chelsea,3900956,8463,Leeds United,8455,Chelsea,2022-08-21 11:00:00+00:00,True,True,3 - 0
+,,/match/3900961/matchfacts/west-ham-united-vs-brighton--hove-albion,3900961,8654,West Ham United,10204,Brighton & Hove Albion,2022-08-21 11:00:00+00:00,True,True,0 - 2
+,,/match/3900959/matchfacts/newcastle-united-vs-manchester-city,3900959,10261,Newcastle United,8456,Manchester City,2022-08-21 13:30:00+00:00,True,True,3 - 3
+,,/match/3900958/matchfacts/manchester-united-vs-liverpool,3900958,10260,Manchester United,8650,Liverpool,2022-08-22 17:00:00+00:00,True,True,2 - 1
+,,/match/3900970/matchfacts/southampton-vs-manchester-united,3900970,8466,Southampton,10260,Manchester United,2022-08-27 09:30:00+00:00,True,True,0 - 1
+,,/match/3900964/matchfacts/brentford-vs-everton,3900964,9937,Brentford,8668,Everton,2022-08-27 12:00:00+00:00,True,True,1 - 1
+,,/match/3900965/matchfacts/brighton--hove-albion-vs-leeds-united,3900965,10204,Brighton & Hove Albion,8463,Leeds United,2022-08-27 12:00:00+00:00,True,True,1 - 0
+,,/match/3900966/matchfacts/chelsea-vs-leicester-city,3900966,8455,Chelsea,8197,Leicester City,2022-08-27 12:00:00+00:00,True,True,2 - 1
+,,/match/3900967/matchfacts/liverpool-vs-afc-bournemouth,3900967,8650,Liverpool,8678,AFC Bournemouth,2022-08-27 12:00:00+00:00,True,True,9 - 0
+,,/match/3900968/matchfacts/manchester-city-vs-crystal-palace,3900968,8456,Manchester City,9826,Crystal Palace,2022-08-27 12:00:00+00:00,True,True,4 - 2
+,,/match/3900962/matchfacts/arsenal-vs-fulham,3900962,9825,Arsenal,9879,Fulham,2022-08-27 14:30:00+00:00,True,True,2 - 1
+,,/match/3900963/matchfacts/aston-villa-vs-west-ham-united,3900963,10252,Aston Villa,8654,West Ham United,2022-08-28 11:00:00+00:00,True,True,0 - 1
+,,/match/3900971/matchfacts/wolverhampton-wanderers-vs-newcastle-united,3900971,8602,Wolverhampton Wanderers,10261,Newcastle United,2022-08-28 11:00:00+00:00,True,True,1 - 1
+,,/match/3900969/matchfacts/nottingham-forest-vs-tottenham-hotspur,3900969,10203,Nottingham Forest,8586,Tottenham Hotspur,2022-08-28 13:30:00+00:00,True,True,0 - 2
+,,/match/3900978/matchfacts/crystal-palace-vs-brentford,3900978,9826,Crystal Palace,9937,Brentford,2022-08-30 16:30:00+00:00,True,True,1 - 1
+,,/match/3900974/matchfacts/fulham-vs-brighton--hove-albion,3900974,9879,Fulham,10204,Brighton & Hove Albion,2022-08-30 16:30:00+00:00,True,True,2 - 1
+,,/match/3900979/matchfacts/southampton-vs-chelsea,3900979,8466,Southampton,8455,Chelsea,2022-08-30 16:45:00+00:00,True,True,2 - 1
+,,/match/3900975/matchfacts/leeds-united-vs-everton,3900975,8463,Leeds United,8668,Everton,2022-08-30 17:00:00+00:00,True,True,1 - 1
+,,/match/3900973/matchfacts/afc-bournemouth-vs-wolverhampton-wanderers,3900973,8678,AFC Bournemouth,8602,Wolverhampton Wanderers,2022-08-31 16:30:00+00:00,True,True,0 - 0
+,,/match/3900972/matchfacts/arsenal-vs-aston-villa,3900972,9825,Arsenal,10252,Aston Villa,2022-08-31 16:30:00+00:00,True,True,2 - 1
+,,/match/3900981/matchfacts/manchester-city-vs-nottingham-forest,3900981,8456,Manchester City,10203,Nottingham Forest,2022-08-31 16:30:00+00:00,True,True,6 - 0
+,,/match/3900977/matchfacts/west-ham-united-vs-tottenham-hotspur,3900977,8654,West Ham United,8586,Tottenham Hotspur,2022-08-31 16:45:00+00:00,True,True,1 - 1
+,,/match/3900980/matchfacts/liverpool-vs-newcastle-united,3900980,8650,Liverpool,10261,Newcastle United,2022-08-31 17:00:00+00:00,True,True,2 - 1
+,,/match/3900976/matchfacts/leicester-city-vs-manchester-united,3900976,8197,Leicester City,10260,Manchester United,2022-09-01 17:00:00+00:00,True,True,0 - 1
+,,/match/3900986/matchfacts/everton-vs-liverpool,3900986,8668,Everton,8650,Liverpool,2022-09-03 09:30:00+00:00,True,True,0 - 0
+,,/match/3900983/matchfacts/brentford-vs-leeds-united,3900983,9937,Brentford,8463,Leeds United,2022-09-03 12:00:00+00:00,True,True,5 - 2
+,,/match/3900985/matchfacts/chelsea-vs-west-ham-united,3900985,8455,Chelsea,8654,West Ham United,2022-09-03 12:00:00+00:00,True,True,2 - 1
+,,/match/3900988/matchfacts/newcastle-united-vs-crystal-palace,3900988,10261,Newcastle United,9826,Crystal Palace,2022-09-03 12:00:00+00:00,True,True,0 - 0
+,,/match/3900989/matchfacts/nottingham-forest-vs-afc-bournemouth,3900989,10203,Nottingham Forest,8678,AFC Bournemouth,2022-09-03 12:00:00+00:00,True,True,2 - 3
+,,/match/3900990/matchfacts/tottenham-hotspur-vs-fulham,3900990,8586,Tottenham Hotspur,9879,Fulham,2022-09-03 12:00:00+00:00,True,True,2 - 1
+,,/match/3900991/matchfacts/wolverhampton-wanderers-vs-southampton,3900991,8602,Wolverhampton Wanderers,8466,Southampton,2022-09-03 12:00:00+00:00,True,True,1 - 0
+,,/match/3900982/matchfacts/aston-villa-vs-manchester-city,3900982,10252,Aston Villa,8456,Manchester City,2022-09-03 14:30:00+00:00,True,True,1 - 1
+,,/match/3900984/matchfacts/brighton--hove-albion-vs-leicester-city,3900984,10204,Brighton & Hove Albion,8197,Leicester City,2022-09-04 11:00:00+00:00,True,True,5 - 2
+,,/match/3900987/matchfacts/manchester-united-vs-arsenal,3900987,10260,Manchester United,9825,Arsenal,2022-09-04 13:30:00+00:00,True,True,3 - 1
+,,/match/3901002/matchfacts/aston-villa-vs-southampton,3901002,10252,Aston Villa,8466,Southampton,2022-09-16 17:00:00+00:00,True,True,1 - 0
+,,/match/3901009/matchfacts/nottingham-forest-vs-fulham,3901009,10203,Nottingham Forest,9879,Fulham,2022-09-16 17:00:00+00:00,True,True,2 - 3
+,,/match/3901011/matchfacts/wolverhampton-wanderers-vs-manchester-city,3901011,8602,Wolverhampton Wanderers,8456,Manchester City,2022-09-17 09:30:00+00:00,True,True,0 - 3
+,,/match/3901008/matchfacts/newcastle-united-vs-afc-bournemouth,3901008,10261,Newcastle United,8678,AFC Bournemouth,2022-09-17 12:00:00+00:00,True,True,1 - 1
+,,/match/3901010/matchfacts/tottenham-hotspur-vs-leicester-city,3901010,8586,Tottenham Hotspur,8197,Leicester City,2022-09-17 14:30:00+00:00,True,True,6 - 2
+,,/match/3901003/matchfacts/brentford-vs-arsenal,3901003,9937,Brentford,9825,Arsenal,2022-09-18 09:00:00+00:00,True,True,0 - 3
+,,/match/3901006/matchfacts/everton-vs-west-ham-united,3901006,8668,Everton,8654,West Ham United,2022-09-18 11:15:00+00:00,True,True,1 - 0
+,,/match/3901012/matchfacts/arsenal-vs-tottenham-hotspur,3901012,9825,Arsenal,8586,Tottenham Hotspur,2022-10-01 09:30:00+00:00,True,True,3 - 1
+,,/match/3901013/matchfacts/afc-bournemouth-vs-brentford,3901013,8678,AFC Bournemouth,9937,Brentford,2022-10-01 12:00:00+00:00,True,True,0 - 0
+,,/match/3901014/matchfacts/crystal-palace-vs-chelsea,3901014,9826,Crystal Palace,8455,Chelsea,2022-10-01 12:00:00+00:00,True,True,1 - 2
+,,/match/3901015/matchfacts/fulham-vs-newcastle-united,3901015,9879,Fulham,10261,Newcastle United,2022-10-01 12:00:00+00:00,True,True,1 - 4
+,,/match/3901018/matchfacts/liverpool-vs-brighton--hove-albion,3901018,8650,Liverpool,10204,Brighton & Hove Albion,2022-10-01 12:00:00+00:00,True,True,3 - 3
+,,/match/3901020/matchfacts/southampton-vs-everton,3901020,8466,Southampton,8668,Everton,2022-10-01 12:00:00+00:00,True,True,1 - 2
+,,/match/3901021/matchfacts/west-ham-united-vs-wolverhampton-wanderers,3901021,8654,West Ham United,8602,Wolverhampton Wanderers,2022-10-01 14:30:00+00:00,True,True,2 - 0
+,,/match/3901019/matchfacts/manchester-city-vs-manchester-united,3901019,8456,Manchester City,10260,Manchester United,2022-10-02 11:00:00+00:00,True,True,6 - 3
+,,/match/3901016/matchfacts/leeds-united-vs-aston-villa,3901016,8463,Leeds United,10252,Aston Villa,2022-10-02 13:30:00+00:00,True,True,0 - 0
+,,/match/3901017/matchfacts/leicester-city-vs-nottingham-forest,3901017,8197,Leicester City,10203,Nottingham Forest,2022-10-03 17:00:00+00:00,True,True,4 - 0
+,,/match/3901023/matchfacts/afc-bournemouth-vs-leicester-city,3901023,8678,AFC Bournemouth,8197,Leicester City,2022-10-08 12:00:00+00:00,True,True,2 - 1
+,,/match/3901025/matchfacts/chelsea-vs-wolverhampton-wanderers,3901025,8455,Chelsea,8602,Wolverhampton Wanderers,2022-10-08 12:00:00+00:00,True,True,3 - 0
+,,/match/3901028/matchfacts/manchester-city-vs-southampton,3901028,8456,Manchester City,8466,Southampton,2022-10-08 12:00:00+00:00,True,True,4 - 0
+,,/match/3901029/matchfacts/newcastle-united-vs-brentford,3901029,10261,Newcastle United,9937,Brentford,2022-10-08 12:00:00+00:00,True,True,5 - 1
+,,/match/3901024/matchfacts/brighton--hove-albion-vs-tottenham-hotspur,3901024,10204,Brighton & Hove Albion,8586,Tottenham Hotspur,2022-10-08 14:30:00+00:00,True,True,0 - 1
+,,/match/3901026/matchfacts/crystal-palace-vs-leeds-united,3901026,9826,Crystal Palace,8463,Leeds United,2022-10-09 11:00:00+00:00,True,True,2 - 1
+,,/match/3901031/matchfacts/west-ham-united-vs-fulham,3901031,8654,West Ham United,9879,Fulham,2022-10-09 11:00:00+00:00,True,True,3 - 1
+,,/match/3901022/matchfacts/arsenal-vs-liverpool,3901022,9825,Arsenal,8650,Liverpool,2022-10-09 13:30:00+00:00,True,True,3 - 2
+,,/match/3901027/matchfacts/everton-vs-manchester-united,3901027,8668,Everton,10260,Manchester United,2022-10-09 16:00:00+00:00,True,True,1 - 2
+,,/match/3901030/matchfacts/nottingham-forest-vs-aston-villa,3901030,10203,Nottingham Forest,10252,Aston Villa,2022-10-10 17:00:00+00:00,True,True,1 - 1
+,,/match/3901033/matchfacts/brentford-vs-brighton--hove-albion,3901033,9937,Brentford,10204,Brighton & Hove Albion,2022-10-14 17:00:00+00:00,True,True,2 - 0
+,,/match/3901036/matchfacts/leicester-city-vs-crystal-palace,3901036,8197,Leicester City,9826,Crystal Palace,2022-10-15 09:30:00+00:00,True,True,0 - 0
+,,/match/3901034/matchfacts/fulham-vs-afc-bournemouth,3901034,9879,Fulham,8678,AFC Bournemouth,2022-10-15 12:00:00+00:00,True,True,2 - 2
+,,/match/3901041/matchfacts/wolverhampton-wanderers-vs-nottingham-forest,3901041,8602,Wolverhampton Wanderers,10203,Nottingham Forest,2022-10-15 12:00:00+00:00,True,True,1 - 0
+,,/match/3901040/matchfacts/tottenham-hotspur-vs-everton,3901040,8586,Tottenham Hotspur,8668,Everton,2022-10-15 14:30:00+00:00,True,True,2 - 0
+,,/match/3901032/matchfacts/aston-villa-vs-chelsea,3901032,10252,Aston Villa,8455,Chelsea,2022-10-16 11:00:00+00:00,True,True,0 - 2
+,,/match/3901035/matchfacts/leeds-united-vs-arsenal,3901035,8463,Leeds United,9825,Arsenal,2022-10-16 11:00:00+00:00,True,True,0 - 1
+,,/match/3901038/matchfacts/manchester-united-vs-newcastle-united,3901038,10260,Manchester United,10261,Newcastle United,2022-10-16 11:00:00+00:00,True,True,0 - 0
+,,/match/3901039/matchfacts/southampton-vs-west-ham-united,3901039,8466,Southampton,8654,West Ham United,2022-10-16 11:00:00+00:00,True,True,1 - 1
+,,/match/3901037/matchfacts/liverpool-vs-manchester-city,3901037,8650,Liverpool,8456,Manchester City,2022-10-16 13:30:00+00:00,True,True,1 - 0
+,,/match/3901045/matchfacts/brighton--hove-albion-vs-nottingham-forest,3901045,10204,Brighton & Hove Albion,10203,Nottingham Forest,2022-10-18 16:30:00+00:00,True,True,0 - 0
+,,/match/3901048/matchfacts/crystal-palace-vs-wolverhampton-wanderers,3901048,9826,Crystal Palace,8602,Wolverhampton Wanderers,2022-10-18 17:15:00+00:00,True,True,2 - 1
+,,/match/3901043/matchfacts/afc-bournemouth-vs-southampton,3901043,8678,AFC Bournemouth,8466,Southampton,2022-10-19 16:30:00+00:00,True,True,0 - 1
+,,/match/3901044/matchfacts/brentford-vs-chelsea,3901044,9937,Brentford,8455,Chelsea,2022-10-19 16:30:00+00:00,True,True,0 - 0
+,,/match/3901050/matchfacts/liverpool-vs-west-ham-united,3901050,8650,Liverpool,8654,West Ham United,2022-10-19 16:30:00+00:00,True,True,1 - 0
+,,/match/3901049/matchfacts/newcastle-united-vs-everton,3901049,10261,Newcastle United,8668,Everton,2022-10-19 16:30:00+00:00,True,True,1 - 0
+,,/match/3901051/matchfacts/manchester-united-vs-tottenham-hotspur,3901051,10260,Manchester United,8586,Tottenham Hotspur,2022-10-19 17:15:00+00:00,True,True,2 - 0
+,,/match/3901046/matchfacts/fulham-vs-aston-villa,3901046,9879,Fulham,10252,Aston Villa,2022-10-20 16:30:00+00:00,True,True,3 - 0
+,,/match/3901047/matchfacts/leicester-city-vs-leeds-united,3901047,8197,Leicester City,8463,Leeds United,2022-10-20 17:15:00+00:00,True,True,2 - 0
+,,/match/3901057/matchfacts/nottingham-forest-vs-liverpool,3901057,10203,Nottingham Forest,8650,Liverpool,2022-10-22 09:30:00+00:00,True,True,1 - 0
+,,/match/3901054/matchfacts/everton-vs-crystal-palace,3901054,8668,Everton,9826,Crystal Palace,2022-10-22 12:00:00+00:00,True,True,3 - 0
+,,/match/3901056/matchfacts/manchester-city-vs-brighton--hove-albion,3901056,8456,Manchester City,10204,Brighton & Hove Albion,2022-10-22 12:00:00+00:00,True,True,3 - 1
+,,/match/3901053/matchfacts/chelsea-vs-manchester-united,3901053,8455,Chelsea,10260,Manchester United,2022-10-22 14:30:00+00:00,True,True,1 - 1
+,,/match/3901052/matchfacts/aston-villa-vs-brentford,3901052,10252,Aston Villa,9937,Brentford,2022-10-23 11:00:00+00:00,True,True,4 - 0
+,,/match/3901055/matchfacts/leeds-united-vs-fulham,3901055,8463,Leeds United,9879,Fulham,2022-10-23 11:00:00+00:00,True,True,2 - 3
+,,/match/3901058/matchfacts/southampton-vs-arsenal,3901058,8466,Southampton,9825,Arsenal,2022-10-23 11:00:00+00:00,True,True,1 - 1
+,,/match/3901061/matchfacts/wolverhampton-wanderers-vs-leicester-city,3901061,8602,Wolverhampton Wanderers,8197,Leicester City,2022-10-23 11:00:00+00:00,True,True,0 - 4
+,,/match/3901059/matchfacts/tottenham-hotspur-vs-newcastle-united,3901059,8586,Tottenham Hotspur,10261,Newcastle United,2022-10-23 13:30:00+00:00,True,True,1 - 2
+,,/match/3901060/matchfacts/west-ham-united-vs-afc-bournemouth,3901060,8654,West Ham United,8678,AFC Bournemouth,2022-10-24 17:00:00+00:00,True,True,2 - 0
+,,/match/3901068/matchfacts/leicester-city-vs-manchester-city,3901068,8197,Leicester City,8456,Manchester City,2022-10-29 09:30:00+00:00,True,True,0 - 1
+,,/match/3901063/matchfacts/afc-bournemouth-vs-tottenham-hotspur,3901063,8678,AFC Bournemouth,8586,Tottenham Hotspur,2022-10-29 12:00:00+00:00,True,True,2 - 3
+,,/match/3901064/matchfacts/brentford-vs-wolverhampton-wanderers,3901064,9937,Brentford,8602,Wolverhampton Wanderers,2022-10-29 12:00:00+00:00,True,True,1 - 1
+,,/match/3901065/matchfacts/brighton--hove-albion-vs-chelsea,3901065,10204,Brighton & Hove Albion,8455,Chelsea,2022-10-29 12:00:00+00:00,True,True,4 - 1
+,,/match/3901066/matchfacts/crystal-palace-vs-southampton,3901066,9826,Crystal Palace,8466,Southampton,2022-10-29 12:00:00+00:00,True,True,1 - 0
+,,/match/3901071/matchfacts/newcastle-united-vs-aston-villa,3901071,10261,Newcastle United,10252,Aston Villa,2022-10-29 12:00:00+00:00,True,True,4 - 0
+,,/match/3901067/matchfacts/fulham-vs-everton,3901067,9879,Fulham,8668,Everton,2022-10-29 14:30:00+00:00,True,True,0 - 0
+,,/match/3901069/matchfacts/liverpool-vs-leeds-united,3901069,8650,Liverpool,8463,Leeds United,2022-10-29 16:45:00+00:00,True,True,1 - 2
+,,/match/3901062/matchfacts/arsenal-vs-nottingham-forest,3901062,9825,Arsenal,10203,Nottingham Forest,2022-10-30 13:00:00+00:00,True,True,5 - 0
+,,/match/3901070/matchfacts/manchester-united-vs-west-ham-united,3901070,10260,Manchester United,8654,West Ham United,2022-10-30 15:15:00+00:00,True,True,1 - 0
+,,/match/3901075/matchfacts/leeds-united-vs-afc-bournemouth,3901075,8463,Leeds United,8678,AFC Bournemouth,2022-11-05 14:00:00+00:00,True,True,4 - 3
+,,/match/3901076/matchfacts/manchester-city-vs-fulham,3901076,8456,Manchester City,9879,Fulham,2022-11-05 14:00:00+00:00,True,True,2 - 1
+,,/match/3901077/matchfacts/nottingham-forest-vs-brentford,3901077,10203,Nottingham Forest,9937,Brentford,2022-11-05 14:00:00+00:00,True,True,2 - 2
+,,/match/3901081/matchfacts/wolverhampton-wanderers-vs-brighton--hove-albion,3901081,8602,Wolverhampton Wanderers,10204,Brighton & Hove Albion,2022-11-05 14:00:00+00:00,True,True,2 - 3
+,,/match/3901074/matchfacts/everton-vs-leicester-city,3901074,8668,Everton,8197,Leicester City,2022-11-05 16:30:00+00:00,True,True,0 - 2
+,,/match/3901073/matchfacts/chelsea-vs-arsenal,3901073,8455,Chelsea,9825,Arsenal,2022-11-06 11:00:00+00:00,True,True,0 - 1
+,,/match/3901072/matchfacts/aston-villa-vs-manchester-united,3901072,10252,Aston Villa,10260,Manchester United,2022-11-06 13:00:00+00:00,True,True,3 - 1
+,,/match/3901078/matchfacts/southampton-vs-newcastle-united,3901078,8466,Southampton,10261,Newcastle United,2022-11-06 13:00:00+00:00,True,True,1 - 4
+,,/match/3901080/matchfacts/west-ham-united-vs-crystal-palace,3901080,8654,West Ham United,9826,Crystal Palace,2022-11-06 13:00:00+00:00,True,True,1 - 2
+,,/match/3901079/matchfacts/tottenham-hotspur-vs-liverpool,3901079,8586,Tottenham Hotspur,8650,Liverpool,2022-11-06 15:30:00+00:00,True,True,1 - 2
+,,/match/3901086/matchfacts/manchester-city-vs-brentford,3901086,8456,Manchester City,9937,Brentford,2022-11-12 11:30:00+00:00,True,True,1 - 2
+,,/match/3901082/matchfacts/afc-bournemouth-vs-everton,3901082,8678,AFC Bournemouth,8668,Everton,2022-11-12 14:00:00+00:00,True,True,3 - 0
+,,/match/3901085/matchfacts/liverpool-vs-southampton,3901085,8650,Liverpool,8466,Southampton,2022-11-12 14:00:00+00:00,True,True,3 - 1
+,,/match/3901088/matchfacts/nottingham-forest-vs-crystal-palace,3901088,10203,Nottingham Forest,9826,Crystal Palace,2022-11-12 14:00:00+00:00,True,True,1 - 0
+,,/match/3901089/matchfacts/tottenham-hotspur-vs-leeds-united,3901089,8586,Tottenham Hotspur,8463,Leeds United,2022-11-12 14:00:00+00:00,True,True,4 - 3
+,,/match/3901090/matchfacts/west-ham-united-vs-leicester-city,3901090,8654,West Ham United,8197,Leicester City,2022-11-12 14:00:00+00:00,True,True,0 - 2
+,,/match/3901087/matchfacts/newcastle-united-vs-chelsea,3901087,10261,Newcastle United,8455,Chelsea,2022-11-12 16:30:00+00:00,True,True,1 - 0
+,,/match/3901091/matchfacts/wolverhampton-wanderers-vs-arsenal,3901091,8602,Wolverhampton Wanderers,9825,Arsenal,2022-11-12 18:45:00+00:00,True,True,0 - 2
+,,/match/3901083/matchfacts/brighton--hove-albion-vs-aston-villa,3901083,10204,Brighton & Hove Albion,10252,Aston Villa,2022-11-13 13:00:00+00:00,True,True,1 - 2
+,,/match/3901084/matchfacts/fulham-vs-manchester-united,3901084,9879,Fulham,10260,Manchester United,2022-11-13 15:30:00+00:00,True,True,1 - 2
+,,/match/3901094/matchfacts/brentford-vs-tottenham-hotspur,3901094,9937,Brentford,8586,Tottenham Hotspur,2022-12-26 11:30:00+00:00,True,True,2 - 2
+,,/match/3901096/matchfacts/crystal-palace-vs-fulham,3901096,9826,Crystal Palace,9879,Fulham,2022-12-26 14:00:00+00:00,True,True,0 - 3
+,,/match/3901097/matchfacts/everton-vs-wolverhampton-wanderers,3901097,8668,Everton,8602,Wolverhampton Wanderers,2022-12-26 14:00:00+00:00,True,True,1 - 2
+,,/match/3901099/matchfacts/leicester-city-vs-newcastle-united,3901099,8197,Leicester City,10261,Newcastle United,2022-12-26 14:00:00+00:00,True,True,0 - 3
+,,/match/3901101/matchfacts/southampton-vs-brighton--hove-albion,3901101,8466,Southampton,10204,Brighton & Hove Albion,2022-12-26 14:00:00+00:00,True,True,1 - 3
+,,/match/3901093/matchfacts/aston-villa-vs-liverpool,3901093,10252,Aston Villa,8650,Liverpool,2022-12-26 16:30:00+00:00,True,True,1 - 3
+,,/match/3901092/matchfacts/arsenal-vs-west-ham-united,3901092,9825,Arsenal,8654,West Ham United,2022-12-26 19:00:00+00:00,True,True,3 - 1
+,,/match/3901095/matchfacts/chelsea-vs-afc-bournemouth,3901095,8455,Chelsea,8678,AFC Bournemouth,2022-12-27 16:30:00+00:00,True,True,2 - 0
+,,/match/3901100/matchfacts/manchester-united-vs-nottingham-forest,3901100,10260,Manchester United,10203,Nottingham Forest,2022-12-27 19:00:00+00:00,True,True,3 - 0
+,,/match/3901098/matchfacts/leeds-united-vs-manchester-city,3901098,8463,Leeds United,8456,Manchester City,2022-12-28 19:00:00+00:00,True,True,1 - 3
+,,/match/3901110/matchfacts/west-ham-united-vs-brentford,3901110,8654,West Ham United,9937,Brentford,2022-12-30 18:45:00+00:00,True,True,0 - 2
+,,/match/3901105/matchfacts/liverpool-vs-leicester-city,3901105,8650,Liverpool,8197,Leicester City,2022-12-30 19:00:00+00:00,True,True,2 - 1
+,,/match/3901111/matchfacts/wolverhampton-wanderers-vs-manchester-united,3901111,8602,Wolverhampton Wanderers,10260,Manchester United,2022-12-31 11:30:00+00:00,True,True,0 - 1
+,,/match/3901102/matchfacts/afc-bournemouth-vs-crystal-palace,3901102,8678,AFC Bournemouth,9826,Crystal Palace,2022-12-31 14:00:00+00:00,True,True,0 - 2
+,,/match/3901104/matchfacts/fulham-vs-southampton,3901104,9879,Fulham,8466,Southampton,2022-12-31 14:00:00+00:00,True,True,2 - 1
+,,/match/3901106/matchfacts/manchester-city-vs-everton,3901106,8456,Manchester City,8668,Everton,2022-12-31 14:00:00+00:00,True,True,1 - 1
+,,/match/3901107/matchfacts/newcastle-united-vs-leeds-united,3901107,10261,Newcastle United,8463,Leeds United,2022-12-31 14:00:00+00:00,True,True,0 - 0
+,,/match/3901103/matchfacts/brighton--hove-albion-vs-arsenal,3901103,10204,Brighton & Hove Albion,9825,Arsenal,2022-12-31 16:30:00+00:00,True,True,2 - 4
+,,/match/3901109/matchfacts/tottenham-hotspur-vs-aston-villa,3901109,8586,Tottenham Hotspur,10252,Aston Villa,2023-01-01 13:00:00+00:00,True,True,0 - 2
+,,/match/3901108/matchfacts/nottingham-forest-vs-chelsea,3901108,10203,Nottingham Forest,8455,Chelsea,2023-01-01 15:30:00+00:00,True,True,1 - 1
+,,/match/3901114/matchfacts/brentford-vs-liverpool,3901114,9937,Brentford,8650,Liverpool,2023-01-02 16:30:00+00:00,True,True,3 - 1
+,,/match/3901112/matchfacts/arsenal-vs-newcastle-united,3901112,9825,Arsenal,10261,Newcastle United,2023-01-03 18:45:00+00:00,True,True,0 - 0
+,,/match/3901117/matchfacts/everton-vs-brighton--hove-albion,3901117,8668,Everton,10204,Brighton & Hove Albion,2023-01-03 18:45:00+00:00,True,True,1 - 4
+,,/match/3901119/matchfacts/leicester-city-vs-fulham,3901119,8197,Leicester City,9879,Fulham,2023-01-03 18:45:00+00:00,True,True,0 - 1
+,,/match/3901120/matchfacts/manchester-united-vs-afc-bournemouth,3901120,10260,Manchester United,8678,AFC Bournemouth,2023-01-03 19:00:00+00:00,True,True,3 - 0
+,,/match/3901121/matchfacts/southampton-vs-nottingham-forest,3901121,8466,Southampton,10203,Nottingham Forest,2023-01-04 18:30:00+00:00,True,True,0 - 1
+,,/match/3901118/matchfacts/leeds-united-vs-west-ham-united,3901118,8463,Leeds United,8654,West Ham United,2023-01-04 18:45:00+00:00,True,True,2 - 2
+,,/match/3901113/matchfacts/aston-villa-vs-wolverhampton-wanderers,3901113,10252,Aston Villa,8602,Wolverhampton Wanderers,2023-01-04 19:00:00+00:00,True,True,1 - 1
+,,/match/3901116/matchfacts/crystal-palace-vs-tottenham-hotspur,3901116,9826,Crystal Palace,8586,Tottenham Hotspur,2023-01-04 19:00:00+00:00,True,True,0 - 4
+,,/match/3901115/matchfacts/chelsea-vs-manchester-city,3901115,8455,Chelsea,8456,Manchester City,2023-01-05 19:00:00+00:00,True,True,0 - 1
+,,/match/3900995/matchfacts/fulham-vs-chelsea,3900995,9879,Fulham,8455,Chelsea,2023-01-12 19:00:00+00:00,True,True,2 - 1
+,,/match/3901122/matchfacts/aston-villa-vs-leeds-united,3901122,10252,Aston Villa,8463,Leeds United,2023-01-13 19:00:00+00:00,True,True,2 - 1
+,,/match/3901127/matchfacts/manchester-united-vs-manchester-city,3901127,10260,Manchester United,8456,Manchester City,2023-01-14 11:30:00+00:00,True,True,2 - 1
+,,/match/3901124/matchfacts/brighton--hove-albion-vs-liverpool,3901124,10204,Brighton & Hove Albion,8650,Liverpool,2023-01-14 14:00:00+00:00,True,True,3 - 0
+,,/match/3901126/matchfacts/everton-vs-southampton,3901126,8668,Everton,8466,Southampton,2023-01-14 14:00:00+00:00,True,True,1 - 2
+,,/match/3901129/matchfacts/nottingham-forest-vs-leicester-city,3901129,10203,Nottingham Forest,8197,Leicester City,2023-01-14 14:00:00+00:00,True,True,2 - 0
+,,/match/3901131/matchfacts/wolverhampton-wanderers-vs-west-ham-united,3901131,8602,Wolverhampton Wanderers,8654,West Ham United,2023-01-14 14:00:00+00:00,True,True,1 - 0
+,,/match/3901123/matchfacts/brentford-vs-afc-bournemouth,3901123,9937,Brentford,8678,AFC Bournemouth,2023-01-14 16:30:00+00:00,True,True,2 - 0
+,,/match/3901125/matchfacts/chelsea-vs-crystal-palace,3901125,8455,Chelsea,9826,Crystal Palace,2023-01-15 13:00:00+00:00,True,True,1 - 0
+,,/match/3901128/matchfacts/newcastle-united-vs-fulham,3901128,10261,Newcastle United,9879,Fulham,2023-01-15 13:00:00+00:00,True,True,1 - 0
+,,/match/3901130/matchfacts/tottenham-hotspur-vs-arsenal,3901130,8586,Tottenham Hotspur,9825,Arsenal,2023-01-15 15:30:00+00:00,True,True,0 - 2
+,,/match/3900994/matchfacts/crystal-palace-vs-manchester-united,3900994,9826,Crystal Palace,10260,Manchester United,2023-01-18 19:00:00+00:00,True,True,1 - 1
+,,/match/3900999/matchfacts/manchester-city-vs-tottenham-hotspur,3900999,8456,Manchester City,8586,Tottenham Hotspur,2023-01-19 19:00:00+00:00,True,True,4 - 2
+,,/match/3901138/matchfacts/liverpool-vs-chelsea,3901138,8650,Liverpool,8455,Chelsea,2023-01-21 11:30:00+00:00,True,True,0 - 0
+,,/match/3901133/matchfacts/afc-bournemouth-vs-nottingham-forest,3901133,8678,AFC Bournemouth,10203,Nottingham Forest,2023-01-21 14:00:00+00:00,True,True,1 - 1
+,,/match/3901137/matchfacts/leicester-city-vs-brighton--hove-albion,3901137,8197,Leicester City,10204,Brighton & Hove Albion,2023-01-21 14:00:00+00:00,True,True,2 - 2
+,,/match/3901140/matchfacts/southampton-vs-aston-villa,3901140,8466,Southampton,10252,Aston Villa,2023-01-21 14:00:00+00:00,True,True,0 - 1
+,,/match/3901141/matchfacts/west-ham-united-vs-everton,3901141,8654,West Ham United,8668,Everton,2023-01-21 14:00:00+00:00,True,True,2 - 0
+,,/match/3901134/matchfacts/crystal-palace-vs-newcastle-united,3901134,9826,Crystal Palace,10261,Newcastle United,2023-01-21 16:30:00+00:00,True,True,0 - 0
+,,/match/3901136/matchfacts/leeds-united-vs-brentford,3901136,8463,Leeds United,9937,Brentford,2023-01-22 13:00:00+00:00,True,True,0 - 0
+,,/match/3901139/matchfacts/manchester-city-vs-wolverhampton-wanderers,3901139,8456,Manchester City,8602,Wolverhampton Wanderers,2023-01-22 13:00:00+00:00,True,True,3 - 0
+,,/match/3901132/matchfacts/arsenal-vs-manchester-united,3901132,9825,Arsenal,10260,Manchester United,2023-01-22 15:30:00+00:00,True,True,3 - 2
+,,/match/3901135/matchfacts/fulham-vs-tottenham-hotspur,3901135,9879,Fulham,8586,Tottenham Hotspur,2023-01-23 19:15:00+00:00,True,True,0 - 1
+,,/match/3901145/matchfacts/chelsea-vs-fulham,3901145,8455,Chelsea,9879,Fulham,2023-02-03 19:00:00+00:00,True,True,0 - 0
+,,/match/3901146/matchfacts/everton-vs-arsenal,3901146,8668,Everton,9825,Arsenal,2023-02-04 11:30:00+00:00,True,True,1 - 0
+,,/match/3901142/matchfacts/aston-villa-vs-leicester-city,3901142,10252,Aston Villa,8197,Leicester City,2023-02-04 14:00:00+00:00,True,True,2 - 4
+,,/match/3901143/matchfacts/brentford-vs-southampton,3901143,9937,Brentford,8466,Southampton,2023-02-04 14:00:00+00:00,True,True,3 - 0
+,,/match/3901144/matchfacts/brighton--hove-albion-vs-afc-bournemouth,3901144,10204,Brighton & Hove Albion,8678,AFC Bournemouth,2023-02-04 14:00:00+00:00,True,True,1 - 0
+,,/match/3901147/matchfacts/manchester-united-vs-crystal-palace,3901147,10260,Manchester United,9826,Crystal Palace,2023-02-04 14:00:00+00:00,True,True,2 - 1
+,,/match/3901151/matchfacts/wolverhampton-wanderers-vs-liverpool,3901151,8602,Wolverhampton Wanderers,8650,Liverpool,2023-02-04 14:00:00+00:00,True,True,3 - 0
+,,/match/3901148/matchfacts/newcastle-united-vs-west-ham-united,3901148,10261,Newcastle United,8654,West Ham United,2023-02-04 16:30:00+00:00,True,True,1 - 1
+,,/match/3901149/matchfacts/nottingham-forest-vs-leeds-united,3901149,10203,Nottingham Forest,8463,Leeds United,2023-02-05 13:00:00+00:00,True,True,1 - 0
+,,/match/3901150/matchfacts/tottenham-hotspur-vs-manchester-city,3901150,8586,Tottenham Hotspur,8456,Manchester City,2023-02-05 15:30:00+00:00,True,True,1 - 0
+,,/match/3901007/matchfacts/manchester-united-vs-leeds-united,3901007,10260,Manchester United,8463,Leeds United,2023-02-08 19:00:00+00:00,True,True,2 - 2
+,,/match/3901161/matchfacts/west-ham-united-vs-chelsea,3901161,8654,West Ham United,8455,Chelsea,2023-02-11 11:30:00+00:00,True,True,1 - 1
+,,/match/3901152/matchfacts/arsenal-vs-brentford,3901152,9825,Arsenal,9937,Brentford,2023-02-11 14:00:00+00:00,True,True,1 - 1
+,,/match/3901154/matchfacts/crystal-palace-vs-brighton--hove-albion,3901154,9826,Crystal Palace,10204,Brighton & Hove Albion,2023-02-11 14:00:00+00:00,True,True,1 - 1
+,,/match/3901155/matchfacts/fulham-vs-nottingham-forest,3901155,9879,Fulham,10203,Nottingham Forest,2023-02-11 14:00:00+00:00,True,True,2 - 0
+,,/match/3901157/matchfacts/leicester-city-vs-tottenham-hotspur,3901157,8197,Leicester City,8586,Tottenham Hotspur,2023-02-11 14:00:00+00:00,True,True,4 - 1
+,,/match/3901160/matchfacts/southampton-vs-wolverhampton-wanderers,3901160,8466,Southampton,8602,Wolverhampton Wanderers,2023-02-11 14:00:00+00:00,True,True,1 - 2
+,,/match/3901153/matchfacts/afc-bournemouth-vs-newcastle-united,3901153,8678,AFC Bournemouth,10261,Newcastle United,2023-02-11 16:30:00+00:00,True,True,1 - 1
+,,/match/3901156/matchfacts/leeds-united-vs-manchester-united,3901156,8463,Leeds United,10260,Manchester United,2023-02-12 13:00:00+00:00,True,True,0 - 2
+,,/match/3901159/matchfacts/manchester-city-vs-aston-villa,3901159,8456,Manchester City,10252,Aston Villa,2023-02-12 15:30:00+00:00,True,True,3 - 1
+,,/match/3901158/matchfacts/liverpool-vs-everton,3901158,8650,Liverpool,8668,Everton,2023-02-13 19:00:00+00:00,True,True,2 - 0
+,,/match/3901042/matchfacts/arsenal-vs-manchester-city,3901042,9825,Arsenal,8456,Manchester City,2023-02-15 18:30:00+00:00,True,True,1 - 3
+,,/match/3901162/matchfacts/aston-villa-vs-arsenal,3901162,10252,Aston Villa,9825,Arsenal,2023-02-18 11:30:00+00:00,True,True,2 - 4
+,,/match/3901163/matchfacts/brentford-vs-crystal-palace,3901163,9937,Brentford,9826,Crystal Palace,2023-02-18 14:00:00+00:00,True,True,1 - 1
+,,/match/3901164/matchfacts/brighton--hove-albion-vs-fulham,3901164,10204,Brighton & Hove Albion,9879,Fulham,2023-02-18 14:00:00+00:00,True,True,0 - 1
+,,/match/3901165/matchfacts/chelsea-vs-southampton,3901165,8455,Chelsea,8466,Southampton,2023-02-18 14:00:00+00:00,True,True,0 - 1
+,,/match/3901166/matchfacts/everton-vs-leeds-united,3901166,8668,Everton,8463,Leeds United,2023-02-18 14:00:00+00:00,True,True,1 - 0
+,,/match/3901169/matchfacts/nottingham-forest-vs-manchester-city,3901169,10203,Nottingham Forest,8456,Manchester City,2023-02-18 14:00:00+00:00,True,True,1 - 1
+,,/match/3901171/matchfacts/wolverhampton-wanderers-vs-afc-bournemouth,3901171,8602,Wolverhampton Wanderers,8678,AFC Bournemouth,2023-02-18 14:00:00+00:00,True,True,0 - 1
+,,/match/3901168/matchfacts/newcastle-united-vs-liverpool,3901168,10261,Newcastle United,8650,Liverpool,2023-02-18 16:30:00+00:00,True,True,0 - 2
+,,/match/3901167/matchfacts/manchester-united-vs-leicester-city,3901167,10260,Manchester United,8197,Leicester City,2023-02-19 13:00:00+00:00,True,True,3 - 0
+,,/match/3901170/matchfacts/tottenham-hotspur-vs-west-ham-united,3901170,8586,Tottenham Hotspur,8654,West Ham United,2023-02-19 15:30:00+00:00,True,True,2 - 0
+,,/match/3901175/matchfacts/fulham-vs-wolverhampton-wanderers,3901175,9879,Fulham,8602,Wolverhampton Wanderers,2023-02-24 19:00:00+00:00,True,True,1 - 1
+,,/match/3901174/matchfacts/everton-vs-aston-villa,3901174,8668,Everton,10252,Aston Villa,2023-02-25 14:00:00+00:00,True,True,0 - 2
+,,/match/3901176/matchfacts/leeds-united-vs-southampton,3901176,8463,Leeds United,8466,Southampton,2023-02-25 14:00:00+00:00,True,True,1 - 0
+,,/match/3901177/matchfacts/leicester-city-vs-arsenal,3901177,8197,Leicester City,9825,Arsenal,2023-02-25 14:00:00+00:00,True,True,0 - 1
+,,/match/3901181/matchfacts/west-ham-united-vs-nottingham-forest,3901181,8654,West Ham United,10203,Nottingham Forest,2023-02-25 14:00:00+00:00,True,True,4 - 0
+,,/match/3901172/matchfacts/afc-bournemouth-vs-manchester-city,3901172,8678,AFC Bournemouth,8456,Manchester City,2023-02-25 16:30:00+00:00,True,True,1 - 4
+,,/match/3901173/matchfacts/crystal-palace-vs-liverpool,3901173,9826,Crystal Palace,8650,Liverpool,2023-02-25 18:45:00+00:00,True,True,0 - 0
+,,/match/3901180/matchfacts/tottenham-hotspur-vs-chelsea,3901180,8586,Tottenham Hotspur,8455,Chelsea,2023-02-26 12:30:00+00:00,True,True,2 - 0
+,,/match/3900992/matchfacts/arsenal-vs-everton,3900992,9825,Arsenal,8668,Everton,2023-03-01 18:45:00+00:00,True,True,4 - 0
+,,/match/3900998/matchfacts/liverpool-vs-wolverhampton-wanderers,3900998,8650,Liverpool,8602,Wolverhampton Wanderers,2023-03-01 19:00:00+00:00,True,True,2 - 0
+,,/match/3901188/matchfacts/manchester-city-vs-newcastle-united,3901188,8456,Manchester City,10261,Newcastle United,2023-03-04 11:30:00+00:00,True,True,2 - 0
+,,/match/3901182/matchfacts/arsenal-vs-afc-bournemouth,3901182,9825,Arsenal,8678,AFC Bournemouth,2023-03-04 14:00:00+00:00,True,True,3 - 2
+,,/match/3901183/matchfacts/aston-villa-vs-crystal-palace,3901183,10252,Aston Villa,9826,Crystal Palace,2023-03-04 14:00:00+00:00,True,True,1 - 0
+,,/match/3901185/matchfacts/brighton--hove-albion-vs-west-ham-united,3901185,10204,Brighton & Hove Albion,8654,West Ham United,2023-03-04 14:00:00+00:00,True,True,4 - 0
+,,/match/3901186/matchfacts/chelsea-vs-leeds-united,3901186,8455,Chelsea,8463,Leeds United,2023-03-04 14:00:00+00:00,True,True,1 - 0
+,,/match/3901191/matchfacts/wolverhampton-wanderers-vs-tottenham-hotspur,3901191,8602,Wolverhampton Wanderers,8586,Tottenham Hotspur,2023-03-04 14:00:00+00:00,True,True,1 - 0
+,,/match/3901190/matchfacts/southampton-vs-leicester-city,3901190,8466,Southampton,8197,Leicester City,2023-03-04 16:30:00+00:00,True,True,1 - 0
+,,/match/3901189/matchfacts/nottingham-forest-vs-everton,3901189,10203,Nottingham Forest,8668,Everton,2023-03-05 13:00:00+00:00,True,True,2 - 2
+,,/match/3901187/matchfacts/liverpool-vs-manchester-united,3901187,8650,Liverpool,10260,Manchester United,2023-03-05 15:30:00+00:00,True,True,7 - 0
+,,/match/3901184/matchfacts/brentford-vs-fulham,3901184,9937,Brentford,9879,Fulham,2023-03-06 19:00:00+00:00,True,True,3 - 2
+,,/match/3901192/matchfacts/afc-bournemouth-vs-liverpool,3901192,8678,AFC Bournemouth,8650,Liverpool,2023-03-11 11:30:00+00:00,True,True,1 - 0
+,,/match/3901194/matchfacts/everton-vs-brentford,3901194,8668,Everton,9937,Brentford,2023-03-11 14:00:00+00:00,True,True,1 - 0
+,,/match/3901196/matchfacts/leeds-united-vs-brighton--hove-albion,3901196,8463,Leeds United,10204,Brighton & Hove Albion,2023-03-11 14:00:00+00:00,True,True,2 - 2
+,,/match/3901197/matchfacts/leicester-city-vs-chelsea,3901197,8197,Leicester City,8455,Chelsea,2023-03-11 14:00:00+00:00,True,True,1 - 3
+,,/match/3901200/matchfacts/tottenham-hotspur-vs-nottingham-forest,3901200,8586,Tottenham Hotspur,10203,Nottingham Forest,2023-03-11 14:00:00+00:00,True,True,3 - 1
+,,/match/3901193/matchfacts/crystal-palace-vs-manchester-city,3901193,9826,Crystal Palace,8456,Manchester City,2023-03-11 16:30:00+00:00,True,True,0 - 1
+,,/match/3901195/matchfacts/fulham-vs-arsenal,3901195,9879,Fulham,9825,Arsenal,2023-03-12 13:00:00+00:00,True,True,0 - 3
+,,/match/3901198/matchfacts/manchester-united-vs-southampton,3901198,10260,Manchester United,8466,Southampton,2023-03-12 13:00:00+00:00,True,True,0 - 0
+,,/match/3901201/matchfacts/west-ham-united-vs-aston-villa,3901201,8654,West Ham United,10252,Aston Villa,2023-03-12 13:00:00+00:00,True,True,1 - 1
+,,/match/3901199/matchfacts/newcastle-united-vs-wolverhampton-wanderers,3901199,10261,Newcastle United,8602,Wolverhampton Wanderers,2023-03-12 15:30:00+00:00,True,True,2 - 1
+,,/match/3901004/matchfacts/brighton--hove-albion-vs-crystal-palace,3901004,10204,Brighton & Hove Albion,9826,Crystal Palace,2023-03-15 18:30:00+00:00,True,True,1 - 0
+,,/match/3901000/matchfacts/southampton-vs-brentford,3901000,8466,Southampton,9937,Brentford,2023-03-15 18:30:00+00:00,True,True,0 - 2
+,,/match/3901209/matchfacts/nottingham-forest-vs-newcastle-united,3901209,10203,Nottingham Forest,10261,Newcastle United,2023-03-17 19:00:00+00:00,True,True,1 - 2
+,,/match/3901203/matchfacts/aston-villa-vs-afc-bournemouth,3901203,10252,Aston Villa,8678,AFC Bournemouth,2023-03-18 14:00:00+00:00,True,True,3 - 0
+,,/match/3901204/matchfacts/brentford-vs-leicester-city,3901204,9937,Brentford,8197,Leicester City,2023-03-18 14:00:00+00:00,True,True,1 - 1
+,,/match/3901210/matchfacts/southampton-vs-tottenham-hotspur,3901210,8466,Southampton,8586,Tottenham Hotspur,2023-03-18 14:00:00+00:00,True,True,3 - 3
+,,/match/3901211/matchfacts/wolverhampton-wanderers-vs-leeds-united,3901211,8602,Wolverhampton Wanderers,8463,Leeds United,2023-03-18 14:00:00+00:00,True,True,2 - 4
+,,/match/3901206/matchfacts/chelsea-vs-everton,3901206,8455,Chelsea,8668,Everton,2023-03-18 16:30:00+00:00,True,True,2 - 2
+,,/match/3901202/matchfacts/arsenal-vs-crystal-palace,3901202,9825,Arsenal,9826,Crystal Palace,2023-03-19 13:00:00+00:00,True,True,4 - 1
+,,/match/3901218/matchfacts/manchester-city-vs-liverpool,3901218,8456,Manchester City,8650,Liverpool,2023-04-01 09:30:00+00:00,True,True,4 - 1
+,,/match/3901213/matchfacts/afc-bournemouth-vs-fulham,3901213,8678,AFC Bournemouth,9879,Fulham,2023-04-01 12:00:00+00:00,True,True,2 - 1
+,,/match/3901212/matchfacts/arsenal-vs-leeds-united,3901212,9825,Arsenal,8463,Leeds United,2023-04-01 12:00:00+00:00,True,True,4 - 1
+,,/match/3901214/matchfacts/brighton--hove-albion-vs-brentford,3901214,10204,Brighton & Hove Albion,9937,Brentford,2023-04-01 12:00:00+00:00,True,True,3 - 3
+,,/match/3901216/matchfacts/crystal-palace-vs-leicester-city,3901216,9826,Crystal Palace,8197,Leicester City,2023-04-01 12:00:00+00:00,True,True,2 - 1
+,,/match/3901220/matchfacts/nottingham-forest-vs-wolverhampton-wanderers,3901220,10203,Nottingham Forest,8602,Wolverhampton Wanderers,2023-04-01 12:00:00+00:00,True,True,1 - 1
+,,/match/3901215/matchfacts/chelsea-vs-aston-villa,3901215,8455,Chelsea,10252,Aston Villa,2023-04-01 14:30:00+00:00,True,True,0 - 2
+,,/match/3901221/matchfacts/west-ham-united-vs-southampton,3901221,8654,West Ham United,8466,Southampton,2023-04-02 11:00:00+00:00,True,True,1 - 0
+,,/match/3901219/matchfacts/newcastle-united-vs-manchester-united,3901219,10261,Newcastle United,10260,Manchester United,2023-04-02 13:30:00+00:00,True,True,2 - 0
+,,/match/3901217/matchfacts/everton-vs-tottenham-hotspur,3901217,8668,Everton,8586,Tottenham Hotspur,2023-04-03 17:00:00+00:00,True,True,1 - 1
+,,/match/3900993/matchfacts/afc-bournemouth-vs-brighton--hove-albion,3900993,8678,AFC Bournemouth,10204,Brighton & Hove Albion,2023-04-04 16:45:00+00:00,True,True,0 - 2
+,,/match/3900996/matchfacts/leeds-united-vs-nottingham-forest,3900996,8463,Leeds United,10203,Nottingham Forest,2023-04-04 16:45:00+00:00,True,True,2 - 1
+,,/match/3900997/matchfacts/leicester-city-vs-aston-villa,3900997,8197,Leicester City,10252,Aston Villa,2023-04-04 16:45:00+00:00,True,True,1 - 2
+,,/match/3901005/matchfacts/chelsea-vs-liverpool,3901005,8455,Chelsea,8650,Liverpool,2023-04-04 17:00:00+00:00,True,True,0 - 0
+,,/match/3901178/matchfacts/manchester-united-vs-brentford,3901178,10260,Manchester United,9937,Brentford,2023-04-05 17:00:00+00:00,True,True,1 - 0
+,,/match/3901001/matchfacts/west-ham-united-vs-newcastle-united,3901001,8654,West Ham United,10261,Newcastle United,2023-04-05 17:00:00+00:00,True,True,1 - 5
+,,/match/3901228/matchfacts/manchester-united-vs-everton,3901228,10260,Manchester United,8668,Everton,2023-04-08 09:30:00+00:00,True,True,2 - 0
+,,/match/3901222/matchfacts/aston-villa-vs-nottingham-forest,3901222,10252,Aston Villa,10203,Nottingham Forest,2023-04-08 12:00:00+00:00,True,True,2 - 0
+,,/match/3901223/matchfacts/brentford-vs-newcastle-united,3901223,9937,Brentford,10261,Newcastle United,2023-04-08 12:00:00+00:00,True,True,1 - 2
+,,/match/3901224/matchfacts/fulham-vs-west-ham-united,3901224,9879,Fulham,8654,West Ham United,2023-04-08 12:00:00+00:00,True,True,0 - 1
+,,/match/3901226/matchfacts/leicester-city-vs-afc-bournemouth,3901226,8197,Leicester City,8678,AFC Bournemouth,2023-04-08 12:00:00+00:00,True,True,0 - 1
+,,/match/3901230/matchfacts/tottenham-hotspur-vs-brighton--hove-albion,3901230,8586,Tottenham Hotspur,10204,Brighton & Hove Albion,2023-04-08 12:00:00+00:00,True,True,2 - 1
+,,/match/3901231/matchfacts/wolverhampton-wanderers-vs-chelsea,3901231,8602,Wolverhampton Wanderers,8455,Chelsea,2023-04-08 12:00:00+00:00,True,True,1 - 0
+,,/match/3901229/matchfacts/southampton-vs-manchester-city,3901229,8466,Southampton,8456,Manchester City,2023-04-08 14:30:00+00:00,True,True,1 - 4
+,,/match/3901225/matchfacts/leeds-united-vs-crystal-palace,3901225,8463,Leeds United,9826,Crystal Palace,2023-04-09 11:00:00+00:00,True,True,1 - 5
+,,/match/3901227/matchfacts/liverpool-vs-arsenal,3901227,8650,Liverpool,9825,Arsenal,2023-04-09 13:30:00+00:00,True,True,2 - 2
+,,/match/3901232/matchfacts/aston-villa-vs-newcastle-united,3901232,10252,Aston Villa,10261,Newcastle United,2023-04-15 09:30:00+00:00,True,True,3 - 0
+,,/match/3901233/matchfacts/chelsea-vs-brighton--hove-albion,3901233,8455,Chelsea,10204,Brighton & Hove Albion,2023-04-15 12:00:00+00:00,True,True,1 - 2
+,,/match/3901234/matchfacts/everton-vs-fulham,3901234,8668,Everton,9879,Fulham,2023-04-15 12:00:00+00:00,True,True,1 - 3
+,,/match/3901238/matchfacts/southampton-vs-crystal-palace,3901238,8466,Southampton,9826,Crystal Palace,2023-04-15 12:00:00+00:00,True,True,0 - 2
+,,/match/3901241/matchfacts/wolverhampton-wanderers-vs-brentford,3901241,8602,Wolverhampton Wanderers,9937,Brentford,2023-04-15 12:00:00+00:00,True,True,2 - 0
+,,/match/3901239/matchfacts/tottenham-hotspur-vs-afc-bournemouth,3901239,8586,Tottenham Hotspur,8678,AFC Bournemouth,2023-04-15 12:15:00+00:00,True,True,2 - 3
+,,/match/3901236/matchfacts/manchester-city-vs-leicester-city,3901236,8456,Manchester City,8197,Leicester City,2023-04-15 14:30:00+00:00,True,True,3 - 1
+,,/match/3901240/matchfacts/west-ham-united-vs-arsenal,3901240,8654,West Ham United,9825,Arsenal,2023-04-16 11:00:00+00:00,True,True,2 - 2
+,,/match/3901237/matchfacts/nottingham-forest-vs-manchester-united,3901237,10203,Nottingham Forest,10260,Manchester United,2023-04-16 13:30:00+00:00,True,True,0 - 2
+,,/match/3901235/matchfacts/leeds-united-vs-liverpool,3901235,8463,Leeds United,8650,Liverpool,2023-04-17 17:00:00+00:00,True,True,1 - 6
+,,/match/3901242/matchfacts/arsenal-vs-southampton,3901242,9825,Arsenal,8466,Southampton,2023-04-21 17:00:00+00:00,True,True,3 - 3
+,,/match/3901247/matchfacts/fulham-vs-leeds-united,3901247,9879,Fulham,8463,Leeds United,2023-04-22 09:30:00+00:00,True,True,2 - 1
+,,/match/3901244/matchfacts/brentford-vs-aston-villa,3901244,9937,Brentford,10252,Aston Villa,2023-04-22 12:00:00+00:00,True,True,1 - 1
+,,/match/3901246/matchfacts/crystal-palace-vs-everton,3901246,9826,Crystal Palace,8668,Everton,2023-04-22 12:00:00+00:00,True,True,0 - 0
+,,/match/3901248/matchfacts/leicester-city-vs-wolverhampton-wanderers,3901248,8197,Leicester City,8602,Wolverhampton Wanderers,2023-04-22 12:00:00+00:00,True,True,2 - 1
+,,/match/3901249/matchfacts/liverpool-vs-nottingham-forest,3901249,8650,Liverpool,10203,Nottingham Forest,2023-04-22 12:00:00+00:00,True,True,3 - 2
+,,/match/3901243/matchfacts/afc-bournemouth-vs-west-ham-united,3901243,8678,AFC Bournemouth,8654,West Ham United,2023-04-23 11:00:00+00:00,True,True,0 - 4
+,,/match/3901251/matchfacts/newcastle-united-vs-tottenham-hotspur,3901251,10261,Newcastle United,8586,Tottenham Hotspur,2023-04-23 11:00:00+00:00,True,True,6 - 1
+,,/match/3901257/matchfacts/wolverhampton-wanderers-vs-crystal-palace,3901257,8602,Wolverhampton Wanderers,9826,Crystal Palace,2023-04-25 16:30:00+00:00,True,True,2 - 0
+,,/match/3901258/matchfacts/aston-villa-vs-fulham,3901258,10252,Aston Villa,9879,Fulham,2023-04-25 16:45:00+00:00,True,True,1 - 0
+,,/match/3901253/matchfacts/leeds-united-vs-leicester-city,3901253,8463,Leeds United,8197,Leicester City,2023-04-25 17:00:00+00:00,True,True,1 - 1
+,,/match/3901254/matchfacts/nottingham-forest-vs-brighton--hove-albion,3901254,10203,Nottingham Forest,10204,Brighton & Hove Albion,2023-04-26 16:30:00+00:00,True,True,3 - 1
+,,/match/3901259/matchfacts/chelsea-vs-brentford,3901259,8455,Chelsea,9937,Brentford,2023-04-26 16:45:00+00:00,True,True,0 - 2
+,,/match/3901256/matchfacts/west-ham-united-vs-liverpool,3901256,8654,West Ham United,8650,Liverpool,2023-04-26 16:45:00+00:00,True,True,1 - 2
+,,/match/3901261/matchfacts/manchester-city-vs-arsenal,3901261,8456,Manchester City,9825,Arsenal,2023-04-26 17:00:00+00:00,True,True,4 - 1
+,,/match/3901252/matchfacts/everton-vs-newcastle-united,3901252,8668,Everton,10261,Newcastle United,2023-04-27 16:45:00+00:00,True,True,1 - 4
+,,/match/3901260/matchfacts/southampton-vs-afc-bournemouth,3901260,8466,Southampton,8678,AFC Bournemouth,2023-04-27 16:45:00+00:00,True,True,0 - 1
+,,/match/3901255/matchfacts/tottenham-hotspur-vs-manchester-united,3901255,8586,Tottenham Hotspur,10260,Manchester United,2023-04-27 17:15:00+00:00,True,True,2 - 2
+,,/match/3901266/matchfacts/crystal-palace-vs-west-ham-united,3901266,9826,Crystal Palace,8654,West Ham United,2023-04-29 09:45:00+00:00,True,True,4 - 3
+,,/match/3901264/matchfacts/brentford-vs-nottingham-forest,3901264,9937,Brentford,10203,Nottingham Forest,2023-04-29 12:00:00+00:00,True,True,2 - 1
+,,/match/3901265/matchfacts/brighton--hove-albion-vs-wolverhampton-wanderers,3901265,10204,Brighton & Hove Albion,8602,Wolverhampton Wanderers,2023-04-29 12:00:00+00:00,True,True,6 - 0
+,,/match/3901263/matchfacts/afc-bournemouth-vs-leeds-united,3901263,8678,AFC Bournemouth,8463,Leeds United,2023-04-30 11:00:00+00:00,True,True,4 - 1
+,,/match/3901267/matchfacts/fulham-vs-manchester-city,3901267,9879,Fulham,8456,Manchester City,2023-04-30 11:00:00+00:00,True,True,1 - 2
+,,/match/3901270/matchfacts/manchester-united-vs-aston-villa,3901270,10260,Manchester United,10252,Aston Villa,2023-04-30 11:00:00+00:00,True,True,1 - 0
+,,/match/3901271/matchfacts/newcastle-united-vs-southampton,3901271,10261,Newcastle United,8466,Southampton,2023-04-30 11:00:00+00:00,True,True,3 - 1
+,,/match/3901269/matchfacts/liverpool-vs-tottenham-hotspur,3901269,8650,Liverpool,8586,Tottenham Hotspur,2023-04-30 13:30:00+00:00,True,True,4 - 3
+,,/match/3901268/matchfacts/leicester-city-vs-everton,3901268,8197,Leicester City,8668,Everton,2023-05-01 17:00:00+00:00,True,True,2 - 2
+,,/match/3901262/matchfacts/arsenal-vs-chelsea,3901262,9825,Arsenal,8455,Chelsea,2023-05-02 17:00:00+00:00,True,True,3 - 1
+,,/match/3901207/matchfacts/liverpool-vs-fulham,3901207,8650,Liverpool,9879,Fulham,2023-05-03 17:00:00+00:00,True,True,1 - 0
+,,/match/3901208/matchfacts/manchester-city-vs-west-ham-united,3901208,8456,Manchester City,8654,West Ham United,2023-05-03 17:00:00+00:00,True,True,3 - 0
+,,/match/3901205/matchfacts/brighton--hove-albion-vs-manchester-united,3901205,10204,Brighton & Hove Albion,10260,Manchester United,2023-05-04 17:00:00+00:00,True,True,1 - 0
+,,/match/3901272/matchfacts/afc-bournemouth-vs-chelsea,3901272,8678,AFC Bournemouth,8455,Chelsea,2023-05-06 12:00:00+00:00,True,True,1 - 3
+,,/match/3901276/matchfacts/manchester-city-vs-leeds-united,3901276,8456,Manchester City,8463,Leeds United,2023-05-06 12:00:00+00:00,True,True,2 - 1
+,,/match/3901279/matchfacts/tottenham-hotspur-vs-crystal-palace,3901279,8586,Tottenham Hotspur,9826,Crystal Palace,2023-05-06 12:00:00+00:00,True,True,1 - 0
+,,/match/3901281/matchfacts/wolverhampton-wanderers-vs-aston-villa,3901281,8602,Wolverhampton Wanderers,10252,Aston Villa,2023-05-06 12:00:00+00:00,True,True,1 - 0
+,,/match/3901275/matchfacts/liverpool-vs-brentford,3901275,8650,Liverpool,9937,Brentford,2023-05-06 14:30:00+00:00,True,True,1 - 0
+,,/match/3901277/matchfacts/newcastle-united-vs-arsenal,3901277,10261,Newcastle United,9825,Arsenal,2023-05-07 13:30:00+00:00,True,True,0 - 2
+,,/match/3901280/matchfacts/west-ham-united-vs-manchester-united,3901280,8654,West Ham United,10260,Manchester United,2023-05-07 16:00:00+00:00,True,True,1 - 0
+,,/match/3901274/matchfacts/fulham-vs-leicester-city,3901274,9879,Fulham,8197,Leicester City,2023-05-08 12:00:00+00:00,True,True,5 - 3
+,,/match/3901273/matchfacts/brighton--hove-albion-vs-everton,3901273,10204,Brighton & Hove Albion,8668,Everton,2023-05-08 14:30:00+00:00,True,True,1 - 5
+,,/match/3901278/matchfacts/nottingham-forest-vs-southampton,3901278,10203,Nottingham Forest,8466,Southampton,2023-05-08 17:00:00+00:00,True,True,4 - 3
+,,/match/3901288/matchfacts/leeds-united-vs-newcastle-united,3901288,8463,Leeds United,10261,Newcastle United,2023-05-13 09:30:00+00:00,True,True,2 - 2
+,,/match/3901283/matchfacts/aston-villa-vs-tottenham-hotspur,3901283,10252,Aston Villa,8586,Tottenham Hotspur,2023-05-13 12:00:00+00:00,True,True,2 - 1
+,,/match/3901285/matchfacts/chelsea-vs-nottingham-forest,3901285,8455,Chelsea,10203,Nottingham Forest,2023-05-13 12:00:00+00:00,True,True,2 - 2
+,,/match/3901286/matchfacts/crystal-palace-vs-afc-bournemouth,3901286,9826,Crystal Palace,8678,AFC Bournemouth,2023-05-13 12:00:00+00:00,True,True,2 - 0
+,,/match/3901290/matchfacts/manchester-united-vs-wolverhampton-wanderers,3901290,10260,Manchester United,8602,Wolverhampton Wanderers,2023-05-13 12:00:00+00:00,True,True,2 - 0
+,,/match/3901291/matchfacts/southampton-vs-fulham,3901291,8466,Southampton,9879,Fulham,2023-05-13 12:00:00+00:00,True,True,0 - 2
+,,/match/3901284/matchfacts/brentford-vs-west-ham-united,3901284,9937,Brentford,8654,West Ham United,2023-05-14 11:00:00+00:00,True,True,2 - 0
+,,/match/3901287/matchfacts/everton-vs-manchester-city,3901287,8668,Everton,8456,Manchester City,2023-05-14 11:00:00+00:00,True,True,0 - 3
+,,/match/3901282/matchfacts/arsenal-vs-brighton--hove-albion,3901282,9825,Arsenal,10204,Brighton & Hove Albion,2023-05-14 13:30:00+00:00,True,True,0 - 3
+,,/match/3901289/matchfacts/leicester-city-vs-liverpool,3901289,8197,Leicester City,8650,Liverpool,2023-05-15 17:00:00+00:00,True,True,0 - 3
+,,/match/3901179/matchfacts/newcastle-united-vs-brighton--hove-albion,3901179,10261,Newcastle United,10204,Brighton & Hove Albion,2023-05-18 16:30:00+00:00,True,True,4 - 1
+,,/match/3901299/matchfacts/tottenham-hotspur-vs-brentford,3901299,8586,Tottenham Hotspur,9937,Brentford,2023-05-20 09:30:00+00:00,True,True,1 - 3
+,,/match/3901292/matchfacts/afc-bournemouth-vs-manchester-united,3901292,8678,AFC Bournemouth,10260,Manchester United,2023-05-20 12:00:00+00:00,True,True,0 - 1
+,,/match/3901294/matchfacts/fulham-vs-crystal-palace,3901294,9879,Fulham,9826,Crystal Palace,2023-05-20 12:00:00+00:00,True,True,2 - 2
+,,/match/3901295/matchfacts/liverpool-vs-aston-villa,3901295,8650,Liverpool,10252,Aston Villa,2023-05-20 12:00:00+00:00,True,True,1 - 1
+,,/match/3901301/matchfacts/wolverhampton-wanderers-vs-everton,3901301,8602,Wolverhampton Wanderers,8668,Everton,2023-05-20 12:00:00+00:00,True,True,1 - 1
+,,/match/3901298/matchfacts/nottingham-forest-vs-arsenal,3901298,10203,Nottingham Forest,9825,Arsenal,2023-05-20 14:30:00+00:00,True,True,1 - 0
+,,/match/3901300/matchfacts/west-ham-united-vs-leeds-united,3901300,8654,West Ham United,8463,Leeds United,2023-05-21 10:30:00+00:00,True,True,3 - 1
+,,/match/3901293/matchfacts/brighton--hove-albion-vs-southampton,3901293,10204,Brighton & Hove Albion,8466,Southampton,2023-05-21 11:00:00+00:00,True,True,3 - 1
+,,/match/3901296/matchfacts/manchester-city-vs-chelsea,3901296,8456,Manchester City,8455,Chelsea,2023-05-21 13:00:00+00:00,True,True,1 - 0
+,,/match/3901297/matchfacts/newcastle-united-vs-leicester-city,3901297,10261,Newcastle United,8197,Leicester City,2023-05-22 17:00:00+00:00,True,True,0 - 0
+,,/match/3901245/matchfacts/brighton--hove-albion-vs-manchester-city,3901245,10204,Brighton & Hove Albion,8456,Manchester City,2023-05-24 17:00:00+00:00,True,True,1 - 1
+,,/match/3901250/matchfacts/manchester-united-vs-chelsea,3901250,10260,Manchester United,8455,Chelsea,2023-05-25 17:00:00+00:00,True,True,4 - 1
+,,/match/3901302/matchfacts/arsenal-vs-wolverhampton-wanderers,3901302,9825,Arsenal,8602,Wolverhampton Wanderers,2023-05-28 13:30:00+00:00,True,True,5 - 0
+,,/match/3901303/matchfacts/aston-villa-vs-brighton--hove-albion,3901303,10252,Aston Villa,10204,Brighton & Hove Albion,2023-05-28 13:30:00+00:00,True,True,2 - 1
+,,/match/3901304/matchfacts/brentford-vs-manchester-city,3901304,9937,Brentford,8456,Manchester City,2023-05-28 13:30:00+00:00,True,True,1 - 0
+,,/match/3901305/matchfacts/chelsea-vs-newcastle-united,3901305,8455,Chelsea,10261,Newcastle United,2023-05-28 13:30:00+00:00,True,True,1 - 1
+,,/match/3901306/matchfacts/crystal-palace-vs-nottingham-forest,3901306,9826,Crystal Palace,10203,Nottingham Forest,2023-05-28 13:30:00+00:00,True,True,1 - 1
+,,/match/3901307/matchfacts/everton-vs-afc-bournemouth,3901307,8668,Everton,8678,AFC Bournemouth,2023-05-28 13:30:00+00:00,True,True,1 - 0
+,,/match/3901308/matchfacts/leeds-united-vs-tottenham-hotspur,3901308,8463,Leeds United,8586,Tottenham Hotspur,2023-05-28 13:30:00+00:00,True,True,1 - 4
+,,/match/3901309/matchfacts/leicester-city-vs-west-ham-united,3901309,8197,Leicester City,8654,West Ham United,2023-05-28 13:30:00+00:00,True,True,2 - 1
+,,/match/3901310/matchfacts/manchester-united-vs-fulham,3901310,10260,Manchester United,9879,Fulham,2023-05-28 13:30:00+00:00,True,True,2 - 1
+,,/match/3901311/matchfacts/southampton-vs-liverpool,3901311,8466,Southampton,8650,Liverpool,2023-05-28 13:30:00+00:00,True,True,4 - 4

@@ -4,7 +4,11 @@ import pandas as pd
 
 
 def fm_season_stat_leaders(
-    league_id: str, team_or_player: str, stat_name: list, json_file: json = None
+    league_id: str,
+    team_or_player: str,
+    stat_name: list,
+    season: str = None,
+    json_file: json = None,
 ) -> pd.DataFrame:
     """Returns top 3 stat leaders of a given league
 
@@ -12,6 +16,7 @@ def fm_season_stat_leaders(
         league_id (str): id of a league
         team_or_player (str): 'teams' or 'players'
         stat_name (list): name of stats. See documentation for list of available stats.
+        season (str, optional): season of a league. Use / divider for leagues over 2 calendar years. Defaults to None.
         json_file (json, optional): json file of stat data. Defaults to None.
 
     Returns:
@@ -27,7 +32,7 @@ def fm_season_stat_leaders(
         stat_name = [stat_name]
 
     if json_file is None:
-        url = f"https://www.fotmob.com/api/leagues?id={league_id}"
+        url = f"https://www.fotmob.com/api/leagues?id={league_id}&season={season}"
 
         response = urlopen(url)
         data = json.loads(response.read())

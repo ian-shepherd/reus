@@ -1,0 +1,326 @@
+[
+    {
+        "id": "35207",
+        "name": "marco-reus",
+        "url": "/marco-reus/profil/spieler/35207",
+        "headshot_url": "https://img.a.transfermarkt.technology/portrait/header/35207-1661413169.jpg?lm=1",
+        "full_name": null,
+        "born": "May 31, 1989",
+        "birth_place": "Dortmund",
+        "birth_country": "Germany",
+        "age": "34",
+        "height": "1.80",
+        "nationality": "Germany",
+        "position": "midfield - Attacking Midfield",
+        "position_main": "Attacking Midfield",
+        "position_alt1": "Left Winger",
+        "position_alt2": "Right Winger",
+        "foot": "right",
+        "agent": "Dirk Hebel",
+        "outfitter": "Puma",
+        "social_twitter": "http://twitter.com/woodyinho",
+        "social_facebook": "http://www.facebook.com/MarcoReus11",
+        "social_instagram": "http://www.instagram.com/marcinho11/",
+        "club": "Borussia Dortmund",
+        "joined": "Jul 1, 2012",
+        "contracted": "Jun 30, 2024",
+        "extension": "Apr 27, 2023",
+        "currency": "\u20ac",
+        "mv": 7000000.0,
+        "update": "Jun 22, 2023"
+    },
+    [
+        {
+            "date": "Feb 4, 2008",
+            "team": "Rot Weiss Ahlen U19",
+            "currency": "\u20ac",
+            "value": "50000"
+        },
+        {
+            "date": "Oct 24, 2008",
+            "team": "Rot Weiss Ahlen",
+            "currency": "\u20ac",
+            "value": "250000"
+        },
+        {
+            "date": "Jan 21, 2009",
+            "team": "Rot Weiss Ahlen",
+            "currency": "\u20ac",
+            "value": "700000"
+        },
+        {
+            "date": "Jun 10, 2009",
+            "team": "Rot Weiss Ahlen",
+            "currency": "\u20ac",
+            "value": "1000000"
+        },
+        {
+            "date": "Nov 9, 2009",
+            "team": "Borussia M\\u00F6nchengladbach",
+            "currency": "\u20ac",
+            "value": "1500000"
+        },
+        {
+            "date": "Jan 17, 2010",
+            "team": "Borussia M\\u00F6nchengladbach",
+            "currency": "\u20ac",
+            "value": "2500000"
+        },
+        {
+            "date": "May 8, 2010",
+            "team": "Borussia M\\u00F6nchengladbach",
+            "currency": "\u20ac",
+            "value": "4500000"
+        },
+        {
+            "date": "Jul 16, 2010",
+            "team": "Borussia M\\u00F6nchengladbach",
+            "currency": "\u20ac",
+            "value": "5500000"
+        },
+        {
+            "date": "Nov 23, 2010",
+            "team": "Borussia M\\u00F6nchengladbach",
+            "currency": "\u20ac",
+            "value": "6500000"
+        },
+        {
+            "date": "Jan 12, 2011",
+            "team": "Borussia M\\u00F6nchengladbach",
+            "currency": "\u20ac",
+            "value": "8500000"
+        },
+        {
+            "date": "Jun 29, 2011",
+            "team": "Borussia M\\u00F6nchengladbach",
+            "currency": "\u20ac",
+            "value": "14000000"
+        },
+        {
+            "date": "Jan 23, 2012",
+            "team": "Borussia M\\u00F6nchengladbach",
+            "currency": "\u20ac",
+            "value": "20000000"
+        },
+        {
+            "date": "Jun 29, 2012",
+            "team": "Borussia M\\u00F6nchengladbach",
+            "currency": "\u20ac",
+            "value": "20000000"
+        },
+        {
+            "date": "Oct 26, 2012",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "27000000"
+        },
+        {
+            "date": "Jan 17, 2013",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "30000000"
+        },
+        {
+            "date": "Jun 30, 2013",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "34000000"
+        },
+        {
+            "date": "Feb 12, 2014",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "40000000"
+        },
+        {
+            "date": "Jul 10, 2014",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "50000000"
+        },
+        {
+            "date": "Feb 4, 2015",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "50000000"
+        },
+        {
+            "date": "Jul 1, 2015",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "45000000"
+        },
+        {
+            "date": "Feb 15, 2016",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "45000000"
+        },
+        {
+            "date": "Jul 22, 2016",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "40000000"
+        },
+        {
+            "date": "Feb 7, 2017",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "40000000"
+        },
+        {
+            "date": "Jun 19, 2017",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "35000000"
+        },
+        {
+            "date": "Dec 28, 2017",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "28000000"
+        },
+        {
+            "date": "Apr 4, 2018",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "35000000"
+        },
+        {
+            "date": "Jun 5, 2018",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "35000000"
+        },
+        {
+            "date": "Jul 16, 2018",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "40000000"
+        },
+        {
+            "date": "Dec 18, 2018",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "50000000"
+        },
+        {
+            "date": "Jun 5, 2019",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "50000000"
+        },
+        {
+            "date": "Dec 17, 2019",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "40000000"
+        },
+        {
+            "date": "Apr 8, 2020",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "32000000"
+        },
+        {
+            "date": "Jul 8, 2020",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "25000000"
+        },
+        {
+            "date": "Feb 10, 2021",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "15000000"
+        },
+        {
+            "date": "Jun 9, 2021",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "13000000"
+        },
+        {
+            "date": "Dec 22, 2021",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "13000000"
+        },
+        {
+            "date": "Jun 9, 2022",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "11000000"
+        },
+        {
+            "date": "Nov 9, 2022",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "9000000"
+        },
+        {
+            "date": "Jun 22, 2023",
+            "team": "Borussia Dortmund",
+            "currency": "\u20ac",
+            "value": "7000000"
+        }
+    ],
+    [
+        {
+            "left": "Bor. M'gladbach",
+            "joined": "Bor. Dortmund",
+            "type": "Transfer",
+            "currency": "\u20ac",
+            "market_value": 20000000.0,
+            "fee": 17100000.0
+        },
+        {
+            "left": "Rot Weiss Ahlen",
+            "joined": "Bor. M'gladbach",
+            "type": "Transfer",
+            "currency": "\u20ac",
+            "market_value": 1000000.0,
+            "fee": 1000000.0
+        },
+        {
+            "left": "RW Ahlen U19",
+            "joined": "Rot Weiss Ahlen",
+            "type": "Youth",
+            "currency": "\u20ac",
+            "market_value": 50000.0,
+            "fee": 0.0
+        },
+        {
+            "left": "RW Ahlen U17",
+            "joined": "RW Ahlen U19",
+            "type": "Youth",
+            "currency": "-",
+            "market_value": 0.0,
+            "fee": 0.0
+        },
+        {
+            "left": "B. Dortmund U17",
+            "joined": "LR Ahlen U17",
+            "type": "Free Transfer",
+            "currency": "-",
+            "market_value": 0.0,
+            "fee": 0.0
+        },
+        {
+            "left": "Dortmund Yth.",
+            "joined": "B. Dortmund U17",
+            "type": "Youth",
+            "currency": "-",
+            "market_value": 0.0,
+            "fee": 0.0
+        },
+        {
+            "left": "PTSV Dort. Yth.",
+            "joined": "Dortmund Yth.",
+            "type": "Free Transfer",
+            "currency": "-",
+            "market_value": 0.0,
+            "fee": 0.0
+        }
+    ]
+]

@@ -3,11 +3,14 @@ from urllib.request import urlopen
 import pandas as pd
 
 
-def fm_league_table(league_id: str, matches="All", json_file: json = None) -> dict:
+def fm_league_table(
+    league_id: str, season: str = None, matches="All", json_file: json = None
+) -> dict:
     """Returns standing of a given league
 
     Args:
         league_id (str): id of a league
+        season (str, optional): season of a league. Use / divider for leagues over 2 calendar years. Defaults to None.
         matches (str, optional): type of matches to include in standings. Defaults to "All". \n
             'All' \n
             'Home' \n
@@ -27,7 +30,7 @@ def fm_league_table(league_id: str, matches="All", json_file: json = None) -> di
     ], "matches must be one of 'All', 'Home', 'Away', or 'Form'"
 
     if json_file is None:
-        url = f"https://www.fotmob.com/api/leagues?id={league_id}"
+        url = f"https://www.fotmob.com/api/leagues?id={league_id}&season={season}"
 
         response = urlopen(url)
         data = json.loads(response.read())

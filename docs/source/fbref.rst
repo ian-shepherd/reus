@@ -55,7 +55,7 @@ Match functions
 
 .. py:function:: .fbref.fb_match_metadata(pageSoup=None, url: str = None) -> tuple
 
-   Extracts general information (teams, managers, captains, date, time, venue, attendance, score, xG) for a given match
+   Extracts general info (teams, managers, captains, date, time, venue, attendance, score, xG) for a given match
 
    :param pageSoup: bs4 object of a match. Defaults to None.
    :type pageSoup: bs4 or None
@@ -130,7 +130,7 @@ Match functions
    :return: (summary stats for home team players, summary stats for away team players)
    :rtype: (list, list)
 
-.. py:function:: .fbref.fb_match_summary(pageSoup) -> list
+.. py:function:: .fbref.fb_match_summary(pageSoup=None, url: str = None) -> list
 
    Extracts events (goals, bookings, and substitutions) from match summary for a given match
 
@@ -174,7 +174,7 @@ League functions
    :return: match urls for given season
    :rtype: list[str]
 
-.. py:function:: .fbref.fb_season_fixture_urls(competition_type: str = None, competition_name: str = None, country: str = None, gender: str = None, governing_body: str = None, tier: str = None, season_end_year: int = None, stats_bomb: str = None) -> pd.Series
+.. py:function:: .fbref.fb_season_fixture_urls(competition_type: str = None, competition_name: str = None, country: str = None, gender: str = None, governing_body: str = None, tier: str = None, season_end_year: int = None, advanced: str = None) -> pd.Series
 
    Returns a series of urls for fixture section of a season
 
@@ -223,16 +223,16 @@ League functions
 
    :param season_end: year at end of competition. Defaults to None.
    :type season_end: int, list, or None
-   :param stats_bomb: flag for if statsbomb data is available. Defaults to None.
+   :param advanced: flag for if advanced data is available. Defaults to None.
 
       - ``Y``
       - ``N``
 
-   :type stats_bomb: str, list, or None
+   :type advanced: str, list, or None
    :return: season fixture urls
    :rtype: series
 
-.. py:function:: .fbref.fb_season_urls(competition_type: str = None, competition_name: str = None, country: str = None, gender: str = None, governing_body: str = None, tier: str = None, season_end_year: int = None, stats_bomb: str = None) -> pd.Series
+.. py:function:: .fbref.fb_season_urls(competition_type: str = None, competition_name: str = None, country: str = None, gender: str = None, governing_body: str = None, tier: str = None, season_end_year: int = None, advanced: str = None) -> pd.Series
 
    Returns a series of urls for overview section of a season
 
@@ -281,12 +281,12 @@ League functions
 
    :param season_end: year at end of competition. Defaults to None.
    :type season_end: int, list, or None
-   :param stats_bomb: flag for if statsbomb data is available. Defaults to None.
+   :param advanced: flag for if advanced data is available. Defaults to None.
 
       - ``Y``
       - ``N``
 
-   :type stats_bomb: str, list, or None
+   :type advanced: str, list, or None
    :return: season fixture urls
    :rtype: series
 

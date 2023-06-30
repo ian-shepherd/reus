@@ -59,68 +59,21 @@ def fb_season_fixture_urls(
         keep_default_na=False,
     )
 
-    # Competition type
-    if competition_type is None:
-        competition_type = df.competition_type.unique()
-    elif not isinstance(competition_type, list):
-        competition_type = [competition_type]
+    filters = {
+        "competition_type": competition_type,
+        "competition_name": competition_name,
+        "country": country,
+        "gender": gender,
+        "governing_body": governing_body,
+        "tier": tier,
+        "season_end_year": season_end_year,
+        "advanced": advanced,
+    }
 
-    df = df[df.competition_type.isin(competition_type)]
-
-    # Competition name
-    if competition_name is None:
-        competition_name = df.competition_name.unique()
-    elif not isinstance(competition_name, list):
-        competition_name = [competition_name]
-
-    df = df[df.competition_name.isin(competition_name)]
-
-    # Country
-    if country is None:
-        country = df.country.unique()
-    elif not isinstance(country, list):
-        country = [country]
-
-    df = df[df.country.isin(country)]
-
-    # Gender
-    if gender is None:
-        gender = df.gender.unique()
-    elif not isinstance(gender, list):
-        gender = [gender]
-
-    df = df[df.gender.isin(gender)]
-
-    # Governing body
-    if governing_body is None:
-        governing_body = df.governing_body.unique()
-    elif not isinstance(governing_body, list):
-        governing_body = [governing_body]
-
-    df = df[df.governing_body.isin(governing_body)]
-
-    # Tier
-    if tier is None:
-        tier = df.tier.unique()
-    elif not isinstance(tier, list):
-        tier = [tier]
-
-    df = df[df.tier.isin(tier)]
-
-    # Season end
-    if season_end_year is None:
-        season_end_year = df.season_end_year.unique()
-    elif not isinstance(season_end_year, list):
-        season_end_year = [season_end_year]
-
-    df = df[df.season_end_year.isin(season_end_year)]
-
-    # Advanced stats
-    if advanced is None:
-        advanced = df.advanced.unique()
-    elif not isinstance(advanced, list):
-        advanced = [advanced]
-
-    df = df[df.advanced.isin(advanced)]
+    for column, value in filters.items():
+        if value is not None:
+            if not isinstance(value, list):
+                value = [value]
+            df = df[df[column].isin(value)]
 
     return df["fixtures_url"]

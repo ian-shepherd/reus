@@ -41,6 +41,8 @@ def fb_team_player_summary_stats(pageSoup=None, url: str = None) -> list:
         age = row.find("td", {"data-stat": "age"}).text.split("-")
         try:
             age = int(age[0]) + int(age[1]) / 365
+        except IndexError:
+            age = int(age[0])
         except ValueError:
             age = None
         minutes = row.find("td", {"data-stat": "minutes"}).text

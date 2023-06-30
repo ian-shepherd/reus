@@ -1,6 +1,99 @@
 from ..util import get_page_soup
 
 
+def _get_current_stat(row):
+    if row == "Possession":
+        return "possession"
+    elif row == "Passing Accuracy":
+        return "passing"
+    elif row == "Shots on Target":
+        return "shooting"
+    elif row == "Saves":
+        return "saves"
+    elif row == "Cards":
+        return "cards"
+
+
+def _extract_percentage_stat(row):
+    stat = row.find_all("div")
+    stat_x = stat[0].find_all("div")[0].text.split()
+    stat_success_x = stat_x[0]
+    stat_attempted_x = stat_x[2]
+    stat_accuracy_x = stat_x[4].replace("%", "")
+
+    stat_y = stat[5].find_all("div")[0].text.split()
+    stat_accuracy_y = stat_y[0].replace("%", "")
+    stat_success_y = stat_y[2]
+    stat_attempted_y = stat_y[4]
+
+    return (
+        stat_success_x,
+        stat_attempted_x,
+        stat_accuracy_x,
+        stat_success_y,
+        stat_attempted_y,
+        stat_accuracy_y,
+        None,
+    )
+
+
+def _extract_save_stat(row):
+    goalkeeping = row.find_all("div")
+    goalkeeping_x = goalkeeping[0].find_all("div")[0].text.split()
+    if goalkeeping_x[0] == "of":
+        saves_x = "0"
+        saves_attempted_x = goalkeeping_x[1]
+        save_rate_x = "0"
+    else:
+        saves_x = goalkeeping_x[0]
+        saves_attempted_x = goalkeeping_x[2]
+        save_rate_x = goalkeeping_x[4].replace("%", "")
+    goalkeeping_y = goalkeeping[5].find_all("div")[0].text.split()
+    if goalkeeping_y[2] == "of":
+        saves_y = "0"
+        saves_attempted_y = goalkeeping_y[3]
+        save_rate_y = "0"
+    else:
+        saves_y = goalkeeping_y[2]
+        saves_attempted_y = goalkeeping_y[4]
+        save_rate_y = goalkeeping_y[0].replace("%", "")
+
+    return (
+        saves_x,
+        saves_attempted_x,
+        save_rate_x,
+        saves_y,
+        saves_attempted_y,
+        save_rate_y,
+        None,
+    )
+
+
+def _extract_cards(row):
+    cards = row.find_all("div")
+    cards_x = cards[0]
+    yellow_cards_x = len(cards_x.find_all("span", {"class": "yellow_card"}))
+    red_cards_x = len(cards_x.find_all("span", {"class": "red_card"}))
+    cards_y = cards[5]
+    yellow_cards_y = len(cards_y.find_all("span", {"class": "yellow_card"}))
+    red_cards_y = len(cards_y.find_all("span", {"class": "red_card"}))
+
+    return (
+        yellow_cards_x,
+        red_cards_x,
+        yellow_cards_y,
+        red_cards_y,
+        None,
+    )
+
+
+def _extract_extra_stats(div):
+    stat_x = div.findPrevious("div").text
+    stat_y = div.findNext("div").text
+
+    return stat_x, stat_y
+
+
 def fb_match_team_stats(pageSoup=None, url: str = None) -> dict:
     """Extracts summary stats for each team in a given match
 
@@ -51,20 +144,14 @@ def fb_match_team_stats(pageSoup=None, url: str = None) -> dict:
 
     currentStat = None
     for i in statsTable[1:]:
-        if i.text == "Possession":
-            currentStat = "possession"
-            continue
-        elif i.text == "Passing Accuracy":
-            currentStat = "passing"
-            continue
-        elif i.text == "Shots on Target":
-            currentStat = "shooting"
-            continue
-        elif i.text == "Saves":
-            currentStat = "saves"
-            continue
-        elif i.text == "Cards":
-            currentStat = "cards"
+        if i.text in [
+            "Possession",
+            "Passing Accuracy",
+            "Shots on Target",
+            "Saves",
+            "Cards",
+        ]:
+            currentStat = _get_current_stat(i.text)
             continue
 
         if currentStat == "possession":
@@ -74,116 +161,81 @@ def fb_match_team_stats(pageSoup=None, url: str = None) -> dict:
             currentStat = None
             continue
         elif currentStat == "passing":
-            passing = i.find_all("div")
-            passing_x = passing[0].find_all("div")[0].text.split()
-            passes_completed_x = passing_x[0]
-            passes_attempted_x = passing_x[2]
-            passing_accuracy_x = passing_x[4].replace("%", "")
-            passing_y = passing[5].find_all("div")[0].text.split()
-            passing_accuracy_y = passing_y[0].replace("%", "")
-            passes_completed_y = passing_y[2]
-            passes_attempted_y = passing_y[4]
-            currentStat = None
+            (
+                passes_completed_x,
+                passes_attempted_x,
+                passing_accuracy_x,
+                passes_completed_y,
+                passes_attempted_y,
+                passing_accuracy_y,
+                currentStat,
+            ) = _extract_percentage_stat(i)
+
             continue
         elif currentStat == "shooting":
-            shooting = i.find_all("div")
-            shooting_x = shooting[0].find_all("div")[0].text.split()
-            shots_target_x = shooting_x[0]
-            shots_taken_x = shooting_x[2]
-            shot_accuracy_x = shooting_x[4].replace("%", "")
-            shooting_y = shooting[5].find_all("div")[0].text.split()
-            shot_accuracy_y = shooting_y[0].replace("%", "")
-            shots_target_y = shooting_y[2]
-            shots_taken_y = shooting_y[4]
-            currentStat = None
+            (
+                shots_target_x,
+                shots_taken_x,
+                shot_accuracy_x,
+                shots_target_y,
+                shots_taken_y,
+                shot_accuracy_y,
+                currentStat,
+            ) = _extract_percentage_stat(i)
+
             continue
         elif currentStat == "saves":
-            goalkeeping = i.find_all("div")
-            goalkeeping_x = goalkeeping[0].find_all("div")[0].text.split()
-            if goalkeeping_x[0] == "of":
-                saves_x = "0"
-                saves_attempted_x = goalkeeping_x[1]
-                save_rate_x = "0"
-            else:
-                saves_x = goalkeeping_x[0]
-                saves_attempted_x = goalkeeping_x[2]
-                save_rate_x = goalkeeping_x[4].replace("%", "")
-            goalkeeping_y = goalkeeping[5].find_all("div")[0].text.split()
-            if goalkeeping_y[2] == "of":
-                saves_y = "0"
-                saves_attempted_y = goalkeeping_y[3]
-                save_rate_y = "0"
-            else:
-                saves_y = goalkeeping_y[2]
-                saves_attempted_y = goalkeeping_y[4]
-                save_rate_y = goalkeeping_y[0].replace("%", "")
-            currentStat = None
+            (
+                saves_x,
+                saves_attempted_x,
+                save_rate_x,
+                saves_y,
+                saves_attempted_y,
+                save_rate_y,
+                currentStat,
+            ) = _extract_save_stat(i)
             continue
         elif currentStat == "cards":
-            cards = i.find_all("div")
-            cards_x = cards[0]
-            yellow_cards_x = len(cards_x.find_all("span", {"class": "yellow_card"}))
-            red_cards_x = len(cards_x.find_all("span", {"class": "red_card"}))
-            cards_y = cards[5]
-            yellow_cards_y = len(cards_y.find_all("span", {"class": "yellow_card"}))
-            red_cards_y = len(cards_y.find_all("span", {"class": "red_card"}))
-            currentStat = None
+            (
+                yellow_cards_x,
+                red_cards_x,
+                yellow_cards_y,
+                red_cards_y,
+                currentStat,
+            ) = _extract_cards(i)
             continue
 
     # Extra stats
     extra = pageSoup.find("div", {"id": "team_stats_extra"})
     extraTable = extra.find_all("div")
 
-    fouls_x = fouls_y = None
-    corners_x = corners_y = None
-    crosses_x = crosses_y = None
-    touches_x = touches_y = None
-    tackles_x = tackles_y = None
-    interceptions_x = interceptions_y = None
-    aerials_won_x = aerials_won_y = None
-    clearances_x = clearances_y = None
-    offsides_x = offsides_y = None
-    goal_kicks_x = goal_kicks_y = None
-    throw_ins_x = throw_ins_y = None
-    long_balls_x = long_balls_y = None
+    fouls_x = fouls_y = None  # noqa: F841
+    corners_x = corners_y = None  # noqa: F841
+    crosses_x = crosses_y = None  # noqa: F841
+    touches_x = touches_y = None  # noqa: F841
+    tackles_x = tackles_y = None  # noqa: F841
+    interceptions_x = interceptions_y = None  # noqa: F841
+    aerials_won_x = aerials_won_y = None  # noqa: F841
+    clearances_x = clearances_y = None  # noqa: F841
+    offsides_x = offsides_y = None  # noqa: F841
+    goal_kicks_x = goal_kicks_y = None  # noqa: F841
+    throw_ins_x = throw_ins_y = None  # noqa: F841
+    long_balls_x = long_balls_y = None  # noqa: F841
 
-    for div in extraTable:
-        if div.text == "Fouls":
-            fouls_x = div.findPrevious("div").text
-            fouls_y = div.findNext("div").text
-        elif div.text == "Corners":
-            corners_x = div.findPrevious("div").text
-            corners_y = div.findNext("div").text
-        elif div.text == "Crosses":
-            crosses_x = div.findPrevious("div").text
-            crosses_y = div.findNext("div").text
-        elif div.text == "Touches":
-            touches_x = div.findPrevious("div").text
-            touches_y = div.findNext("div").text
-        elif div.text == "Tackles":
-            tackles_x = div.findPrevious("div").text
-            tackles_y = div.findNext("div").text
-        elif div.text == "Interceptions":
-            interceptions_x = div.findPrevious("div").text
-            interceptions_y = div.findNext("div").text
-        elif div.text == "Aerials Won":
-            aerials_won_x = div.findPrevious("div").text
-            aerials_won_y = div.findNext("div").text
-        elif div.text == "Clearances":
-            clearances_x = div.findPrevious("div").text
-            clearances_y = div.findNext("div").text
-        elif div.text == "Offsides":
-            offsides_x = div.findPrevious("div").text
-            offsides_y = div.findNext("div").text
-        elif div.text == "Goal Kicks":
-            goal_kicks_x = div.findPrevious("div").text
-            goal_kicks_y = div.findNext("div").text
-        elif div.text == "Throw Ins":
-            throw_ins_x = div.findPrevious("div").text
-            throw_ins_y = div.findNext("div").text
-        elif div.text == "Long Balls":
-            long_balls_x = div.findPrevious("div").text
-            long_balls_y = div.findNext("div").text
+    extra_stats_mapping = {
+        "Fouls": ("fouls_x", "fouls_y"),
+        "Corners": ("corners_x", "corners_y"),
+        "Crosses": ("crosses_x", "crosses_y"),
+        "Touches": ("touches_x", "touches_y"),
+        "Tackles": ("tackles_x", "tackles_y"),
+        "Interceptions": ("interceptions_x", "interceptions_y"),
+        "Aerials Won": ("aerials_won_x", "aerials_won_y"),
+        "Clearances": ("clearances_x", "clearances_y"),
+        "Offsides": ("offsides_x", "offsides_y"),
+        "Goal Kicks": ("goal_kicks_x", "goal_kicks_y"),
+        "Throw Ins": ("throw_ins_x", "throw_ins_y"),
+        "Long Balls": ("long_balls_x", "long_balls_y"),
+    }
 
     # generate dictionary
     mydict = {
@@ -211,30 +263,13 @@ def fb_match_team_stats(pageSoup=None, url: str = None) -> dict:
         "red_cards_x": red_cards_x,
         "yellow_cards_y": yellow_cards_y,
         "red_cards_y": red_cards_y,
-        "fouls_x": fouls_x,
-        "fouls_y": fouls_y,
-        "corners_x": corners_x,
-        "corners_y": corners_y,
-        "crosses_x": crosses_x,
-        "crosses_y": crosses_y,
-        "touches_x": touches_x,
-        "touches_y": touches_y,
-        "tackles_x": tackles_x,
-        "tackles_y": tackles_y,
-        "interceptions_x": interceptions_x,
-        "interceptions_y": interceptions_y,
-        "aerials_won_x": aerials_won_x,
-        "aerials_won_y": aerials_won_y,
-        "clearances_x": clearances_x,
-        "clearances_y": clearances_y,
-        "offsides_x": offsides_x,
-        "offsides_y": offsides_y,
-        "goal_kicks_x": goal_kicks_x,
-        "goal_kicks_y": goal_kicks_y,
-        "throw_ins_x": throw_ins_x,
-        "throw_ins_y": throw_ins_y,
-        "long_balls_x": long_balls_x,
-        "long_balls_y": long_balls_y,
     }
+
+    for div in extraTable:
+        stat_name = div.text
+        if stat_name in extra_stats_mapping:
+            vars_x, vars_y = _extract_extra_stats(div)
+            for i, key in enumerate(extra_stats_mapping[stat_name]):
+                mydict[key] = vars_x if i == 0 else vars_y
 
     return mydict

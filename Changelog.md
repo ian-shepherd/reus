@@ -1,5 +1,41 @@
 # Change Log
 
+## 1.1.3 2023-06-30
+* added github actions for testing
+* deprecated fm_league_ids and fm_league_urls in favor of fm_leagues
+* added season parameter
+	* fm_league_matches
+	* fm_league_table
+	* fm_season_stat_leaders
+	* fm_season_stats
+* reduced complexity of functions
+	* fb_match_keeper_stats
+	* fb_match_metadata
+	* fb_match_summary
+	* fb_match_team_stats
+	* fb_seasib_fixtures_urls
+	* fb_season_urls
+	* fotmob util function
+* added error handling to fb_league_table for last 5 matches
+* added error handling for age
+	* fb_team_player_advanced_keeper_stats
+	* fb_team_player_defensive_action_stats
+	* fb_team_player_goal_sca_stats
+	* fb_team_player_keeper_stats
+	* fb_team_player_misc_stats
+	* fb_team_player_passing_stats
+	* fb_team_player_passing_type_stats
+	* fb_team_player_playing_time_stats
+	* fb_team_player_possession_stats
+	* fb_team_player_shooting_stats
+	* fb_team_player_summary_stats
+	* tm_player_metadata
+	* tm_team_player_data
+	* tm_team_transfers
+* fixed docstring for fm_match_ids
+* fixed currency bug for tm_player_transfers
+* added unittests for all functions
+
 ## 1.1.2 2023-06-02
 * added fotmob functions
 	* fm_league_ids: Returns a series of league ids

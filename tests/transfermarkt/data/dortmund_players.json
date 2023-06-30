@@ -386,7 +386,7 @@
         "position": "Central Midfield",
         "arrival_type": "Transfer",
         "birth_date": "Jun 29, 2003",
-        "age": "19",
+        "age": "20",
         "nation": "England",
         "height": "1.86",
         "foot": "right",
@@ -532,6 +532,24 @@
         "market_value": 14000000.0
     },
     {
+        "name": "Thorgan Hazard",
+        "url": "/thorgan-hazard/profil/spieler/102226",
+        "number": "-",
+        "position": "Left Winger",
+        "arrival_type": "Returned from Loan",
+        "birth_date": "Mar 29, 1993",
+        "age": "30",
+        "nation": "Belgium",
+        "height": "1.75",
+        "foot": "right",
+        "joined": "Jul 1, 2019",
+        "signed_from": "Borussia M\u00f6nchengladbach",
+        "signed_from_url": "/borussia-monchengladbach/startseite/verein/18/saison_id/2019",
+        "fee": 25500000.0,
+        "currency": "\u20ac",
+        "market_value": 7000000.0
+    },
+    {
         "name": "Donyell Malen",
         "url": "/donyell-malen/profil/spieler/326029",
         "number": "21",
@@ -568,6 +586,24 @@
         "currency": "\u20ac",
         "contracted": "-",
         "market_value": 8500000.0
+    },
+    {
+        "name": "Ansgar Knauff",
+        "url": "/ansgar-knauff/profil/spieler/429874",
+        "number": "-",
+        "position": "Right Winger",
+        "arrival_type": "Transfer",
+        "birth_date": "Jan 10, 2002",
+        "age": "21",
+        "nation": "Germany",
+        "height": "1.80",
+        "foot": "right",
+        "joined": "Jul 1, 2021",
+        "signed_from": "Borussia Dortmund II",
+        "signed_from_url": "/borussia-dortmund-ii/startseite/verein/17/saison_id/2021",
+        "fee": 0.0,
+        "currency": "-",
+        "market_value": 8000000.0
     },
     {
         "name": "S\u00e9bastien Haller",

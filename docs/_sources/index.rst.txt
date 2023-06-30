@@ -2,7 +2,7 @@ Welcome to reus's documentation!
 ================================
 
 **reus** is a Python library for getting soccer data and information from 
-`fbref <https://fbref.com/>`_ and `transfermarkt <http://transfermarkt.com/>`_.
+`fbref <https://fbref.com/>`_, `fotmob <http://fotmob.com/>`_, and `transfermarkt <http://transfermarkt.com/>`_.
 You can view the code on |github_link|.
 
 .. |github_link| raw:: html
@@ -24,7 +24,9 @@ It is a minor inconvenience to you but lets us all keep accessing the data.
    :caption: Contents:
    
    fbref
+   fotmob
    transfermarkt
+   utils
 
 
 .. note::

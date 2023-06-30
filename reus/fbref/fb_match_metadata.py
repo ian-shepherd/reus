@@ -2,52 +2,40 @@ import re
 from ..util import get_page_soup
 
 
-def fb_match_metadata(pageSoup=None, url: str = None) -> tuple:
-    """Extracts general information (teams, managers, captains, date, time, venue, attendance, score, xG) for a given match
-
-    Args:
-        pageSoup (bs4, optional): bs4 object of a match. Defaults to None.
-        url (str, optional): path of fbref match page. Defaults to None.
-
-    Returns:
-        tuple: metadata and officials
-            dict: metadata information
-            dict: match officials
-    """
-
-    assert (
-        pageSoup is not None or url is not None
-    ), "Either pageSoup or url must be provided"
-
-    if pageSoup is None:
-        pageSoup = get_page_soup(url)
-
-    # Extract url
+def _extract_url(pageSoup):
     url = pageSoup.find("meta", {"property": "og:url"})["content"]
     url = url.replace("https://fbref.com", "")
     match_id = url.split("/")[3]
+    return url, match_id
 
+
+def _extract_teams(pageSoup):
     # Find scorebox object
     scorebox = pageSoup.find("div", {"class": "scorebox"})
     # teams = scorebox.find_all("div", {"itemprop": "performer"})
     teams = scorebox.find_all("strong")
 
-    # extract team id and name
-    team_idx = []
-    for i in range(len(teams)):
-        if teams[i].find("a", href=True) is not None and "squad" in teams[i].find(
-            "a", href=True
-        ).get("href"):
-            team_idx.append(i)
-    id_x = teams[team_idx[0]].find("a", href=True)["href"].split("/")[3]
-    id_y = teams[team_idx[1]].find("a", href=True)["href"].split("/")[3]
+    team_idx = [
+        i
+        for i, team in enumerate(teams)
+        if team.find("a", href=True)
+        and "squad" in team.find("a", href=True).get("href")
+    ]
+
     team_x = teams[team_idx[0]].find("a", href=True).text
     team_y = teams[team_idx[1]].find("a", href=True).text
 
-    # extract scores
+    id_x = teams[team_idx[0]].find("a", href=True)["href"].split("/")[3]
+    id_y = teams[team_idx[1]].find("a", href=True)["href"].split("/")[3]
+
+    return id_x, team_x, id_y, team_y
+
+
+def _extract_scores(pageSoup):
     scores = pageSoup.find_all("div", {"class": "scores"})
     score_x = scores[0].find("div", {"class": "score"}).text
     score_y = scores[1].find("div", {"class": "score"}).text
+
     # error handling for non-xG
     try:
         xg_x = scores[0].find("div", {"class": "score_xg"}).text
@@ -58,8 +46,12 @@ def fb_match_metadata(pageSoup=None, url: str = None) -> tuple:
     except AttributeError:
         xg_y = None
 
-    # extract managers and captains
+    return score_x, score_y, xg_x, xg_y
+
+
+def _extract_managers_captains(pageSoup):
     managers = pageSoup.find_all("div", {"class": "datapoint"})
+
     manager_x = None
     manager_y = None
     captain_x = None
@@ -121,6 +113,52 @@ def fb_match_metadata(pageSoup=None, url: str = None) -> tuple:
         captain_url_y = managers[1].find("a", href=True)["href"]
         captain_id_x = captain_url_x.split("/")[3]
         captain_id_y = captain_url_y.split("/")[3]
+
+    return (
+        manager_x,
+        manager_y,
+        captain_x,
+        captain_y,
+        captain_url_x,
+        captain_url_y,
+        captain_id_x,
+        captain_id_y,
+    )
+
+
+def fb_match_metadata(pageSoup=None, url: str = None) -> tuple:
+    """Extracts general info (teams, managers, captains, date, time, venue, attendance, score, xG) for a given match
+
+    Args:
+        pageSoup (bs4, optional): bs4 object of a match. Defaults to None.
+        url (str, optional): path of fbref match page. Defaults to None.
+
+    Returns:
+        tuple: metadata and officials
+            dict: metadata information
+            dict: match officials
+    """
+
+    assert (
+        pageSoup is not None or url is not None
+    ), "Either pageSoup or url must be provided"
+
+    if pageSoup is None:
+        pageSoup = get_page_soup(url)
+
+    url, match_id = _extract_url(pageSoup)
+    id_x, team_x, id_y, team_y = _extract_teams(pageSoup)
+    score_x, score_y, xg_x, xg_y = _extract_scores(pageSoup)
+    (
+        manager_x,
+        manager_y,
+        captain_x,
+        captain_y,
+        captain_url_x,
+        captain_url_y,
+        captain_id_x,
+        captain_id_y,
+    ) = _extract_managers_captains(pageSoup)
 
     # Find match information object
     scorebox_meta = pageSoup.find("div", {"class": "scorebox_meta"})

@@ -2,6 +2,11 @@ def extract_player_stats(stats):
     mydict = {}
 
     playerStats = stats[0].get("stats")
+    tmp = {}
+    for k, v in playerStats.items():
+        tmp[k] = v.get("value")
+    playerStats = tmp
+
     mydict["rating"] = playerStats.get("FotMob rating")
     mydict["goals"] = playerStats.get("Goals")
     mydict["assists"] = playerStats.get("Assists")
@@ -19,6 +24,11 @@ def extract_player_stats(stats):
 
     try:
         playerStatsAttack = stats[1].get("stats")
+        tmp = {}
+        for k, v in playerStatsAttack.items():
+            tmp[k] = v.get("value")
+        playerStatsAttack = tmp
+
         mydict["shot_accuracy"] = playerStatsAttack.get("Shot accuracy")
         mydict["blocked_shots"] = playerStatsAttack.get("Blocked shots")
         mydict["big_chances_missed"] = playerStatsAttack.get("Big chance missed")
@@ -38,6 +48,11 @@ def extract_player_stats(stats):
 
     try:
         playerStatsDefense = stats[2].get("stats")
+        tmp = {}
+        for k, v in playerStatsDefense.items():
+            tmp[k] = v.get("value")
+        playerStatsDefense = tmp
+
         mydict["tackles_won"] = playerStatsDefense.get("Tackles won")
         mydict["blocks"] = playerStatsDefense.get("Blocks")
         mydict["clearances"] = playerStatsDefense.get("Clearances")
@@ -50,6 +65,11 @@ def extract_player_stats(stats):
 
     try:
         playerStatsDuels = stats[3].get("stats")
+        tmp = {}
+        for k, v in playerStatsDuels.items():
+            tmp[k] = v.get("value")
+        playerStatsDuels = tmp
+
         mydict["ground_duels_won"] = playerStatsDuels.get("Ground duels won")
         mydict["aerial_duels_won"] = playerStatsDuels.get("Aerial duels won")
         mydict["was_fouled"] = playerStatsDuels.get("Was fouled")

@@ -1,0 +1,490 @@
+round,roundName,pageUrl,id,id_x,team_x,id_y,team_y,utcTime,started,finished,scoreStr
+,,/match/3787303/matchfacts/philadelphia-union-vs-minnesota-united,3787303,191716,Philadelphia Union,207242,Minnesota United,2022-02-26 17:00:00+00:00,True,True,1 - 1
+,,/match/3787426/matchfacts/columbus-crew-vs-vancouver-whitecaps,3787426,6001,Columbus Crew,307691,Vancouver Whitecaps,2022-02-26 19:30:00+00:00,True,True,4 - 0
+,,/match/3787290/matchfacts/los-angeles-fc-vs-colorado-rapids,3787290,867280,Los Angeles FC,8314,Colorado Rapids,2022-02-26 19:30:00+00:00,True,True,3 - 0
+,,/match/3787425/matchfacts/fc-dallas-vs-toronto-fc,3787425,6399,FC Dallas,56453,Toronto FC,2022-02-26 21:30:00+00:00,True,True,1 - 1
+,,/match/3787289/matchfacts/austin-fc-vs-fc-cincinnati,3787289,1218886,Austin FC,722265,FC Cincinnati,2022-02-26 22:00:00+00:00,True,True,5 - 0
+,,/match/3787288/matchfacts/dc-united-vs-charlotte-fc,3787288,6602,DC United,1323940,Charlotte FC,2022-02-26 22:00:00+00:00,True,True,3 - 0
+,,/match/3787287/matchfacts/inter-miami-cf-vs-chicago-fire-fc,3787287,960720,Inter Miami CF,6397,Chicago Fire FC,2022-02-26 22:00:00+00:00,True,True,0 - 0
+,,/match/3787286/matchfacts/san-jose-earthquakes-vs-new-york-red-bulls,3787286,6603,San Jose Earthquakes,6514,New York Red Bulls,2022-02-26 22:00:00+00:00,True,True,1 - 3
+,,/match/3787285/matchfacts/portland-timbers-vs-new-england-revolution,3787285,307690,Portland Timbers,6580,New England Revolution,2022-02-26 23:30:00+00:00,True,True,2 - 2
+,,/match/3787424/matchfacts/orlando-city-vs-cf-montreal,3787424,267810,Orlando City,161195,CF Montreal,2022-02-27 17:00:00+00:00,True,True,2 - 0
+,,/match/3787284/matchfacts/atlanta-united-vs-sporting-kansas-city,3787284,773958,Atlanta United,6604,Sporting Kansas City,2022-02-27 19:00:00+00:00,True,True,3 - 1
+,,/match/3787283/matchfacts/la-galaxy-vs-new-york-city-fc,3787283,6637,LA Galaxy,546238,New York City FC,2022-02-27 21:00:00+00:00,True,True,1 - 0
+,,/match/3787282/matchfacts/houston-dynamo-fc-vs-real-salt-lake,3787282,8259,Houston Dynamo FC,6606,Real Salt Lake,2022-02-27 23:00:00+00:00,True,True,0 - 0
+,,/match/3787281/matchfacts/seattle-sounders-fc-vs-nashville-sc,3787281,130394,Seattle Sounders FC,915807,Nashville SC,2022-02-28 00:00:00+00:00,True,True,0 - 1
+,,/match/3787291/matchfacts/new-england-revolution-vs-fc-dallas,3787291,6580,New England Revolution,6399,FC Dallas,2022-03-05 17:30:00+00:00,True,True,1 - 0
+,,/match/3787423/matchfacts/toronto-fc-vs-new-york-red-bulls,3787423,56453,Toronto FC,6514,New York Red Bulls,2022-03-05 18:00:00+00:00,True,True,1 - 4
+,,/match/3787292/matchfacts/sporting-kansas-city-vs-houston-dynamo-fc,3787292,6604,Sporting Kansas City,8259,Houston Dynamo FC,2022-03-05 19:30:00+00:00,True,True,1 - 0
+,,/match/3787422/matchfacts/cf-montreal-vs-philadelphia-union,3787422,161195,CF Montreal,191716,Philadelphia Union,2022-03-05 20:00:00+00:00,True,True,1 - 2
+,,/match/3787302/matchfacts/san-jose-earthquakes-vs-columbus-crew,3787302,6603,San Jose Earthquakes,6001,Columbus Crew,2022-03-05 21:30:00+00:00,True,True,3 - 3
+,,/match/3787301/matchfacts/chicago-fire-fc-vs-orlando-city,3787301,6397,Chicago Fire FC,267810,Orlando City,2022-03-05 22:00:00+00:00,True,True,0 - 0
+,,/match/3787299/matchfacts/colorado-rapids-vs-atlanta-united,3787299,8314,Colorado Rapids,773958,Atlanta United,2022-03-05 22:00:00+00:00,True,True,3 - 0
+,,/match/3787300/matchfacts/fc-cincinnati-vs-dc-united,3787300,722265,FC Cincinnati,6602,DC United,2022-03-05 22:00:00+00:00,True,True,0 - 1
+,,/match/3787298/matchfacts/minnesota-united-vs-nashville-sc,3787298,207242,Minnesota United,915807,Nashville SC,2022-03-05 22:00:00+00:00,True,True,1 - 1
+,,/match/3787297/matchfacts/real-salt-lake-vs-seattle-sounders-fc,3787297,6606,Real Salt Lake,130394,Seattle Sounders FC,2022-03-05 22:00:00+00:00,True,True,1 - 0
+,,/match/3787421/matchfacts/vancouver-whitecaps-vs-new-york-city-fc,3787421,307691,Vancouver Whitecaps,546238,New York City FC,2022-03-05 22:00:00+00:00,True,True,0 - 0
+,,/match/3787296/matchfacts/charlotte-fc-vs-la-galaxy,3787296,1323940,Charlotte FC,6637,LA Galaxy,2022-03-05 23:30:00+00:00,True,True,0 - 1
+,,/match/3787295/matchfacts/austin-fc-vs-inter-miami-cf,3787295,1218886,Austin FC,960720,Inter Miami CF,2022-03-06 20:00:00+00:00,True,True,5 - 1
+,,/match/3787294/matchfacts/los-angeles-fc-vs-portland-timbers,3787294,867280,Los Angeles FC,307690,Portland Timbers,2022-03-07 02:00:00+00:00,True,True,1 - 1
+,,/match/3787409/matchfacts/new-york-city-fc-vs-cf-montreal,3787409,546238,New York City FC,161195,CF Montreal,2022-03-12 17:00:00+00:00,True,True,4 - 1
+,,/match/3787451/matchfacts/columbus-crew-vs-toronto-fc,3787451,6001,Columbus Crew,56453,Toronto FC,2022-03-12 17:30:00+00:00,True,True,2 - 1
+,,/match/3787293/matchfacts/inter-miami-cf-vs-los-angeles-fc,3787293,960720,Inter Miami CF,867280,Los Angeles FC,2022-03-12 17:30:00+00:00,True,True,0 - 2
+,,/match/3787280/matchfacts/seattle-sounders-fc-vs-la-galaxy,3787280,130394,Seattle Sounders FC,6637,LA Galaxy,2022-03-12 19:55:00+00:00,True,True,3 - 2
+,,/match/3787452/matchfacts/houston-dynamo-fc-vs-vancouver-whitecaps,3787452,8259,Houston Dynamo FC,307691,Vancouver Whitecaps,2022-03-12 22:30:00+00:00,True,True,2 - 1
+,,/match/3787279/matchfacts/dc-united-vs-chicago-fire-fc,3787279,6602,DC United,6397,Chicago Fire FC,2022-03-12 23:30:00+00:00,True,True,0 - 2
+,,/match/3787266/matchfacts/new-england-revolution-vs-real-salt-lake,3787266,6580,New England Revolution,6606,Real Salt Lake,2022-03-12 23:30:00+00:00,True,True,2 - 3
+,,/match/3787265/matchfacts/orlando-city-vs-fc-cincinnati,3787265,267810,Orlando City,722265,FC Cincinnati,2022-03-12 23:30:00+00:00,True,True,1 - 2
+,,/match/3787264/matchfacts/philadelphia-union-vs-san-jose-earthquakes,3787264,191716,Philadelphia Union,6603,San Jose Earthquakes,2022-03-12 23:30:00+00:00,True,True,2 - 0
+,,/match/3787263/matchfacts/fc-dallas-vs-nashville-sc,3787263,6399,FC Dallas,915807,Nashville SC,2022-03-13 00:30:00+00:00,True,True,2 - 0
+,,/match/3787262/matchfacts/colorado-rapids-vs-sporting-kansas-city,3787262,8314,Colorado Rapids,6604,Sporting Kansas City,2022-03-13 01:00:00+00:00,True,True,2 - 0
+,,/match/3787261/matchfacts/portland-timbers-vs-austin-fc,3787261,307690,Portland Timbers,1218886,Austin FC,2022-03-13 02:00:00+00:00,True,True,1 - 0
+,,/match/3787259/matchfacts/atlanta-united-vs-charlotte-fc,3787259,773958,Atlanta United,1323940,Charlotte FC,2022-03-13 19:30:00+00:00,True,True,2 - 1
+,,/match/3787260/matchfacts/new-york-red-bulls-vs-minnesota-united,3787260,6514,New York Red Bulls,207242,Minnesota United,2022-03-13 22:00:00+00:00,True,True,0 - 1
+,,/match/3787258/matchfacts/fc-cincinnati-vs-inter-miami-cf,3787258,722265,FC Cincinnati,960720,Inter Miami CF,2022-03-19 16:00:00+00:00,True,True,3 - 1
+,,/match/3787257/matchfacts/new-york-city-fc-vs-philadelphia-union,3787257,546238,New York City FC,191716,Philadelphia Union,2022-03-19 16:00:00+00:00,True,True,0 - 2
+,,/match/3787453/matchfacts/toronto-fc-vs-dc-united,3787453,56453,Toronto FC,6602,DC United,2022-03-19 18:00:00+00:00,True,True,2 - 1
+,,/match/3787267/matchfacts/la-galaxy-vs-orlando-city,3787267,6637,LA Galaxy,267810,Orlando City,2022-03-19 18:30:00+00:00,True,True,0 - 1
+,,/match/3787454/matchfacts/atlanta-united-vs-cf-montreal,3787454,773958,Atlanta United,161195,CF Montreal,2022-03-19 19:00:00+00:00,True,True,3 - 3
+,,/match/3787268/matchfacts/chicago-fire-fc-vs-sporting-kansas-city,3787268,6397,Chicago Fire FC,6604,Sporting Kansas City,2022-03-19 21:00:00+00:00,True,True,3 - 1
+,,/match/3787278/matchfacts/charlotte-fc-vs-new-england-revolution,3787278,1323940,Charlotte FC,6580,New England Revolution,2022-03-19 22:00:00+00:00,True,True,3 - 1
+,,/match/3787277/matchfacts/minnesota-united-vs-san-jose-earthquakes,3787277,207242,Minnesota United,6603,San Jose Earthquakes,2022-03-19 23:00:00+00:00,True,True,1 - 0
+,,/match/3787276/matchfacts/fc-dallas-vs-portland-timbers,3787276,6399,FC Dallas,307690,Portland Timbers,2022-03-19 23:30:00+00:00,True,True,4 - 1
+,,/match/3787275/matchfacts/houston-dynamo-fc-vs-colorado-rapids,3787275,8259,Houston Dynamo FC,8314,Colorado Rapids,2022-03-19 23:30:00+00:00,True,True,1 - 1
+,,/match/3787274/matchfacts/real-salt-lake-vs-nashville-sc,3787274,6606,Real Salt Lake,915807,Nashville SC,2022-03-20 00:30:00+00:00,True,True,2 - 1
+,,/match/3787273/matchfacts/new-york-red-bulls-vs-columbus-crew,3787273,6514,New York Red Bulls,6001,Columbus Crew,2022-03-20 17:00:00+00:00,True,True,1 - 1
+,,/match/3787272/matchfacts/austin-fc-vs-seattle-sounders-fc,3787272,1218886,Austin FC,130394,Seattle Sounders FC,2022-03-20 19:30:00+00:00,True,True,1 - 1
+,,/match/3787455/matchfacts/los-angeles-fc-vs-vancouver-whitecaps,3787455,867280,Los Angeles FC,307691,Vancouver Whitecaps,2022-03-21 01:00:00+00:00,True,True,3 - 1
+,,/match/3787271/matchfacts/charlotte-fc-vs-fc-cincinnati,3787271,1323940,Charlotte FC,722265,FC Cincinnati,2022-03-26 20:00:00+00:00,True,True,2 - 0
+,,/match/3787270/matchfacts/sporting-kansas-city-vs-real-salt-lake,3787270,6604,Sporting Kansas City,6606,Real Salt Lake,2022-03-26 22:00:00+00:00,True,True,1 - 0
+,,/match/3787269/matchfacts/portland-timbers-vs-orlando-city,3787269,307690,Portland Timbers,267810,Orlando City,2022-03-27 18:00:00+00:00,True,True,1 - 1
+,,/match/3787256/matchfacts/chicago-fire-fc-vs-fc-dallas,3787256,6397,Chicago Fire FC,6399,FC Dallas,2022-04-02 17:30:00+00:00,True,True,0 - 0
+,,/match/3787456/matchfacts/fc-cincinnati-vs-cf-montreal,3787456,722265,FC Cincinnati,161195,CF Montreal,2022-04-02 18:00:00+00:00,True,True,3 - 4
+,,/match/3787474/matchfacts/toronto-fc-vs-new-york-city-fc,3787474,56453,Toronto FC,546238,New York City FC,2022-04-02 18:00:00+00:00,True,True,2 - 1
+,,/match/3787304/matchfacts/columbus-crew-vs-nashville-sc,3787304,6001,Columbus Crew,915807,Nashville SC,2022-04-02 20:00:00+00:00,True,True,0 - 1
+,,/match/3787305/matchfacts/dc-united-vs-atlanta-united,3787305,6602,DC United,773958,Atlanta United,2022-04-02 21:30:00+00:00,True,True,0 - 1
+,,/match/3787306/matchfacts/new-england-revolution-vs-new-york-red-bulls,3787306,6580,New England Revolution,6514,New York Red Bulls,2022-04-02 21:30:00+00:00,True,True,0 - 1
+,,/match/3787322/matchfacts/orlando-city-vs-los-angeles-fc,3787322,267810,Orlando City,867280,Los Angeles FC,2022-04-02 21:30:00+00:00,True,True,2 - 4
+,,/match/3787323/matchfacts/philadelphia-union-vs-charlotte-fc,3787323,191716,Philadelphia Union,1323940,Charlotte FC,2022-04-02 21:30:00+00:00,True,True,2 - 0
+,,/match/3787324/matchfacts/san-jose-earthquakes-vs-austin-fc,3787324,6603,San Jose Earthquakes,1218886,Austin FC,2022-04-02 21:30:00+00:00,True,True,2 - 2
+,,/match/3787325/matchfacts/inter-miami-cf-vs-houston-dynamo-fc,3787325,960720,Inter Miami CF,8259,Houston Dynamo FC,2022-04-02 22:00:00+00:00,True,True,1 - 3
+,,/match/3787326/matchfacts/minnesota-united-vs-seattle-sounders-fc,3787326,207242,Minnesota United,130394,Seattle Sounders FC,2022-04-02 22:00:00+00:00,True,True,1 - 2
+,,/match/3787475/matchfacts/vancouver-whitecaps-vs-sporting-kansas-city,3787475,307691,Vancouver Whitecaps,6604,Sporting Kansas City,2022-04-02 22:00:00+00:00,True,True,1 - 0
+,,/match/3787327/matchfacts/colorado-rapids-vs-real-salt-lake,3787327,8314,Colorado Rapids,6606,Real Salt Lake,2022-04-02 23:00:00+00:00,True,True,1 - 1
+,,/match/3787328/matchfacts/portland-timbers-vs-la-galaxy,3787328,307690,Portland Timbers,6637,LA Galaxy,2022-04-03 18:30:00+00:00,True,True,1 - 3
+,,/match/3787329/matchfacts/orlando-city-vs-chicago-fire-fc,3787329,267810,Orlando City,6397,Chicago Fire FC,2022-04-09 15:00:00+00:00,True,True,1 - 0
+,,/match/3787331/matchfacts/inter-miami-cf-vs-new-england-revolution,3787331,960720,Inter Miami CF,6580,New England Revolution,2022-04-09 17:00:00+00:00,True,True,3 - 2
+,,/match/3787476/matchfacts/new-york-red-bulls-vs-cf-montreal,3787476,6514,New York Red Bulls,161195,CF Montreal,2022-04-09 18:00:00+00:00,True,True,1 - 2
+,,/match/3787333/matchfacts/philadelphia-union-vs-columbus-crew,3787333,191716,Philadelphia Union,6001,Columbus Crew,2022-04-09 20:00:00+00:00,True,True,1 - 0
+,,/match/3787334/matchfacts/la-galaxy-vs-los-angeles-fc,3787334,6637,LA Galaxy,867280,Los Angeles FC,2022-04-09 21:30:00+00:00,True,True,2 - 1
+,,/match/3787477/matchfacts/real-salt-lake-vs-toronto-fc,3787477,6606,Real Salt Lake,56453,Toronto FC,2022-04-09 22:00:00+00:00,True,True,2 - 2
+,,/match/3787321/matchfacts/fc-dallas-vs-colorado-rapids,3787321,6399,FC Dallas,8314,Colorado Rapids,2022-04-09 22:30:00+00:00,True,True,3 - 1
+,,/match/3787320/matchfacts/houston-dynamo-fc-vs-san-jose-earthquakes,3787320,8259,Houston Dynamo FC,6603,San Jose Earthquakes,2022-04-09 22:30:00+00:00,True,True,4 - 3
+,,/match/3787307/matchfacts/sporting-kansas-city-vs-nashville-sc,3787307,6604,Sporting Kansas City,915807,Nashville SC,2022-04-09 22:30:00+00:00,True,True,1 - 2
+,,/match/3787478/matchfacts/vancouver-whitecaps-vs-portland-timbers,3787478,307691,Vancouver Whitecaps,307690,Portland Timbers,2022-04-10 00:00:00+00:00,True,True,2 - 3
+,,/match/3787330/matchfacts/charlotte-fc-vs-atlanta-united,3787330,1323940,Charlotte FC,773958,Atlanta United,2022-04-10 15:30:00+00:00,True,True,1 - 0
+,,/match/3787309/matchfacts/austin-fc-vs-minnesota-united,3787309,1218886,Austin FC,207242,Minnesota United,2022-04-10 21:30:00+00:00,True,True,1 - 0
+,,/match/3787479/matchfacts/cf-montreal-vs-vancouver-whitecaps,3787479,161195,CF Montreal,307691,Vancouver Whitecaps,2022-04-16 17:00:00+00:00,True,True,2 - 1
+,,/match/3787310/matchfacts/san-jose-earthquakes-vs-nashville-sc,3787310,6603,San Jose Earthquakes,915807,Nashville SC,2022-04-16 17:30:00+00:00,True,True,2 - 2
+,,/match/3787311/matchfacts/atlanta-united-vs-fc-cincinnati,3787311,773958,Atlanta United,722265,FC Cincinnati,2022-04-16 20:00:00+00:00,True,True,0 - 0
+,,/match/3787312/matchfacts/houston-dynamo-fc-vs-portland-timbers,3787312,8259,Houston Dynamo FC,307690,Portland Timbers,2022-04-16 20:00:00+00:00,True,True,0 - 0
+,,/match/3787313/matchfacts/new-york-red-bulls-vs-fc-dallas,3787313,6514,New York Red Bulls,6399,FC Dallas,2022-04-16 21:00:00+00:00,True,True,0 - 0
+,,/match/3787314/matchfacts/columbus-crew-vs-orlando-city,3787314,6001,Columbus Crew,267810,Orlando City,2022-04-16 21:30:00+00:00,True,True,0 - 2
+,,/match/3787315/matchfacts/dc-united-vs-austin-fc,3787315,6602,DC United,1218886,Austin FC,2022-04-16 21:30:00+00:00,True,True,2 - 3
+,,/match/3787316/matchfacts/new-england-revolution-vs-charlotte-fc,3787316,6580,New England Revolution,1323940,Charlotte FC,2022-04-16 21:30:00+00:00,True,True,2 - 1
+,,/match/3787480/matchfacts/toronto-fc-vs-philadelphia-union,3787480,56453,Toronto FC,191716,Philadelphia Union,2022-04-16 21:30:00+00:00,True,True,2 - 1
+,,/match/3787317/matchfacts/chicago-fire-fc-vs-la-galaxy,3787317,6397,Chicago Fire FC,6637,LA Galaxy,2022-04-16 22:00:00+00:00,True,True,0 - 0
+,,/match/3787318/matchfacts/minnesota-united-vs-colorado-rapids,3787318,207242,Minnesota United,8314,Colorado Rapids,2022-04-16 22:00:00+00:00,True,True,3 - 1
+,,/match/3787319/matchfacts/seattle-sounders-fc-vs-inter-miami-cf,3787319,130394,Seattle Sounders FC,960720,Inter Miami CF,2022-04-17 00:00:00+00:00,True,True,0 - 1
+,,/match/3787335/matchfacts/new-york-city-fc-vs-real-salt-lake,3787335,546238,New York City FC,6606,Real Salt Lake,2022-04-17 15:00:00+00:00,True,True,6 - 0
+,,/match/3787336/matchfacts/los-angeles-fc-vs-sporting-kansas-city,3787336,867280,Los Angeles FC,6604,Sporting Kansas City,2022-04-17 18:00:00+00:00,True,True,3 - 1
+,,/match/3787347/matchfacts/fc-dallas-vs-houston-dynamo-fc,3787347,6399,FC Dallas,8259,Houston Dynamo FC,2022-04-23 17:00:00+00:00,True,True,2 - 1
+,,/match/3787481/matchfacts/philadelphia-union-vs-cf-montreal,3787481,191716,Philadelphia Union,161195,CF Montreal,2022-04-23 17:00:00+00:00,True,True,1 - 1
+,,/match/3787348/matchfacts/minnesota-united-vs-chicago-fire-fc,3787348,207242,Minnesota United,6397,Chicago Fire FC,2022-04-23 19:00:00+00:00,True,True,3 - 0
+,,/match/3787349/matchfacts/dc-united-vs-new-england-revolution,3787349,6602,DC United,6580,New England Revolution,2022-04-23 21:30:00+00:00,True,True,3 - 2
+,,/match/3787482/matchfacts/austin-fc-vs-vancouver-whitecaps,3787482,1218886,Austin FC,307691,Vancouver Whitecaps,2022-04-23 22:30:00+00:00,True,True,3 - 0
+,,/match/3787350/matchfacts/sporting-kansas-city-vs-columbus-crew,3787350,6604,Sporting Kansas City,6001,Columbus Crew,2022-04-23 22:30:00+00:00,True,True,0 - 0
+,,/match/3787351/matchfacts/colorado-rapids-vs-charlotte-fc,3787351,8314,Colorado Rapids,1323940,Charlotte FC,2022-04-23 23:00:00+00:00,True,True,0 - 0
+,,/match/3787352/matchfacts/portland-timbers-vs-real-salt-lake,3787352,307690,Portland Timbers,6606,Real Salt Lake,2022-04-24 00:00:00+00:00,True,True,0 - 0
+,,/match/3787354/matchfacts/san-jose-earthquakes-vs-seattle-sounders-fc,3787354,6603,San Jose Earthquakes,130394,Seattle Sounders FC,2022-04-24 00:00:00+00:00,True,True,4 - 3
+,,/match/3787353/matchfacts/la-galaxy-vs-nashville-sc,3787353,6637,LA Galaxy,915807,Nashville SC,2022-04-24 00:30:00+00:00,True,True,1 - 0
+,,/match/3787346/matchfacts/inter-miami-cf-vs-atlanta-united,3787346,960720,Inter Miami CF,773958,Atlanta United,2022-04-24 15:00:00+00:00,True,True,2 - 1
+,,/match/3787345/matchfacts/orlando-city-vs-new-york-red-bulls,3787345,267810,Orlando City,6514,New York Red Bulls,2022-04-24 17:30:00+00:00,True,True,0 - 3
+,,/match/3787337/matchfacts/fc-cincinnati-vs-los-angeles-fc,3787337,722265,FC Cincinnati,867280,Los Angeles FC,2022-04-24 19:00:00+00:00,True,True,1 - 2
+,,/match/3787483/matchfacts/new-york-city-fc-vs-toronto-fc,3787483,546238,New York City FC,56453,Toronto FC,2022-04-24 19:00:00+00:00,True,True,5 - 4
+,,/match/3787339/matchfacts/houston-dynamo-fc-vs-austin-fc,3787339,8259,Houston Dynamo FC,1218886,Austin FC,2022-04-30 15:30:00+00:00,True,True,1 - 2
+,,/match/3787484/matchfacts/toronto-fc-vs-fc-cincinnati,3787484,56453,Toronto FC,722265,FC Cincinnati,2022-04-30 17:00:00+00:00,True,True,1 - 2
+,,/match/3787340/matchfacts/real-salt-lake-vs-la-galaxy,3787340,6606,Real Salt Lake,6637,LA Galaxy,2022-04-30 17:30:00+00:00,True,True,1 - 0
+,,/match/3787485/matchfacts/cf-montreal-vs-atlanta-united,3787485,161195,CF Montreal,773958,Atlanta United,2022-04-30 18:00:00+00:00,True,True,2 - 1
+,,/match/3787341/matchfacts/columbus-crew-vs-dc-united,3787341,6001,Columbus Crew,6602,DC United,2022-04-30 21:30:00+00:00,True,True,3 - 0
+,,/match/3787338/matchfacts/new-england-revolution-vs-inter-miami-cf,3787338,6580,New England Revolution,960720,Inter Miami CF,2022-04-30 21:30:00+00:00,True,True,2 - 0
+,,/match/3787342/matchfacts/orlando-city-vs-charlotte-fc,3787342,267810,Orlando City,1323940,Charlotte FC,2022-04-30 21:30:00+00:00,True,True,2 - 1
+,,/match/3787343/matchfacts/chicago-fire-fc-vs-new-york-red-bulls,3787343,6397,Chicago Fire FC,6514,New York Red Bulls,2022-04-30 22:00:00+00:00,True,True,1 - 2
+,,/match/3787344/matchfacts/sporting-kansas-city-vs-fc-dallas,3787344,6604,Sporting Kansas City,6399,FC Dallas,2022-04-30 22:30:00+00:00,True,True,2 - 2
+,,/match/3787355/matchfacts/colorado-rapids-vs-portland-timbers,3787355,8314,Colorado Rapids,307690,Portland Timbers,2022-04-30 23:00:00+00:00,True,True,2 - 0
+,,/match/3787356/matchfacts/new-york-city-fc-vs-san-jose-earthquakes,3787356,546238,New York City FC,6603,San Jose Earthquakes,2022-05-01 15:00:00+00:00,True,True,3 - 0
+,,/match/3787366/matchfacts/nashville-sc-vs-philadelphia-union,3787366,915807,Nashville SC,191716,Philadelphia Union,2022-05-01 18:00:00+00:00,True,True,1 - 1
+,,/match/3787367/matchfacts/los-angeles-fc-vs-minnesota-united,3787367,867280,Los Angeles FC,207242,Minnesota United,2022-05-02 00:00:00+00:00,True,True,2 - 0
+,,/match/3787458/matchfacts/fc-cincinnati-vs-toronto-fc,3787458,722265,FC Cincinnati,56453,Toronto FC,2022-05-04 21:30:00+00:00,True,True,2 - 0
+,,/match/3787369/matchfacts/charlotte-fc-vs-inter-miami-cf,3787369,1323940,Charlotte FC,960720,Inter Miami CF,2022-05-07 17:30:00+00:00,True,True,1 - 0
+,,/match/3787487/matchfacts/cf-montreal-vs-orlando-city,3787487,161195,CF Montreal,267810,Orlando City,2022-05-07 18:00:00+00:00,True,True,4 - 1
+,,/match/3787370/matchfacts/atlanta-united-vs-chicago-fire-fc,3787370,773958,Atlanta United,6397,Chicago Fire FC,2022-05-07 20:00:00+00:00,True,True,4 - 1
+,,/match/3787365/matchfacts/new-york-city-fc-vs-sporting-kansas-city,3787365,546238,New York City FC,6604,Sporting Kansas City,2022-05-07 21:00:00+00:00,True,True,0 - 0
+,,/match/3787371/matchfacts/new-york-red-bulls-vs-portland-timbers,3787371,6514,New York Red Bulls,307690,Portland Timbers,2022-05-07 21:00:00+00:00,True,True,1 - 1
+,,/match/3787364/matchfacts/dc-united-vs-houston-dynamo-fc,3787364,6602,DC United,8259,Houston Dynamo FC,2022-05-07 21:30:00+00:00,True,True,2 - 0
+,,/match/3787363/matchfacts/new-england-revolution-vs-columbus-crew,3787363,6580,New England Revolution,6001,Columbus Crew,2022-05-07 21:30:00+00:00,True,True,2 - 2
+,,/match/3787362/matchfacts/minnesota-united-vs-fc-cincinnati,3787362,207242,Minnesota United,722265,FC Cincinnati,2022-05-07 22:00:00+00:00,True,True,0 - 1
+,,/match/3787361/matchfacts/fc-dallas-vs-seattle-sounders-fc,3787361,6399,FC Dallas,130394,Seattle Sounders FC,2022-05-07 22:30:00+00:00,True,True,2 - 0
+,,/match/3787368/matchfacts/san-jose-earthquakes-vs-colorado-rapids,3787368,6603,San Jose Earthquakes,8314,Colorado Rapids,2022-05-08 00:00:00+00:00,True,True,1 - 0
+,,/match/3787360/matchfacts/los-angeles-fc-vs-philadelphia-union,3787360,867280,Los Angeles FC,191716,Philadelphia Union,2022-05-08 01:00:00+00:00,True,True,2 - 2
+,,/match/3787473/matchfacts/vancouver-whitecaps-vs-toronto-fc,3787473,307691,Vancouver Whitecaps,56453,Toronto FC,2022-05-08 18:00:00+00:00,True,True,1 - 0
+,,/match/3787359/matchfacts/nashville-sc-vs-real-salt-lake,3787359,915807,Nashville SC,6606,Real Salt Lake,2022-05-08 19:00:00+00:00,True,True,2 - 0
+,,/match/3787358/matchfacts/austin-fc-vs-la-galaxy,3787358,1218886,Austin FC,6637,LA Galaxy,2022-05-08 21:00:00+00:00,True,True,0 - 1
+,,/match/3787472/matchfacts/toronto-fc-vs-orlando-city,3787472,56453,Toronto FC,267810,Orlando City,2022-05-14 17:00:00+00:00,True,True,0 - 1
+,,/match/3787357/matchfacts/colorado-rapids-vs-los-angeles-fc,3787357,8314,Colorado Rapids,867280,Los Angeles FC,2022-05-14 17:30:00+00:00,True,True,2 - 0
+,,/match/3787471/matchfacts/charlotte-fc-vs-cf-montreal,3787471,1323940,Charlotte FC,161195,CF Montreal,2022-05-14 21:00:00+00:00,True,True,0 - 2
+,,/match/3787405/matchfacts/new-york-city-fc-vs-columbus-crew,3787405,546238,New York City FC,6001,Columbus Crew,2022-05-14 21:00:00+00:00,True,True,2 - 0
+,,/match/3787457/matchfacts/vancouver-whitecaps-vs-san-jose-earthquakes,3787457,307691,Vancouver Whitecaps,6603,San Jose Earthquakes,2022-05-14 21:00:00+00:00,True,True,3 - 3
+,,/match/3787390/matchfacts/philadelphia-union-vs-new-york-red-bulls,3787390,191716,Philadelphia Union,6514,New York Red Bulls,2022-05-14 21:30:00+00:00,True,True,1 - 1
+,,/match/3787391/matchfacts/chicago-fire-fc-vs-fc-cincinnati,3787391,6397,Chicago Fire FC,722265,FC Cincinnati,2022-05-14 22:00:00+00:00,True,True,1 - 2
+,,/match/3787392/matchfacts/inter-miami-cf-vs-dc-united,3787392,960720,Inter Miami CF,6602,DC United,2022-05-14 22:00:00+00:00,True,True,2 - 2
+,,/match/3787393/matchfacts/houston-dynamo-fc-vs-nashville-sc,3787393,8259,Houston Dynamo FC,915807,Nashville SC,2022-05-14 22:30:00+00:00,True,True,2 - 0
+,,/match/3787394/matchfacts/real-salt-lake-vs-austin-fc,3787394,6606,Real Salt Lake,1218886,Austin FC,2022-05-14 23:30:00+00:00,True,True,2 - 1
+,,/match/3787395/matchfacts/portland-timbers-vs-sporting-kansas-city,3787395,307690,Portland Timbers,6604,Sporting Kansas City,2022-05-15 00:00:00+00:00,True,True,7 - 2
+,,/match/3787396/matchfacts/la-galaxy-vs-fc-dallas,3787396,6637,LA Galaxy,6399,FC Dallas,2022-05-15 00:30:00+00:00,True,True,1 - 3
+,,/match/3787397/matchfacts/atlanta-united-vs-new-england-revolution,3787397,773958,Atlanta United,6580,New England Revolution,2022-05-15 15:55:00+00:00,True,True,2 - 2
+,,/match/3787398/matchfacts/seattle-sounders-fc-vs-minnesota-united,3787398,130394,Seattle Sounders FC,207242,Minnesota United,2022-05-15 18:00:00+00:00,True,True,3 - 1
+,,/match/3787399/matchfacts/dc-united-vs-new-york-city-fc,3787399,6602,DC United,546238,New York City FC,2022-05-18 21:30:00+00:00,True,True,0 - 2
+,,/match/3787400/matchfacts/new-york-red-bulls-vs-chicago-fire-fc,3787400,6514,New York Red Bulls,6397,Chicago Fire FC,2022-05-18 21:30:00+00:00,True,True,3 - 3
+,,/match/3787401/matchfacts/philadelphia-union-vs-inter-miami-cf,3787401,191716,Philadelphia Union,960720,Inter Miami CF,2022-05-18 21:30:00+00:00,True,True,0 - 0
+,,/match/3787402/matchfacts/minnesota-united-vs-la-galaxy,3787402,207242,Minnesota United,6637,LA Galaxy,2022-05-18 22:00:00+00:00,True,True,1 - 1
+,,/match/3787403/matchfacts/houston-dynamo-fc-vs-seattle-sounders-fc,3787403,8259,Houston Dynamo FC,130394,Seattle Sounders FC,2022-05-18 22:30:00+00:00,True,True,0 - 1
+,,/match/3787459/matchfacts/nashville-sc-vs-cf-montreal,3787459,915807,Nashville SC,161195,CF Montreal,2022-05-18 22:30:00+00:00,True,True,2 - 1
+,,/match/3787404/matchfacts/sporting-kansas-city-vs-colorado-rapids,3787404,6604,Sporting Kansas City,8314,Colorado Rapids,2022-05-18 22:30:00+00:00,True,True,2 - 1
+,,/match/3787460/matchfacts/vancouver-whitecaps-vs-fc-dallas,3787460,307691,Vancouver Whitecaps,6399,FC Dallas,2022-05-19 00:00:00+00:00,True,True,2 - 1
+,,/match/3787389/matchfacts/los-angeles-fc-vs-austin-fc,3787389,867280,Los Angeles FC,1218886,Austin FC,2022-05-19 00:30:00+00:00,True,True,1 - 2
+,,/match/3787388/matchfacts/san-jose-earthquakes-vs-portland-timbers,3787388,6603,San Jose Earthquakes,307690,Portland Timbers,2022-05-19 00:30:00+00:00,True,True,3 - 2
+,,/match/3787378/matchfacts/columbus-crew-vs-los-angeles-fc,3787378,6001,Columbus Crew,867280,Los Angeles FC,2022-05-21 17:30:00+00:00,True,True,0 - 2
+,,/match/3787377/matchfacts/fc-cincinnati-vs-new-england-revolution,3787377,722265,FC Cincinnati,6580,New England Revolution,2022-05-21 20:00:00+00:00,True,True,2 - 3
+,,/match/3787461/matchfacts/dc-united-vs-toronto-fc,3787461,6602,DC United,56453,Toronto FC,2022-05-21 20:30:00+00:00,True,True,2 - 2
+,,/match/3787376/matchfacts/nashville-sc-vs-atlanta-united,3787376,915807,Nashville SC,773958,Atlanta United,2022-05-21 21:30:00+00:00,True,True,2 - 2
+,,/match/3787462/matchfacts/cf-montreal-vs-real-salt-lake,3787462,161195,CF Montreal,6606,Real Salt Lake,2022-05-22 18:00:00+00:00,True,True,1 - 2
+,,/match/3787463/matchfacts/charlotte-fc-vs-vancouver-whitecaps,3787463,1323940,Charlotte FC,307691,Vancouver Whitecaps,2022-05-22 19:00:00+00:00,True,True,2 - 1
+,,/match/3787375/matchfacts/new-york-city-fc-vs-chicago-fire-fc,3787375,546238,New York City FC,6397,Chicago Fire FC,2022-05-22 19:00:00+00:00,True,True,1 - 0
+,,/match/3787374/matchfacts/inter-miami-cf-vs-new-york-red-bulls,3787374,960720,Inter Miami CF,6514,New York Red Bulls,2022-05-22 20:00:00+00:00,True,True,2 - 0
+,,/match/3787373/matchfacts/fc-dallas-vs-minnesota-united,3787373,6399,FC Dallas,207242,Minnesota United,2022-05-22 21:00:00+00:00,True,True,1 - 2
+,,/match/3787372/matchfacts/san-jose-earthquakes-vs-sporting-kansas-city,3787372,6603,San Jose Earthquakes,6604,Sporting Kansas City,2022-05-22 21:30:00+00:00,True,True,1 - 1
+,,/match/3787379/matchfacts/austin-fc-vs-orlando-city,3787379,1218886,Austin FC,267810,Orlando City,2022-05-22 22:00:00+00:00,True,True,2 - 2
+,,/match/3787380/matchfacts/colorado-rapids-vs-seattle-sounders-fc,3787380,8314,Colorado Rapids,130394,Seattle Sounders FC,2022-05-22 22:00:00+00:00,True,True,1 - 0
+,,/match/3787381/matchfacts/la-galaxy-vs-houston-dynamo-fc,3787381,6637,LA Galaxy,8259,Houston Dynamo FC,2022-05-22 22:00:00+00:00,True,True,0 - 3
+,,/match/3787382/matchfacts/portland-timbers-vs-philadelphia-union,3787382,307690,Portland Timbers,191716,Philadelphia Union,2022-05-23 00:00:00+00:00,True,True,0 - 2
+,,/match/3787383/matchfacts/los-angeles-fc-vs-san-jose-earthquakes,3787383,867280,Los Angeles FC,6603,San Jose Earthquakes,2022-05-28 20:00:00+00:00,True,True,3 - 2
+,,/match/3787384/matchfacts/atlanta-united-vs-columbus-crew,3787384,773958,Atlanta United,6001,Columbus Crew,2022-05-28 21:00:00+00:00,True,True,1 - 2
+,,/match/3787385/matchfacts/new-york-red-bulls-vs-dc-united,3787385,6514,New York Red Bulls,6602,DC United,2022-05-28 21:00:00+00:00,True,True,4 - 1
+,,/match/3787464/matchfacts/toronto-fc-vs-chicago-fire-fc,3787464,56453,Toronto FC,6397,Chicago Fire FC,2022-05-28 21:00:00+00:00,True,True,3 - 2
+,,/match/3787465/matchfacts/cf-montreal-vs-fc-cincinnati,3787465,161195,CF Montreal,722265,FC Cincinnati,2022-05-28 21:30:00+00:00,True,True,4 - 3
+,,/match/3787386/matchfacts/new-england-revolution-vs-philadelphia-union,3787386,6580,New England Revolution,191716,Philadelphia Union,2022-05-28 21:30:00+00:00,True,True,1 - 1
+,,/match/3787387/matchfacts/orlando-city-vs-fc-dallas,3787387,267810,Orlando City,6399,FC Dallas,2022-05-28 21:30:00+00:00,True,True,1 - 3
+,,/match/3787406/matchfacts/inter-miami-cf-vs-portland-timbers,3787406,960720,Inter Miami CF,307690,Portland Timbers,2022-05-28 22:00:00+00:00,True,True,2 - 1
+,,/match/3787407/matchfacts/minnesota-united-vs-new-york-city-fc,3787407,207242,Minnesota United,546238,New York City FC,2022-05-28 22:00:00+00:00,True,True,0 - 1
+,,/match/3787408/matchfacts/colorado-rapids-vs-nashville-sc,3787408,8314,Colorado Rapids,915807,Nashville SC,2022-05-28 23:00:00+00:00,True,True,1 - 3
+,,/match/3787466/matchfacts/sporting-kansas-city-vs-vancouver-whitecaps,3787466,6604,Sporting Kansas City,307691,Vancouver Whitecaps,2022-05-28 23:00:00+00:00,True,True,0 - 1
+,,/match/3787450/matchfacts/real-salt-lake-vs-houston-dynamo-fc,3787450,6606,Real Salt Lake,8259,Houston Dynamo FC,2022-05-28 23:30:00+00:00,True,True,3 - 0
+,,/match/3787438/matchfacts/la-galaxy-vs-austin-fc,3787438,6637,LA Galaxy,1218886,Austin FC,2022-05-29 20:00:00+00:00,True,True,4 - 1
+,,/match/3787437/matchfacts/seattle-sounders-fc-vs-charlotte-fc,3787437,130394,Seattle Sounders FC,1323940,Charlotte FC,2022-05-29 23:30:00+00:00,True,True,2 - 1
+,,/match/3787467/matchfacts/vancouver-whitecaps-vs-real-salt-lake,3787467,307691,Vancouver Whitecaps,6606,Real Salt Lake,2022-06-04 21:00:00+00:00,True,True,2 - 1
+,,/match/3787436/matchfacts/charlotte-fc-vs-new-york-red-bulls,3787436,1323940,Charlotte FC,6514,New York Red Bulls,2022-06-11 17:00:00+00:00,True,True,2 - 0
+,,/match/3787435/matchfacts/nashville-sc-vs-san-jose-earthquakes,3787435,915807,Nashville SC,6603,San Jose Earthquakes,2022-06-11 22:00:00+00:00,True,True,0 - 0
+,,/match/3787434/matchfacts/sporting-kansas-city-vs-new-england-revolution,3787434,6604,Sporting Kansas City,6580,New England Revolution,2022-06-12 17:00:00+00:00,True,True,1 - 2
+,,/match/3787486/matchfacts/seattle-sounders-fc-vs-vancouver-whitecaps,3787486,130394,Seattle Sounders FC,307691,Vancouver Whitecaps,2022-06-15 00:30:00+00:00,True,True,4 - 0
+,,/match/3787428/matchfacts/new-england-revolution-vs-orlando-city,3787428,6580,New England Revolution,267810,Orlando City,2022-06-15 21:30:00+00:00,True,True,1 - 1
+,,/match/3787433/matchfacts/seattle-sounders-fc-vs-los-angeles-fc,3787433,130394,Seattle Sounders FC,867280,Los Angeles FC,2022-06-18 17:00:00+00:00,True,True,1 - 1
+,,/match/3787432/matchfacts/la-galaxy-vs-portland-timbers,3787432,6637,LA Galaxy,307690,Portland Timbers,2022-06-18 19:00:00+00:00,True,True,1 - 1
+,,/match/3787468/matchfacts/new-york-red-bulls-vs-toronto-fc,3787468,6514,New York Red Bulls,56453,Toronto FC,2022-06-18 21:00:00+00:00,True,True,2 - 0
+,,/match/3787469/matchfacts/cf-montreal-vs-austin-fc,3787469,161195,CF Montreal,1218886,Austin FC,2022-06-18 21:30:00+00:00,True,True,0 - 1
+,,/match/3787431/matchfacts/columbus-crew-vs-charlotte-fc,3787431,6001,Columbus Crew,1323940,Charlotte FC,2022-06-18 21:30:00+00:00,True,True,1 - 1
+,,/match/3787440/matchfacts/orlando-city-vs-houston-dynamo-fc,3787440,267810,Orlando City,8259,Houston Dynamo FC,2022-06-18 21:30:00+00:00,True,True,2 - 1
+,,/match/3787441/matchfacts/philadelphia-union-vs-fc-cincinnati,3787441,191716,Philadelphia Union,722265,FC Cincinnati,2022-06-18 21:30:00+00:00,True,True,1 - 1
+,,/match/3787449/matchfacts/chicago-fire-fc-vs-dc-united,3787449,6397,Chicago Fire FC,6602,DC United,2022-06-18 22:00:00+00:00,True,True,1 - 0
+,,/match/3787470/matchfacts/fc-dallas-vs-vancouver-whitecaps,3787470,6399,FC Dallas,307691,Vancouver Whitecaps,2022-06-18 23:00:00+00:00,True,True,0 - 2
+,,/match/3787448/matchfacts/real-salt-lake-vs-san-jose-earthquakes,3787448,6606,Real Salt Lake,6603,San Jose Earthquakes,2022-06-18 23:30:00+00:00,True,True,2 - 0
+,,/match/3787447/matchfacts/atlanta-united-vs-inter-miami-cf,3787447,773958,Atlanta United,960720,Inter Miami CF,2022-06-19 17:00:00+00:00,True,True,2 - 0
+,,/match/3787439/matchfacts/new-england-revolution-vs-minnesota-united,3787439,6580,New England Revolution,207242,Minnesota United,2022-06-19 19:00:00+00:00,True,True,2 - 1
+,,/match/3787446/matchfacts/new-york-city-fc-vs-colorado-rapids,3787446,546238,New York City FC,8314,Colorado Rapids,2022-06-19 19:00:00+00:00,True,True,1 - 1
+,,/match/3787445/matchfacts/nashville-sc-vs-sporting-kansas-city,3787445,915807,Nashville SC,6604,Sporting Kansas City,2022-06-19 20:00:00+00:00,True,True,1 - 2
+,,/match/3787444/matchfacts/fc-cincinnati-vs-orlando-city,3787444,722265,FC Cincinnati,267810,Orlando City,2022-06-24 21:30:00+00:00,True,True,1 - 0
+,,/match/3787443/matchfacts/seattle-sounders-fc-vs-sporting-kansas-city,3787443,130394,Seattle Sounders FC,6604,Sporting Kansas City,2022-06-25 17:00:00+00:00,True,True,3 - 0
+,,/match/3787442/matchfacts/dc-united-vs-nashville-sc,3787442,6602,DC United,915807,Nashville SC,2022-06-25 19:00:00+00:00,True,True,1 - 3
+,,/match/3787488/matchfacts/cf-montreal-vs-charlotte-fc,3787488,161195,CF Montreal,1323940,Charlotte FC,2022-06-25 21:30:00+00:00,True,True,2 - 1
+,,/match/3787489/matchfacts/toronto-fc-vs-atlanta-united,3787489,56453,Toronto FC,773958,Atlanta United,2022-06-25 21:30:00+00:00,True,True,2 - 1
+,,/match/3787430/matchfacts/houston-dynamo-fc-vs-chicago-fire-fc,3787430,8259,Houston Dynamo FC,6397,Chicago Fire FC,2022-06-25 22:00:00+00:00,True,True,2 - 0
+,,/match/3787429/matchfacts/inter-miami-cf-vs-minnesota-united,3787429,960720,Inter Miami CF,207242,Minnesota United,2022-06-25 22:00:00+00:00,True,True,2 - 1
+,,/match/3787417/matchfacts/austin-fc-vs-fc-dallas,3787417,1218886,Austin FC,6399,FC Dallas,2022-06-25 23:00:00+00:00,True,True,2 - 2
+,,/match/3787416/matchfacts/real-salt-lake-vs-columbus-crew,3787416,6606,Real Salt Lake,6001,Columbus Crew,2022-06-26 00:00:00+00:00,True,True,0 - 0
+,,/match/3787414/matchfacts/portland-timbers-vs-colorado-rapids,3787414,307690,Portland Timbers,8314,Colorado Rapids,2022-06-26 00:30:00+00:00,True,True,3 - 0
+,,/match/3787413/matchfacts/los-angeles-fc-vs-new-york-red-bulls,3787413,867280,Los Angeles FC,6514,New York Red Bulls,2022-06-26 17:00:00+00:00,True,True,2 - 0
+,,/match/3787412/matchfacts/philadelphia-union-vs-new-york-city-fc,3787412,191716,Philadelphia Union,546238,New York City FC,2022-06-26 20:00:00+00:00,True,True,2 - 1
+,,/match/3787504/matchfacts/vancouver-whitecaps-vs-new-england-revolution,3787504,307691,Vancouver Whitecaps,6580,New England Revolution,2022-06-26 22:00:00+00:00,True,True,0 - 0
+,,/match/3787411/matchfacts/fc-cincinnati-vs-new-york-city-fc,3787411,722265,FC Cincinnati,546238,New York City FC,2022-06-29 21:30:00+00:00,True,True,4 - 4
+,,/match/3787503/matchfacts/toronto-fc-vs-columbus-crew,3787503,56453,Toronto FC,6001,Columbus Crew,2022-06-29 21:30:00+00:00,True,True,1 - 2
+,,/match/3787410/matchfacts/chicago-fire-fc-vs-philadelphia-union,3787410,6397,Chicago Fire FC,191716,Philadelphia Union,2022-06-29 22:00:00+00:00,True,True,1 - 0
+,,/match/3787502/matchfacts/seattle-sounders-fc-vs-cf-montreal,3787502,130394,Seattle Sounders FC,161195,CF Montreal,2022-06-30 00:00:00+00:00,True,True,1 - 2
+,,/match/3787561/matchfacts/la-galaxy-vs-minnesota-united,3787561,6637,LA Galaxy,207242,Minnesota United,2022-06-30 00:30:00+00:00,True,True,2 - 3
+,,/match/3787418/matchfacts/los-angeles-fc-vs-fc-dallas,3787418,867280,Los Angeles FC,6399,FC Dallas,2022-06-30 00:30:00+00:00,True,True,3 - 1
+,,/match/3787419/matchfacts/portland-timbers-vs-houston-dynamo-fc,3787419,307690,Portland Timbers,8259,Houston Dynamo FC,2022-06-30 00:30:00+00:00,True,True,2 - 1
+,,/match/3787420/matchfacts/charlotte-fc-vs-austin-fc,3787420,1323940,Charlotte FC,1218886,Austin FC,2022-06-30 21:00:00+00:00,True,True,0 - 1
+,,/match/3787427/matchfacts/new-york-red-bulls-vs-atlanta-united,3787427,6514,New York Red Bulls,773958,Atlanta United,2022-06-30 22:00:00+00:00,True,True,2 - 1
+,,/match/3787501/matchfacts/toronto-fc-vs-seattle-sounders-fc,3787501,56453,Toronto FC,130394,Seattle Sounders FC,2022-07-02 21:30:00+00:00,True,True,0 - 2
+,,/match/3787664/matchfacts/vancouver-whitecaps-vs-los-angeles-fc,3787664,307691,Vancouver Whitecaps,867280,Los Angeles FC,2022-07-03 00:00:00+00:00,True,True,1 - 0
+,,/match/3787499/matchfacts/new-york-city-fc-vs-atlanta-united,3787499,546238,New York City FC,773958,Atlanta United,2022-07-03 19:00:00+00:00,True,True,2 - 2
+,,/match/3787498/matchfacts/columbus-crew-vs-philadelphia-union,3787498,6001,Columbus Crew,191716,Philadelphia Union,2022-07-03 21:30:00+00:00,True,True,0 - 0
+,,/match/3787497/matchfacts/new-england-revolution-vs-fc-cincinnati,3787497,6580,New England Revolution,722265,FC Cincinnati,2022-07-03 21:30:00+00:00,True,True,2 - 2
+,,/match/3787500/matchfacts/minnesota-united-vs-real-salt-lake,3787500,207242,Minnesota United,6606,Real Salt Lake,2022-07-03 22:00:00+00:00,True,True,3 - 2
+,,/match/3787496/matchfacts/sporting-kansas-city-vs-new-york-red-bulls,3787496,6604,Sporting Kansas City,6514,New York Red Bulls,2022-07-03 22:00:00+00:00,True,True,0 - 1
+,,/match/3787495/matchfacts/houston-dynamo-fc-vs-charlotte-fc,3787495,8259,Houston Dynamo FC,1323940,Charlotte FC,2022-07-03 22:30:00+00:00,True,True,1 - 2
+,,/match/3787494/matchfacts/nashville-sc-vs-portland-timbers,3787494,915807,Nashville SC,307690,Portland Timbers,2022-07-03 22:30:00+00:00,True,True,2 - 2
+,,/match/3787493/matchfacts/san-jose-earthquakes-vs-chicago-fire-fc,3787493,6603,San Jose Earthquakes,6397,Chicago Fire FC,2022-07-03 23:00:00+00:00,True,True,2 - 1
+,,/match/3787492/matchfacts/orlando-city-vs-dc-united,3787492,267810,Orlando City,6602,DC United,2022-07-04 21:00:00+00:00,True,True,3 - 5
+,,/match/3787491/matchfacts/colorado-rapids-vs-austin-fc,3787491,8314,Colorado Rapids,1218886,Austin FC,2022-07-04 23:00:00+00:00,True,True,2 - 3
+,,/match/3787490/matchfacts/fc-dallas-vs-inter-miami-cf,3787490,6399,FC Dallas,960720,Inter Miami CF,2022-07-04 23:00:00+00:00,True,True,1 - 1
+,,/match/3787665/matchfacts/la-galaxy-vs-cf-montreal,3787665,6637,LA Galaxy,161195,CF Montreal,2022-07-05 00:30:00+00:00,True,True,4 - 0
+,,/match/3787505/matchfacts/philadelphia-union-vs-dc-united,3787505,191716,Philadelphia Union,6602,DC United,2022-07-08 21:45:00+00:00,True,True,7 - 0
+,,/match/3787506/matchfacts/los-angeles-fc-vs-la-galaxy,3787506,867280,Los Angeles FC,6637,LA Galaxy,2022-07-09 00:10:00+00:00,True,True,3 - 2
+,,/match/3787666/matchfacts/vancouver-whitecaps-vs-minnesota-united,3787666,307691,Vancouver Whitecaps,207242,Minnesota United,2022-07-09 00:40:00+00:00,True,True,1 - 3
+,,/match/3787519/matchfacts/new-york-city-fc-vs-new-england-revolution,3787519,546238,New York City FC,6580,New England Revolution,2022-07-09 15:00:00+00:00,True,True,4 - 2
+,,/match/3787520/matchfacts/seattle-sounders-fc-vs-portland-timbers,3787520,130394,Seattle Sounders FC,307690,Portland Timbers,2022-07-09 18:30:00+00:00,True,True,0 - 3
+,,/match/3787521/matchfacts/atlanta-united-vs-austin-fc,3787521,773958,Atlanta United,1218886,Austin FC,2022-07-09 21:00:00+00:00,True,True,0 - 3
+,,/match/3787667/matchfacts/cf-montreal-vs-sporting-kansas-city,3787667,161195,CF Montreal,6604,Sporting Kansas City,2022-07-09 21:30:00+00:00,True,True,1 - 2
+,,/match/3787522/matchfacts/charlotte-fc-vs-nashville-sc,3787522,1323940,Charlotte FC,915807,Nashville SC,2022-07-09 21:30:00+00:00,True,True,4 - 1
+,,/match/3787668/matchfacts/toronto-fc-vs-san-jose-earthquakes,3787668,56453,Toronto FC,6603,San Jose Earthquakes,2022-07-09 21:30:00+00:00,True,True,2 - 2
+,,/match/3787523/matchfacts/fc-cincinnati-vs-new-york-red-bulls,3787523,722265,FC Cincinnati,6514,New York Red Bulls,2022-07-09 21:40:00+00:00,True,True,1 - 1
+,,/match/3787524/matchfacts/orlando-city-vs-inter-miami-cf,3787524,267810,Orlando City,960720,Inter Miami CF,2022-07-09 22:00:00+00:00,True,True,1 - 0
+,,/match/3787525/matchfacts/chicago-fire-fc-vs-columbus-crew,3787525,6397,Chicago Fire FC,6001,Columbus Crew,2022-07-09 22:10:00+00:00,True,True,2 - 3
+,,/match/3787526/matchfacts/houston-dynamo-fc-vs-fc-dallas,3787526,8259,Houston Dynamo FC,6399,FC Dallas,2022-07-09 22:40:00+00:00,True,True,2 - 2
+,,/match/3787527/matchfacts/real-salt-lake-vs-colorado-rapids,3787527,6606,Real Salt Lake,8314,Colorado Rapids,2022-07-10 00:00:00+00:00,True,True,2 - 2
+,,/match/3787528/matchfacts/austin-fc-vs-houston-dynamo-fc,3787528,1218886,Austin FC,8259,Houston Dynamo FC,2022-07-12 23:00:00+00:00,True,True,3 - 1
+,,/match/3787518/matchfacts/atlanta-united-vs-real-salt-lake,3787518,773958,Atlanta United,6606,Real Salt Lake,2022-07-13 21:30:00+00:00,True,True,2 - 1
+,,/match/3787669/matchfacts/chicago-fire-fc-vs-toronto-fc,3787669,6397,Chicago Fire FC,56453,Toronto FC,2022-07-13 22:00:00+00:00,True,True,2 - 0
+,,/match/3787517/matchfacts/dc-united-vs-columbus-crew,3787517,6602,DC United,6001,Columbus Crew,2022-07-13 22:00:00+00:00,True,True,2 - 2
+,,/match/3787670/matchfacts/fc-cincinnati-vs-vancouver-whitecaps,3787670,722265,FC Cincinnati,307691,Vancouver Whitecaps,2022-07-13 22:00:00+00:00,True,True,2 - 2
+,,/match/3787507/matchfacts/inter-miami-cf-vs-philadelphia-union,3787507,960720,Inter Miami CF,191716,Philadelphia Union,2022-07-13 22:00:00+00:00,True,True,1 - 2
+,,/match/3787508/matchfacts/minnesota-united-vs-sporting-kansas-city,3787508,207242,Minnesota United,6604,Sporting Kansas City,2022-07-13 22:00:00+00:00,True,True,1 - 1
+,,/match/3787509/matchfacts/nashville-sc-vs-seattle-sounders-fc,3787509,915807,Nashville SC,130394,Seattle Sounders FC,2022-07-13 22:30:00+00:00,True,True,1 - 0
+,,/match/3787510/matchfacts/colorado-rapids-vs-orlando-city,3787510,8314,Colorado Rapids,267810,Orlando City,2022-07-13 23:00:00+00:00,True,True,1 - 1
+,,/match/3787511/matchfacts/fc-dallas-vs-new-york-city-fc,3787511,6399,FC Dallas,546238,New York City FC,2022-07-13 23:00:00+00:00,True,True,0 - 1
+,,/match/3787512/matchfacts/la-galaxy-vs-san-jose-earthquakes,3787512,6637,LA Galaxy,6603,San Jose Earthquakes,2022-07-14 00:00:00+00:00,True,True,2 - 3
+,,/match/3787671/matchfacts/cf-montreal-vs-toronto-fc,3787671,161195,CF Montreal,56453,Toronto FC,2022-07-16 21:30:00+00:00,True,True,1 - 0
+,,/match/3787513/matchfacts/philadelphia-union-vs-new-england-revolution,3787513,191716,Philadelphia Union,6580,New England Revolution,2022-07-16 21:30:00+00:00,True,True,2 - 1
+,,/match/3787514/matchfacts/chicago-fire-fc-vs-seattle-sounders-fc,3787514,6397,Chicago Fire FC,130394,Seattle Sounders FC,2022-07-16 22:00:00+00:00,True,True,1 - 0
+,,/match/3787515/matchfacts/inter-miami-cf-vs-charlotte-fc,3787515,960720,Inter Miami CF,1323940,Charlotte FC,2022-07-16 22:00:00+00:00,True,True,3 - 2
+,,/match/3787516/matchfacts/minnesota-united-vs-dc-united,3787516,207242,Minnesota United,6602,DC United,2022-07-16 22:00:00+00:00,True,True,2 - 0
+,,/match/3787529/matchfacts/colorado-rapids-vs-la-galaxy,3787529,8314,Colorado Rapids,6637,LA Galaxy,2022-07-16 23:00:00+00:00,True,True,2 - 0
+,,/match/3787530/matchfacts/fc-dallas-vs-austin-fc,3787530,6399,FC Dallas,1218886,Austin FC,2022-07-16 23:00:00+00:00,True,True,1 - 1
+,,/match/3787544/matchfacts/atlanta-united-vs-orlando-city,3787544,773958,Atlanta United,267810,Orlando City,2022-07-17 17:00:00+00:00,True,True,1 - 1
+,,/match/3787545/matchfacts/new-york-red-bulls-vs-new-york-city-fc,3787545,6514,New York Red Bulls,546238,New York City FC,2022-07-17 19:00:00+00:00,True,True,0 - 1
+,,/match/3787546/matchfacts/columbus-crew-vs-fc-cincinnati,3787546,6001,Columbus Crew,722265,FC Cincinnati,2022-07-17 21:30:00+00:00,True,True,2 - 0
+,,/match/3787547/matchfacts/nashville-sc-vs-los-angeles-fc,3787547,915807,Nashville SC,867280,Los Angeles FC,2022-07-17 22:30:00+00:00,True,True,1 - 2
+,,/match/3787548/matchfacts/real-salt-lake-vs-sporting-kansas-city,3787548,6606,Real Salt Lake,6604,Sporting Kansas City,2022-07-17 23:30:00+00:00,True,True,3 - 0
+,,/match/3787549/matchfacts/san-jose-earthquakes-vs-houston-dynamo-fc,3787549,6603,San Jose Earthquakes,8259,Houston Dynamo FC,2022-07-17 23:30:00+00:00,True,True,1 - 2
+,,/match/3787672/matchfacts/portland-timbers-vs-vancouver-whitecaps,3787672,307690,Portland Timbers,307691,Vancouver Whitecaps,2022-07-18 00:30:00+00:00,True,True,1 - 1
+,,/match/3787550/matchfacts/new-york-city-fc-vs-inter-miami-cf,3787550,546238,New York City FC,960720,Inter Miami CF,2022-07-23 21:00:00+00:00,True,True,2 - 0
+,,/match/3787552/matchfacts/columbus-crew-vs-new-england-revolution,3787552,6001,Columbus Crew,6580,New England Revolution,2022-07-23 21:30:00+00:00,True,True,0 - 0
+,,/match/3787551/matchfacts/fc-cincinnati-vs-nashville-sc,3787551,722265,FC Cincinnati,915807,Nashville SC,2022-07-23 21:30:00+00:00,True,True,1 - 1
+,,/match/3787553/matchfacts/orlando-city-vs-philadelphia-union,3787553,267810,Orlando City,191716,Philadelphia Union,2022-07-23 21:30:00+00:00,True,True,0 - 1
+,,/match/3787673/matchfacts/toronto-fc-vs-charlotte-fc,3787673,56453,Toronto FC,1323940,Charlotte FC,2022-07-23 21:30:00+00:00,True,True,4 - 0
+,,/match/3787656/matchfacts/dc-united-vs-cf-montreal,3787656,6602,DC United,161195,CF Montreal,2022-07-23 22:00:00+00:00,True,True,1 - 2
+,,/match/3787554/matchfacts/houston-dynamo-fc-vs-minnesota-united,3787554,8259,Houston Dynamo FC,207242,Minnesota United,2022-07-23 22:30:00+00:00,True,True,1 - 2
+,,/match/3787543/matchfacts/sporting-kansas-city-vs-los-angeles-fc,3787543,6604,Sporting Kansas City,867280,Los Angeles FC,2022-07-23 22:30:00+00:00,True,True,0 - 2
+,,/match/3787542/matchfacts/real-salt-lake-vs-fc-dallas,3787542,6606,Real Salt Lake,6399,FC Dallas,2022-07-24 00:00:00+00:00,True,True,0 - 1
+,,/match/3787531/matchfacts/seattle-sounders-fc-vs-colorado-rapids,3787531,130394,Seattle Sounders FC,8314,Colorado Rapids,2022-07-24 00:00:00+00:00,True,True,2 - 1
+,,/match/3787704/matchfacts/vancouver-whitecaps-vs-chicago-fire-fc,3787704,307691,Vancouver Whitecaps,6397,Chicago Fire FC,2022-07-24 00:00:00+00:00,True,True,1 - 3
+,,/match/3787532/matchfacts/portland-timbers-vs-san-jose-earthquakes,3787532,307690,Portland Timbers,6603,San Jose Earthquakes,2022-07-24 00:30:00+00:00,True,True,2 - 1
+,,/match/3787533/matchfacts/austin-fc-vs-new-york-red-bulls,3787533,1218886,Austin FC,6514,New York Red Bulls,2022-07-24 22:00:00+00:00,True,True,3 - 4
+,,/match/3787534/matchfacts/la-galaxy-vs-atlanta-united,3787534,6637,LA Galaxy,773958,Atlanta United,2022-07-24 23:30:00+00:00,True,True,2 - 0
+,,/match/3787535/matchfacts/los-angeles-fc-vs-seattle-sounders-fc,3787535,867280,Los Angeles FC,130394,Seattle Sounders FC,2022-07-30 01:00:00+00:00,True,True,2 - 1
+,,/match/3787537/matchfacts/minnesota-united-vs-portland-timbers,3787537,207242,Minnesota United,307690,Portland Timbers,2022-07-30 17:00:00+00:00,True,True,4 - 4
+,,/match/3787538/matchfacts/chicago-fire-fc-vs-atlanta-united,3787538,6397,Chicago Fire FC,773958,Atlanta United,2022-07-30 19:00:00+00:00,True,True,0 - 0
+,,/match/3787703/matchfacts/cf-montreal-vs-new-york-city-fc,3787703,161195,CF Montreal,546238,New York City FC,2022-07-30 21:30:00+00:00,True,True,0 - 0
+,,/match/3787541/matchfacts/philadelphia-union-vs-houston-dynamo-fc,3787541,191716,Philadelphia Union,8259,Houston Dynamo FC,2022-07-30 21:30:00+00:00,True,True,6 - 0
+,,/match/3787555/matchfacts/inter-miami-cf-vs-fc-cincinnati,3787555,960720,Inter Miami CF,722265,FC Cincinnati,2022-07-30 22:00:00+00:00,True,True,4 - 4
+,,/match/3787702/matchfacts/nashville-sc-vs-vancouver-whitecaps,3787702,915807,Nashville SC,307691,Vancouver Whitecaps,2022-07-30 22:00:00+00:00,True,True,1 - 1
+,,/match/3787701/matchfacts/new-england-revolution-vs-toronto-fc,3787701,6580,New England Revolution,56453,Toronto FC,2022-07-30 22:00:00+00:00,True,True,0 - 0
+,,/match/3787556/matchfacts/sporting-kansas-city-vs-austin-fc,3787556,6604,Sporting Kansas City,1218886,Austin FC,2022-07-30 22:30:00+00:00,True,True,0 - 2
+,,/match/3787565/matchfacts/fc-dallas-vs-la-galaxy,3787565,6399,FC Dallas,6637,LA Galaxy,2022-07-30 23:00:00+00:00,True,True,1 - 0
+,,/match/3787536/matchfacts/san-jose-earthquakes-vs-real-salt-lake,3787536,6603,San Jose Earthquakes,6606,Real Salt Lake,2022-07-31 00:00:00+00:00,True,True,2 - 2
+,,/match/3787564/matchfacts/dc-united-vs-orlando-city,3787564,6602,DC United,267810,Orlando City,2022-07-31 19:00:00+00:00,True,True,2 - 1
+,,/match/3787540/matchfacts/new-york-red-bulls-vs-colorado-rapids,3787540,6514,New York Red Bulls,8314,Colorado Rapids,2022-08-02 21:30:00+00:00,True,True,4 - 5
+,,/match/3787563/matchfacts/seattle-sounders-fc-vs-fc-dallas,3787563,130394,Seattle Sounders FC,6399,FC Dallas,2022-08-03 00:00:00+00:00,True,True,1 - 0
+,,/match/3787562/matchfacts/charlotte-fc-vs-dc-united,3787562,1323940,Charlotte FC,6602,DC United,2022-08-03 21:00:00+00:00,True,True,3 - 0
+,,/match/3787700/matchfacts/columbus-crew-vs-cf-montreal,3787700,6001,Columbus Crew,161195,CF Montreal,2022-08-03 21:30:00+00:00,True,True,1 - 2
+,,/match/3787560/matchfacts/portland-timbers-vs-nashville-sc,3787560,307690,Portland Timbers,915807,Nashville SC,2022-08-04 00:30:00+00:00,True,True,1 - 1
+,,/match/3787559/matchfacts/san-jose-earthquakes-vs-inter-miami-cf,3787559,6603,San Jose Earthquakes,960720,Inter Miami CF,2022-08-04 00:30:00+00:00,True,True,0 - 1
+,,/match/3787699/matchfacts/vancouver-whitecaps-vs-houston-dynamo-fc,3787699,307691,Vancouver Whitecaps,8259,Houston Dynamo FC,2022-08-06 00:30:00+00:00,True,True,2 - 1
+,,/match/3787558/matchfacts/atlanta-united-vs-seattle-sounders-fc,3787558,773958,Atlanta United,130394,Seattle Sounders FC,2022-08-06 17:00:00+00:00,True,True,2 - 1
+,,/match/3787557/matchfacts/charlotte-fc-vs-chicago-fire-fc,3787557,1323940,Charlotte FC,6397,Chicago Fire FC,2022-08-06 21:00:00+00:00,True,True,2 - 3
+,,/match/3787698/matchfacts/cf-montreal-vs-inter-miami-cf,3787698,161195,CF Montreal,960720,Inter Miami CF,2022-08-06 21:30:00+00:00,True,True,2 - 2
+,,/match/3787567/matchfacts/columbus-crew-vs-new-york-city-fc,3787567,6001,Columbus Crew,546238,New York City FC,2022-08-06 21:30:00+00:00,True,True,3 - 2
+,,/match/3787588/matchfacts/dc-united-vs-new-york-red-bulls,3787588,6602,DC United,6514,New York Red Bulls,2022-08-06 21:30:00+00:00,True,True,0 - 0
+,,/match/3787566/matchfacts/fc-cincinnati-vs-philadelphia-union,3787566,722265,FC Cincinnati,191716,Philadelphia Union,2022-08-06 21:30:00+00:00,True,True,3 - 1
+,,/match/3787589/matchfacts/orlando-city-vs-new-england-revolution,3787589,267810,Orlando City,6580,New England Revolution,2022-08-06 21:30:00+00:00,True,True,0 - 3
+,,/match/3787697/matchfacts/nashville-sc-vs-toronto-fc,3787697,915807,Nashville SC,56453,Toronto FC,2022-08-06 22:00:00+00:00,True,True,3 - 4
+,,/match/3787590/matchfacts/sporting-kansas-city-vs-la-galaxy,3787590,6604,Sporting Kansas City,6637,LA Galaxy,2022-08-06 22:30:00+00:00,True,True,4 - 2
+,,/match/3787591/matchfacts/austin-fc-vs-san-jose-earthquakes,3787591,1218886,Austin FC,6603,San Jose Earthquakes,2022-08-06 23:00:00+00:00,True,True,3 - 3
+,,/match/3787592/matchfacts/colorado-rapids-vs-minnesota-united,3787592,8314,Colorado Rapids,207242,Minnesota United,2022-08-06 23:00:00+00:00,True,True,4 - 3
+,,/match/3787593/matchfacts/real-salt-lake-vs-los-angeles-fc,3787593,6606,Real Salt Lake,867280,Los Angeles FC,2022-08-07 00:00:00+00:00,True,True,1 - 4
+,,/match/3787594/matchfacts/portland-timbers-vs-fc-dallas,3787594,307690,Portland Timbers,6399,FC Dallas,2022-08-07 00:30:00+00:00,True,True,1 - 1
+,,/match/3787595/matchfacts/new-york-red-bulls-vs-orlando-city,3787595,6514,New York Red Bulls,267810,Orlando City,2022-08-13 20:00:00+00:00,True,True,0 - 1
+,,/match/3787596/matchfacts/fc-cincinnati-vs-atlanta-united,3787596,722265,FC Cincinnati,773958,Atlanta United,2022-08-13 21:30:00+00:00,True,True,2 - 2
+,,/match/3787597/matchfacts/new-england-revolution-vs-dc-united,3787597,6580,New England Revolution,6602,DC United,2022-08-13 21:30:00+00:00,True,True,1 - 0
+,,/match/3787598/matchfacts/philadelphia-union-vs-chicago-fire-fc,3787598,191716,Philadelphia Union,6397,Chicago Fire FC,2022-08-13 21:30:00+00:00,True,True,4 - 1
+,,/match/3787696/matchfacts/toronto-fc-vs-portland-timbers,3787696,56453,Toronto FC,307690,Portland Timbers,2022-08-13 21:30:00+00:00,True,True,3 - 1
+,,/match/3787599/matchfacts/inter-miami-cf-vs-new-york-city-fc,3787599,960720,Inter Miami CF,546238,New York City FC,2022-08-13 22:00:00+00:00,True,True,3 - 2
+,,/match/3787600/matchfacts/austin-fc-vs-sporting-kansas-city,3787600,1218886,Austin FC,6604,Sporting Kansas City,2022-08-13 23:00:00+00:00,True,True,4 - 3
+,,/match/3787601/matchfacts/colorado-rapids-vs-columbus-crew,3787601,8314,Colorado Rapids,6001,Columbus Crew,2022-08-13 23:00:00+00:00,True,True,1 - 1
+,,/match/3787602/matchfacts/fc-dallas-vs-san-jose-earthquakes,3787602,6399,FC Dallas,6603,San Jose Earthquakes,2022-08-13 23:00:00+00:00,True,True,4 - 1
+,,/match/3787695/matchfacts/houston-dynamo-fc-vs-cf-montreal,3787695,8259,Houston Dynamo FC,161195,CF Montreal,2022-08-13 23:00:00+00:00,True,True,2 - 3
+,,/match/3787705/matchfacts/la-galaxy-vs-vancouver-whitecaps,3787705,6637,LA Galaxy,307691,Vancouver Whitecaps,2022-08-14 00:00:00+00:00,True,True,5 - 2
+,,/match/3787603/matchfacts/los-angeles-fc-vs-charlotte-fc,3787603,867280,Los Angeles FC,1323940,Charlotte FC,2022-08-14 00:30:00+00:00,True,True,5 - 0
+,,/match/3787604/matchfacts/nashville-sc-vs-minnesota-united,3787604,915807,Nashville SC,207242,Minnesota United,2022-08-14 23:00:00+00:00,True,True,1 - 2
+,,/match/3787587/matchfacts/seattle-sounders-fc-vs-real-salt-lake,3787587,130394,Seattle Sounders FC,6606,Real Salt Lake,2022-08-15 00:00:00+00:00,True,True,1 - 2
+,,/match/3787569/matchfacts/los-angeles-fc-vs-dc-united,3787569,867280,Los Angeles FC,6602,DC United,2022-08-17 00:30:00+00:00,True,True,1 - 0
+,,/match/3787585/matchfacts/atlanta-united-vs-new-york-red-bulls,3787585,773958,Atlanta United,6514,New York Red Bulls,2022-08-17 21:30:00+00:00,True,True,1 - 2
+,,/match/3787721/matchfacts/toronto-fc-vs-new-england-revolution,3787721,56453,Toronto FC,6580,New England Revolution,2022-08-17 21:30:00+00:00,True,True,2 - 2
+,,/match/3787586/matchfacts/new-york-city-fc-vs-charlotte-fc,3787586,546238,New York City FC,1323940,Charlotte FC,2022-08-17 22:00:00+00:00,True,True,1 - 3
+,,/match/3787568/matchfacts/fc-dallas-vs-philadelphia-union,3787568,6399,FC Dallas,191716,Philadelphia Union,2022-08-17 23:00:00+00:00,True,True,1 - 0
+,,/match/3787722/matchfacts/vancouver-whitecaps-vs-colorado-rapids,3787722,307691,Vancouver Whitecaps,8314,Colorado Rapids,2022-08-18 00:00:00+00:00,True,True,2 - 1
+,,/match/3787570/matchfacts/la-galaxy-vs-seattle-sounders-fc,3787570,6637,LA Galaxy,130394,Seattle Sounders FC,2022-08-20 00:00:00+00:00,True,True,3 - 3
+,,/match/3787571/matchfacts/new-york-red-bulls-vs-fc-cincinnati,3787571,6514,New York Red Bulls,722265,FC Cincinnati,2022-08-20 20:00:00+00:00,True,True,1 - 1
+,,/match/3787723/matchfacts/cf-montreal-vs-new-england-revolution,3787723,161195,CF Montreal,6580,New England Revolution,2022-08-20 21:30:00+00:00,True,True,4 - 0
+,,/match/3787572/matchfacts/dc-united-vs-philadelphia-union,3787572,6602,DC United,191716,Philadelphia Union,2022-08-20 21:30:00+00:00,True,True,0 - 6
+,,/match/3787724/matchfacts/inter-miami-cf-vs-toronto-fc,3787724,960720,Inter Miami CF,56453,Toronto FC,2022-08-20 22:00:00+00:00,True,True,2 - 1
+,,/match/3787573/matchfacts/minnesota-united-vs-austin-fc,3787573,207242,Minnesota United,1218886,Austin FC,2022-08-20 22:00:00+00:00,True,True,2 - 1
+,,/match/3787574/matchfacts/colorado-rapids-vs-houston-dynamo-fc,3787574,8314,Colorado Rapids,8259,Houston Dynamo FC,2022-08-20 23:00:00+00:00,True,True,1 - 1
+,,/match/3787725/matchfacts/real-salt-lake-vs-vancouver-whitecaps,3787725,6606,Real Salt Lake,307691,Vancouver Whitecaps,2022-08-21 00:00:00+00:00,True,True,1 - 1
+,,/match/3787575/matchfacts/san-jose-earthquakes-vs-los-angeles-fc,3787575,6603,San Jose Earthquakes,867280,Los Angeles FC,2022-08-21 00:00:00+00:00,True,True,2 - 1
+,,/match/3787577/matchfacts/columbus-crew-vs-atlanta-united,3787577,6001,Columbus Crew,773958,Atlanta United,2022-08-21 19:30:00+00:00,True,True,2 - 2
+,,/match/3787576/matchfacts/chicago-fire-fc-vs-new-york-city-fc,3787576,6397,Chicago Fire FC,546238,New York City FC,2022-08-21 20:00:00+00:00,True,True,0 - 2
+,,/match/3787578/matchfacts/charlotte-fc-vs-orlando-city,3787578,1323940,Charlotte FC,267810,Orlando City,2022-08-21 21:00:00+00:00,True,True,1 - 2
+,,/match/3787579/matchfacts/sporting-kansas-city-vs-portland-timbers,3787579,6604,Sporting Kansas City,307690,Portland Timbers,2022-08-21 21:30:00+00:00,True,True,4 - 1
+,,/match/3787580/matchfacts/nashville-sc-vs-fc-dallas,3787580,915807,Nashville SC,6399,FC Dallas,2022-08-21 22:30:00+00:00,True,True,4 - 0
+,,/match/3787581/matchfacts/austin-fc-vs-los-angeles-fc,3787581,1218886,Austin FC,867280,Los Angeles FC,2022-08-26 22:00:00+00:00,True,True,4 - 1
+,,/match/3787582/matchfacts/portland-timbers-vs-seattle-sounders-fc,3787582,307690,Portland Timbers,130394,Seattle Sounders FC,2022-08-27 00:00:00+00:00,True,True,2 - 1
+,,/match/3787583/matchfacts/minnesota-united-vs-houston-dynamo-fc,3787583,207242,Minnesota United,8259,Houston Dynamo FC,2022-08-27 17:30:00+00:00,True,True,2 - 1
+,,/match/3787728/matchfacts/charlotte-fc-vs-toronto-fc,3787728,1323940,Charlotte FC,56453,Toronto FC,2022-08-27 21:00:00+00:00,True,True,0 - 2
+,,/match/3787584/matchfacts/new-york-red-bulls-vs-inter-miami-cf,3787584,6514,New York Red Bulls,960720,Inter Miami CF,2022-08-27 21:00:00+00:00,True,True,3 - 1
+,,/match/3787605/matchfacts/fc-cincinnati-vs-columbus-crew,3787605,722265,FC Cincinnati,6001,Columbus Crew,2022-08-27 21:30:00+00:00,True,True,2 - 2
+,,/match/3787606/matchfacts/philadelphia-union-vs-colorado-rapids,3787606,191716,Philadelphia Union,8314,Colorado Rapids,2022-08-27 21:30:00+00:00,True,True,6 - 0
+,,/match/3787727/matchfacts/chicago-fire-fc-vs-cf-montreal,3787727,6397,Chicago Fire FC,161195,CF Montreal,2022-08-27 22:00:00+00:00,True,True,0 - 2
+,,/match/3787607/matchfacts/sporting-kansas-city-vs-san-jose-earthquakes,3787607,6604,Sporting Kansas City,6603,San Jose Earthquakes,2022-08-27 22:30:00+00:00,True,True,1 - 0
+,,/match/3787608/matchfacts/fc-dallas-vs-real-salt-lake,3787608,6399,FC Dallas,6606,Real Salt Lake,2022-08-27 23:00:00+00:00,True,True,1 - 1
+,,/match/3787726/matchfacts/vancouver-whitecaps-vs-nashville-sc,3787726,307691,Vancouver Whitecaps,915807,Nashville SC,2022-08-28 00:00:00+00:00,True,True,0 - 3
+,,/match/3787609/matchfacts/atlanta-united-vs-dc-united,3787609,773958,Atlanta United,6602,DC United,2022-08-28 18:00:00+00:00,True,True,3 - 2
+,,/match/3787655/matchfacts/orlando-city-vs-new-york-city-fc,3787655,267810,Orlando City,546238,New York City FC,2022-08-28 21:30:00+00:00,True,True,2 - 1
+,,/match/3787642/matchfacts/new-england-revolution-vs-la-galaxy,3787642,6580,New England Revolution,6637,LA Galaxy,2022-08-28 22:00:00+00:00,True,True,1 - 2
+,,/match/3787638/matchfacts/philadelphia-union-vs-atlanta-united,3787638,191716,Philadelphia Union,773958,Atlanta United,2022-08-31 21:00:00+00:00,True,True,4 - 1
+,,/match/3787729/matchfacts/cf-montreal-vs-new-york-red-bulls,3787729,161195,CF Montreal,6514,New York Red Bulls,2022-08-31 21:30:00+00:00,True,True,0 - 1
+,,/match/3787641/matchfacts/columbus-crew-vs-inter-miami-cf,3787641,6001,Columbus Crew,960720,Inter Miami CF,2022-08-31 21:30:00+00:00,True,True,1 - 0
+,,/match/3787640/matchfacts/new-england-revolution-vs-chicago-fire-fc,3787640,6580,New England Revolution,6397,Chicago Fire FC,2022-08-31 21:30:00+00:00,True,True,0 - 0
+,,/match/3787639/matchfacts/orlando-city-vs-seattle-sounders-fc,3787639,267810,Orlando City,130394,Seattle Sounders FC,2022-08-31 21:30:00+00:00,True,True,3 - 2
+,,/match/3787730/matchfacts/toronto-fc-vs-la-galaxy,3787730,56453,Toronto FC,6637,LA Galaxy,2022-08-31 21:30:00+00:00,True,True,2 - 2
+,,/match/3787332/matchfacts/new-york-city-fc-vs-dc-united,3787332,546238,New York City FC,6602,DC United,2022-08-31 22:00:00+00:00,True,True,1 - 2
+,,/match/3787637/matchfacts/houston-dynamo-fc-vs-los-angeles-fc,3787637,8259,Houston Dynamo FC,867280,Los Angeles FC,2022-08-31 22:30:00+00:00,True,True,2 - 1
+,,/match/3787636/matchfacts/nashville-sc-vs-colorado-rapids,3787636,915807,Nashville SC,8314,Colorado Rapids,2022-08-31 22:30:00+00:00,True,True,4 - 1
+,,/match/3787635/matchfacts/austin-fc-vs-portland-timbers,3787635,1218886,Austin FC,307690,Portland Timbers,2022-08-31 23:00:00+00:00,True,True,1 - 2
+,,/match/3787634/matchfacts/real-salt-lake-vs-minnesota-united,3787634,6606,Real Salt Lake,207242,Minnesota United,2022-08-31 23:30:00+00:00,True,True,3 - 0
+,,/match/3787643/matchfacts/minnesota-united-vs-fc-dallas,3787643,207242,Minnesota United,6399,FC Dallas,2022-09-03 17:30:00+00:00,True,True,0 - 3
+,,/match/3787654/matchfacts/columbus-crew-vs-chicago-fire-fc,3787654,6001,Columbus Crew,6397,Chicago Fire FC,2022-09-03 19:30:00+00:00,True,True,0 - 0
+,,/match/3787644/matchfacts/new-york-red-bulls-vs-philadelphia-union,3787644,6514,New York Red Bulls,191716,Philadelphia Union,2022-09-03 21:00:00+00:00,True,True,0 - 2
+,,/match/3787645/matchfacts/fc-cincinnati-vs-charlotte-fc,3787645,722265,FC Cincinnati,1323940,Charlotte FC,2022-09-03 21:30:00+00:00,True,True,2 - 0
+,,/match/3787652/matchfacts/nashville-sc-vs-austin-fc,3787652,915807,Nashville SC,1218886,Austin FC,2022-09-03 22:30:00+00:00,True,True,3 - 0
+,,/match/3787651/matchfacts/portland-timbers-vs-atlanta-united,3787651,307690,Portland Timbers,773958,Atlanta United,2022-09-04 19:30:00+00:00,True,True,2 - 1
+,,/match/3787653/matchfacts/dc-united-vs-colorado-rapids,3787653,6602,DC United,8314,Colorado Rapids,2022-09-04 21:30:00+00:00,True,True,0 - 0
+,,/match/3787731/matchfacts/toronto-fc-vs-cf-montreal,3787731,56453,Toronto FC,161195,CF Montreal,2022-09-04 21:30:00+00:00,True,True,3 - 4
+,,/match/3787650/matchfacts/la-galaxy-vs-sporting-kansas-city,3787650,6637,LA Galaxy,6604,Sporting Kansas City,2022-09-04 22:00:00+00:00,True,True,2 - 2
+,,/match/3787648/matchfacts/new-england-revolution-vs-new-york-city-fc,3787648,6580,New England Revolution,546238,New York City FC,2022-09-04 22:00:00+00:00,True,True,3 - 0
+,,/match/3787647/matchfacts/seattle-sounders-fc-vs-houston-dynamo-fc,3787647,130394,Seattle Sounders FC,8259,Houston Dynamo FC,2022-09-04 23:00:00+00:00,True,True,2 - 1
+,,/match/3787732/matchfacts/san-jose-earthquakes-vs-vancouver-whitecaps,3787732,6603,San Jose Earthquakes,307691,Vancouver Whitecaps,2022-09-04 23:30:00+00:00,True,True,2 - 0
+,,/match/3787646/matchfacts/los-angeles-fc-vs-real-salt-lake,3787646,867280,Los Angeles FC,6606,Real Salt Lake,2022-09-05 00:30:00+00:00,True,True,2 - 0
+,,/match/3787633/matchfacts/new-york-city-fc-vs-fc-cincinnati,3787633,546238,New York City FC,722265,FC Cincinnati,2022-09-07 22:00:00+00:00,True,True,1 - 1
+,,/match/3787720/matchfacts/cf-montreal-vs-columbus-crew,3787720,161195,CF Montreal,6001,Columbus Crew,2022-09-09 21:30:00+00:00,True,True,2 - 2
+,,/match/3787618/matchfacts/charlotte-fc-vs-new-york-city-fc,3787618,1323940,Charlotte FC,546238,New York City FC,2022-09-10 15:00:00+00:00,True,True,1 - 0
+,,/match/3787619/matchfacts/nashville-sc-vs-la-galaxy,3787619,915807,Nashville SC,6637,LA Galaxy,2022-09-10 17:30:00+00:00,True,True,1 - 1
+,,/match/3787632/matchfacts/new-york-red-bulls-vs-new-england-revolution,3787632,6514,New York Red Bulls,6580,New England Revolution,2022-09-10 20:00:00+00:00,True,True,2 - 1
+,,/match/3787719/matchfacts/atlanta-united-vs-toronto-fc,3787719,773958,Atlanta United,56453,Toronto FC,2022-09-10 21:30:00+00:00,True,True,4 - 2
+,,/match/3787617/matchfacts/fc-cincinnati-vs-san-jose-earthquakes,3787617,722265,FC Cincinnati,6603,San Jose Earthquakes,2022-09-10 21:30:00+00:00,True,True,6 - 0
+,,/match/3787616/matchfacts/philadelphia-union-vs-orlando-city,3787616,191716,Philadelphia Union,267810,Orlando City,2022-09-10 21:30:00+00:00,True,True,5 - 1
+,,/match/3787615/matchfacts/chicago-fire-fc-vs-inter-miami-cf,3787615,6397,Chicago Fire FC,960720,Inter Miami CF,2022-09-10 22:00:00+00:00,True,True,3 - 1
+,,/match/3787614/matchfacts/seattle-sounders-fc-vs-austin-fc,3787614,130394,Seattle Sounders FC,1218886,Austin FC,2022-09-10 22:00:00+00:00,True,True,3 - 0
+,,/match/3787613/matchfacts/fc-dallas-vs-los-angeles-fc,3787613,6399,FC Dallas,867280,Los Angeles FC,2022-09-10 22:30:00+00:00,True,True,2 - 1
+,,/match/3787612/matchfacts/houston-dynamo-fc-vs-sporting-kansas-city,3787612,8259,Houston Dynamo FC,6604,Sporting Kansas City,2022-09-10 22:30:00+00:00,True,True,0 - 0
+,,/match/3787718/matchfacts/colorado-rapids-vs-vancouver-whitecaps,3787718,8314,Colorado Rapids,307691,Vancouver Whitecaps,2022-09-10 23:30:00+00:00,True,True,3 - 1
+,,/match/3787611/matchfacts/real-salt-lake-vs-dc-united,3787611,6606,Real Salt Lake,6602,DC United,2022-09-10 23:30:00+00:00,True,True,0 - 0
+,,/match/3787610/matchfacts/portland-timbers-vs-minnesota-united,3787610,307690,Portland Timbers,207242,Minnesota United,2022-09-11 00:00:00+00:00,True,True,1 - 0
+,,/match/3787707/matchfacts/cf-montreal-vs-chicago-fire-fc,3787707,161195,CF Montreal,6397,Chicago Fire FC,2022-09-13 21:30:00+00:00,True,True,3 - 2
+,,/match/3787620/matchfacts/inter-miami-cf-vs-columbus-crew,3787620,960720,Inter Miami CF,6001,Columbus Crew,2022-09-13 22:00:00+00:00,True,True,2 - 1
+,,/match/3787621/matchfacts/minnesota-united-vs-los-angeles-fc,3787621,207242,Minnesota United,867280,Los Angeles FC,2022-09-13 22:00:00+00:00,True,True,1 - 1
+,,/match/3787629/matchfacts/houston-dynamo-fc-vs-new-england-revolution,3787629,8259,Houston Dynamo FC,6580,New England Revolution,2022-09-13 22:30:00+00:00,True,True,3 - 1
+,,/match/3787631/matchfacts/sporting-kansas-city-vs-dc-united,3787631,6604,Sporting Kansas City,6602,DC United,2022-09-13 22:30:00+00:00,True,True,3 - 0
+,,/match/3787628/matchfacts/orlando-city-vs-atlanta-united,3787628,267810,Orlando City,773958,Atlanta United,2022-09-14 20:00:00+00:00,True,True,0 - 1
+,,/match/3787630/matchfacts/austin-fc-vs-real-salt-lake,3787630,1218886,Austin FC,6606,Real Salt Lake,2022-09-14 23:15:00+00:00,True,True,3 - 0
+,,/match/3787627/matchfacts/colorado-rapids-vs-san-jose-earthquakes,3787627,8314,Colorado Rapids,6603,San Jose Earthquakes,2022-09-15 00:00:00+00:00,True,True,2 - 1
+,,/match/3787708/matchfacts/vancouver-whitecaps-vs-la-galaxy,3787708,307691,Vancouver Whitecaps,6637,LA Galaxy,2022-09-15 00:00:00+00:00,True,True,3 - 0
+,,/match/3787626/matchfacts/new-york-city-fc-vs-new-york-red-bulls,3787626,546238,New York City FC,6514,New York Red Bulls,2022-09-17 15:00:00+00:00,True,True,2 - 0
+,,/match/3787624/matchfacts/atlanta-united-vs-philadelphia-union,3787624,773958,Atlanta United,191716,Philadelphia Union,2022-09-17 17:30:00+00:00,True,True,0 - 0
+,,/match/3787709/matchfacts/new-england-revolution-vs-cf-montreal,3787709,6580,New England Revolution,161195,CF Montreal,2022-09-17 21:30:00+00:00,True,True,0 - 1
+,,/match/3787710/matchfacts/orlando-city-vs-toronto-fc,3787710,267810,Orlando City,56453,Toronto FC,2022-09-17 21:30:00+00:00,True,True,4 - 0
+,,/match/3787623/matchfacts/chicago-fire-fc-vs-charlotte-fc,3787623,6397,Chicago Fire FC,1323940,Charlotte FC,2022-09-17 22:00:00+00:00,True,True,2 - 3
+,,/match/3787622/matchfacts/sporting-kansas-city-vs-minnesota-united,3787622,6604,Sporting Kansas City,207242,Minnesota United,2022-09-17 22:30:00+00:00,True,True,4 - 1
+,,/match/3787684/matchfacts/austin-fc-vs-nashville-sc,3787684,1218886,Austin FC,915807,Nashville SC,2022-09-17 23:00:00+00:00,True,True,1 - 1
+,,/match/3787683/matchfacts/real-salt-lake-vs-fc-cincinnati,3787683,6606,Real Salt Lake,722265,FC Cincinnati,2022-09-17 23:30:00+00:00,True,True,1 - 2
+,,/match/3787711/matchfacts/vancouver-whitecaps-vs-seattle-sounders-fc,3787711,307691,Vancouver Whitecaps,130394,Seattle Sounders FC,2022-09-18 00:00:00+00:00,True,True,2 - 1
+,,/match/3787682/matchfacts/la-galaxy-vs-colorado-rapids,3787682,6637,LA Galaxy,8314,Colorado Rapids,2022-09-18 00:30:00+00:00,True,True,4 - 1
+,,/match/3787625/matchfacts/san-jose-earthquakes-vs-fc-dallas,3787625,6603,San Jose Earthquakes,6399,FC Dallas,2022-09-18 00:30:00+00:00,True,True,1 - 1
+,,/match/3787681/matchfacts/columbus-crew-vs-portland-timbers,3787681,6001,Columbus Crew,307690,Portland Timbers,2022-09-18 15:00:00+00:00,True,True,1 - 1
+,,/match/3787680/matchfacts/dc-united-vs-inter-miami-cf,3787680,6602,DC United,960720,Inter Miami CF,2022-09-18 19:00:00+00:00,True,True,2 - 3
+,,/match/3787679/matchfacts/los-angeles-fc-vs-houston-dynamo-fc,3787679,867280,Los Angeles FC,8259,Houston Dynamo FC,2022-09-19 00:30:00+00:00,True,True,3 - 1
+,,/match/3787415/matchfacts/san-jose-earthquakes-vs-la-galaxy,3787415,6603,San Jose Earthquakes,6637,LA Galaxy,2022-09-25 00:00:00+00:00,True,True,2 - 3
+,,/match/3787308/matchfacts/seattle-sounders-fc-vs-fc-cincinnati,3787308,130394,Seattle Sounders FC,722265,FC Cincinnati,2022-09-28 00:00:00+00:00,True,True,1 - 1
+,,/match/3787712/matchfacts/toronto-fc-vs-inter-miami-cf,3787712,56453,Toronto FC,960720,Inter Miami CF,2022-09-30 21:30:00+00:00,True,True,0 - 1
+,,/match/3787677/matchfacts/new-england-revolution-vs-atlanta-united,3787677,6580,New England Revolution,773958,Atlanta United,2022-10-01 15:30:00+00:00,True,True,2 - 1
+,,/match/3787685/matchfacts/colorado-rapids-vs-fc-dallas,3787685,8314,Colorado Rapids,6399,FC Dallas,2022-10-01 17:30:00+00:00,True,True,1 - 0
+,,/match/3787686/matchfacts/charlotte-fc-vs-philadelphia-union,3787686,1323940,Charlotte FC,191716,Philadelphia Union,2022-10-01 19:30:00+00:00,True,True,4 - 0
+,,/match/3787713/matchfacts/cf-montreal-vs-dc-united,3787713,161195,CF Montreal,6602,DC United,2022-10-01 21:30:00+00:00,True,True,1 - 0
+,,/match/3787692/matchfacts/columbus-crew-vs-new-york-red-bulls,3787692,6001,Columbus Crew,6514,New York Red Bulls,2022-10-01 21:30:00+00:00,True,True,2 - 1
+,,/match/3787693/matchfacts/fc-cincinnati-vs-chicago-fire-fc,3787693,722265,FC Cincinnati,6397,Chicago Fire FC,2022-10-01 21:30:00+00:00,True,True,2 - 3
+,,/match/3787678/matchfacts/san-jose-earthquakes-vs-minnesota-united,3787678,6603,San Jose Earthquakes,207242,Minnesota United,2022-10-02 00:00:00+00:00,True,True,2 - 0
+,,/match/3787714/matchfacts/vancouver-whitecaps-vs-austin-fc,3787714,307691,Vancouver Whitecaps,1218886,Austin FC,2022-10-02 00:00:00+00:00,True,True,2 - 0
+,,/match/3787691/matchfacts/la-galaxy-vs-real-salt-lake,3787691,6637,LA Galaxy,6606,Real Salt Lake,2022-10-02 00:30:00+00:00,True,True,1 - 1
+,,/match/3787694/matchfacts/new-york-city-fc-vs-orlando-city,3787694,546238,New York City FC,267810,Orlando City,2022-10-02 15:00:00+00:00,True,True,2 - 1
+,,/match/3787690/matchfacts/portland-timbers-vs-los-angeles-fc,3787690,307690,Portland Timbers,867280,Los Angeles FC,2022-10-02 17:00:00+00:00,True,True,1 - 2
+,,/match/3787689/matchfacts/sporting-kansas-city-vs-seattle-sounders-fc,3787689,6604,Sporting Kansas City,130394,Seattle Sounders FC,2022-10-02 19:00:00+00:00,True,True,1 - 0
+,,/match/3787688/matchfacts/nashville-sc-vs-houston-dynamo-fc,3787688,915807,Nashville SC,8259,Houston Dynamo FC,2022-10-02 22:30:00+00:00,True,True,1 - 2
+,,/match/3787539/matchfacts/charlotte-fc-vs-columbus-crew,3787539,1323940,Charlotte FC,6001,Columbus Crew,2022-10-05 21:00:00+00:00,True,True,2 - 2
+,,/match/3787649/matchfacts/inter-miami-cf-vs-orlando-city,3787649,960720,Inter Miami CF,267810,Orlando City,2022-10-05 22:00:00+00:00,True,True,4 - 1
+,,/match/3787687/matchfacts/atlanta-united-vs-new-york-city-fc,3787687,773958,Atlanta United,546238,New York City FC,2022-10-09 16:30:00+00:00,True,True,1 - 2
+,,/match/3787676/matchfacts/chicago-fire-fc-vs-new-england-revolution,3787676,6397,Chicago Fire FC,6580,New England Revolution,2022-10-09 16:30:00+00:00,True,True,1 - 1
+,,/match/3787675/matchfacts/dc-united-vs-fc-cincinnati,3787675,6602,DC United,722265,FC Cincinnati,2022-10-09 16:30:00+00:00,True,True,2 - 5
+,,/match/3787715/matchfacts/inter-miami-cf-vs-cf-montreal,3787715,960720,Inter Miami CF,161195,CF Montreal,2022-10-09 16:30:00+00:00,True,True,1 - 3
+,,/match/3787674/matchfacts/new-york-red-bulls-vs-charlotte-fc,3787674,6514,New York Red Bulls,1323940,Charlotte FC,2022-10-09 16:30:00+00:00,True,True,2 - 0
+,,/match/3787657/matchfacts/orlando-city-vs-columbus-crew,3787657,267810,Orlando City,6001,Columbus Crew,2022-10-09 16:30:00+00:00,True,True,2 - 1
+,,/match/3787716/matchfacts/philadelphia-union-vs-toronto-fc,3787716,191716,Philadelphia Union,56453,Toronto FC,2022-10-09 16:30:00+00:00,True,True,4 - 0
+,,/match/3787658/matchfacts/austin-fc-vs-colorado-rapids,3787658,1218886,Austin FC,8314,Colorado Rapids,2022-10-09 19:00:00+00:00,True,True,1 - 1
+,,/match/3787659/matchfacts/fc-dallas-vs-sporting-kansas-city,3787659,6399,FC Dallas,6604,Sporting Kansas City,2022-10-09 19:00:00+00:00,True,True,2 - 1
+,,/match/3787660/matchfacts/houston-dynamo-fc-vs-la-galaxy,3787660,8259,Houston Dynamo FC,6637,LA Galaxy,2022-10-09 19:00:00+00:00,True,True,1 - 3
+,,/match/3787661/matchfacts/los-angeles-fc-vs-nashville-sc,3787661,867280,Los Angeles FC,915807,Nashville SC,2022-10-09 19:00:00+00:00,True,True,0 - 1
+,,/match/3787717/matchfacts/minnesota-united-vs-vancouver-whitecaps,3787717,207242,Minnesota United,307691,Vancouver Whitecaps,2022-10-09 19:00:00+00:00,True,True,2 - 0
+,,/match/3787662/matchfacts/real-salt-lake-vs-portland-timbers,3787662,6606,Real Salt Lake,307690,Portland Timbers,2022-10-09 19:00:00+00:00,True,True,3 - 1
+,,/match/3787663/matchfacts/seattle-sounders-fc-vs-san-jose-earthquakes,3787663,130394,Seattle Sounders FC,6603,San Jose Earthquakes,2022-10-09 19:00:00+00:00,True,True,2 - 2
+,,/match/4044407/matchfacts/new-york-red-bulls-vs-fc-cincinnati,4044407,6514,New York Red Bulls,722265,FC Cincinnati,2022-10-15 14:00:00+00:00,True,True,1 - 2
+,,/match/4044408/matchfacts/la-galaxy-vs-nashville-sc,4044408,6637,LA Galaxy,915807,Nashville SC,2022-10-15 17:00:00+00:00,True,True,1 - 0
+,,/match/4044409/matchfacts/austin-fc-vs-real-salt-lake,4044409,1218886,Austin FC,6606,Real Salt Lake,2022-10-16 17:00:00+00:00,True,True,2 - 2
+,,/match/4044410/matchfacts/cf-montreal-vs-orlando-city,4044410,161195,CF Montreal,267810,Orlando City,2022-10-16 22:00:00+00:00,True,True,2 - 0
+,,/match/4044411/matchfacts/new-york-city-fc-vs-inter-miami-cf,4044411,546238,New York City FC,960720,Inter Miami CF,2022-10-17 21:00:00+00:00,True,True,3 - 0
+,,/match/4044412/matchfacts/fc-dallas-vs-minnesota-united,4044412,6399,FC Dallas,207242,Minnesota United,2022-10-17 23:30:00+00:00,True,True,1 - 1
+,,/match/4044413/matchfacts/philadelphia-union-vs-fc-cincinnati,4044413,191716,Philadelphia Union,722265,FC Cincinnati,2022-10-20 22:00:00+00:00,True,True,1 - 0
+,,/match/4044415/matchfacts/los-angeles-fc-vs-la-galaxy,4044415,867280,Los Angeles FC,6637,LA Galaxy,2022-10-21 00:00:00+00:00,True,True,3 - 2
+,,/match/4044414/matchfacts/cf-montreal-vs-new-york-city-fc,4044414,161195,CF Montreal,546238,New York City FC,2022-10-23 15:00:00+00:00,True,True,1 - 3
+,,/match/4044416/matchfacts/austin-fc-vs-fc-dallas,4044416,1218886,Austin FC,6399,FC Dallas,2022-10-23 22:00:00+00:00,True,True,2 - 1
+,,/match/4050323/matchfacts/los-angeles-fc-vs-austin-fc,4050323,867280,Los Angeles FC,1218886,Austin FC,2022-10-30 18:00:00+00:00,True,True,3 - 0
+,,/match/4050324/matchfacts/philadelphia-union-vs-new-york-city-fc,4050324,191716,Philadelphia Union,546238,New York City FC,2022-10-30 23:00:00+00:00,True,True,3 - 1
+,,/match/4050325/matchfacts/los-angeles-fc-vs-philadelphia-union,4050325,867280,Los Angeles FC,191716,Philadelphia Union,2022-11-05 19:00:00+00:00,True,True,3 - 3

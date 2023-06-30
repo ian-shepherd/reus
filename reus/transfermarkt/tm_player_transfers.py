@@ -81,7 +81,7 @@ def tm_player_transfers(pageSoup=None, url: str = None) -> list:
         mv = mv.replace("-", "0")
 
         # excess text
-        substring = ["Loan fee:", "€", "£", "$", "m", "Th.", "â\u201a¬"]
+        substring = ["Loan fee:", "€", "£", "$", "m", "Th.", "k", "â\u201a¬"]
         for s in substring:
             mv = mv.replace(s, "")
             fee = fee.replace(s, "")

@@ -8,6 +8,7 @@ def fm_season_stats(
     league_id: str,
     team_or_player: str,
     stat_name: str,
+    season: str = None,
     url: str = None,
     json_file: json = None,
 ) -> pd.DataFrame:
@@ -16,7 +17,8 @@ def fm_season_stats(
     Args:
         league_id (str): id of a league
         team_or_player (str): 'teams' or 'players'
-        stat_name (str, optional): name of stat. See documentation for list of available stats. Defaults to None.
+        stat_name (str): name of stat. See documentation for list of available stats.
+        season (str, optional): season of a league. Use / divider for leagues over 2 calendar years. Defaults to None.
         url (str, optional): url of stat leaders. Defaults to None.
         json_file (json, optional): json file of stat data. Defaults to None.
 
@@ -30,7 +32,12 @@ def fm_season_stats(
     ], "team_or_player must be one of 'teams' or 'players'"
 
     if url is None and json_file is None:
-        leaders = fm_season_stat_leaders(league_id, team_or_player, stat_name)
+        leaders = fm_season_stat_leaders(
+            league_id=league_id,
+            team_or_player=team_or_player,
+            stat_name=stat_name,
+            season=season,
+        )
         url = leaders["all_url"].iloc[0]
 
         response = requests.get(url)

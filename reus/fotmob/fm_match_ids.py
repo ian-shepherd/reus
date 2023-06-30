@@ -11,7 +11,7 @@ def fm_match_ids(
     """Returns a list of match ids for a given date
 
     Args:
-        match_date (str): date of matches in format YYYY-MM-DD
+        match_date (str): date of matches in format YYYYMMDD
         ccode (str): country code of a league. Defaults to None.
         name (str): name of a league. Defaults to None.
         league_id (int): league id of a league. Defaults to None.

@@ -46,10 +46,13 @@ def fb_league_table(url: str) -> list:
             xGDp90 = float(row.find("td", {"data-stat": "xg_diff_per90"}).text)
         except AttributeError:
             xG = xGA = xGD = xGDp90 = None
-        last_5_ = row.find("td", {"data-stat": "last_5"})
-        last_5 = ""
-        for t in last_5_.find_all("div", {"class": "poptip"}):
-            last_5 += t.text
+        try:
+            last_5_ = row.find("td", {"data-stat": "last_5"})
+            last_5 = ""
+            for t in last_5_.find_all("div", {"class": "poptip"}):
+                last_5 += t.text
+        except AttributeError:
+            last_5 = None
         avg_attendance = row.find("td", {"data-stat": "attendance_per_g"}).text
         top_scorer = row.find("td", {"data-stat": "top_team_scorers"}).text
         goalkeeper = row.find("td", {"data-stat": "top_keeper"}).text

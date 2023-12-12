@@ -1,7 +1,8 @@
-import json
-from urllib.request import urlopen
-import re
 import datetime as dt
+import json
+import re
+from urllib.request import urlopen
+
 from .util import extract_player_stats
 
 
@@ -161,6 +162,20 @@ def _extract_shots(shotmap):
     return shotList
 
 
+def _extract_match_stats(matchStats):
+    mydict = {}
+    for key, val in matchStats.items():
+        period_dict = {}
+        for j in val["stats"]:
+            stats_dict = {}
+            for k in j["stats"]:
+                stats_dict[k.get("key")] = k["stats"]
+            period_dict[j["key"]] = stats_dict
+        mydict[key] = period_dict
+
+    return mydict
+
+
 def _extract_lineups(lineup, metadata):
     benchPlayerList = []
     startPlayerList = []
@@ -187,6 +202,8 @@ def _extract_lineups(lineup, metadata):
                 statsDict = extract_player_stats(b.get("stats"))
                 mydict.update(statsDict)
             except TypeError:
+                pass
+            except IndexError:
                 pass
 
             benchPlayerList.append(mydict)
@@ -306,11 +323,13 @@ def fm_match_data(
         tuple: match data
             dict: metadata information
             list: events
+            dict: team stats
             list: shots
             list: bench players
             list: starters
             list: players not available
             list: shootout
+            list: momentum
             json: json file (if save_json=True)
     """
 
@@ -328,9 +347,10 @@ def fm_match_data(
     header = data.get("header")
     content = data.get("content")
     matchFacts = content.get("matchFacts")
-    # matchStats = content.get("stats").get("stats")
+    matchStats = content.get("stats").get("Periods")
     shotmap = content.get("shotmap").get("shots")
     lineup = content.get("lineup")
+    momentum = content["momentum"]["main"]
 
     metadata = {
         "id": general.get("matchId"),
@@ -390,45 +410,41 @@ def fm_match_data(
 
     shootoutList = _extract_shootouts(matchFacts, metadata)
 
-    # TODO: add match stats content.get("stats").get("Periods")
-    # stats = {}
-    # for s in matchStats[1:]:
-    #     for i in s.get("stats"):
-    #         if i.get("stats") != [None, None]:
-    #             if "xG" in i.get("title"):
-    #                 val_x = float(i.get("stats")[0])
-    #                 val_y = float(i.get("stats")[1])
-    #             else:
-    #                 val_x = i.get("stats")[0]
-    #                 val_y = i.get("stats")[1]
-
-    #             stats[i.get("title").replace(" ", "_").lower() + "_x"] = val_x
-    #             stats[i.get("title").replace(" ", "_").lower() + "_y"] = val_y
-
     shotList = _extract_shots(shotmap)
+
+    teamStats = _extract_match_stats(matchStats)
 
     benchPlayerList, startPlayerList, metadata = _extract_lineups(lineup, metadata)
     metadata = {**metadata, **_extract_lineup_info(lineup)}
     naPlayerList = _extract_na_players(lineup, metadata)
 
+    momentumList = momentum.get("data")
+
     if save_json:
         return (
             metadata,
             eventList,
+            teamStats,
             shotList,
             benchPlayerList,
             startPlayerList,
             naPlayerList,
             shootoutList,
+            momentumList,
             data,
         )
     else:
         return (
             metadata,
             eventList,
+            teamStats,
             shotList,
             benchPlayerList,
             startPlayerList,
             naPlayerList,
             shootoutList,
+            momentumList,
         )
+
+
+# TODO: updaated documentation

@@ -1,4 +1,5 @@
 import re
+
 from ..util import get_page_soup_headers
 
 
@@ -25,7 +26,7 @@ def _extract_social_media(pageSoup, tag, pattern):
         return None
 
 
-def extract_positions(pageSoup, position):
+def _extract_positions(pageSoup, position):
     # position - primary
     try:
         position_data = pageSoup.find("div", {"class": "detail-position__box"})
@@ -157,7 +158,7 @@ def tm_player_metadata(pageSoup=None, url: str = None) -> dict:
         value = _extract_social_media(pageSoup, "span", pattern)
         player_info[attr] = value
 
-    position_main, pos_alt1, pos_alt2 = extract_positions(
+    position_main, pos_alt1, pos_alt2 = _extract_positions(
         pageSoup, player_info["position"]
     )
 

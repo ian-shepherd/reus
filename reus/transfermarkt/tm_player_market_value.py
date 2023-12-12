@@ -1,4 +1,5 @@
 import re
+
 from ..util import get_page_soup_headers
 
 
@@ -6,8 +7,8 @@ def tm_player_market_value(pageSoup=None, url: str = None) -> list:
     """Extracts date, team, and market value from highchart
 
     Args:
-        pageSoup (bs4, optional): bs4 object of player page referenced in url. Defaults to None.
-        url (str, optional): path of transfermarkt player page. Defaults to None.
+        pageSoup (bs4, optional): bs4 object of player market value page referenced in url. Defaults to None.
+        url (str, optional): path of transfermarkt player market value page. Defaults to None.
 
     Returns:
         list: market value of player by date
@@ -56,3 +57,6 @@ def tm_player_market_value(pageSoup=None, url: str = None) -> list:
         mylist.append(mydict)
 
     return mylist
+
+
+# TODO: updaated documentation

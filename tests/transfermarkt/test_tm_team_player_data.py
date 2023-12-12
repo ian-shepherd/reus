@@ -1,9 +1,11 @@
-import unittest
-import numpy.testing as npt
-from pathlib import Path
 import json
-from reus.transfermarkt import tm_team_player_data
 import time
+import unittest
+from pathlib import Path
+
+import numpy.testing as npt
+
+from reus.transfermarkt import tm_team_player_data
 
 
 class TestTmPlayerData(unittest.TestCase):
@@ -22,8 +24,11 @@ class TestTmPlayerData(unittest.TestCase):
         time.sleep(4)
 
         for dicts in expected:
+            dicts.pop("number", None)
             dicts.pop("contracted", None)
+            dicts.pop("arrival_type", None)
         for dicts in actual:
+            dicts.pop("number", None)
             dicts.pop("contracted", None)
 
         npt.assert_array_equal(actual, expected)

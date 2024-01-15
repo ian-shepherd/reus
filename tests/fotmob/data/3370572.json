@@ -455,6 +455,7 @@
             "score_post": "3:3"
         }
     ],
+    null,
     [
         {
             "id": 2492350709,
@@ -4214,7 +4215,7 @@
             "event": "Goal",
             "shooter": "Kylian Mbapp\u00e9",
             "shooter_id": 701154,
-            "shooter_url": "/players/701154/kylian-mbapp",
+            "shooter_url": "/players/701154/kylian-mbappe",
             "score_pre": "0:0",
             "score_post": "0:1"
         },
@@ -4250,7 +4251,7 @@
             "event": "MissedPenalty",
             "shooter": "Aur\u00e9lien Tchouam\u00e9ni",
             "shooter_id": 914458,
-            "shooter_url": "/players/914458/aurlien-tchouam\u00e9ni",
+            "shooter_url": "/players/914458/aurelien-tchouameni",
             "score_pre": "2:1",
             "score_post": "2:1"
         },
@@ -4281,5 +4282,6 @@
             "score_pre": "3:2",
             "score_post": "4:2"
         }
-    ]
+    ],
+    null
 ]

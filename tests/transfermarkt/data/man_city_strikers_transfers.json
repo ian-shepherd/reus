@@ -29,7 +29,7 @@
         "transfer_league": "Liga Profesional",
         "transfer_league_url": "/superliga/transfers/wettbewerb/AR1N",
         "transfer_country": "Argentina",
-        "currency": "E",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 23000000.0
     },
@@ -46,7 +46,7 @@
         "transfer_league": "S\u00e9rie A",
         "transfer_league_url": "/campeonato-brasileiro-serie-a/transfers/wettbewerb/BRA1",
         "transfer_country": "Brazil",
-        "currency": "E",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 3000000.0
     },
@@ -60,10 +60,10 @@
         "nation": "Argentina",
         "transfer_club": "Girona",
         "transfer_club_url": "/fc-girona/startseite/verein/12321",
-        "transfer_league": "LaLiga2",
-        "transfer_league_url": "/laliga2/transfers/wettbewerb/ES2",
+        "transfer_league": "LaLiga",
+        "transfer_league_url": "/laliga/transfers/wettbewerb/ES1",
         "transfer_country": "Spain",
-        "currency": "E",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 3000000.0
     },
@@ -80,9 +80,43 @@
         "transfer_league": "Jupiler Pro League",
         "transfer_league_url": "/jupiler-pro-league/transfers/wettbewerb/BE1",
         "transfer_country": "Belgium",
-        "currency": "E",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 900000.0
+    },
+    {
+        "direction": "arrival",
+        "transfer_type": "End of loan",
+        "name": "Slobodan Tedic",
+        "url": "/slobodan-tedic/profil/spieler/505652",
+        "position": "Centre-Forward",
+        "age": "22",
+        "nation": "Serbia",
+        "transfer_club": "PEC Zwolle",
+        "transfer_club_url": "/pec-zwolle/startseite/verein/1269",
+        "transfer_league": "Keuken Kampioen Divisie",
+        "transfer_league_url": "/keuken-kampioen-divisie/transfers/wettbewerb/NL2",
+        "transfer_country": "Netherlands",
+        "currency": "\u20ac",
+        "fee": 0.0,
+        "market_value": 750000.0
+    },
+    {
+        "direction": "arrival",
+        "transfer_type": "End of loan",
+        "name": "Slobodan Tedic",
+        "url": "/slobodan-tedic/profil/spieler/505652",
+        "position": "Centre-Forward",
+        "age": "23",
+        "nation": "Serbia",
+        "transfer_club": "Barnsley FC",
+        "transfer_club_url": "/fc-barnsley/startseite/verein/349",
+        "transfer_league": "League One",
+        "transfer_league_url": "/league-one/transfers/wettbewerb/GB3",
+        "transfer_country": "England",
+        "currency": "\u20ac",
+        "fee": 0.0,
+        "market_value": 600000.0
     },
     {
         "direction": "arrival",
@@ -97,7 +131,7 @@
         "transfer_league": "Challenger Pro League",
         "transfer_league_url": "/proximus-league/transfers/wettbewerb/BE2",
         "transfer_country": "Belgium",
-        "currency": "E",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 500000.0
     },
@@ -114,7 +148,7 @@
         "transfer_league": "Liga Portugal",
         "transfer_league_url": "/liga-nos/transfers/wettbewerb/PO1",
         "transfer_country": "Portugal",
-        "currency": "E",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 300000.0
     },
@@ -131,7 +165,7 @@
         "transfer_league": "Challenger Pro League",
         "transfer_league_url": "/proximus-league/transfers/wettbewerb/BE2",
         "transfer_country": "Belgium",
-        "currency": "E",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 150000.0
     },
@@ -182,7 +216,7 @@
         "transfer_league": "A-League Men",
         "transfer_league_url": "/a-league/transfers/wettbewerb/AUS1",
         "transfer_country": "Australia",
-        "currency": "f",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 500000.0
     },
@@ -199,7 +233,7 @@
         "transfer_league": "J1 League",
         "transfer_league_url": "/j1-league/transfers/wettbewerb/JAP1",
         "transfer_country": "Japan",
-        "currency": "f",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 300000.0
     },
@@ -216,7 +250,7 @@
         "transfer_league": "Ligue 1",
         "transfer_league_url": "/ligue-1/transfers/wettbewerb/FR1",
         "transfer_country": "France",
-        "currency": "?",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 900000.0
     },
@@ -233,7 +267,7 @@
         "transfer_league": "S\u00e9rie A",
         "transfer_league_url": "/campeonato-brasileiro-serie-a/transfers/wettbewerb/BRA1",
         "transfer_country": "Brazil",
-        "currency": "l",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 3000000.0
     },
@@ -250,9 +284,26 @@
         "transfer_league": "Liga Profesional",
         "transfer_league_url": "/superliga/transfers/wettbewerb/AR1N",
         "transfer_country": "Argentina",
-        "currency": "l",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 3000000.0
+    },
+    {
+        "direction": "departure",
+        "transfer_type": "Loan",
+        "name": "Slobodan Tedic",
+        "url": "/slobodan-tedic/profil/spieler/505652",
+        "position": "Centre-Forward",
+        "age": "22",
+        "nation": "Serbia",
+        "transfer_club": "Barnsley FC",
+        "transfer_club_url": "/fc-barnsley/startseite/verein/349",
+        "transfer_league": "League One",
+        "transfer_league_url": "/league-one/transfers/wettbewerb/GB3",
+        "transfer_country": "England",
+        "currency": "\u20ac",
+        "fee": 0.0,
+        "market_value": 750000.0
     },
     {
         "direction": "departure",
@@ -267,7 +318,7 @@
         "transfer_league": "",
         "transfer_league_url": "/vereinslos/startseite/verein/515",
         "transfer_country": "Ghana",
-        "currency": "-",
+        "currency": "\u20ac",
         "fee": 0.0,
         "market_value": 150000.0
     }

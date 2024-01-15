@@ -1,9 +1,11 @@
-import unittest
-import numpy.testing as npt
-from pathlib import Path
 import json
-from reus.fotmob import fm_season_stat_leaders
 import time
+import unittest
+from pathlib import Path
+
+import numpy.testing as npt
+
+from reus.fotmob import fm_season_stat_leaders
 
 
 class TestFmSeasonStatLeaders(unittest.TestCase):
@@ -45,14 +47,14 @@ class TestFmSeasonStatLeaders(unittest.TestCase):
     def test_epl_big_chances_created_leaders(self):
         with open(
             self.data_path
-            / "epl_big_chances_created_season_stat_leaders_2020_2021.json"
+            / "epl_big_chances_created_season_stat_leaders_2020_2021.json"  # noqa: W503
         ) as f:
             expected = json.load(f)
 
         actual = fm_season_stat_leaders(
             league_id=47,
             team_or_player="teams",
-            stat_name="Big chances created",
+            stat_name="Big chances",
             season="2020/2021",
         ).to_dict(orient="records")
 

@@ -1,6 +1,7 @@
+import pandas as pd
+
 from ..util import get_page_soup_headers
 from .util import tm_format_currency
-import pandas as pd
 
 
 def _get_team_id_and_club(team_id, club):
@@ -10,10 +11,10 @@ def _get_team_id_and_club(team_id, club):
     )
     filter_condition = (
         (df.fbref_name == club)
-        | (df.transfermarkt_name == club)
-        | (df.transfermarkt_link == club)
-        | (df.fcpython == club)
-        | (df.fivethirtyeight == club)
+        | (df.transfermarkt_name == club)  # noqa: W503
+        | (df.transfermarkt_link == club)  # noqa: W503
+        | (df.fcpython == club)  # noqa: W503
+        | (df.fivethirtyeight == club)  # noqa: W503
     )
     filtered_df = df[filter_condition]
     club = filtered_df.transfermarkt_link.iloc[0]
@@ -105,7 +106,10 @@ def _extract_player_metadata(row, direction):
     transfer_league_url = signing_class.find_next("a", href=True)["href"]
     transfer_country = signing_class["alt"]
     signed_value = hauptlink_class[-1].text
-    signed_currency = signed_value[0]
+    if mv[0] == "0":
+        currency = None
+    else:
+        currency = mv[0]
 
     # value cleaning
     if "End of loan" in signed_value:
@@ -122,6 +126,9 @@ def _extract_player_metadata(row, direction):
         signed_value = "0"
     elif "?" in signed_value:
         transfer_type = "Unknown"
+        signed_value = "0"
+    elif "draft" in signed_value:
+        transfer_type = "draft"
         signed_value = "0"
     else:
         signed_value = signed_value.replace("-", "0")
@@ -141,7 +148,7 @@ def _extract_player_metadata(row, direction):
         "transfer_league": transfer_league,
         "transfer_league_url": transfer_league_url,
         "transfer_country": transfer_country,
-        "currency": signed_currency,
+        "currency": currency,
         "fee": tm_format_currency(signed_value),
         "market_value": tm_format_currency(mv),
     }
@@ -232,13 +239,13 @@ def tm_team_transfers(
     elif len(tables) == 1:
         if (
             pageSoup.find("span", {"class": "empty"}).find_previous("h2").text.strip()
-            == "Arrivals"
+            == "Arrivals"  # noqa: W503
         ):
             table_arrivals = None
             table_departures = tables[0]
         elif (
             pageSoup.find("span", {"class": "empty"}).find_previous("h2").text.strip()
-            == "Departures"
+            == "Departures"  # noqa: W503
         ):
             table_arrivals = tables[0]
             table_departures = None

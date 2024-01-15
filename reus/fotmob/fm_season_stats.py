@@ -1,7 +1,9 @@
-import requests
-from .fm_season_stat_leaders import fm_season_stat_leaders
-import pandas as pd
 import json
+
+import pandas as pd
+import requests
+
+from .fm_season_stat_leaders import fm_season_stat_leaders
 
 
 def fm_season_stats(

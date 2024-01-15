@@ -1,9 +1,11 @@
-import unittest
-import numpy.testing as npt
-from pathlib import Path
 import json
-from reus.fotmob import fm_league_table
 import time
+import unittest
+from pathlib import Path
+
+import numpy.testing as npt
+
+from reus.fotmob import fm_league_table
 
 
 class TestFmLeagueTable(unittest.TestCase):
@@ -19,6 +21,9 @@ class TestFmLeagueTable(unittest.TestCase):
             .get("Premier League")
             .to_dict(orient="records")
         )
+        # save actual to file
+        with open(self.data_path / "epl_table_2022_2023_2.json", "w") as f:
+            json.dump(actual, f, indent=4)
 
         time.sleep(4)
 

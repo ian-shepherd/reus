@@ -1,6 +1,7 @@
+import pandas as pd
+
 from ..util import get_page_soup_headers
 from .util import tm_format_currency
-import pandas as pd
 
 
 def _get_team_id_and_club(team_id, club):
@@ -10,10 +11,10 @@ def _get_team_id_and_club(team_id, club):
     )
     filter_condition = (
         (df.fbref_name == club)
-        | (df.transfermarkt_name == club)
-        | (df.transfermarkt_link == club)
-        | (df.fcpython == club)
-        | (df.fivethirtyeight == club)
+        | (df.transfermarkt_name == club)  # noqa: W503
+        | (df.transfermarkt_link == club)  # noqa: W503
+        | (df.fcpython == club)  # noqa: W503
+        | (df.fivethirtyeight == club)  # noqa: W503
     )
     filtered_df = df[filter_condition]
     club = filtered_df.transfermarkt_link.iloc[0]
@@ -22,7 +23,7 @@ def _get_team_id_and_club(team_id, club):
     return club, team_id
 
 
-def _extract_player_metadata(row, num):
+def _extract_player_metadata(row, num, adj):
     # extract basic info
     player_table = row.find("table")
     url = player_table.find("a", href=True)["href"]
@@ -36,49 +37,50 @@ def _extract_player_metadata(row, num):
     birth_date = birth[0].strip()
     age = birth[1].replace(")", "").strip()
 
-    arrival_type = _extract_arrival_type(row)
-
     # extract nation
     nation = data[2].find("img")["alt"]
 
     # extract height
     try:
-        height = data[-5].text.strip()
+        height = data[-5 + adj].text.strip()
         height = height.replace(",", ".").replace("m", "").strip()
     except TypeError:
         height = None
 
     # extract foot
     try:
-        foot = data[-4].text.strip()
+        foot = data[-4 + adj].text.strip()
         foot = None if foot == "-" else foot
     except TypeError:
         foot = None
 
     # extract joined date
     try:
-        joined = data[-3].text.strip()
+        joined = data[-3 + adj].text.strip()
         joined = None if joined == "-" else joined
     except TypeError:
         joined = None
 
     # extract signing information
-    signed_from, signed_from_url, signed_value, signed_currency = _extract_signing_info(
-        data
-    )
+    signed_from, signed_from_url, signed_value = _extract_signing_info(data, adj)
 
     # extract contracted
-    try:
-        contracted = data[-1].text.strip()
-    except TypeError:
+    if adj == 1:
         contracted = None
+    else:
+        try:
+            contracted = data[-1].text.strip()
+        except TypeError:
+            contracted = None
 
     # extract market value
     try:
         mv = row.find("td", {"class": "rechts hauptlink"}).text
+        currency = mv[0]
         mv = tm_format_currency(mv)
-    except AttributeError:
+    except (AttributeError, ValueError, ValueError):
         mv = 0
+        currency = None
 
     # generate dictionary for each player
     mydict = {
@@ -86,7 +88,6 @@ def _extract_player_metadata(row, num):
         "url": url,
         "number": num,
         "position": pos,
-        "arrival_type": arrival_type,
         "birth_date": birth_date,
         "age": age,
         "nation": nation,
@@ -96,7 +97,7 @@ def _extract_player_metadata(row, num):
         "signed_from": signed_from,
         "signed_from_url": signed_from_url,
         "fee": signed_value,
-        "currency": signed_currency,
+        "currency": currency,
         "contracted": contracted,
         "market_value": mv,
     }
@@ -104,32 +105,11 @@ def _extract_player_metadata(row, num):
     return mydict
 
 
-def _extract_arrival_type(row):
-    # determine if new arrival and subsequent type
+def _extract_signing_info(data, adj):
     try:
-        arrival = row.find("a")["title"]
-        if "On loan" in arrival:
-            arrival_type = "Loan"
-        elif "Returned after loan spell" in arrival:
-            arrival_type = "Returned from Loan"
-        elif "Internal transfer" in arrival:
-            arrival_type = "Internal"
-        elif "free transfer" in arrival:
-            arrival_type = "free transfer"
-        elif "Joined from":
-            arrival_type = "Transfer"
-    except KeyError:
-        arrival_type = "N/A"
-
-    return arrival_type
-
-
-def _extract_signing_info(data):
-    try:
-        signed_from = data[-2].find("img")["alt"]
-        signed_from_url = data[-2].find("a", href=True)["href"]
-        signed_value = data[-2].find("a")["title"].split()[-1]
-        signed_currency = signed_value[0]
+        signed_from = data[-2 + adj].find("img")["alt"]
+        signed_from_url = data[-2 + adj].find("a", href=True)["href"]
+        signed_value = data[-2 + adj].find("a")["title"].split()[-1]
         signed_value = signed_value.replace("-", "0").replace("transfer", "0")
         if signed_value == "?":
             signed_value = "unknown"
@@ -139,9 +119,8 @@ def _extract_signing_info(data):
         signed_from = None
         signed_from_url = None
         signed_value = None
-        signed_currency = None
 
-    return signed_from, signed_from_url, signed_value, signed_currency
+    return signed_from, signed_from_url, signed_value
 
 
 def tm_team_player_data(
@@ -181,6 +160,13 @@ def tm_team_player_data(
     table = pageSoup.find("table", {"class": "items"})
     tbody = table.find("tbody")
 
+    # Previous season column adjustment
+    col_name = table.find_all("th")[-2].text
+    if col_name == "Signed from":
+        adj = 1
+    else:
+        adj = 0
+
     # Find rows
     rows = tbody.find_all("tr")
 
@@ -195,7 +181,7 @@ def tm_team_player_data(
         except AttributeError:
             continue
 
-        mydict = _extract_player_metadata(row, num)
+        mydict = _extract_player_metadata(row, num, adj)
 
         # append dictionary to list
         mylist.append(mydict)

@@ -426,6 +426,129 @@ League functions
    :rtype: (list, list)
 
 
+Player functions
+----------------
+
+.. py:function:: .fbref.fb_player_scouting_report(pageSoup=None, url: str = None, player_url: str = None, comp_league: str = None, position_comp: str = "Primary") -> dict
+
+   Extracts scouting report for a given player
+
+   :param pageSoup: bs4 object of a player's scouting report. Defaults to None.
+   :type pageSoup: bs4 or None
+   :param url: path of fbref scouting report page. Defaults to None.
+   :type url: str or None
+   :param player_url: path of fbref player page. Defaults to None.
+   :type player_url: str or None
+   :param comp_league: name of comparison league. Defaults to None.
+   :type comp_league: str or None
+   :param position_comp: primary or secondary position. Defaults to "Primary".
+   :type position_comp: str
+   :return: complete scouting report for a player
+   :rtype: dict
+
+.. py:function:: .fbref.fb_player_match_logs_data(season_end: str, player_id: str) -> dict
+
+   Extracts scouting report for a given player
+
+   :param season_end: ending year of a season
+   :type season_end: str
+   :param player_id: unique identifier for a player
+   :type player_id: str
+   :return: match logs for a player in a given season
+   :rtype: dict[list]
+  
+.. py:function:: .fbref.fb_player_match_logs_defensive_actions(pageSoup=None, season_end: str = None, player_id: str = None) -> dict
+
+   Retrieves a players defensive actions match log for a given season
+
+   :param pageSoup: bs4 object of a players defensive actions match log page. Defaults to None.
+   :type pageSoup: bs4 or None
+   :param season_end: ending year of a season
+   :type season_end: str
+   :param player_id: unique identifier for a player
+   :type player_id: str
+   :return: defensive actions match log for a player in a given season
+   :rtype: list
+
+.. py:function:: .fbref.fb_player_match_logs_gca_sca(pageSoup=None, season_end: str = None, player_id: str = None) -> dict
+
+   Retrieves a players goal and shot creating actions match log for a given season
+
+   :param pageSoup: bs4 object of a players goal and shot creating actions match log page. Defaults to None.
+   :type pageSoup: bs4 or None
+   :param season_end: ending year of a season
+   :type season_end: str
+   :param player_id: unique identifier for a player
+   :type player_id: str
+   :return: goal and shot creating actions match log for a player in a given season
+   :rtype: list
+
+.. py:function:: .fbref.fb_player_match_logs_misc(pageSoup=None, season_end: str = None, player_id: str = None) -> dict
+
+   Retrieves a players miscellaneous match log for a given season
+
+   :param pageSoup: bs4 object of a players miscellaneous match log page. Defaults to None.
+   :type pageSoup: bs4 or None
+   :param season_end: ending year of a season
+   :type season_end: str
+   :param player_id: unique identifier for a player
+   :type player_id: str
+   :return: miscellaneous match log for a player in a given season
+   :rtype: list
+
+.. py:function:: .fbref.fb_player_match_logs_passing(pageSoup=None, season_end: str = None, player_id: str = None) -> dict
+
+   Retrieves a players passing match log for a given season
+
+   :param pageSoup: bs4 object of a players passing match log page. Defaults to None.
+   :type pageSoup: bs4 or None
+   :param season_end: ending year of a season
+   :type season_end: str
+   :param player_id: unique identifier for a player
+   :type player_id: str
+   :return: passing match log for a player in a given season
+   :rtype: list
+
+.. py:function:: .fbref.fb_player_match_logs_passing_types(pageSoup=None, season_end: str = None, player_id: str = None) -> dict
+
+   Retrieves a players passing type match log for a given season
+
+   :param pageSoup: bs4 object of a players passing type match log page. Defaults to None.
+   :type pageSoup: bs4 or None
+   :param season_end: ending year of a season
+   :type season_end: str
+   :param player_id: unique identifier for a player
+   :type player_id: str
+   :return: passing type match log for a player in a given season
+   :rtype: list
+
+.. py:function:: .fbref.fb_player_match_logs_possession(pageSoup=None, season_end: str = None, player_id: str = None) -> dict
+
+   Retrieves a players possession match log for a given season
+
+   :param pageSoup: bs4 object of a players possession match log page. Defaults to None.
+   :type pageSoup: bs4 or None
+   :param season_end: ending year of a season
+   :type season_end: str
+   :param player_id: unique identifier for a player
+   :type player_id: str
+   :return: possession match log for a player in a given season
+   :rtype: list
+
+.. py:function:: .fbref.fb_player_match_logs_summary(pageSoup=None, season_end: str = None, player_id: str = None) -> dict
+
+   Retrieves a players summary match log for a given season
+
+   :param pageSoup: bs4 object of a players summary match log page. Defaults to None.
+   :type pageSoup: bs4 or None
+   :param season_end: ending year of a season
+   :type season_end: str
+   :param player_id: unique identifier for a player
+   :type player_id: str
+   :return: summary match log for a player in a given season
+   :rtype: list
+  
+
 Team functions
 --------------
 

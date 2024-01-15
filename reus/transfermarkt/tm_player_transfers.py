@@ -1,51 +1,46 @@
-from ..util import get_page_soup_headers
+import json
+
+from ..util import fetch_api_data
 
 
-def tm_player_transfers(pageSoup=None, url: str = None) -> list:
+def tm_player_transfers(json_file: json = None, player_id: str = None) -> list:
     """Extracts player transfer information
 
     Args:
-        pageSoup (bs4, optional): bs4 object of player page referenced in url. Defaults to None.
-        url (str, optional): path of transfermarkt player page. Defaults to None.
+        json_file (json, optional): json file of player transfer history. Defaults to None.
+        player_id (str, optional): transfermarkt player id. Defaults to None.
 
     Returns:
         list: player transfers
     """
 
     assert (
-        pageSoup is not None or url is not None
-    ), "Either pageSoup or url must be provided"
+        json_file is not None or player_id is not None
+    ), "Either json_file or player_id must be specified"
 
-    if pageSoup is None:
-        pageSoup = get_page_soup_headers(url)
+    if json_file is not None:
+        data = json_file
+    else:
+        data = fetch_api_data(
+            f"https://www.transfermarkt.us/ceapi/transferHistory/list/{player_id}"
+        )
 
-    # Find transfer object
-    transfer_data = pageSoup.find("div", {"data-viewport": "Transferhistorie"})
-    table = transfer_data.find_all("div", {"class": "tm-player-transfer-history-grid"})
+    # Get market values object
+    transfers = data["transfers"]
 
-    # Generate empty list
+    # generate empty list
     mylist = []
 
-    # iterate through each transfer and store attributes
-    # for row in rows:
-    for row in table[1:-1]:
-        # extract teams
-        left = row.find(
-            "div", {"class": "tm-player-transfer-history-grid__old-club"}
-        ).text.strip()
-        joined = row.find(
-            "div", {"class": "tm-player-transfer-history-grid__new-club"}
-        ).text.strip()
+    # iterate through each data point and store attributes
+    for t in transfers:
+        date = t.get("date")
+        left = t.get("from")["clubName"]
+        left_url = t.get("from")["href"]
+        joined = t.get("to")["clubName"]
+        joined_url = t.get("to")["href"]
 
-        # extract raw market value and fee
-        mv = row.find(
-            "div", {"class": "tm-player-transfer-history-grid__market-value"}
-        ).text.strip()
-        fee = row.find(
-            "div", {"class": "tm-player-transfer-history-grid__fee"}
-        ).text.strip()
-
-        # extract currency
+        mv = t.get("marketValue")
+        fee = t.get("fee")
         currency = mv[0]
 
         # base of market value and fee
@@ -86,17 +81,17 @@ def tm_player_transfers(pageSoup=None, url: str = None) -> list:
             mv = mv.replace(s, "")
             fee = fee.replace(s, "")
 
-        # generate dictionary for each transfer
         mydict = {
+            "date": date,
             "left": left,
+            "left_url": left_url,
             "joined": joined,
+            "joined_url": joined_url,
             "type": transfer_type,
             "currency": currency,
             "market_value": float(mv.strip()) * mv_mult,
             "fee": float(fee.strip()) * fee_mult,
         }
-
-        # append dictionary to list
         mylist.append(mydict)
 
     return mylist

@@ -1,5 +1,27 @@
 # Change Log
 
+## 1.1.4 2024-01-15
+* added fbref functions
+	* fb_player_match_logs_data
+	* fb_player_match_logs_defensive_actions
+	* fb_player_match_logs_gca_sca
+	* fb_player_match_logs_misc
+	* fb_player_match_logs_passing_type
+	* fb_player_match_logs_passing
+	* fb_player_match_logs_possession
+	* fb_player_match_logs_summary
+	* fb_player_scouting_report
+* fm_match_data enhancement
+	* added team stats
+	* added momentum
+* fixed transfermarkt bugs
+	* tm_player_market_value
+	* tm_player_metadata
+	* tm_player_transfers
+* added transfermarkt functions
+	* tm_team_staff
+	* tm_team_staff_history
+
 ## 1.1.3 2023-06-30
 * added github actions for testing
 * deprecated fm_league_ids and fm_league_urls in favor of fm_leagues

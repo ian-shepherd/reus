@@ -77,18 +77,18 @@ def fb_player_scouting_report(
     player_url: str = None,
     comp_league: str = None,
     position_comp: str = "Primary",
-) -> None:
-    """_summary_
+) -> dict:
+    """Extracts scouting report for a given player
 
     Args:
-        pageSoup (_type_, optional): _description_. Defaults to None.
-        url (str, optional): _description_. Defaults to None.
-        player_url (str, optional): _description_. Defaults to None.
-        comp_league (str, optional): _description_. Defaults to None.
-        position_comp (str, optional): _description_. Defaults to None.
+        pageSoup (bs4, optional): bs4 object of a player's scouting report. Defaults to None.
+        url (str, optional): path of fbref scouting report page. Defaults to None.
+        player_url (str, optional): path of fbref player page. Defaults to None.
+        comp_league (str, optional): name of comparison league. Defaults to None.
+        position_comp (str, optional): primary or secondary position. Defaults to "Primary".
 
     Returns:
-        _type_: _description_
+        dict: complete scouting report for a player
     """
 
     assert (
@@ -115,6 +115,3 @@ def fb_player_scouting_report(
     stats_dict = _extract_stats(pageSoup, position_comp)
 
     return stats_dict
-
-
-# TODO: documentation

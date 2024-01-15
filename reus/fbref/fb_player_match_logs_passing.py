@@ -5,6 +5,17 @@ from .util import match_log_iterator
 def fb_player_match_logs_passing(
     pageSoup=None, season_end: str = None, player_id: str = None
 ) -> list:
+    """Retrieves a players passing match log for a given season
+
+    Args:
+        pageSoup (bs4, optional): bs4 object of a players passing match log page. Defaults to None.
+        season_end (str): ending year of a season
+        player_id (str): unique identifier for a player
+
+    Returns:
+        list: passing match log for a player in a given season
+    """
+
     url = f"https://fbref.com/en/players/{player_id}/matchlogs/{int(season_end)-1}-{season_end}/passing/"
 
     assert (
@@ -58,6 +69,3 @@ def fb_player_match_logs_passing(
     mylist = match_log_iterator(rows=rows, attributes=attributes)
 
     return mylist
-
-
-# TODO: documentation

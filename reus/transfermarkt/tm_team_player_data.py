@@ -23,7 +23,7 @@ def _get_team_id_and_club(team_id, club):
     return club, team_id
 
 
-def _extract_player_metadata(row, num):
+def _extract_player_metadata(row, num, adj):
     # extract basic info
     player_table = row.find("table")
     url = player_table.find("a", href=True)["href"]
@@ -42,40 +42,43 @@ def _extract_player_metadata(row, num):
 
     # extract height
     try:
-        height = data[-5].text.strip()
+        height = data[-5 + adj].text.strip()
         height = height.replace(",", ".").replace("m", "").strip()
     except TypeError:
         height = None
 
     # extract foot
     try:
-        foot = data[-4].text.strip()
+        foot = data[-4 + adj].text.strip()
         foot = None if foot == "-" else foot
     except TypeError:
         foot = None
 
     # extract joined date
     try:
-        joined = data[-3].text.strip()
+        joined = data[-3 + adj].text.strip()
         joined = None if joined == "-" else joined
     except TypeError:
         joined = None
 
     # extract signing information
-    signed_from, signed_from_url, signed_value = _extract_signing_info(data)
+    signed_from, signed_from_url, signed_value = _extract_signing_info(data, adj)
 
     # extract contracted
-    try:
-        contracted = data[-1].text.strip()
-    except TypeError:
+    if adj == 1:
         contracted = None
+    else:
+        try:
+            contracted = data[-1].text.strip()
+        except TypeError:
+            contracted = None
 
     # extract market value
     try:
         mv = row.find("td", {"class": "rechts hauptlink"}).text
         currency = mv[0]
         mv = tm_format_currency(mv)
-    except AttributeError:
+    except (AttributeError, ValueError, ValueError):
         mv = 0
         currency = None
 
@@ -102,11 +105,11 @@ def _extract_player_metadata(row, num):
     return mydict
 
 
-def _extract_signing_info(data):
+def _extract_signing_info(data, adj):
     try:
-        signed_from = data[-2].find("img")["alt"]
-        signed_from_url = data[-2].find("a", href=True)["href"]
-        signed_value = data[-2].find("a")["title"].split()[-1]
+        signed_from = data[-2 + adj].find("img")["alt"]
+        signed_from_url = data[-2 + adj].find("a", href=True)["href"]
+        signed_value = data[-2 + adj].find("a")["title"].split()[-1]
         signed_value = signed_value.replace("-", "0").replace("transfer", "0")
         if signed_value == "?":
             signed_value = "unknown"
@@ -157,6 +160,13 @@ def tm_team_player_data(
     table = pageSoup.find("table", {"class": "items"})
     tbody = table.find("tbody")
 
+    # Previous season column adjustment
+    col_name = table.find_all("th")[-2].text
+    if col_name == "Signed from":
+        adj = 1
+    else:
+        adj = 0
+
     # Find rows
     rows = tbody.find_all("tr")
 
@@ -171,7 +181,7 @@ def tm_team_player_data(
         except AttributeError:
             continue
 
-        mydict = _extract_player_metadata(row, num)
+        mydict = _extract_player_metadata(row, num, adj)
 
         # append dictionary to list
         mylist.append(mydict)

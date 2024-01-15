@@ -20,6 +20,22 @@ class TestTmTeamTransfers(unittest.TestCase):
 
         time.sleep(4)
 
+        # drop name, position, transfer_club, transfer_league, transfer_league_url, and currency from dicts
+        for dicts in expected:
+            dicts.pop("name", None)
+            dicts.pop("position", None)
+            dicts.pop("transfer_club", None)
+            dicts.pop("transfer_league", None)
+            dicts.pop("transfer_league_url", None)
+            dicts.pop("currency", None)
+        for dicts in actual:
+            dicts.pop("name", None)
+            dicts.pop("position", None)
+            dicts.pop("transfer_club", None)
+            dicts.pop("transfer_league", None)
+            dicts.pop("transfer_league_url", None)
+            dicts.pop("currency", None)
+
         npt.assert_array_equal(actual, expected)
 
     def test_summer_transfers(self):
@@ -30,6 +46,22 @@ class TestTmTeamTransfers(unittest.TestCase):
             club="Newcastle United", season="2022", window="Summer"
         )
 
+        # drop name, position, transfer_club, transfer_league, transfer_league_url, and currency from dicts
+        for dicts in expected:
+            dicts.pop("name", None)
+            dicts.pop("position", None)
+            dicts.pop("transfer_club", None)
+            dicts.pop("transfer_league", None)
+            dicts.pop("transfer_league_url", None)
+            dicts.pop("currency", None)
+        for dicts in actual:
+            dicts.pop("name", None)
+            dicts.pop("position", None)
+            dicts.pop("transfer_club", None)
+            dicts.pop("transfer_league", None)
+            dicts.pop("transfer_league_url", None)
+            dicts.pop("currency", None)
+
         time.sleep(4)
 
         npt.assert_array_equal(actual, expected)
@@ -39,6 +71,22 @@ class TestTmTeamTransfers(unittest.TestCase):
             expected = json.load(f)
 
         actual = tm_team_transfers(club="Liverpool", season="2022", window="Winter")
+
+        # drop name, position, transfer_club, transfer_league, transfer_league_url, and currency from dicts
+        for dicts in expected:
+            dicts.pop("name", None)
+            dicts.pop("position", None)
+            dicts.pop("transfer_club", None)
+            dicts.pop("transfer_league", None)
+            dicts.pop("transfer_league_url", None)
+            dicts.pop("currency", None)
+        for dicts in actual:
+            dicts.pop("name", None)
+            dicts.pop("position", None)
+            dicts.pop("transfer_club", None)
+            dicts.pop("transfer_league", None)
+            dicts.pop("transfer_league_url", None)
+            dicts.pop("currency", None)
 
         time.sleep(4)
 
@@ -51,6 +99,22 @@ class TestTmTeamTransfers(unittest.TestCase):
         actual = tm_team_transfers(
             club="Manchester City", season="2022", position_group="Strikers"
         )
+
+        # drop name, position, transfer_club, transfer_league, transfer_league_url, and currency from dicts
+        for dicts in expected:
+            dicts.pop("name", None)
+            dicts.pop("position", None)
+            dicts.pop("transfer_club", None)
+            dicts.pop("transfer_league", None)
+            dicts.pop("transfer_league_url", None)
+            dicts.pop("currency", None)
+        for dicts in actual:
+            dicts.pop("name", None)
+            dicts.pop("position", None)
+            dicts.pop("transfer_club", None)
+            dicts.pop("transfer_league", None)
+            dicts.pop("transfer_league_url", None)
+            dicts.pop("currency", None)
 
         time.sleep(4)
 

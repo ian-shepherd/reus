@@ -117,10 +117,9 @@ def tm_player_metadata(pageSoup=None, url: str = None) -> dict:
     # Extract data and error handling
     attributes = {
         "full_name": ["Name in home country:", "Full name:"],
-        "born": ["Date of birth:"],
+        "born": ["Date of birth:", "Date of birth/Age:"],
         "birth_place": ["Place of birth:"],
         "birth_country": ["Place of birth:", "img"],
-        "age": ["Age:"],
         "height": ["Height:"],
         "nationality": ["Citizenship:"],
         "position": ["Position:"],
@@ -137,8 +136,13 @@ def tm_player_metadata(pageSoup=None, url: str = None) -> dict:
             value = _extract_text(player_data, "span", pattern, cat)
             player_info[attr] = value
             if value is not None:
-                if attr == "birth_date":
+                if attr == "born":
                     value = value.replace(" Happy Birthday", "")
+                    # keep everything within parenthesis
+                    age = re.findall(r"\(.*\)", value)[0]
+                    player_info["age"] = age.replace("(", "").replace(")", "")
+                    # remove everything after parenthesis
+                    value = re.sub(r"\(.*\)", "", value).strip()
                 elif attr == "height":
                     value = value.replace(",", ".").replace("m", "").strip()
                 elif attr == "nationality":

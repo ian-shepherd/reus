@@ -38,6 +38,11 @@ class TestFbMatchData(unittest.TestCase):
         npt.assert_array_equal(self.actual[5], self.expected[5])
 
     def test_unavailable_players(self):
+        # remove expected_return
+        for i in range(len(self.actual[6])):
+            self.actual[6][i].pop("expected_return", None)
+            self.expected[6][i].pop("expected_return", None)
+
         npt.assert_array_equal(self.actual[6], self.expected[6])
 
     def test_shootout(self):

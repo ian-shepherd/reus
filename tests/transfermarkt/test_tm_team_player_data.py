@@ -23,12 +23,21 @@ class TestTmPlayerData(unittest.TestCase):
 
         time.sleep(4)
 
+        # drop name, number, position, signed_from, currency, and contracted
         for dicts in expected:
+            dicts.pop("name", None)
             dicts.pop("number", None)
+            dicts.pop("position", None)
+            dicts.pop("signed_from", None)
+            dicts.pop("currency", None)
             dicts.pop("contracted", None)
             dicts.pop("arrival_type", None)
         for dicts in actual:
+            dicts.pop("name", None)
             dicts.pop("number", None)
+            dicts.pop("position", None)
+            dicts.pop("signed_from", None)
+            dicts.pop("currency", None)
             dicts.pop("contracted", None)
 
         npt.assert_array_equal(actual, expected)

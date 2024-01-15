@@ -23,67 +23,69 @@ def _get_team_id_and_club(team_id, club):
 
 
 def _get_role_id(role):
-    # TODO: order by number or alphabetical
-    # TODO: check missing (Man City)
     role_dict = {
-        "Manager": 1,
-        "Caretaker Manager": 10,
-        "Assistant Manager": 2,
-        "Goalkeeping Coach": 3,
-        "Conditioning Coach": 11,
-        "Fitness Coach": 22,
-        "Technical Coach": 38,
-        "Chief Analyst": 16,
-        "Youth Coach": 104,
-        "Head of Academy Coaching": 106,
-        "Video Analyst": 70,
-        "Match Analyst": 146,
-        "Director of Football": 13,
-        "Sporting Director": 54,
-        "Team Manager": 55,
+        "Academy Goalkeeping cooridnator": 144,
         "Academy Manager": 67,
-        "Chief Executive Officer": 25,
+        "Academy Staff": 139,
+        "Advisor": 118,
         "Advisor of management": 102,
-        "Director": 188,
-        "Chairman": 28,
+        "Assistant Manager": 2,
         "Board Member": 39,
-        "Owner": 105,
+        "Caretaker Manager": 10,
+        "Chairman": 28,
+        "Chief Analyst": 16,
+        "Chief Executive Officer": 25,
+        "Chief Instructor": 127,
         "Chief Scout": 53,
-        "Head of Scouting": 90,
-        "Scout": 7,
-        "Youth Chief Scout": 167,
-        "Youth Scout": 166,
-        "Head of Youth Scouting": 140,
-        "Head of Medical": 46,
         "Club Doctor": 19,
-        "Physiotherapist": 12,
-        "Sports Scientist": 71,
-        "Masseur": 45,
-        "Medical Director Physiotherapy": 180,
+        "Club representative": 149,
+        "Conditioning Coach": 11,
+        "Development Coach": 187,
+        "Developer International Relations": 148,
+        "Director": 188,
+        "Director of Finance": 81,
+        "Director of Football": 13,
+        "Director of Marketing and Sales": 57,
+        "Fitness Coach": 22,
+        "Goalkeeping Coach": 3,
+        "Goalkeeping Co-oridnator": 65,
+        "Head of Academy Coaching": 106,
+        "Head of Media and Communication": 179,
+        "Head of Medical": 46,
+        "Head of Methodology": 185,
+        "Head of Scouting": 90,
+        "Head of Youth Scouting": 140,
+        "Honorary President": 86,
+        "Kit Manager": 20,
+        "Loan Player Manager": 158,
+        "Manager": 1,
         "Marketing Staff": 44,
+        "Marketing/Management": 83,
+        "Match Analyst": 146,
+        "Masseur": 45,
         "Media Officer": 92,
         "Media worker": 131,
-        "Sponsoring": 56,
-        "Head of Media and Communication": 179,
-        "Photographer": 151,
-        "Kit Manager": 20,
-        "Club representative": 149,
-        "Director of Finance": 81,
-        "Advisor": 118,
-        "Loan Player Manager": 158,
-        "President": 17,
-        "Vice-President": 27,
-        "Vice-Chairman": 28,
         "Member of administrative board": 59,
-        "Marketing/Management": 83,
-        "Director of Marketing and Sales": 57,
-        "Honorary President": 86,
+        "Medical Director Physiotherapy": 180,
         "Nutritionist": 130,
-        "Academy Staff": 139,
-        "Chief Instructor": 127,
-        "Development Coach": 187,
-        "Academy Goalkeeping cooridnator": 144,
-        "Goalkeeping Co-oridnator": 65,
+        "Owner": 105,
+        "Photographer": 151,
+        "Physiotherapist": 12,
+        "President": 17,
+        "Scout": 7,
+        "Sponsoring": 56,
+        "Sporting Director": 54,
+        "Sports Scientist": 71,
+        "Sports Technologies Coordinator": 183,
+        "Staff of the Office": 111,
+        "Technical Coach": 38,
+        "Team Manager": 55,
+        "Vice-Chairman": 28,
+        "Vice-President": 27,
+        "Video Analyst": 70,
+        "Youth Chief Scout": 167,
+        "Youth Coach": 104,
+        "Youth Scout": 166,
     }
 
     role_id = role_dict[role]
@@ -105,9 +107,10 @@ def tm_team_staff_history(
         team_id (int, optional): transfermarkt team id. Defaults to None.
         pageSoup (bs4, optional): bs4 object of staff page for team referenced in url. Defaults to None.
         url (str, optional): path of transfermarkt team staff page. Defaults to None.
+        role (str, optional): role of staff member. Defaults to None.
 
     Returns:
-        list: team staff history
+        list: team role staff history
     """
 
     assert (
@@ -122,7 +125,7 @@ def tm_team_staff_history(
 
         # Generate url
         role_id = _get_role_id(role)
-        url = f"https://www.transfermarkt.com/{club}/mitarbeiter/verein/{team_id}/personalie_id/{role_id}"
+        url = f"https://www.transfermarkt.us/{club}/mitarbeiterhistorie/verein/{team_id}/personalie_id/{role_id}"
 
         # Get page soup
         pageSoup = get_page_soup_headers(url)

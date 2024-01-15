@@ -12,6 +12,16 @@ from .fb_player_match_logs_summary import fb_player_match_logs_summary
 
 
 def fb_player_match_logs_data(season_end: str, player_id: str) -> dict:
+    """Retrieves all match logs for a player in a given season
+
+    Args:
+        season_end (str): ending year of a season
+        player_id (str): unique identifier for a player
+
+    Returns:
+        dict: match logs for a player in a given season
+    """
+
     summary = fb_player_match_logs_summary(season_end=season_end, player_id=player_id)
     time.sleep(4)
 
@@ -50,6 +60,3 @@ def fb_player_match_logs_data(season_end: str, player_id: str) -> dict:
     }
 
     return data
-
-
-# TODO: documentation

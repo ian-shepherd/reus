@@ -51,7 +51,7 @@ def tm_team_staff(
         club, team_id = _get_team_id_and_club(team_id, club)
 
         # Generate url
-        url = f"https://www.transfermarkt.com/{club}/mitarbeiter/verein/{team_id}"
+        url = f"https://www.transfermarkt.us/{club}/mitarbeiter/verein/{team_id}"
 
     if pageSoup is None:
         pageSoup = get_page_soup_headers(url)

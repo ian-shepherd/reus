@@ -445,6 +445,3 @@ def fm_match_data(
             shootoutList,
             momentumList,
         )
-
-
-# TODO: updaated documentation

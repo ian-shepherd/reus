@@ -84,7 +84,7 @@ Functions
     :param json_file: json file of match page. Defaults to None.
     :type json_file: json or None
     :return: match data and json of match page (optional)
-    :rtype: (dict, list, list, list, list, list, list, json) or (dict, list, list, list, list, list, list)
+    :rtype: (dict, list, dict, list, list, list, list, list, list, json) or (dict, list, dict, list, list, list, list, list, list)
 
 .. py:function:: .fotmob.fm_match_ids(match_date: str, ccode: str = None, name: str = None, league_id: str = None) -> list
 
@@ -159,7 +159,7 @@ Functions
         - ``Accurate long balls per match``
         - ``Accurate passes per match``
         - ``Average possession``
-        - ``Big chances created``
+        - ``Big chances``
         - ``Big chances missed``
         - ``Clean sheets``
         - ``Clearances per match``

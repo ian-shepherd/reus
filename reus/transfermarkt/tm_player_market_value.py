@@ -1,62 +1,58 @@
+import json
 import re
 
-from ..util import get_page_soup_headers
+from ..util import fetch_api_data
 
 
-def tm_player_market_value(pageSoup=None, url: str = None) -> list:
-    """Extracts date, team, and market value from highchart
+def tm_player_market_value(json_file: json = None, player_id: str = None) -> list:
+    """Extracts date, team, and market value from market value chart
 
     Args:
-        pageSoup (bs4, optional): bs4 object of player market value page referenced in url. Defaults to None.
-        url (str, optional): path of transfermarkt player market value page. Defaults to None.
+        json_file (json, optional): json file of player market value history. Defaults to None.
+        player_id (str, optional): transfermarkt player id. Defaults to None.
 
     Returns:
         list: market value of player by date
     """
 
     assert (
-        pageSoup is not None or url is not None
-    ), "Either pageSoup or url must be provided"
+        json_file is not None or player_id is not None
+    ), "Either json_file or player_id must be specified"
 
-    if pageSoup is None:
-        pageSoup = get_page_soup_headers(url)
+    if json_file is not None:
+        data = json_file
+    else:
+        data = fetch_api_data(
+            f"https://www.transfermarkt.us/ceapi/marketValueDevelopment/graph/{player_id}"
+        )
 
-    # Extract currency
-    value = pageSoup.find("div", {"class": "data-header__box--small"}).find("a").text
-    value = value.split("Last update: ")[0]
-    currency = value[0]
-
-    # Find hicharts script object
-    script = pageSoup.find("script", text=re.compile("Highcharts.Chart")).string
-
-    # string pattern
-    pattern = re.compile("'datum_mw':(.*?),'x'")
-    date = re.findall(pattern, script)
-    pattern = re.compile("'verein':(.*?),'age'")
-    team = re.findall(pattern, script)
-    pattern = re.compile("'y':(.*?),'verein'")
-    value = re.findall(pattern, script)
+    # Get market values object
+    market_values = data["list"]
 
     # generate empty list
     mylist = []
 
     # iterate through each data point and store attributes
-    for i in range(len(date)):
+    for m in market_values:
+        date = m.get("datum_mw").replace("'", "")
+        team = m.get("verein")
+        age = m.get("age")
+        mw = m.get("mw")
+        currency = mw[0]
+        mult = 1000000 if mw[-1] == "m" else 1000
+        # keep only numbers and period
+        value = float(re.sub("[^0-9.]", "", mw)) * mult
+
         # generate dictionary for each point
         mydict = {
-            "date": date[i].replace("\\x20", " ").replace("'", ""),
-            "team": team[i]
-            .replace("\\x20", " ")
-            .replace("\\u00E9", "\u00E9")
-            .replace("'", ""),
+            "date": date,
+            "team": team,
+            "age": age,
             "currency": currency,
-            "value": value[i].replace("\\x20", " "),
+            "value": value,
         }
 
         # append dictionary to list
         mylist.append(mydict)
 
     return mylist
-
-
-# TODO: updaated documentation

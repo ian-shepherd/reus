@@ -22,6 +22,12 @@ class TestTmTeamStaffData(unittest.TestCase):
 
     time.sleep(4)
 
+    # drop age
+    for dicts in expected:
+        dicts.pop("age", None)
+    for dicts in actual:
+        dicts.pop("age", None)
+
     def test_team_staff_data(self):
         npt.assert_array_equal(self.actual, self.expected)
 

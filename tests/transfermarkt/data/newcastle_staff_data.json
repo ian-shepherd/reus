@@ -33,10 +33,10 @@
         "last_club_url": "/sheffield-united/startseite/verein/350/saison_id/2020"
     },
     {
-        "name": "Stephen Purches",
-        "url": "/stephen-purches/profil/trainer/59153",
+        "name": "Simon Weatherstone",
+        "url": "/simon-weatherstone/profil/trainer/28239",
         "role": "Assistant Manager",
-        "age": "44",
+        "age": "43",
         "nation": "England",
         "appointed": "Nov 8, 2021",
         "contracted": "30.06.2024",
@@ -44,10 +44,10 @@
         "last_club_url": "/afc-bournemouth/startseite/verein/989/saison_id/2020"
     },
     {
-        "name": "Simon Weatherstone",
-        "url": "/simon-weatherstone/profil/trainer/28239",
+        "name": "Stephen Purches",
+        "url": "/stephen-purches/profil/trainer/59153",
         "role": "Assistant Manager",
-        "age": "43",
+        "age": "44",
         "nation": "England",
         "appointed": "Nov 8, 2021",
         "contracted": "30.06.2024",
@@ -174,17 +174,6 @@
         "contracted": "-",
         "last_club": "Brighton & Hove Albion",
         "last_club_url": "/brighton-amp-hove-albion/startseite/verein/1237/saison_id/2023"
-    },
-    {
-        "name": "Dan Ashworth",
-        "url": "/dan-ashworth/profil/trainer/93634",
-        "role": "Sporting Director",
-        "age": "52",
-        "nation": "England",
-        "appointed": "May 30, 2022",
-        "contracted": "-",
-        "last_club": "Brighton & Hove Albion",
-        "last_club_url": "/brighton-amp-hove-albion/startseite/verein/1237/saison_id/2021"
     },
     {
         "name": "Darren Eales",
@@ -436,8 +425,8 @@
         "nation": "England",
         "appointed": "Jun 1, 2023",
         "contracted": "-",
-        "last_club": "England",
-        "last_club_url": "/england/startseite/verein/3299"
+        "last_club": "Leeds United",
+        "last_club_url": "/leeds-united/startseite/verein/399/saison_id/2022"
     },
     {
         "name": "Paul Catterson",
@@ -491,8 +480,8 @@
         "nation": "Scotland",
         "appointed": "Oct 21, 2022",
         "contracted": "-",
-        "last_club": "England U21",
-        "last_club_url": "/england-u21/startseite/verein/9565"
+        "last_club": "Hibernian FC",
+        "last_club_url": "/hibernian-fc/startseite/verein/903/saison_id/2022"
     },
     {
         "name": "Aaron Harris",
@@ -504,6 +493,17 @@
         "contracted": "-",
         "last_club": "Queens Park Rangers",
         "last_club_url": "/queens-park-rangers/startseite/verein/1039/saison_id/2022"
+    },
+    {
+        "name": "Jonny King",
+        "url": "/jonny-king/profil/trainer/109278",
+        "role": "Physiotherapist",
+        "age": "35",
+        "nation": "England",
+        "appointed": "Feb 1, 2024",
+        "contracted": "-",
+        "last_club": "Leicester City",
+        "last_club_url": "/leicester-city/startseite/verein/1003/saison_id/2023"
     },
     {
         "name": "Simon Tweddle",

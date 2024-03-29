@@ -173,7 +173,7 @@ def tm_player_metadata(pageSoup=None, url: str = None) -> dict:
     meta_attributes = {
         "joined": "Joined:",
         "contracted": "Contract expires:",
-        "extension": "Date of last contract extension:",
+        "extension": "Last contract extension:",
     }
 
     for attr, pattern in meta_attributes.items():

@@ -376,18 +376,24 @@ def fm_match_data(
         "team_y": general.get("awayTeam").get("name"),
         "id_x": general.get("homeTeam").get("id"),
         "id_y": general.get("awayTeam").get("id"),
-        "color_x": general.get("teamColors").get("home")
-        if isinstance(general.get("teamColors"), dict)
-        else general.get("teamColors")[0].get("color"),
-        "color_y": general.get("teamColors").get("away")
-        if isinstance(general.get("teamColors"), dict)
-        else general.get("teamColors")[1].get("color"),
+        "color_x": (
+            general.get("teamColors").get("lightMode").get("home")
+            if isinstance(general.get("teamColors"), dict)
+            else general.get("teamColors")[0].get("color")
+        ),
+        "color_y": (
+            general.get("teamColors").get("lightMode").get("away")
+            if isinstance(general.get("teamColors"), dict)
+            else general.get("teamColors")[1].get("color")
+        ),
         "score_x": header.get("teams")[0].get("score"),
         "score_y": header.get("teams")[1].get("score"),
         "reason": header.get("status").get("reason").get("long"),
-        "highlights": matchFacts.get("highlights").get("url")
-        if matchFacts.get("highlights")
-        else None,
+        "highlights": (
+            matchFacts.get("highlights").get("url")
+            if matchFacts.get("highlights")
+            else None
+        ),
         "venue": matchFacts.get("infoBox").get("Stadium").get("name"),
         "city": matchFacts.get("infoBox").get("Stadium").get("city"),
         "country": matchFacts.get("infoBox").get("Stadium").get("country"),
@@ -395,14 +401,16 @@ def fm_match_data(
         "long": matchFacts.get("infoBox").get("Stadium").get("long"),
         "referee": matchFacts.get("infoBox").get("Referee").get("text"),
         "attendance": matchFacts.get("infoBox").get("Attendance"),
-        "player_of_match": " ".join(
-            matchFacts.get("playerOfTheMatch").get("name").values()
-        )
-        if matchFacts.get("playerOfTheMatch")
-        else None,
-        "player_of_match_id": matchFacts.get("playerOfTheMatch").get("id")
-        if matchFacts.get("playerOfTheMatch")
-        else None,
+        "player_of_match": (
+            " ".join(matchFacts.get("playerOfTheMatch").get("name").values())
+            if matchFacts.get("playerOfTheMatch")
+            else None
+        ),
+        "player_of_match_id": (
+            matchFacts.get("playerOfTheMatch").get("id")
+            if matchFacts.get("playerOfTheMatch")
+            else None
+        ),
     }
 
     events = matchFacts.get("events")["events"]

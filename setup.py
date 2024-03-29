@@ -1,7 +1,7 @@
 import setuptools
 
-VERSION = "1.1.4"
-DESCRIPTION = "A package that allows you to soccer information"
+VERSION = "1.1.5"
+DESCRIPTION = "A package that allows you scrape soccer information"
 LONG_DESCRIPTION = """
     A package that allows you to pull soccer statistics, player market values, and
      transfer information, primarily from FBref, Fotmob, and Transfermarkt"""
@@ -13,7 +13,12 @@ setuptools.setup(
     long_description=LONG_DESCRIPTION,
     url="https://github.com/ian-shepherd/reus",
     author="Ian Shepherd",
-    install_requires=["pandas", "numpy", "requests", "beautifulsoup4>=4.10.0"],
+    install_requires=[
+        "pandas>=2.2.0",
+        "numpy>=1.26.4",
+        "requests>=2.23.0",
+        "beautifulsoup4>=4.10.0",
+    ],
     keywords=["python", "fbref", "fotmob", "transfermarkt", "soccer", "football"],
     classifiers=[
         "Programming Language :: Python :: 3",

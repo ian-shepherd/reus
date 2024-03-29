@@ -19,6 +19,7 @@ setuptools.setup(
         "requests>=2.23.0",
         "beautifulsoup4>=4.10.0",
     ],
+    python_requires=">3.10",
     keywords=["python", "fbref", "fotmob", "transfermarkt", "soccer", "football"],
     classifiers=[
         "Programming Language :: Python :: 3",

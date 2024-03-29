@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.1.5 2024-03-28
+* Officially removed python 3.9 support due to lack of match case functionality
+* Moved from requirements.txt to pyproject.toml
+* Fixed fotmob team colors and player stat issues in fm_match_data
+* Team id bug fixes for transfermarkt
+* Transfermarkt tm_player_data bug fix for previous seasons
+
+
 ## 1.1.4 2024-01-15
 * added fbref functions
 	* fb_player_match_logs_data

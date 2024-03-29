@@ -1,10 +1,16 @@
-def extract_player_stats(stats):
+def extract_player_stats(stats):  # noqa: C901
     mydict = {}
 
     playerStats = stats[0].get("stats")
     tmp = {}
     for k, v in playerStats.items():
-        tmp[k] = v.get("value")
+        val = v["stat"].get("value")
+        total = v["stat"].get("total")
+        if total is not None:
+            tmp[k] = f"{val}/{total}"
+        else:
+            tmp[k] = val
+
     playerStats = tmp
 
     mydict["rating"] = playerStats.get("FotMob rating")
@@ -26,7 +32,12 @@ def extract_player_stats(stats):
         playerStatsAttack = stats[1].get("stats")
         tmp = {}
         for k, v in playerStatsAttack.items():
-            tmp[k] = v.get("value")
+            val = v["stat"].get("value")
+            total = v["stat"].get("total")
+            if total is not None:
+                tmp[k] = f"{val}/{total}"
+            else:
+                tmp[k] = val
         playerStatsAttack = tmp
 
         mydict["shot_accuracy"] = playerStatsAttack.get("Shot accuracy")
@@ -50,7 +61,12 @@ def extract_player_stats(stats):
         playerStatsDefense = stats[2].get("stats")
         tmp = {}
         for k, v in playerStatsDefense.items():
-            tmp[k] = v.get("value")
+            val = v["stat"].get("value")
+            total = v["stat"].get("total")
+            if total is not None:
+                tmp[k] = f"{val}/{total}"
+            else:
+                tmp[k] = val
         playerStatsDefense = tmp
 
         mydict["tackles_won"] = playerStatsDefense.get("Tackles won")
@@ -67,7 +83,12 @@ def extract_player_stats(stats):
         playerStatsDuels = stats[3].get("stats")
         tmp = {}
         for k, v in playerStatsDuels.items():
-            tmp[k] = v.get("value")
+            val = v["stat"].get("value")
+            total = v["stat"].get("total")
+            if total is not None:
+                tmp[k] = f"{val}/{total}"
+            else:
+                tmp[k] = val
         playerStatsDuels = tmp
 
         mydict["ground_duels_won"] = playerStatsDuels.get("Ground duels won")

@@ -367,21 +367,21 @@
         "url": "/andy-cunningham/profil/trainer/102375",
         "dob": "Jan 31, 1891",
         "nation": "Scotland",
-        "appointed": "Jan 9, 1930",
+        "appointed": "Jan 2, 1930",
         "left": "Jun 30, 1935",
-        "time_in_post": "1998 days\u00a0",
-        "matches": "182",
-        "ppg": "1.48"
+        "time_in_post": "2005 days\u00a0",
+        "matches": "251",
+        "ppg": "1.43"
     },
     {
         "name": "Frank Watt",
         "url": "/frank-watt/profil/trainer/93888",
-        "dob": "-",
+        "dob": "Jan 1, 1854",
         "nation": "Scotland",
         "appointed": "Aug 1, 1895",
         "left": "Jan 1, 1930",
         "time_in_post": "12571 days\u00a0",
-        "matches": "2",
-        "ppg": "3.00"
+        "matches": "69",
+        "ppg": "1.42"
     }
 ]

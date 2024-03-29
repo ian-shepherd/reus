@@ -18,7 +18,7 @@ def _get_team_id_and_club(team_id, club):
     )
     filtered_df = df[filter_condition]
     club = filtered_df.transfermarkt_link.iloc[0]
-    team_id = int(filtered_df.transfermarkt.iloc[0])
+    team_id = int(float(filtered_df.transfermarkt.iloc[0]))
 
     return club, team_id
 

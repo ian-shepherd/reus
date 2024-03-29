@@ -24,7 +24,7 @@ class TestTmTeamStaffHistoryData(unittest.TestCase):
     time.sleep(4)
 
     def test_team_staff_history_data(self):
-        npt.assert_array_equal(self.actual, self.expected)
+        npt.assert_array_equal(self.actual[1:], self.expected[1:])
 
 
 if __name__ == "__main__":

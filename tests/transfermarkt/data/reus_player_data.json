@@ -3,31 +3,31 @@
         "id": "35207",
         "name": "marco-reus",
         "url": "/marco-reus/profil/spieler/35207",
-        "headshot_url": "https://img.a.transfermarkt.technology/portrait/header/35207-1692013435.jpg?lm=1",
+        "headshot_url": "https://img.a.transfermarkt.technology/portrait/header/35207-1725258243.jpg?lm=1",
         "full_name": null,
         "born": "May 31, 1989",
         "birth_place": "Dortmund",
         "birth_country": "Germany",
-        "age": "34",
+        "age": "35",
         "height": "1.80",
         "nationality": "Germany",
-        "position": "midfield - Attacking Midfield",
+        "position": "Midfield - Attacking Midfield",
         "position_main": "Attacking Midfield",
         "position_alt1": "Left Winger",
-        "position_alt2": null,
+        "position_alt2": "Right Winger",
         "foot": "right",
         "agent": "Dirk Hebel",
         "outfitter": "Puma",
-        "social_twitter": "http://twitter.com/woodyinho",
-        "social_facebook": "http://www.facebook.com/MarcoReus11",
-        "social_instagram": "http://www.instagram.com/marcinho11/",
-        "club": "Borussia Dortmund",
-        "joined": "Jul 1, 2012",
-        "contracted": "Jun 30, 2024",
-        "extension": "Apr 27, 2023",
+        "social_twitter": "https://twitter.com/woodyinho",
+        "social_facebook": "https://www.facebook.com/MarcoReus11",
+        "social_instagram": "https://www.instagram.com/marcinho11/",
+        "club": "Los Angeles Galaxy",
+        "joined": "Aug 14, 2024",
+        "contracted": "Dec 31, 2026",
+        "extension": null,
         "currency": "\u20ac",
-        "mv": 7000000.0,
-        "update": "Dec 14, 2023"
+        "mv": 5000000.0,
+        "update": "May 29, 2024"
     },
     [
         {
@@ -35,289 +35,307 @@
             "team": "Rot Weiss Ahlen U19",
             "age": "18",
             "currency": "\u20ac",
-            "value": 50000
+            "value": 50000.0
         },
         {
             "date": "Oct 24, 2008",
             "team": "Rot Weiss Ahlen",
             "age": "19",
             "currency": "\u20ac",
-            "value": 250000
+            "value": 250000.0
         },
         {
             "date": "Jan 21, 2009",
             "team": "Rot Weiss Ahlen",
             "age": "19",
             "currency": "\u20ac",
-            "value": 700000
+            "value": 700000.0
         },
         {
             "date": "Jun 10, 2009",
             "team": "Rot Weiss Ahlen",
             "age": "20",
             "currency": "\u20ac",
-            "value": 1000000
+            "value": 1000000.0
         },
         {
             "date": "Nov 9, 2009",
-            "team": "Borussia M\u00F6nchengladbach",
+            "team": "Borussia M\u00f6nchengladbach",
             "age": "20",
             "currency": "\u20ac",
-            "value": 1500000
+            "value": 1500000.0
         },
         {
             "date": "Jan 17, 2010",
-            "team": "Borussia M\u00F6nchengladbach",
+            "team": "Borussia M\u00f6nchengladbach",
             "age": "20",
             "currency": "\u20ac",
-            "value": 2500000
+            "value": 2500000.0
         },
         {
             "date": "May 8, 2010",
-            "team": "Borussia M\u00F6nchengladbach",
+            "team": "Borussia M\u00f6nchengladbach",
             "age": "20",
             "currency": "\u20ac",
-            "value": 4500000
+            "value": 4500000.0
         },
         {
             "date": "Jul 16, 2010",
-            "team": "Borussia M\u00F6nchengladbach",
+            "team": "Borussia M\u00f6nchengladbach",
             "age": "21",
             "currency": "\u20ac",
-            "value": 5500000
+            "value": 5500000.0
         },
         {
             "date": "Nov 23, 2010",
-            "team": "Borussia M\u00F6nchengladbach",
+            "team": "Borussia M\u00f6nchengladbach",
             "age": "21",
             "currency": "\u20ac",
-            "value": 6500000
+            "value": 6500000.0
         },
         {
             "date": "Jan 12, 2011",
-            "team": "Borussia M\u00F6nchengladbach",
+            "team": "Borussia M\u00f6nchengladbach",
             "age": "21",
             "currency": "\u20ac",
-            "value": 8500000
+            "value": 8500000.0
         },
         {
             "date": "Jun 29, 2011",
-            "team": "Borussia M\u00F6nchengladbach",
+            "team": "Borussia M\u00f6nchengladbach",
             "age": "22",
             "currency": "\u20ac",
-            "value": 14000000
+            "value": 14000000.0
         },
         {
             "date": "Jan 23, 2012",
-            "team": "Borussia M\u00F6nchengladbach",
+            "team": "Borussia M\u00f6nchengladbach",
             "age": "22",
             "currency": "\u20ac",
-            "value": 20000000
+            "value": 20000000.0
         },
         {
             "date": "Jun 29, 2012",
-            "team": "Borussia M\u00F6nchengladbach",
+            "team": "Borussia M\u00f6nchengladbach",
             "age": "23",
             "currency": "\u20ac",
-            "value": 20000000
+            "value": 20000000.0
         },
         {
             "date": "Oct 26, 2012",
             "team": "Borussia Dortmund",
             "age": "23",
             "currency": "\u20ac",
-            "value": 27000000
+            "value": 27000000.0
         },
         {
             "date": "Jan 17, 2013",
             "team": "Borussia Dortmund",
             "age": "23",
             "currency": "\u20ac",
-            "value": 30000000
+            "value": 30000000.0
         },
         {
             "date": "Jun 30, 2013",
             "team": "Borussia Dortmund",
             "age": "24",
             "currency": "\u20ac",
-            "value": 34000000
+            "value": 34000000.0
         },
         {
             "date": "Feb 12, 2014",
             "team": "Borussia Dortmund",
             "age": "24",
             "currency": "\u20ac",
-            "value": 40000000
+            "value": 40000000.0
         },
         {
             "date": "Jul 10, 2014",
             "team": "Borussia Dortmund",
             "age": "25",
             "currency": "\u20ac",
-            "value": 50000000
+            "value": 50000000.0
         },
         {
             "date": "Feb 4, 2015",
             "team": "Borussia Dortmund",
             "age": "25",
             "currency": "\u20ac",
-            "value": 50000000
+            "value": 50000000.0
         },
         {
             "date": "Jul 1, 2015",
             "team": "Borussia Dortmund",
             "age": "26",
             "currency": "\u20ac",
-            "value": 45000000
+            "value": 45000000.0
         },
         {
             "date": "Feb 15, 2016",
             "team": "Borussia Dortmund",
             "age": "26",
             "currency": "\u20ac",
-            "value": 45000000
+            "value": 45000000.0
         },
         {
             "date": "Jul 22, 2016",
             "team": "Borussia Dortmund",
             "age": "27",
             "currency": "\u20ac",
-            "value": 40000000
+            "value": 40000000.0
         },
         {
             "date": "Feb 7, 2017",
             "team": "Borussia Dortmund",
             "age": "27",
             "currency": "\u20ac",
-            "value": 40000000
+            "value": 40000000.0
         },
         {
             "date": "Jun 19, 2017",
             "team": "Borussia Dortmund",
             "age": "28",
             "currency": "\u20ac",
-            "value": 35000000
+            "value": 35000000.0
         },
         {
             "date": "Dec 28, 2017",
             "team": "Borussia Dortmund",
             "age": "28",
             "currency": "\u20ac",
-            "value": 28000000
+            "value": 28000000.0
         },
         {
             "date": "Apr 4, 2018",
             "team": "Borussia Dortmund",
             "age": "28",
             "currency": "\u20ac",
-            "value": 35000000
+            "value": 35000000.0
         },
         {
             "date": "Jun 5, 2018",
             "team": "Borussia Dortmund",
             "age": "29",
             "currency": "\u20ac",
-            "value": 35000000
+            "value": 35000000.0
         },
         {
             "date": "Jul 16, 2018",
             "team": "Borussia Dortmund",
             "age": "29",
             "currency": "\u20ac",
-            "value": 40000000
+            "value": 40000000.0
         },
         {
             "date": "Dec 18, 2018",
             "team": "Borussia Dortmund",
             "age": "29",
             "currency": "\u20ac",
-            "value": 50000000
+            "value": 50000000.0
         },
         {
             "date": "Jun 5, 2019",
             "team": "Borussia Dortmund",
             "age": "30",
             "currency": "\u20ac",
-            "value": 50000000
+            "value": 50000000.0
         },
         {
             "date": "Dec 17, 2019",
             "team": "Borussia Dortmund",
             "age": "30",
             "currency": "\u20ac",
-            "value": 40000000
+            "value": 40000000.0
         },
         {
             "date": "Apr 8, 2020",
             "team": "Borussia Dortmund",
             "age": "30",
             "currency": "\u20ac",
-            "value": 32000000
+            "value": 32000000.0
         },
         {
             "date": "Jul 8, 2020",
             "team": "Borussia Dortmund",
             "age": "31",
             "currency": "\u20ac",
-            "value": 25000000
+            "value": 25000000.0
         },
         {
             "date": "Feb 10, 2021",
             "team": "Borussia Dortmund",
             "age": "31",
             "currency": "\u20ac",
-            "value": 15000000
+            "value": 15000000.0
         },
         {
             "date": "Jun 9, 2021",
             "team": "Borussia Dortmund",
             "age": "32",
             "currency": "\u20ac",
-            "value": 13000000
+            "value": 13000000.0
         },
         {
             "date": "Dec 22, 2021",
             "team": "Borussia Dortmund",
             "age": "32",
             "currency": "\u20ac",
-            "value": 13000000
+            "value": 13000000.0
         },
         {
             "date": "Jun 9, 2022",
             "team": "Borussia Dortmund",
             "age": "33",
             "currency": "\u20ac",
-            "value": 11000000
+            "value": 11000000.0
         },
         {
             "date": "Nov 9, 2022",
             "team": "Borussia Dortmund",
             "age": "33",
             "currency": "\u20ac",
-            "value": 9000000
+            "value": 9000000.0
         },
         {
             "date": "Jun 22, 2023",
             "team": "Borussia Dortmund",
             "age": "34",
             "currency": "\u20ac",
-            "value": 7000000
+            "value": 7000000.0
         },
         {
             "date": "Dec 14, 2023",
             "team": "Borussia Dortmund",
             "age": "34",
             "currency": "\u20ac",
-            "value": 7000000
+            "value": 7000000.0
+        },
+        {
+            "date": "May 29, 2024",
+            "team": "Borussia Dortmund",
+            "age": "34",
+            "currency": "\u20ac",
+            "value": 5000000.0
         }
     ],
     [
         {
+            "date": "Aug 14, 2024",
+            "left": "Bor. Dortmund",
+            "left_url": "/bor-dortmund/transfers/verein/16/saison_id/2024",
+            "joined": "LA Galaxy",
+            "joined_url": "/la-galaxy/transfers/verein/1061/saison_id/2024",
+            "type": "Free Transfer",
+            "currency": "\u20ac",
+            "market_value": 5000000.0,
+            "fee": 0.0
+        },
+        {
             "date": "Jul 1, 2012",
             "left": "Bor. M'gladbach",
-            "left_url": "/borussia-monchengladbach/transfers/verein/18/saison_id/2012",
+            "left_url": "/bor-mgladbach/transfers/verein/18/saison_id/2012",
             "joined": "Bor. Dortmund",
-            "joined_url": "/borussia-dortmund/transfers/verein/16/saison_id/2012",
+            "joined_url": "/bor-dortmund/transfers/verein/16/saison_id/2012",
             "type": "Transfer",
             "currency": "\u20ac",
             "market_value": 20000000.0,
@@ -328,7 +346,7 @@
             "left": "Rot Weiss Ahlen",
             "left_url": "/rot-weiss-ahlen/transfers/verein/50/saison_id/2009",
             "joined": "Bor. M'gladbach",
-            "joined_url": "/borussia-monchengladbach/transfers/verein/18/saison_id/2009",
+            "joined_url": "/bor-mgladbach/transfers/verein/18/saison_id/2009",
             "type": "Transfer",
             "currency": "\u20ac",
             "market_value": 1000000.0,
@@ -337,7 +355,7 @@
         {
             "date": "Jul 1, 2008",
             "left": "RW Ahlen U19",
-            "left_url": "/rot-weiss-ahlen-u19/transfers/verein/7642/saison_id/2008",
+            "left_url": "/rw-ahlen-u19/transfers/verein/7642/saison_id/2008",
             "joined": "Rot Weiss Ahlen",
             "joined_url": "/rot-weiss-ahlen/transfers/verein/50/saison_id/2008",
             "type": "Youth",
@@ -348,9 +366,9 @@
         {
             "date": "Jul 1, 2006",
             "left": "RW Ahlen U17",
-            "left_url": "/rot-weiss-ahlen-u17/transfers/verein/24975/saison_id/2006",
+            "left_url": "/rw-ahlen-u17/transfers/verein/24975/saison_id/2006",
             "joined": "RW Ahlen U19",
-            "joined_url": "/rot-weiss-ahlen-u19/transfers/verein/7642/saison_id/2006",
+            "joined_url": "/rw-ahlen-u19/transfers/verein/7642/saison_id/2006",
             "type": "Youth",
             "currency": "-",
             "market_value": 0.0,
@@ -359,9 +377,9 @@
         {
             "date": "Jan 1, 2005",
             "left": "B. Dortmund U17",
-            "left_url": "/borussia-dortmund-u17/transfers/verein/21055/saison_id/2004",
+            "left_url": "/b-dortmund-u17/transfers/verein/21055/saison_id/2004",
             "joined": "LR Ahlen U17",
-            "joined_url": "/rot-weiss-ahlen-u17/transfers/verein/24975/saison_id/2004",
+            "joined_url": "/lr-ahlen-u17/transfers/verein/24975/saison_id/2004",
             "type": "Free Transfer",
             "currency": "-",
             "market_value": 0.0,
@@ -370,9 +388,9 @@
         {
             "date": "Jul 1, 2004",
             "left": "Dortmund Yth.",
-            "left_url": "/borussia-dortmund-youth/transfers/verein/11896/saison_id/2004",
+            "left_url": "/dortmund-yth-/transfers/verein/11896/saison_id/2004",
             "joined": "B. Dortmund U17",
-            "joined_url": "/borussia-dortmund-u17/transfers/verein/21055/saison_id/2004",
+            "joined_url": "/b-dortmund-u17/transfers/verein/21055/saison_id/2004",
             "type": "Youth",
             "currency": "-",
             "market_value": 0.0,
@@ -381,9 +399,9 @@
         {
             "date": "Jul 1, 1995",
             "left": "PTSV Dort. Yth.",
-            "left_url": "/ptsv-dortmund-youth/transfers/verein/42281/saison_id/1995",
+            "left_url": "/ptsv-dort-yth-/transfers/verein/42281/saison_id/1995",
             "joined": "Dortmund Yth.",
-            "joined_url": "/borussia-dortmund-youth/transfers/verein/11896/saison_id/1995",
+            "joined_url": "/dortmund-yth-/transfers/verein/11896/saison_id/1995",
             "type": "Free Transfer",
             "currency": "-",
             "market_value": 0.0,

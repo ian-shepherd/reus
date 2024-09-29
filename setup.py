@@ -1,6 +1,6 @@
 import setuptools
 
-VERSION = "1.1.5"
+VERSION = "1.1.7"
 DESCRIPTION = "A package that allows you scrape soccer information"
 LONG_DESCRIPTION = """
     A package that allows you to pull soccer statistics, player market values, and
@@ -19,7 +19,7 @@ setuptools.setup(
         "requests>=2.23.0",
         "beautifulsoup4>=4.10.0",
     ],
-    python_requires=">3.10",
+    python_requires=">=3.10",
     keywords=["python", "fbref", "fotmob", "transfermarkt", "soccer", "football"],
     classifiers=[
         "Programming Language :: Python :: 3",

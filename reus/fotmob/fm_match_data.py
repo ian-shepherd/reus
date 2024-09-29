@@ -3,8 +3,6 @@ import json
 import re
 from urllib.request import urlopen
 
-from .util import extract_player_stats
-
 
 def _extract_events(events, metadata):
     eventList = []
@@ -179,32 +177,47 @@ def _extract_match_stats(matchStats):
 def _extract_lineups(lineup, metadata):
     benchPlayerList = []
     startPlayerList = []
+    naPlayersList = []
 
-    for i in lineup.get("lineup"):
-        idx = lineup.get("lineup").index(i)
-        team_id = i.get("teamId")
-        for b in i.get("bench"):
+    idx = 0
+    for i in [lineup.get("homeTeam"), lineup.get("awayTeam")]:
+        team_id = i.get("id")
+        for b in i.get("subs"):
+            sub_events = b.get("performance").get("substitutionEvents")
+            if sub_events is None:
+                time_subbed_on = None
+                time_subbed_off = None
+                subbed_on_reason = None
+                subbed_off_reason = None
+            elif len(sub_events) == 0:
+                time_subbed_on = None
+                time_subbed_off = None
+                subbed_on_reason = None
+                subbed_off_reason = None
+            elif len(sub_events) == 1:
+                time_subbed_on = sub_events[0].get("time")
+                time_subbed_off = None
+                subbed_on_reason = sub_events[0].get("reason")
+                subbed_off_reason = None
+            else:
+                time_subbed_on = sub_events[0].get("time")
+                time_subbed_off = sub_events[1].get("time")
+                subbed_on_reason = sub_events[0].get("reason")
+                subbed_off_reason = sub_events[1].get("reason")
             mydict = {
                 "team_id": team_id,
-                "opta_id": b.get("usingOptaId"),
+                "opta_id": b.get("optaId"),
                 "player_id": b.get("id"),
-                "player_name": b.get("name").get("fullName"),
-                "player_url": b.get("pageUrl"),
-                "shirt_number": b.get("shirt"),
-                "time_subbed_on": b.get("timeSubbedOn"),
-                "time_subbed_off": b.get("timeSubbedOff"),
-                "minutes_played": b.get("minutesPlayed"),
-                "usual_position": b.get("usualPosition"),
-                "role": b.get("role"),
+                "player_name": b.get("name"),
+                "shirt_number": b.get("shirtnumber"),
+                "time_subbed_on": time_subbed_on,
+                "time_subbed_off": time_subbed_off,
+                "subbed_on_reason": subbed_on_reason,
+                "subbed_off_reason": subbed_off_reason,
+                "usual_position": b.get("usualPlayingPositionId"),
+                "role": "sub",
                 "is_captain": b.get("isCaptain"),
             }
-            try:
-                statsDict = extract_player_stats(b.get("stats"))
-                mydict.update(statsDict)
-            except TypeError:
-                pass
-            except IndexError:
-                pass
 
             benchPlayerList.append(mydict)
 
@@ -212,53 +225,99 @@ def _extract_lineups(lineup, metadata):
             metadata = {**metadata, **_extract_managers(i, idx)}
         except TypeError:
             pass
+        _extract_managers(i, idx)
 
-        for j in i.get("players"):
-            for k in j:
-                mydict = {
-                    "team_id": team_id,
-                    "opta_id": k.get("usingOptaId"),
-                    "player_id": k.get("id"),
-                    "player_name": k.get("name").get("fullName"),
-                    "player_url": k.get("pageUrl"),
-                    "shirt_number": k.get("shirt"),
-                    "time_subbed_on": k.get("timeSubbedOn"),
-                    "time_subbed_off": k.get("timeSubbedOff"),
-                    "minutes_played": k.get("minutesPlayed"),
-                    "position": k.get("positionStringShort"),
-                    "usual_position": k.get("usualPosition"),
-                    "role": k.get("role"),
-                    "is_captain": k.get("isCaptain"),
-                }
-                try:
-                    mydict["fantasy_points"] = k.get("fantasyScore").get("num")
-                    statsDict = extract_player_stats(k.get("stats"))
-                    mydict.update(statsDict)
-                except AttributeError:
-                    pass
+        for j in i.get("starters"):
+            sub_events = j.get("performance").get("substitutionEvents")
+            if sub_events is None:
+                time_subbed_on = None
+                time_subbed_off = None
+                subbed_on_reason = None
+                subbed_off_reason = None
+            elif len(sub_events) == 0:
+                time_subbed_on = None
+                time_subbed_off = None
+                subbed_on_reason = None
+                subbed_off_reason = None
+            elif len(sub_events) == 1:
+                time_subbed_on = None
+                time_subbed_off = sub_events[0].get("time")
+                subbed_on_reason = None
+                subbed_off_reason = sub_events[0].get("reason")
+            mydict = {
+                "team_id": team_id,
+                "opta_id": j.get("optaId"),
+                "player_id": j.get("id"),
+                "player_name": j.get("name"),
+                "shirt_number": j.get("shirtNumber"),
+                "time_subbed_off": time_subbed_off,
+                "subbed_off_reason": subbed_off_reason,
+                "position": j.get("positionId"),
+                "usual_position": j.get("usualPlayingPositionId"),
+                "horizontal_layout": j.get("horizontalLayout"),
+                "vertical_layout": j.get("verticalLayout"),
+                "role": "starter",
+                "is_captain": j.get("isCaptain"),
+            }
 
-                startPlayerList.append(mydict)
+            startPlayerList.append(mydict)
 
-    return benchPlayerList, startPlayerList, metadata
+        if i.get("unavailable") is None:
+            idx += 1
+            continue
+
+        for k in i.get("unavailable"):
+            unavailability = k.get("unavailability")
+            mydict = {
+                "team_id": team_id,
+                "player_id": k.get("id"),
+                "player_name": k.get("name"),
+                "type": unavailability.get("type"),
+                "expected_return": unavailability.get("expectedReturn"),
+                "injury_id": unavailability.get("injuryId"),
+            }
+
+            naPlayersList.append(mydict)
+
+        idx += 1
+
+    return benchPlayerList, startPlayerList, naPlayersList, metadata
 
 
 def _extract_managers(row, idx):
-    mgr = row.get("coach")[0]
+    mgr = row.get("coach")
 
     if idx == 0:
         mydict = {
-            "manager_x": mgr.get("name").get("fullName"),
+            "manager_x": mgr.get("name"),
             "manager_id_x": mgr.get("id"),
-            "manager_url_x": mgr.get("pageUrl"),
         }
     else:
         mydict = {
-            "manager_y": mgr.get("name").get("fullName"),
+            "manager_y": mgr.get("name"),
             "manager_id_y": mgr.get("id"),
-            "manager_url_y": mgr.get("pageUrl"),
         }
 
     return mydict
+
+
+def _extract_player_stats(stats):
+    mylist = []
+
+    for k, v in stats.items():
+        mydict = {}
+        mydict["player_id"] = k
+        mydict["name"] = v.get("name")
+
+        for j in v["stats"]:
+            for k2, v2 in j["stats"].items():
+                if v2.get("key") is None:
+                    continue
+                mydict[v2.get("key")] = v2.get("stat").get("value")
+
+        mylist.append(mydict)
+
+    return mylist
 
 
 def _extract_lineup_info(lineup):
@@ -271,42 +330,13 @@ def _extract_lineup_info(lineup):
 
     mydict = {
         "lineup_source": lineup_source,
-        "formation_x": lineup.get("lineup")[0].get("lineup"),
-        "formation_y": lineup.get("lineup")[1].get("lineup"),
-        "team_x_rating": lineup.get("teamRatings").get("home").get("num"),
-        "team_y_rating": lineup.get("teamRatings").get("away").get("num"),
+        "formation_x": lineup.get("homeTeam").get("formation"),
+        "formation_y": lineup.get("awayTeam").get("formation"),
+        "team_x_rating": lineup.get("homeTeam").get("rating"),
+        "team_y_rating": lineup.get("awayTeam").get("rating"),
     }
 
     return mydict
-
-
-def _extract_na_players(lineup, metadata):
-    try:
-        matchNaPlayers = lineup.get("naPlayers").get("naPlayersArr")
-        naPlayerList = []
-        team_id = metadata["id_x"]
-        for j in matchNaPlayers:
-            for k in j:
-                mydict = {}
-                mydict["team_id"] = team_id
-                mydict["player_id"] = k.get("id")
-                mydict["player_name"] = k.get("naInfo").get("name")
-                mydict["player_url"] = k.get("pageUrl")
-                mydict["reason"] = k.get("naInfo").get("naReason")
-                try:
-                    mydict["expected_return"] = (
-                        k.get("naInfo")
-                        .get("expectedReturn")
-                        .get("expectedReturnFallback")
-                    )
-                except AttributeError:
-                    mydict["expected_return"] = None
-                naPlayerList.append(mydict)
-            team_id = metadata["id_y"]
-    except AttributeError:
-        naPlayerList = None
-
-    return naPlayerList
 
 
 def fm_match_data(
@@ -328,6 +358,7 @@ def fm_match_data(
             list: bench players
             list: starters
             list: players not available
+            list: player stats
             list: shootout
             list: momentum
             json: json file (if save_json=True)
@@ -350,7 +381,11 @@ def fm_match_data(
     matchStats = content.get("stats").get("Periods")
     shotmap = content.get("shotmap").get("shots")
     lineup = content.get("lineup")
-    momentum = content["momentum"]["main"]
+    stats = content.get("playerStats")
+    try:
+        momentum = content["momentum"]["main"]
+    except TypeError:
+        momentum = None
 
     metadata = {
         "id": general.get("matchId"),
@@ -422,11 +457,14 @@ def fm_match_data(
 
     teamStats = _extract_match_stats(matchStats)
 
-    benchPlayerList, startPlayerList, metadata = _extract_lineups(lineup, metadata)
+    benchPlayerList, startPlayerList, naPlayerList, metadata = _extract_lineups(
+        lineup, metadata
+    )
     metadata = {**metadata, **_extract_lineup_info(lineup)}
-    naPlayerList = _extract_na_players(lineup, metadata)
 
-    momentumList = momentum.get("data")
+    playerStats = _extract_player_stats(stats)
+
+    momentumList = None if momentum is None else momentum.get("data")
 
     if save_json:
         return (
@@ -437,6 +475,7 @@ def fm_match_data(
             benchPlayerList,
             startPlayerList,
             naPlayerList,
+            playerStats,
             shootoutList,
             momentumList,
             data,
@@ -450,6 +489,7 @@ def fm_match_data(
             benchPlayerList,
             startPlayerList,
             naPlayerList,
+            playerStats,
             shootoutList,
             momentumList,
         )

@@ -5,8 +5,8 @@ def fb_team_player_shooting_stats(pageSoup=None, url: str = None) -> list:
     """Extracts shooting stats for each player in a given team
 
     Args:
-        pageSoup (bs4, optional): bs4 object of a match. Defaults to None.
-        url (str, optional): path of fbref match page. Defaults to None.
+        pageSoup (bs4, optional): bs4 object of a team. Defaults to None.
+        url (str, optional): path of fbref team page. Defaults to None.
 
     Returns:
         list: shooting stats for each player

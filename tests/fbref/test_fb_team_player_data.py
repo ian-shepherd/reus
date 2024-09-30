@@ -1,9 +1,11 @@
-import unittest
-import numpy.testing as npt
-from pathlib import Path
 import json
-from reus.fbref import fb_team_player_data
 import time
+import unittest
+from pathlib import Path
+
+import numpy.testing as npt
+
+from reus.fbref import fb_team_player_data
 
 
 class TestFbTeamPlayerData(unittest.TestCase):

@@ -21,9 +21,6 @@ class TestFmLeagueTable(unittest.TestCase):
             .get("Premier League")
             .to_dict(orient="records")
         )
-        # save actual to file
-        with open(self.data_path / "epl_table_2022_2023_2.json", "w") as f:
-            json.dump(actual, f, indent=4)
 
         time.sleep(4)
 

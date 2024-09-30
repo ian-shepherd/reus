@@ -55,7 +55,7 @@ def fb_season_fixture_urls(
     """
 
     df = pd.read_csv(
-        "https://raw.githubusercontent.com/ian-shepherd/reus_data/main/raw-data/all_competitions.csv",
+        "https://raw.githubusercontent.com/ian-shepherd/reus_data/main/raw-data/fbref_competitions.csv",
         keep_default_na=False,
     )
 

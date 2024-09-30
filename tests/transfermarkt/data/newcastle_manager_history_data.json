@@ -5,10 +5,10 @@
         "dob": "Nov 29, 1977",
         "nation": "England",
         "appointed": "Nov 8, 2021",
-        "left": "-",
-        "time_in_post": "798 days\u00a0",
-        "matches": "105",
-        "ppg": "1.68"
+        "left": "",
+        "time_in_post": "1057 days\u00a0",
+        "matches": "132",
+        "ppg": "1.72"
     },
     {
         "name": "Steve Bruce",
@@ -128,8 +128,8 @@
         "appointed": "Sep 7, 2004",
         "left": "Feb 2, 2006",
         "time_in_post": "513 days\u00a0",
-        "matches": "84",
-        "ppg": "1.54"
+        "matches": "83",
+        "ppg": "1.52"
     },
     {
         "name": "Sir Bobby Robson",
@@ -147,11 +147,11 @@
         "url": "/ruud-gullit/profil/trainer/1273",
         "dob": "Sep 1, 1962",
         "nation": "Netherlands",
-        "appointed": "Jul 1, 1998",
+        "appointed": "Aug 27, 1998",
         "left": "Aug 28, 1999",
-        "time_in_post": "423 days\u00a0",
-        "matches": "53",
-        "ppg": "1.28"
+        "time_in_post": "366 days\u00a0",
+        "matches": "52",
+        "ppg": "1.29"
     },
     {
         "name": "Sir Kenny Dalglish",
@@ -161,7 +161,7 @@
         "appointed": "Jan 14, 1997",
         "left": "Aug 25, 1998",
         "time_in_post": "588 days\u00a0",
-        "matches": "77",
+        "matches": "78",
         "ppg": "1.44"
     },
     {
@@ -293,7 +293,7 @@
         "appointed": "Jul 1, 1958",
         "left": "Oct 18, 1961",
         "time_in_post": "1205 days\u00a0",
-        "matches": "144",
+        "matches": "145",
         "ppg": "1.29"
     },
     {
@@ -381,7 +381,7 @@
         "appointed": "Aug 1, 1895",
         "left": "Jan 1, 1930",
         "time_in_post": "12571 days\u00a0",
-        "matches": "69",
-        "ppg": "1.42"
+        "matches": "478",
+        "ppg": "1.53"
     }
 ]

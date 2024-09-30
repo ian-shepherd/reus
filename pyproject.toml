@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "reus"
-version = "1.1.5"
+version = "1.1.7"
 description = "A package that allows you to pull soccer statistics, player market values, and transfer information, primarily from FBref, Fotmob, and Transfermarkt"
 authors = ["ian-shepherd <ian.shepherd123@gmail.com>"]
 license = "MIT"
